@@ -62,11 +62,17 @@
 </blockquote>
 <p>假设输入的$nums={4,5,6,0,1,2,3}$。</p>
 <p>初始$left=0,right=nums.size()$，每一次循环中，取$mid=(left+right)/2$，将序列最左端的值和target比较，有两种情况需要重点考虑：1. $num[left]&gt;target$，2. $num[left]&lt;target$，等于的话直接结束程序。</p>
-<p>第一种情况中，mid有3种情况，一种是比target大，一种是比它小，最后就是相等。</p>
+<p>第一种情况中，$nums[mid]$​有3种情况，一种是比target大，一种是比它小，最后就是相等。</p>
 <ul>
-<li>如果mid&gt;target，还有两种情况，一种是mid在nums的最小值的左边；一种是在nums的最小值的右边。</li>
+<li>如果$nums[mid]&gt;target$​，还有两种情况，一种是$nums[mid]$​在$nums$​的最小值的左边，那么此时有：$nums[mid]&lt;target&lt;nums[right]$​，所以更新$left=mid$​；一种是在$nums$​的最小值的右边，这种情况下，$nums[mid]$​和$nums[right]$​均大于$target$​，所以需要更新$left=left,right=mid$​。</li>
+<li>如果$nums[mid]&lt;target$，只有一种情况，更新为：$left=mid,right=right$。</li>
+<li>如果$nums[mid]==target$，找到目标值。</li>
 </ul>
-<p>第二种情况中，mid同样有3中情况，即$&gt;target, &lt;target, ==target$。</p>
+<p>第二种情况中，$mid$同样有3中情况，即$nums[mid]&gt;target, nums[mid]&lt;target, nums[mid]==target$。</p>
+<ul>
+<li>如果$nums[mid]&gt;target$，只有一种情况，即：$nums[left]&lt;target&lt;nums[mid]$，更新为：$left=left, right=mid$</li>
+<li>如果$nums[mid]&lt;target$，有两种情况，一种是$nums[mid]$在$nums$最小值的左边，那么此时有：$nums[right]&lt;nums[mid]&lt;target$，这种情况下，需要更新：$left=mid,right=right$；另一种是$nums[mid]$在$nums$最小值的右边，此时有：$nums[left]&lt;nums[mid]&lt;nums[right]$，所以更新$left=left，right=mid$。</li>
+</ul>
 ]]></content>
       <categories>
         <category>刷算法</category>
