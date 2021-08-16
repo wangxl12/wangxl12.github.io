@@ -152,7 +152,7 @@
     
     
     <article
-  id="post-刷算法-2021-08"
+  id="post-刷算法/刷算法-2021-08"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -163,7 +163,7 @@
     <header class="article-header">
        
 <h2 itemprop="name">
-  <a class="article-title" href="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/"
+  <a class="article-title" href="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/"
     >刷算法---2021.08</a> 
 </h2>
  
@@ -172,7 +172,7 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/" class="article-date">
+      <a href="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/" class="article-date">
   <time datetime="2021-08-14T08:20:46.000Z" itemprop="datePublished">2021-08-14</time>
 </a> 
   <div class="article-category">
@@ -189,16 +189,16 @@
 <blockquote>
 <p>本文将记录我在2021年8月中所刷过的题目，题目量不多，但是每一道保证理解透彻。</p>
 </blockquote>
-<p><img src="E:\typora-images\image-20210816112553809.png" alt="image-20210816112553809"></p>
+<p><img src="/.io//leetcode26.png" alt="AC分数"></p>
 <h1 id="力扣26题：删除有序数组中的重复项"><a href="#力扣26题：删除有序数组中的重复项" class="headerlink" title="力扣26题：删除有序数组中的重复项"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/">力扣26题：删除有序数组中的重复项</a></h1><blockquote>
 <p> 首先看清楚题目，这道题目说了是一个有序的数组，那么重复的元素必定是连续的，就连续这一特点我们可以摒弃平常用的字典计数的方法或者使用set的方法，而采用更加简便的方法。</p>
 </blockquote>
 <ul>
-<li><font color=gree>思路1：双指针(时间复杂度O(n)，空间复杂度O(1))</font></li>
+<li><font color="gree">思路1：双指针(时间复杂度O(n)，空间复杂度O(1))</font></li>
 </ul>
 <p>假设两个指针p和q，p在左边，q在右边，如果$nums[p]==nums[q]$，即两指针指向的元素值相等了，那么q指针右移一个单位，再次判断俩指针指向的值是否相等，如果还是相等，q指针继续移动；如果不相等，p指针移动一个单位，且$nums[p] = nums[q]$。</p>
 <p>那么何时跳出循环呢？如果q到达了nums最后一个元素，那么说明了所有的元素都遍历了一遍，那么此时p所指向的就是不重复的元素的最后一个。</p> 
-      <a class="article-more-link" href="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/"
+      <a class="article-more-link" href="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/"
         >阅读更多...</a
       >
        
