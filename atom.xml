@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-08-16T12:45:44.155Z</updated>
+  <updated>2021-08-16T12:53:38.510Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -17,21 +17,50 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>王争数据结构与算法学习笔记-链表</title>
+    <link href="https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/"/>
+    <id>https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/</id>
+    <published>2021-08-16T12:48:24.000Z</published>
+    <updated>2021-08-16T12:53:38.510Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;链表实现LRU&quot;&gt;&lt;a href=&quot;#链表实现LRU&quot; class=&quot;headerlink&quot; title=&quot;链表实现LRU&quot;&gt;&lt;/a&gt;链表实现LRU&lt;/h2&gt;&lt;p&gt;在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。&lt;/p&gt;
+&lt;p&gt;使用链表实现LRU如下：&lt;br&gt;创建一个链表来维护CPU缓存，链表中的每一个结点距离头结点的距离用于衡量该结点中存放的数据被访问的时间点距离当前时间点的时长，所以链表的表尾表示最早访问的数据。这样一来需要分几种情况来讨论：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;遍历链表，如果找到了当前需要访问的数据，就将该结点移到链表的表头。&lt;/li&gt;
+&lt;li&gt;遍历链表，如果没有找到当前需要访问的数据，就需要将该数据插入链表的表头，但是可能CPU缓存在此时已经满了，所以需要分情况考虑：&lt;ul&gt;
+&lt;li&gt; 如果CPU缓存没有满，将该数据插入链表即可。&lt;/li&gt;
+&lt;li&gt;如果CPU缓存满了，将链表的表尾结点删除（最早访问到的数据），然后将新数据插入链表的表头。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 $O(n)$​。&lt;/p&gt;
+&lt;h2 id=&quot;数组实现LRU&quot;&gt;&lt;a href=&quot;#数组实现LRU&quot; class=&quot;headerlink&quot; title=&quot;数组实现LRU&quot;&gt;&lt;/a&gt;数组实现LRU&lt;/h2&gt;</summary>
+    
+    
+    
+    <category term="数据结构" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+    <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>王争数据结构与算法学习笔记-数组</title>
     <link href="https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/"/>
     <id>https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/</id>
     <published>2021-08-16T12:38:31.000Z</published>
-    <updated>2021-08-16T12:45:44.155Z</updated>
+    <updated>2021-08-16T12:58:22.915Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;font size=&quot;4&quot;</summary>
-        
-      
+&lt;p&gt;数组看起来简单基础，但是很多人没有理解这个数据结构的精髓。&lt;strong&gt;数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据&lt;/strong&gt;。数组在逻辑上是一种线性表数据结构. 数组在物理上是一种顺序的存储结构。 数组定义的关键词:&lt;br&gt;1.连续的内存空间&lt;br&gt;2.相同类型的数据.&lt;br&gt;&lt;strong&gt;线性表&lt;/strong&gt;: 数据排成像一条线一样的结构.每个线性表上的数据最多只有前和后两个方向.&lt;br&gt;&lt;strong&gt;非线性表&lt;/strong&gt;: 数据之间并不是简单的前后关系. 线性表数据结构包括: 数组,链表,队列,栈. 非线性表数据结构包括: 二叉树,堆,图 。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;1.数组的查找操作时间复杂度并不是$O(1)$。即便是排好的数组，用二分查找，时间复杂度也是$O(lgn)$。正确表述：数组支持随机访问，根据下标随机访问的时间复杂度为$O(1)$​​&lt;br&gt;2.连续的内存空间和相同类型的数据：正是因为这两个限制，它才有了一个堪称“杀手锏”的特性：“随机访问”。这两个限制也让数组的很多操作变得非常低效，比如要想在数组中删除、插入一个数据，为了保证连续性，就需要做大量的数据搬移工作。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;数组是如何实现根据下标随机访问数组元素&quot;&gt;&lt;a href=&quot;#数组是如何实现根据下标随机访问数组元素&quot; class=&quot;headerlink&quot; title=&quot;数组是如何实现根据下标随机访问数组元素&quot;&gt;&lt;/a&gt;数组是如何实现根据下标随机访问数组元素&lt;/h2&gt;</summary>
     
     
     

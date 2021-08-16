@@ -13,7 +13,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title> WXL&#39;s blog</title>
+      <title>王争数据结构与算法学习笔记-链表 |  WXL&#39;s blog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -57,101 +57,8 @@
     
       
     <main class="content on">
-      
-<section class="cover">
-    
-      
-      <a class="forkMe" href="https://github.com/wangxl12"
-        target="_blank"><img width="149" height="149" src="/images/forkme.png"
-          class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
-    
-  <div class="cover-frame">
-    <div class="bg-box">
-      <img src="/images/cover12.jpg" alt="image frame" />
-    </div>
-    <div class="cover-inner text-center text-white">
-      <h1><a href="/">WXL&#39;s blog</a></h1>
-      <div id="subtitle-box">
-        
-        <span id="subtitle"></span>
-        
-      </div>
-      <div>
-        
-      </div>
-    </div>
-  </div>
-  <div class="cover-learn-more">
-    <a href="javascript:void(0)" class="anchor"><i class="ri-arrow-down-line"></i></a>
-  </div>
-</section>
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
-
-
-<!-- Subtitle -->
-
-  <script>
-    try {
-      var typed = new Typed("#subtitle", {
-        strings: ['Keep head above water!', '愿你一生努力，一生被爱', 'Keep head above water!'],
-        startDelay: 10,
-        typeSpeed: 200,
-        loop: true,
-        backSpeed: 100,
-        showCursor: true
-      });
-    } catch (err) {
-      console.log(err)
-    }
-  </script>
-  
-<div id="main">
-  <section class="outer">
-  
-  
-  
-<div class="notice" style="margin-top:50px">
-    <i class="ri-heart-fill"></i>
-    <div class="notice-content">这是我的个人博客，你也可以访问我的CSDN博客:https://blog.csdn.net/weixin_43141320?spm=1000.2115.3001.5343</div>
-</div>
-
-
-<style>
-    .notice {
-        padding: 20px;
-        border: 1px dashed #e6e6e6;
-        color: #969696;
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        background: #fbfbfb50;
-        border-radius: 10px;
-    }
-
-    .notice i {
-        float: left;
-        color: #999;
-        font-size: 16px;
-        padding-right: 10px;
-        vertical-align: middle;
-        margin-top: -2px;
-    }
-
-    .notice-content {
-        display: initial;
-        vertical-align: middle;
-    }
-</style>
-  
-  <article class="articles">
-    
-    
-    
-    
-    <article
+      <section class="outer">
+  <article
   id="post-数据结构/王争数据结构与算法学习笔记-链表"
   class="article article-type-post"
   itemscope
@@ -162,10 +69,9 @@
     
     <header class="article-header">
        
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/"
-    >王争数据结构与算法学习笔记-链表</a> 
-</h2>
+<h1 class="article-title sea-center" style="border-left:0" itemprop="name">
+  王争数据结构与算法学习笔记-链表
+</h1>
  
 
       
@@ -178,9 +84,34 @@
   <div class="article-category">
     <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
   </div>
-   
+  
+<div class="word_count">
+    <span class="post-time">
+        <span class="post-meta-item-icon">
+            <i class="ri-quill-pen-line"></i>
+            <span class="post-meta-item-text"> 字数统计:</span>
+            <span class="post-count">2.7k</span>
+        </span>
+    </span>
+
+    <span class="post-time">
+        &nbsp; | &nbsp;
+        <span class="post-meta-item-icon">
+            <i class="ri-book-open-line"></i>
+            <span class="post-meta-item-text"> 阅读时长≈</span>
+            <span class="post-count">9 分钟</span>
+        </span>
+    </span>
+</div>
+ 
     </div>
       
+    <div class="tocbot"></div>
+
+
+
+
+  
     <div class="article-entry" itemprop="articleBody">
        
   <h2 id="链表实现LRU"><a href="#链表实现LRU" class="headerlink" title="链表实现LRU"></a>链表实现LRU</h2><p>在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。</p>
@@ -194,172 +125,189 @@
 </li>
 </ul>
 <p>这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 $O(n)$​。</p>
-<h2 id="数组实现LRU"><a href="#数组实现LRU" class="headerlink" title="数组实现LRU"></a>数组实现LRU</h2> 
-      <a class="article-more-link" href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/"
-        >阅读更多...</a
-      >
-       
+<h2 id="数组实现LRU"><a href="#数组实现LRU" class="headerlink" title="数组实现LRU"></a>数组实现LRU</h2><span id="more"></span>
+
+<ol>
+<li>将数组的首元素作为最新访问的数据，数组末尾元素作为最早访问的数据。这样每一次需要遍历数组寻找数据，时间复杂度为O(n)，如果找到了，需要将该数据移到数组首部，最坏的情况是O(n)，最好的情况是O(1);如果不在数组中，当CPU缓存满的时候需要删除数组末尾的数据，这里删除可以采用直接覆盖的方式，移动前面n-1个数据，然后在数组首部插入新数据，时间复杂度为O(n);如果在数组中，移动数据，插入新数据，时间复杂度为O(n)。根据加法原则，时间复杂度为O(2n+1)=O(n)； </li>
+<li>将数组的尾部元素作为最新访问的数据，数组首部为最早访问的数据。这样每一次需要遍历数组寻找数据，时间复杂度为O(n)，如果找到了，需要将该数据移到数组尾部，最坏的情况是O(n)，最好的情况是O(1);如果不在数组中，当CPU缓存满的时候需要删除数组首部的数据，这里删除可以采用直接覆盖的方式，移动后面n-1个数据，然后在数组尾部插入新数据，时间复杂度为O(n);如果在数组中，移动数据，插入新数据，时间复杂度为O(n)。根据加法原则，时间复杂度还是O(2n+1)=O(n)；</li>
+<li>前两种方法其实思路差不多，只是头部和尾部谁用来存放最早访问的数据。这两种方法都有比较大的缺点，即存在大量移动数组元素的情况，这样的效率很低，为了减少移动的次数，可以使用两个指针new，old来分别指向最新访问的数据、最早访问的数据，一开始数组内元素不断扩充，也就是CPU缓存使用率不断上升的过程，此过程中old指针不断往下标大的方向移动，当CPU缓存满的时候，再次访问数据且恰好不在缓存中时，需要删除元素，删除可以采用直接覆盖的方式，old指针向左移动，指向下标为n-2的位置，然后插入新元素，由于此时只有下标为n-1的位置是空的，所以new指针指向n-1的位置，当再有新元素需要存入缓存时，使用同样的方式来避免大量移动数组中的数据。使用这种方法同样需要先遍历数组，确定是否需要插入数据，时间复杂度为O(n)，而插入删除的时间复杂度为O(1)，总的来说时间复杂度为O(n+1)=O(n)。 </li>
+</ol>
+<h2 id="使用单链表实现回文数的判断"><a href="#使用单链表实现回文数的判断" class="headerlink" title="使用单链表实现回文数的判断"></a>使用单链表实现回文数的判断</h2><p>回文数需要首先确定中间的元素，然后判断两边的元素是否都对应相等，在确定链表长度的时候，可以使用快慢指针来实现，慢指针每一次移动一个结点，快指针每一次移动两个结点，当快指针到达链表尾的时候，慢指针就到达中间了，此时仅仅花了遍历全部链表元素的一半的时间。在慢指针前进的过程中，同时修改其 next 指针，使得链表前半部分反序。最后比较中点两侧的链表是否相等，从而判断是否为回文数。</p>
+<p>这里需要避免一个误区，不是快指针跨度越大越好，比如这里快指针跨度为慢指针的100倍，就容易出现一个问题，快指针从某一步开始就跳出链表了，但是也不清楚到底具体链表尾多远，所以需要一个额外的指针来存储快指针上一次存放的地址，当某一次快指针跳出链表的时候，通过这个额外的指针可以回到链表中。回来了还不然，还没有确定链表中间结点，所以，需要重新移动快指针来确定此时与尾结点的距离，然后还要移动相应倍数的慢指针，最终才能确定中间结点，这一过程是比较繁琐的，而且容易出错，所以快慢指针方法的“快指针”不能太“快”。</p>
+<h2 id="双链表和单链表的删除操作"><a href="#双链表和单链表的删除操作" class="headerlink" title="双链表和单链表的删除操作"></a>双链表和单链表的删除操作</h2><p>==删除给定指针指向的结点==: 这种情况是已经找到了要删除的元素,我们只需要执行删除操作即可. <strong>针对单链表而言</strong>: 单链表如果要删除一个结点q.必须要知道这个结点的前驱结点是谁,修改前驱结点的指针指向即可.单链表找某个结点的前驱结点,只能从头开始遍历. 临界值 p-&gt;next == q;说明p就是q的前驱结点.所以在单链表中,找这个前驱结点的平均时间复杂度为O(n),然后执行删除操作的时间复杂度为O(1). 根据时间复杂度分析的加法法则: 删除给定指针指向的结点 –&gt; 单链表的总的时间复杂度为O(n). <strong>针对双链表而言</strong>: 双链表要删除一个结点q.也必须得知道这个结点的前驱结点和后继结点. 修改前驱结点的后继指针next和后继结点的前驱指针prev即可.而针对双链表而言,找q的前驱结点和q的后继结点的时间复杂度都为O(1).而执行删除操作(修改指针指向)的时间复杂度也为O(1). 根据时间复杂度分析的加法法则: 删除给定指针指向的结点 –&gt; 双链表的总的时间复杂度为O(1).</p>
+<h2 id="CPU缓存技术"><a href="#CPU缓存技术" class="headerlink" title="CPU缓存技术"></a>CPU缓存技术</h2><p>缓存实际上就是利用了空间换时间的设计思想。如果我们把数据存储在硬盘上，会比较节省内存，但每次查找数据都要询问一次硬盘，会比较慢。但如果我们通过缓存技术，事先将数据加载在内存中，虽然会比较耗费内存空间，但是每次数据查询的速度就大大提高了。数据库索引操作、MapReduce，是典型的空间换时间。</p>
+<h2 id="数组与链表的区别"><a href="#数组与链表的区别" class="headerlink" title="数组与链表的区别"></a>数组与链表的区别</h2><table>
+<thead>
+<tr>
+<th align="center">时间复杂度</th>
+<th align="center">数组</th>
+<th align="center">链表</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">插入|删除</td>
+<td align="center">$O(n)$</td>
+<td align="center">$O(1)$</td>
+</tr>
+<tr>
+<td align="center">随机访问</td>
+<td align="center">$O(1)$</td>
+<td align="center">$O(n)$</td>
+</tr>
+</tbody></table>
+<ol>
+<li>数组简单易用，在实现上使用的是连续的内存空间，可以借助 <strong>CPU 的缓存机制</strong>，预读数组中的数据，所以访问效率更高。而链表在内存中并不是连续存储，所以对 CPU 缓存不友好，没办法有效预读。</li>
+<li>数组的缺点是<strong>大小固定</strong>，一经声明就要占用整块连续内存空间。如果声明的数组过大，系统可能没有足够的连续内存空间分配给它，导致“内存不足（out of memory）”。如果声明的数组过小，则可能出现不够用的情况。这时只能再申请一个更大的内存空间，把原数组拷贝进去，非常费时。链表本身没有大小的限制，天然地支持动态扩容。</li>
+<li>如果你的代码对<strong>内存的使用非常苛刻</strong>，那数组就更适合你。因为链表中的每个结点都需要消耗额外的存储空间去存储一份指向下一个结点的指针，所以内存消耗会翻倍。而且，对链表进行频繁的插入、删除操作，还会导致频繁的内存申请和释放，容易造成<strong>内存碎片</strong>，如果是 Java 语言，就有可能会导致频繁的 GC（Garbage Collection，垃圾回收）。</li>
+<li><strong>对内存要求方面</strong>: 数组对内存的要求更高。因为数组需要一块连续内存空间来存放数据。（可能出现的问题就是:内存总的剩余空间足够，但是申请容量较大的数组时申请失败） 链表对内存的要求较低，是因为链表不需要连续的内存空间，只要内存剩余空间足够，无论是否连续，用链表来申请空间一定会成功。</li>
+<li>链表虽然方便，但是<strong>内存开销比数组大了将近一倍</strong>，假设存储100个整数，数组400个字节的存储空间足够了。但是如果用链表存储100个整数，链表得需要1200个字节的存储空间(C/C++)，因为链表中的每个节点不止要存储数据，还要存储地址，内存的利用率就比数组低太多了。</li>
+<li>由此还可以得出:如果<strong>内存容量本身就很小，要存储的数据也比较多</strong>。选择<strong>数组</strong>来存储数据更好，如果内存空间充足，那我们在存储数据的时候到底选择链表还是数组。这个就视具体的业务场景而定了。</li>
+</ol>
+ 
       <!-- reward -->
+      
+      <div id="reword-out">
+        <div id="reward-btn">
+          打赏
+        </div>
+      </div>
       
     </div>
     
 
     <!-- copyright -->
     
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-数据结构/王争数据结构与算法学习笔记-数组"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/"
-    >王争数据结构与算法学习笔记-数组</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/" class="article-date">
-  <time datetime="2021-08-16T12:38:31.000Z" itemprop="datePublished">2021-08-16</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-  </div>
-   
+    <div class="declare">
+      <ul class="post-copyright">
+        <li>
+          <i class="ri-copyright-line"></i>
+          <strong>版权声明： </strong>
+          
+          本博客所有文章除特别声明外，著作权归作者所有。转载请注明出处！
+          
+        </li>
+      </ul>
     </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <blockquote>
-<p>数组看起来简单基础，但是很多人没有理解这个数据结构的精髓。<strong>数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据</strong>。数组在逻辑上是一种线性表数据结构. 数组在物理上是一种顺序的存储结构。 数组定义的关键词:<br>1.连续的内存空间<br>2.相同类型的数据.<br><strong>线性表</strong>: 数据排成像一条线一样的结构.每个线性表上的数据最多只有前和后两个方向.<br><strong>非线性表</strong>: 数据之间并不是简单的前后关系. 线性表数据结构包括: 数组,链表,队列,栈. 非线性表数据结构包括: 二叉树,堆,图 。</p>
-<blockquote>
-<p>1.数组的查找操作时间复杂度并不是$O(1)$。即便是排好的数组，用二分查找，时间复杂度也是$O(lgn)$。正确表述：数组支持随机访问，根据下标随机访问的时间复杂度为$O(1)$​​<br>2.连续的内存空间和相同类型的数据：正是因为这两个限制，它才有了一个堪称“杀手锏”的特性：“随机访问”。这两个限制也让数组的很多操作变得非常低效，比如要想在数组中删除、插入一个数据，为了保证连续性，就需要做大量的数据搬移工作。</p>
-</blockquote>
-</blockquote>
-<h2 id="数组是如何实现根据下标随机访问数组元素"><a href="#数组是如何实现根据下标随机访问数组元素" class="headerlink" title="数组是如何实现根据下标随机访问数组元素"></a>数组是如何实现根据下标随机访问数组元素</h2> 
-      <a class="article-more-link" href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
     
     <footer class="article-footer">
        
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-    <article
-  id="post-刷算法/刷算法-2021-08"
-  class="article article-type-post"
-  itemscope
-  itemprop="blogPost"
-  data-scroll-reveal
->
-  <div class="article-inner">
-    
-    <header class="article-header">
-       
-<h2 itemprop="name">
-  <a class="article-title" href="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/"
-    >刷算法---2021.08</a> 
-</h2>
- 
-
-      
-    </header>
-     
-    <div class="article-meta">
-      <a href="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/" class="article-date">
-  <time datetime="2021-08-14T08:20:46.000Z" itemprop="datePublished">2021-08-14</time>
-</a> 
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/%E5%88%B7%E7%AE%97%E6%B3%95/">刷算法</a>
-  </div>
-   
-    </div>
-      
-    <div class="article-entry" itemprop="articleBody">
-       
-  <blockquote>
-<p>从2021年8月中旬开始刷题。</p>
-</blockquote>
-<blockquote>
-<p>本文将记录我在2021年8月中所刷过的题目，题目量不多，但是每一道保证理解透彻。</p>
-</blockquote>
-<h1 id="力扣26题：删除有序数组中的重复项"><a href="#力扣26题：删除有序数组中的重复项" class="headerlink" title="力扣26题：删除有序数组中的重复项"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/">力扣26题：删除有序数组中的重复项</a></h1><p><img src="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/leetcode26.png" alt="AC"></p>
-<blockquote>
-<p> 首先看清楚题目，这道题目说了是一个有序的数组，那么重复的元素必定是连续的，就连续这一特点我们可以摒弃平常用的字典计数的方法或者使用set的方法，而采用更加简便的方法。</p>
-</blockquote>
-<ul>
-<li><font color="gree">思路1：双指针(时间复杂度O(n)，空间复杂度O(1))</font></li>
-</ul>
-<p>假设两个指针p和q，p在左边，q在右边，如果$nums[p]==nums[q]$，即两指针指向的元素值相等了，那么q指针右移一个单位，再次判断俩指针指向的值是否相等，如果还是相等，q指针继续移动；如果不相等，p指针移动一个单位，且$nums[p] = nums[q]$。</p>
-<p>那么何时跳出循环呢？如果q到达了nums最后一个元素，那么说明了所有的元素都遍历了一遍，那么此时p所指向的就是不重复的元素的最后一个。</p> 
-      <a class="article-more-link" href="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/"
-        >阅读更多...</a
-      >
-       
-      <!-- reward -->
-      
-    </div>
-    
-
-    <!-- copyright -->
-    
-    <footer class="article-footer">
-       
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%88%B7%E7%AE%97%E6%B3%95/" rel="tag">刷算法</a></li></ul>
-
-    </footer>
-  </div>
-
-    
- 
-    
-</article>
-
-    
-  </article>
-  
-
-  
-</section>
+<div class="share-btn">
+      <span class="share-sns share-outer">
+        <i class="ri-share-forward-line"></i>
+        分享
+      </span>
+      <div class="share-wrap">
+        <i class="arrow"></i>
+        <div class="share-icons">
+          
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="ri-weibo-fill"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="ri-wechat-fill"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="ri-qq-fill"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="ri-douban-line"></i>
+          </a>
+          <!-- <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a> -->
+          
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="ri-facebook-circle-fill"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="ri-google-fill"></i>
+          </a>
+        </div>
+      </div>
 </div>
 
+<div class="wx-share-modal">
+    <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div id="share-mask"></div>  
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag">数据结构</a></li></ul>
+
+    </footer>
+  </div>
+
+   
+  <nav class="article-nav">
+    
+    
+      <a href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/" class="article-nav-link">
+        <strong class="article-nav-caption">下一篇</strong>
+        <div class="article-nav-title">王争数据结构与算法学习笔记-数组</div>
+      </a>
+    
+  </nav>
+
+   
+<!-- valine评论 -->
+<div id="vcomments-box">
+  <div id="vcomments"></div>
+</div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: "#vcomments",
+    app_id: "",
+    app_key: "",
+    path: window.location.pathname,
+    avatar: "monsterid",
+    placeholder: "给我的文章加点评论吧~",
+    recordIP: true,
+  });
+  const infoEle = document.querySelector("#vcomments .info");
+  if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0) {
+    infoEle.childNodes.forEach(function (item) {
+      item.parentNode.removeChild(item);
+    });
+  }
+</script>
+<style>
+  #vcomments-box {
+    padding: 5px 30px;
+  }
+
+  @media screen and (max-width: 800px) {
+    #vcomments-box {
+      padding: 5px 0px;
+    }
+  }
+
+  #vcomments-box #vcomments {
+    background-color: #fff;
+  }
+
+  .v .vlist .vcard .vh {
+    padding-right: 20px;
+  }
+
+  .v .vlist .vcard {
+    padding-left: 10px;
+  }
+</style>
+
+ 
+   
+     
+</article>
+
+</section>
       <footer class="footer">
   <div class="outer">
     <ul>
@@ -499,6 +447,22 @@
 <script src="/js/lazyload.min.js"></script>
 
 <!-- Tocbot -->
+ 
+<script src="/js/tocbot.min.js"></script>
+
+<script>
+  tocbot.init({
+    tocSelector: ".tocbot",
+    contentSelector: ".article-entry",
+    headingSelector: "h1, h2, h3, h4, h5, h6",
+    hasInnerContainers: true,
+    scrollSmooth: true,
+    scrollContainer: "main",
+    positionFixedSelector: ".tocbot",
+    positionFixedClass: "is-position-fixed",
+    fixedSidebarOffset: "auto",
+  });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/jquery-modal@0.9.2/jquery.modal.min.js"></script>
 <link
