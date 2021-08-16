@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-08-16T10:56:56.382Z</updated>
+  <updated>2021-08-16T11:11:12.349Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wangxl12.github.io/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/"/>
     <id>https://wangxl12.github.io/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/</id>
     <published>2021-08-14T08:20:46.000Z</published>
-    <updated>2021-08-16T10:56:56.382Z</updated>
+    <updated>2021-08-16T11:11:12.349Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
@@ -30,8 +30,7 @@
 &lt;blockquote&gt;
 &lt;p&gt;本文将记录我在2021年8月中所刷过的题目，题目量不多，但是每一道保证理解透彻。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;img src=&quot;/.io//08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/leetcode26.png&quot; class title=&quot;AC分数&quot;&gt;
-
+&lt;p&gt;&lt;img src=&quot;/.io//08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/leetcode26.png&quot; alt=&quot;AC分数&quot;&gt;&lt;/p&gt;
 &lt;h1 id=&quot;力扣26题：删除有序数组中的重复项&quot;&gt;&lt;a href=&quot;#力扣26题：删除有序数组中的重复项&quot; class=&quot;headerlink&quot; title=&quot;力扣26题：删除有序数组中的重复项&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/&quot;&gt;力扣26题：删除有序数组中的重复项&lt;/a&gt;&lt;/h1&gt;&lt;blockquote&gt;
 &lt;p&gt; 首先看清楚题目，这道题目说了是一个有序的数组，那么重复的元素必定是连续的，就连续这一特点我们可以摒弃平常用的字典计数的方法或者使用set的方法，而采用更加简便的方法。&lt;/p&gt;
 &lt;/blockquote&gt;
