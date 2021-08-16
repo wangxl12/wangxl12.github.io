@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-08-16T12:53:38.510Z</updated>
+  <updated>2021-08-16T13:39:37.886Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -21,21 +21,24 @@
     <link href="https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/"/>
     <id>https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/</id>
     <published>2021-08-16T12:48:24.000Z</published>
-    <updated>2021-08-16T12:53:38.510Z</updated>
+    <updated>2021-08-16T13:39:37.886Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;链表实现LRU&quot;&gt;&lt;a href=&quot;#链表实现LRU&quot; class=&quot;headerlink&quot; title=&quot;链表实现LRU&quot;&gt;&lt;/a&gt;链表实现LRU&lt;/h2&gt;&lt;p&gt;在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。&lt;/p&gt;
-&lt;p&gt;使用链表实现LRU如下：&lt;br&gt;创建一个链表来维护CPU缓存，链表中的每一个结点距离头结点的距离用于衡量该结点中存放的数据被访问的时间点距离当前时间点的时长，所以链表的表尾表示最早访问的数据。这样一来需要分几种情况来讨论：&lt;/p&gt;
+    <summary type="html">&lt;h2 id=&quot;链表实现lru&quot;&gt;链表实现LRU&lt;/h2&gt;
+&lt;p&gt;在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。&lt;/p&gt;
+&lt;p&gt;使用链表实现LRU如下：&lt;br&gt;
+创建一个链表来维护CPU缓存，链表中的每一个结点距离头结点的距离用于衡量该结点中存放的数据被访问的时间点距离当前时间点的时长，所以链表的表尾表示最早访问的数据。这样一来需要分几种情况来讨论：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;遍历链表，如果找到了当前需要访问的数据，就将该结点移到链表的表头。&lt;/li&gt;
-&lt;li&gt;遍历链表，如果没有找到当前需要访问的数据，就需要将该数据插入链表的表头，但是可能CPU缓存在此时已经满了，所以需要分情况考虑：&lt;ul&gt;
-&lt;li&gt; 如果CPU缓存没有满，将该数据插入链表即可。&lt;/li&gt;
+&lt;li&gt;遍历链表，如果没有找到当前需要访问的数据，就需要将该数据插入链表的表头，但是可能CPU缓存在此时已经满了，所以需要分情况考虑：
+&lt;ul&gt;
+&lt;li&gt;如果CPU缓存没有满，将该数据插入链表即可。&lt;/li&gt;
 &lt;li&gt;如果CPU缓存满了，将链表的表尾结点删除（最早访问到的数据），然后将新数据插入链表的表头。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 $O(n)$​。&lt;/p&gt;
-&lt;h2 id=&quot;数组实现LRU&quot;&gt;&lt;a href=&quot;#数组实现LRU&quot; class=&quot;headerlink&quot; title=&quot;数组实现LRU&quot;&gt;&lt;/a&gt;数组实现LRU&lt;/h2&gt;</summary>
+&lt;p&gt;这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(n)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;​。&lt;/p&gt;
+&lt;h2 id=&quot;数组实现lru&quot;&gt;数组实现LRU&lt;/h2&gt;</summary>
     
     
     
@@ -51,20 +54,21 @@
     <link href="https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/"/>
     <id>https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/</id>
     <published>2021-08-16T12:38:31.000Z</published>
-    <updated>2021-08-16T13:10:25.513Z</updated>
+    <updated>2021-08-16T13:35:23.463Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;数组看起来简单基础，但是很多人没有理解这个数据结构的精髓。&lt;strong&gt;数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据&lt;/strong&gt;。数组在逻辑上是一种线性表数据结构. 数组在物理上是一种顺序的存储结构。 数组定义的关键词: &lt;/p&gt;
-&lt;p&gt;1.连续的内存空间 &lt;/p&gt;
-&lt;p&gt;2.相同类型的数据. &lt;/p&gt;
-&lt;p&gt;&lt;code&gt;线性表&lt;/code&gt;: 数据排成像一条线一样的结构.每个线性表上的数据最多只有前和后两个方向.&lt;br&gt;&lt;code&gt;非线性表&lt;/code&gt;: 数据之间并不是简单的前后关系. 线性表数据结构包括: 数组,链表,队列,栈. 非线性表数据结构包括: 二叉树,堆,图 。&lt;/p&gt;
+&lt;p&gt;数组看起来简单基础，但是很多人没有理解这个数据结构的精髓。&lt;code&gt;数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据&lt;/code&gt;。数组在逻辑上是一种线性表数据结构. 数组在物理上是一种顺序的存储结构。 数组定义的关键词:&lt;/p&gt;
+&lt;p&gt;1.连续的内存空间&lt;/p&gt;
+&lt;p&gt;2.相同类型的数据.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;线性表&lt;/code&gt;: 数据排成像一条线一样的结构.每个线性表上的数据最多只有前和后两个方向.&lt;br&gt;
+&lt;code&gt;非线性表&lt;/code&gt;: 数据之间并不是简单的前后关系. 线性表数据结构包括: 数组,链表,队列,栈. 非线性表数据结构包括: 二叉树,堆,图 。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;1.数组的查找操作时间复杂度并不是$O(1)$。即便是排好的数组，用二分查找，时间复杂度也是$O(lgn)$。正确表述：数组支持随机访问，根据下标随机访问的时间复杂度为$O(1)$​&lt;/p&gt;
+&lt;p&gt;1.数组的查找操作时间复杂度并不是&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。即便是排好的数组，用二分查找，时间复杂度也是&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(lgn)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。正确表述：数组支持随机访问，根据下标随机访问的时间复杂度为&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;​&lt;/p&gt;
 &lt;p&gt;2.连续的内存空间和相同类型的数据：正是因为这两个限制，它才有了一个堪称“杀手锏”的特性：“随机访问”。这两个限制也让数组的很多操作变得非常低效，比如要想在数组中删除、插入一个数据，为了保证连续性，就需要做大量的数据搬移工作。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;数组是如何实现根据下标随机访问数组元素&quot;&gt;&lt;a href=&quot;#数组是如何实现根据下标随机访问数组元素&quot; class=&quot;headerlink&quot; title=&quot;数组是如何实现根据下标随机访问数组元素&quot;&gt;&lt;/a&gt;数组是如何实现根据下标随机访问数组元素&lt;/h2&gt;</summary>
+&lt;h2 id=&quot;数组是如何实现根据下标随机访问数组元素&quot;&gt;数组是如何实现根据下标随机访问数组元素&lt;/h2&gt;</summary>
     
     
     
@@ -89,14 +93,15 @@
 &lt;blockquote&gt;
 &lt;p&gt;本文将记录我在2021年8月中所刷过的题目，题目量不多，但是每一道保证理解透彻。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h1 id=&quot;力扣26题：删除有序数组中的重复项&quot;&gt;&lt;a href=&quot;#力扣26题：删除有序数组中的重复项&quot; class=&quot;headerlink&quot; title=&quot;力扣26题：删除有序数组中的重复项&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/&quot;&gt;力扣26题：删除有序数组中的重复项&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/leetcode26.png&quot; alt=&quot;AC&quot;&gt;&lt;/p&gt;
+&lt;h1&gt;&lt;a href=&quot;https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/&quot;&gt;力扣26题：删除有序数组中的重复项&lt;/a&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;img src=&quot;/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/leetcode26.png&quot; alt=&quot;AC&quot;&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt; 首先看清楚题目，这道题目说了是一个有序的数组，那么重复的元素必定是连续的，就连续这一特点我们可以摒弃平常用的字典计数的方法或者使用set的方法，而采用更加简便的方法。&lt;/p&gt;
+&lt;p&gt;首先看清楚题目，这道题目说了是一个有序的数组，那么重复的元素必定是连续的，就连续这一特点我们可以摒弃平常用的字典计数的方法或者使用set的方法，而采用更加简便的方法。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;font color=&quot;gree&quot;&gt;思路1：双指针(时间复杂度O(n)，空间复杂度O(1))&lt;/font&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;假设两个指针p和q，p在左边，q在右边，如果$nums[p]==nums[q]$，即两指针指向的元素值相等了，那么q指针右移一个单位，再次判断俩指针指向的值是否相等，如果还是相等，q指针继续移动；如果不相等，p指针移动一个单位，且$nums[p] = nums[q]$。&lt;/p&gt;
+&lt;p&gt;假设两个指针p和q，p在左边，q在右边，如果&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;nums[p]==nums[q]&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.36687em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，即两指针指向的元素值相等了，那么q指针右移一个单位，再次判断俩指针指向的值是否相等，如果还是相等，q指针继续移动；如果不相等，p指针移动一个单位，且&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;nums[p] = nums[q]&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
 &lt;p&gt;那么何时跳出循环呢？如果q到达了nums最后一个元素，那么说明了所有的元素都遍历了一遍，那么此时p所指向的就是不重复的元素的最后一个。&lt;/p&gt;</summary>
     
     

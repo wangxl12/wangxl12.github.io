@@ -47,7 +47,7 @@
         }
       </style>
     <link rel="alternate" href="/atom.xml" title="WXL's blog" type="application/atom+xml">
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   </html>
 </html>
 
@@ -183,18 +183,21 @@
       
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="链表实现LRU"><a href="#链表实现LRU" class="headerlink" title="链表实现LRU"></a>链表实现LRU</h2><p>在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。</p>
-<p>使用链表实现LRU如下：<br>创建一个链表来维护CPU缓存，链表中的每一个结点距离头结点的距离用于衡量该结点中存放的数据被访问的时间点距离当前时间点的时长，所以链表的表尾表示最早访问的数据。这样一来需要分几种情况来讨论：</p>
+  <h2 id="链表实现lru">链表实现LRU</h2>
+<p>在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。</p>
+<p>使用链表实现LRU如下：<br>
+创建一个链表来维护CPU缓存，链表中的每一个结点距离头结点的距离用于衡量该结点中存放的数据被访问的时间点距离当前时间点的时长，所以链表的表尾表示最早访问的数据。这样一来需要分几种情况来讨论：</p>
 <ul>
 <li>遍历链表，如果找到了当前需要访问的数据，就将该结点移到链表的表头。</li>
-<li>遍历链表，如果没有找到当前需要访问的数据，就需要将该数据插入链表的表头，但是可能CPU缓存在此时已经满了，所以需要分情况考虑：<ul>
-<li> 如果CPU缓存没有满，将该数据插入链表即可。</li>
+<li>遍历链表，如果没有找到当前需要访问的数据，就需要将该数据插入链表的表头，但是可能CPU缓存在此时已经满了，所以需要分情况考虑：
+<ul>
+<li>如果CPU缓存没有满，将该数据插入链表即可。</li>
 <li>如果CPU缓存满了，将链表的表尾结点删除（最早访问到的数据），然后将新数据插入链表的表头。</li>
 </ul>
 </li>
 </ul>
-<p>这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 $O(n)$​。</p>
-<h2 id="数组实现LRU"><a href="#数组实现LRU" class="headerlink" title="数组实现LRU"></a>数组实现LRU</h2> 
+<p>这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>​。</p>
+<h2 id="数组实现lru">数组实现LRU</h2> 
       <a class="article-more-link" href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/"
         >阅读更多...</a
       >
@@ -252,16 +255,17 @@
     <div class="article-entry" itemprop="articleBody">
        
   <blockquote>
-<p>数组看起来简单基础，但是很多人没有理解这个数据结构的精髓。<strong>数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据</strong>。数组在逻辑上是一种线性表数据结构. 数组在物理上是一种顺序的存储结构。 数组定义的关键词: </p>
-<p>1.连续的内存空间 </p>
-<p>2.相同类型的数据. </p>
-<p><code>线性表</code>: 数据排成像一条线一样的结构.每个线性表上的数据最多只有前和后两个方向.<br><code>非线性表</code>: 数据之间并不是简单的前后关系. 线性表数据结构包括: 数组,链表,队列,栈. 非线性表数据结构包括: 二叉树,堆,图 。</p>
+<p>数组看起来简单基础，但是很多人没有理解这个数据结构的精髓。<code>数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据</code>。数组在逻辑上是一种线性表数据结构. 数组在物理上是一种顺序的存储结构。 数组定义的关键词:</p>
+<p>1.连续的内存空间</p>
+<p>2.相同类型的数据.</p>
+<p><code>线性表</code>: 数据排成像一条线一样的结构.每个线性表上的数据最多只有前和后两个方向.<br>
+<code>非线性表</code>: 数据之间并不是简单的前后关系. 线性表数据结构包括: 数组,链表,队列,栈. 非线性表数据结构包括: 二叉树,堆,图 。</p>
 <blockquote>
-<p>1.数组的查找操作时间复杂度并不是$O(1)$。即便是排好的数组，用二分查找，时间复杂度也是$O(lgn)$。正确表述：数组支持随机访问，根据下标随机访问的时间复杂度为$O(1)$​</p>
+<p>1.数组的查找操作时间复杂度并不是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>。即便是排好的数组，用二分查找，时间复杂度也是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>l</mi><mi>g</mi><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(lgn)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。正确表述：数组支持随机访问，根据下标随机访问的时间复杂度为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>​</p>
 <p>2.连续的内存空间和相同类型的数据：正是因为这两个限制，它才有了一个堪称“杀手锏”的特性：“随机访问”。这两个限制也让数组的很多操作变得非常低效，比如要想在数组中删除、插入一个数据，为了保证连续性，就需要做大量的数据搬移工作。</p>
 </blockquote>
 </blockquote>
-<h2 id="数组是如何实现根据下标随机访问数组元素"><a href="#数组是如何实现根据下标随机访问数组元素" class="headerlink" title="数组是如何实现根据下标随机访问数组元素"></a>数组是如何实现根据下标随机访问数组元素</h2> 
+<h2 id="数组是如何实现根据下标随机访问数组元素">数组是如何实现根据下标随机访问数组元素</h2> 
       <a class="article-more-link" href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/"
         >阅读更多...</a
       >
@@ -324,14 +328,15 @@
 <blockquote>
 <p>本文将记录我在2021年8月中所刷过的题目，题目量不多，但是每一道保证理解透彻。</p>
 </blockquote>
-<h1 id="力扣26题：删除有序数组中的重复项"><a href="#力扣26题：删除有序数组中的重复项" class="headerlink" title="力扣26题：删除有序数组中的重复项"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/">力扣26题：删除有序数组中的重复项</a></h1><p><img src="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/leetcode26.png" alt="AC"></p>
+<h1><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/">力扣26题：删除有序数组中的重复项</a></h1>
+<p><img src="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/leetcode26.png" alt="AC"></p>
 <blockquote>
-<p> 首先看清楚题目，这道题目说了是一个有序的数组，那么重复的元素必定是连续的，就连续这一特点我们可以摒弃平常用的字典计数的方法或者使用set的方法，而采用更加简便的方法。</p>
+<p>首先看清楚题目，这道题目说了是一个有序的数组，那么重复的元素必定是连续的，就连续这一特点我们可以摒弃平常用的字典计数的方法或者使用set的方法，而采用更加简便的方法。</p>
 </blockquote>
 <ul>
 <li><font color="gree">思路1：双指针(时间复杂度O(n)，空间复杂度O(1))</font></li>
 </ul>
-<p>假设两个指针p和q，p在左边，q在右边，如果$nums[p]==nums[q]$，即两指针指向的元素值相等了，那么q指针右移一个单位，再次判断俩指针指向的值是否相等，如果还是相等，q指针继续移动；如果不相等，p指针移动一个单位，且$nums[p] = nums[q]$。</p>
+<p>假设两个指针p和q，p在左边，q在右边，如果<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>u</mi><mi>m</mi><mi>s</mi><mo stretchy="false">[</mo><mi>p</mi><mo stretchy="false">]</mo><mo>=</mo><mo>=</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>s</mi><mo stretchy="false">[</mo><mi>q</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">nums[p]==nums[q]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault">p</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">]</span></span></span></span>，即两指针指向的元素值相等了，那么q指针右移一个单位，再次判断俩指针指向的值是否相等，如果还是相等，q指针继续移动；如果不相等，p指针移动一个单位，且<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>u</mi><mi>m</mi><mi>s</mi><mo stretchy="false">[</mo><mi>p</mi><mo stretchy="false">]</mo><mo>=</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>s</mi><mo stretchy="false">[</mo><mi>q</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">nums[p] = nums[q]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault">p</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">]</span></span></span></span>。</p>
 <p>那么何时跳出循环呢？如果q到达了nums最后一个元素，那么说明了所有的元素都遍历了一遍，那么此时p所指向的就是不重复的元素的最后一个。</p> 
       <a class="article-more-link" href="/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/"
         >阅读更多...</a

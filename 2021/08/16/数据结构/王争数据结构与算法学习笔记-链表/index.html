@@ -47,7 +47,7 @@
         }
       </style>
     <link rel="alternate" href="/atom.xml" title="WXL's blog" type="application/atom+xml">
-</head>
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
   </html>
 </html>
 
@@ -114,54 +114,83 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h2 id="链表实现LRU"><a href="#链表实现LRU" class="headerlink" title="链表实现LRU"></a>链表实现LRU</h2><p>在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。</p>
-<p>使用链表实现LRU如下：<br>创建一个链表来维护CPU缓存，链表中的每一个结点距离头结点的距离用于衡量该结点中存放的数据被访问的时间点距离当前时间点的时长，所以链表的表尾表示最早访问的数据。这样一来需要分几种情况来讨论：</p>
+  <h2 id="链表实现lru">链表实现LRU</h2>
+<p>在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。</p>
+<p>使用链表实现LRU如下：<br>
+创建一个链表来维护CPU缓存，链表中的每一个结点距离头结点的距离用于衡量该结点中存放的数据被访问的时间点距离当前时间点的时长，所以链表的表尾表示最早访问的数据。这样一来需要分几种情况来讨论：</p>
 <ul>
 <li>遍历链表，如果找到了当前需要访问的数据，就将该结点移到链表的表头。</li>
-<li>遍历链表，如果没有找到当前需要访问的数据，就需要将该数据插入链表的表头，但是可能CPU缓存在此时已经满了，所以需要分情况考虑：<ul>
-<li> 如果CPU缓存没有满，将该数据插入链表即可。</li>
+<li>遍历链表，如果没有找到当前需要访问的数据，就需要将该数据插入链表的表头，但是可能CPU缓存在此时已经满了，所以需要分情况考虑：
+<ul>
+<li>如果CPU缓存没有满，将该数据插入链表即可。</li>
 <li>如果CPU缓存满了，将链表的表尾结点删除（最早访问到的数据），然后将新数据插入链表的表头。</li>
 </ul>
 </li>
 </ul>
-<p>这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 $O(n)$​。</p>
-<h2 id="数组实现LRU"><a href="#数组实现LRU" class="headerlink" title="数组实现LRU"></a>数组实现LRU</h2><span id="more"></span>
-
+<p>这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>​。</p>
+<h2 id="数组实现lru">数组实现LRU</h2>
+<span id="more"></span>
 <ol>
-<li>将数组的首元素作为最新访问的数据，数组末尾元素作为最早访问的数据。这样每一次需要遍历数组寻找数据，时间复杂度为O(n)，如果找到了，需要将该数据移到数组首部，最坏的情况是O(n)，最好的情况是O(1);如果不在数组中，当CPU缓存满的时候需要删除数组末尾的数据，这里删除可以采用直接覆盖的方式，移动前面n-1个数据，然后在数组首部插入新数据，时间复杂度为O(n);如果在数组中，移动数据，插入新数据，时间复杂度为O(n)。根据加法原则，时间复杂度为O(2n+1)=O(n)； </li>
-<li>将数组的尾部元素作为最新访问的数据，数组首部为最早访问的数据。这样每一次需要遍历数组寻找数据，时间复杂度为O(n)，如果找到了，需要将该数据移到数组尾部，最坏的情况是O(n)，最好的情况是O(1);如果不在数组中，当CPU缓存满的时候需要删除数组首部的数据，这里删除可以采用直接覆盖的方式，移动后面n-1个数据，然后在数组尾部插入新数据，时间复杂度为O(n);如果在数组中，移动数据，插入新数据，时间复杂度为O(n)。根据加法原则，时间复杂度还是O(2n+1)=O(n)；</li>
-<li>前两种方法其实思路差不多，只是头部和尾部谁用来存放最早访问的数据。这两种方法都有比较大的缺点，即存在大量移动数组元素的情况，这样的效率很低，为了减少移动的次数，可以使用两个指针new，old来分别指向最新访问的数据、最早访问的数据，一开始数组内元素不断扩充，也就是CPU缓存使用率不断上升的过程，此过程中old指针不断往下标大的方向移动，当CPU缓存满的时候，再次访问数据且恰好不在缓存中时，需要删除元素，删除可以采用直接覆盖的方式，old指针向左移动，指向下标为n-2的位置，然后插入新元素，由于此时只有下标为n-1的位置是空的，所以new指针指向n-1的位置，当再有新元素需要存入缓存时，使用同样的方式来避免大量移动数组中的数据。使用这种方法同样需要先遍历数组，确定是否需要插入数据，时间复杂度为O(n)，而插入删除的时间复杂度为O(1)，总的来说时间复杂度为O(n+1)=O(n)。 </li>
+<li>
+<p>将数组的首元素作为最新访问的数据，数组末尾元素作为最早访问的数据。这样每一次需要遍历数组寻找数据，时间复杂度为O(n)，如果找到了，需要将该数据移到数组首部，最坏的情况是O(n)，最好的情况是O(1);如果不在数组中，当CPU缓存满的时候需要删除数组末尾的数据，这里删除可以采用直接覆盖的方式，移动前面n-1个数据，然后在数组首部插入新数据，时间复杂度为O(n);如果在数组中，移动数据，插入新数据，时间复杂度为O(n)。根据加法原则，时间复杂度为O(2n+1)=O(n)；</p>
+</li>
+<li>
+<p>将数组的尾部元素作为最新访问的数据，数组首部为最早访问的数据。这样每一次需要遍历数组寻找数据，时间复杂度为O(n)，如果找到了，需要将该数据移到数组尾部，最坏的情况是O(n)，最好的情况是O(1);如果不在数组中，当CPU缓存满的时候需要删除数组首部的数据，这里删除可以采用直接覆盖的方式，移动后面n-1个数据，然后在数组尾部插入新数据，时间复杂度为O(n);如果在数组中，移动数据，插入新数据，时间复杂度为O(n)。根据加法原则，时间复杂度还是O(2n+1)=O(n)；</p>
+</li>
+<li>
+<p>前两种方法其实思路差不多，只是头部和尾部谁用来存放最早访问的数据。这两种方法都有比较大的缺点，即存在大量移动数组元素的情况，这样的效率很低，为了减少移动的次数，可以使用两个指针new，old来分别指向最新访问的数据、最早访问的数据，一开始数组内元素不断扩充，也就是CPU缓存使用率不断上升的过程，此过程中old指针不断往下标大的方向移动，当CPU缓存满的时候，再次访问数据且恰好不在缓存中时，需要删除元素，删除可以采用直接覆盖的方式，old指针向左移动，指向下标为n-2的位置，然后插入新元素，由于此时只有下标为n-1的位置是空的，所以new指针指向n-1的位置，当再有新元素需要存入缓存时，使用同样的方式来避免大量移动数组中的数据。使用这种方法同样需要先遍历数组，确定是否需要插入数据，时间复杂度为O(n)，而插入删除的时间复杂度为O(1)，总的来说时间复杂度为O(n+1)=O(n)。</p>
+</li>
 </ol>
-<h2 id="使用单链表实现回文数的判断"><a href="#使用单链表实现回文数的判断" class="headerlink" title="使用单链表实现回文数的判断"></a>使用单链表实现回文数的判断</h2><p>回文数需要首先确定中间的元素，然后判断两边的元素是否都对应相等，在确定链表长度的时候，可以使用快慢指针来实现，慢指针每一次移动一个结点，快指针每一次移动两个结点，当快指针到达链表尾的时候，慢指针就到达中间了，此时仅仅花了遍历全部链表元素的一半的时间。在慢指针前进的过程中，同时修改其 next 指针，使得链表前半部分反序。最后比较中点两侧的链表是否相等，从而判断是否为回文数。</p>
+<h2 id="使用单链表实现回文数的判断">使用单链表实现回文数的判断</h2>
+<p>回文数需要首先确定中间的元素，然后判断两边的元素是否都对应相等，在确定链表长度的时候，可以使用快慢指针来实现，慢指针每一次移动一个结点，快指针每一次移动两个结点，当快指针到达链表尾的时候，慢指针就到达中间了，此时仅仅花了遍历全部链表元素的一半的时间。在慢指针前进的过程中，同时修改其 next 指针，使得链表前半部分反序。最后比较中点两侧的链表是否相等，从而判断是否为回文数。</p>
 <p>这里需要避免一个误区，不是快指针跨度越大越好，比如这里快指针跨度为慢指针的100倍，就容易出现一个问题，快指针从某一步开始就跳出链表了，但是也不清楚到底具体链表尾多远，所以需要一个额外的指针来存储快指针上一次存放的地址，当某一次快指针跳出链表的时候，通过这个额外的指针可以回到链表中。回来了还不然，还没有确定链表中间结点，所以，需要重新移动快指针来确定此时与尾结点的距离，然后还要移动相应倍数的慢指针，最终才能确定中间结点，这一过程是比较繁琐的，而且容易出错，所以快慢指针方法的“快指针”不能太“快”。</p>
-<h2 id="双链表和单链表的删除操作"><a href="#双链表和单链表的删除操作" class="headerlink" title="双链表和单链表的删除操作"></a>双链表和单链表的删除操作</h2><p>==删除给定指针指向的结点==: 这种情况是已经找到了要删除的元素,我们只需要执行删除操作即可. <strong>针对单链表而言</strong>: 单链表如果要删除一个结点q.必须要知道这个结点的前驱结点是谁,修改前驱结点的指针指向即可.单链表找某个结点的前驱结点,只能从头开始遍历. 临界值 p-&gt;next == q;说明p就是q的前驱结点.所以在单链表中,找这个前驱结点的平均时间复杂度为O(n),然后执行删除操作的时间复杂度为O(1). 根据时间复杂度分析的加法法则: 删除给定指针指向的结点 –&gt; 单链表的总的时间复杂度为O(n). <strong>针对双链表而言</strong>: 双链表要删除一个结点q.也必须得知道这个结点的前驱结点和后继结点. 修改前驱结点的后继指针next和后继结点的前驱指针prev即可.而针对双链表而言,找q的前驱结点和q的后继结点的时间复杂度都为O(1).而执行删除操作(修改指针指向)的时间复杂度也为O(1). 根据时间复杂度分析的加法法则: 删除给定指针指向的结点 –&gt; 双链表的总的时间复杂度为O(1).</p>
-<h2 id="CPU缓存技术"><a href="#CPU缓存技术" class="headerlink" title="CPU缓存技术"></a>CPU缓存技术</h2><p>缓存实际上就是利用了空间换时间的设计思想。如果我们把数据存储在硬盘上，会比较节省内存，但每次查找数据都要询问一次硬盘，会比较慢。但如果我们通过缓存技术，事先将数据加载在内存中，虽然会比较耗费内存空间，但是每次数据查询的速度就大大提高了。数据库索引操作、MapReduce，是典型的空间换时间。</p>
-<h2 id="数组与链表的区别"><a href="#数组与链表的区别" class="headerlink" title="数组与链表的区别"></a>数组与链表的区别</h2><table>
+<h2 id="双链表和单链表的删除操作">双链表和单链表的删除操作</h2>
+<p><code>删除给定指针指向的结点</code>: 这种情况是已经找到了要删除的元素,我们只需要执行删除操作即可.</p>
+<p><code>针对单链表而言</code>: 单链表如果要删除一个结点q.必须要知道这个结点的前驱结点是谁,修改前驱结点的指针指向即可.单链表找某个结点的前驱结点,只能从头开始遍历. 临界值 p-&gt;next == q;说明p就是q的前驱结点.所以在单链表中,找这个前驱结点的平均时间复杂度为O(n),然后执行删除操作的时间复杂度为O(1). 根据时间复杂度分析的加法法则: 删除给定指针指向的结点 --&gt; 单链表的总的时间复杂度为O(n).</p>
+<p><code>针对双链表而言</code>: 双链表要删除一个结点q.也必须得知道这个结点的前驱结点和后继结点. 修改前驱结点的后继指针next和后继结点的前驱指针prev即可.而针对双链表而言,找q的前驱结点和q的后继结点的时间复杂度都为O(1).而执行删除操作(修改指针指向)的时间复杂度也为O(1). 根据时间复杂度分析的加法法则: 删除给定指针指向的结点 --&gt; 双链表的总的时间复杂度为O(1).</p>
+<h2 id="cpu缓存技术">CPU缓存技术</h2>
+<p>缓存实际上就是利用了空间换时间的设计思想。如果我们把数据存储在硬盘上，会比较节省内存，但每次查找数据都要询问一次硬盘，会比较慢。但如果我们通过缓存技术，事先将数据加载在内存中，虽然会比较耗费内存空间，但是每次数据查询的速度就大大提高了。数据库索引操作、MapReduce，是典型的空间换时间。</p>
+<h2 id="数组与链表的区别">数组与链表的区别</h2>
+<table>
 <thead>
 <tr>
-<th align="center">时间复杂度</th>
-<th align="center">数组</th>
-<th align="center">链表</th>
+<th style="text-align:center">时间复杂度</th>
+<th style="text-align:center">数组</th>
+<th style="text-align:center">链表</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">插入|删除</td>
-<td align="center">$O(n)$</td>
-<td align="center">$O(1)$</td>
+<tbody>
+<tr>
+<td style="text-align:center">插入|删除</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
 </tr>
 <tr>
-<td align="center">随机访问</td>
-<td align="center">$O(1)$</td>
-<td align="center">$O(n)$</td>
+<td style="text-align:center">随机访问</td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td style="text-align:center"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ol>
-<li>数组简单易用，在实现上使用的是连续的内存空间，可以借助 <strong>CPU 的缓存机制</strong>，预读数组中的数据，所以访问效率更高。而链表在内存中并不是连续存储，所以对 CPU 缓存不友好，没办法有效预读。</li>
-<li>数组的缺点是<strong>大小固定</strong>，一经声明就要占用整块连续内存空间。如果声明的数组过大，系统可能没有足够的连续内存空间分配给它，导致“内存不足（out of memory）”。如果声明的数组过小，则可能出现不够用的情况。这时只能再申请一个更大的内存空间，把原数组拷贝进去，非常费时。链表本身没有大小的限制，天然地支持动态扩容。</li>
-<li>如果你的代码对<strong>内存的使用非常苛刻</strong>，那数组就更适合你。因为链表中的每个结点都需要消耗额外的存储空间去存储一份指向下一个结点的指针，所以内存消耗会翻倍。而且，对链表进行频繁的插入、删除操作，还会导致频繁的内存申请和释放，容易造成<strong>内存碎片</strong>，如果是 Java 语言，就有可能会导致频繁的 GC（Garbage Collection，垃圾回收）。</li>
-<li><strong>对内存要求方面</strong>: 数组对内存的要求更高。因为数组需要一块连续内存空间来存放数据。（可能出现的问题就是:内存总的剩余空间足够，但是申请容量较大的数组时申请失败） 链表对内存的要求较低，是因为链表不需要连续的内存空间，只要内存剩余空间足够，无论是否连续，用链表来申请空间一定会成功。</li>
-<li>链表虽然方便，但是<strong>内存开销比数组大了将近一倍</strong>，假设存储100个整数，数组400个字节的存储空间足够了。但是如果用链表存储100个整数，链表得需要1200个字节的存储空间(C/C++)，因为链表中的每个节点不止要存储数据，还要存储地址，内存的利用率就比数组低太多了。</li>
-<li>由此还可以得出:如果<strong>内存容量本身就很小，要存储的数据也比较多</strong>。选择<strong>数组</strong>来存储数据更好，如果内存空间充足，那我们在存储数据的时候到底选择链表还是数组。这个就视具体的业务场景而定了。</li>
+<li>
+<p>数组简单易用，在实现上使用的是连续的内存空间，可以借助 <code>CPU 的缓存机制</code>，预读数组中的数据，所以访问效率更高。而链表在内存中并不是连续存储，所以对 CPU 缓存不友好，没办法有效预读。</p>
+</li>
+<li>
+<p>数组的缺点是<code>大小固定</code>，一经声明就要占用整块连续内存空间。如果声明的数组过大，系统可能没有足够的连续内存空间分配给它，导致“内存不足（out of memory）”。如果声明的数组过小，则可能出现不够用的情况。这时只能再申请一个更大的内存空间，把原数组拷贝进去，非常费时。链表本身没有大小的限制，天然地支持动态扩容。</p>
+</li>
+<li>
+<p>如果你的代码对<code>内存的使用非常苛刻</code>，那数组就更适合你。因为链表中的每个结点都需要消耗额外的存储空间去存储一份指向下一个结点的指针，所以内存消耗会翻倍。而且，对链表进行频繁的插入、删除操作，还会导致频繁的内存申请和释放，容易造成<code>内存碎片</code>，如果是 Java 语言，就有可能会导致频繁的 GC（Garbage Collection，垃圾回收）。</p>
+</li>
+<li>
+<p><code>对内存要求方面</code>: 数组对内存的要求更高。因为数组需要一块连续内存空间来存放数据。（可能出现的问题就是:内存总的剩余空间足够，但是申请容量较大的数组时申请失败） 链表对内存的要求较低，是因为链表不需要连续的内存空间，只要内存剩余空间足够，无论是否连续，用链表来申请空间一定会成功。</p>
+</li>
+<li>
+<p>链表虽然方便，但是<code>内存开销比数组大了将近一倍</code>，假设存储100个整数，数组400个字节的存储空间足够了。但是如果用链表存储100个整数，链表得需要1200个字节的存储空间(C/C++)，因为链表中的每个节点不止要存储数据，还要存储地址，内存的利用率就比数组低太多了。</p>
+</li>
+<li>
+<p>由此还可以得出:如果<code>内存容量本身就很小，要存储的数据也比较多</code>。选择<code>数组</code>来存储数据更好，如果内存空间充足，那我们在存储数据的时候到底选择链表还是数组。这个就视具体的业务场景而定了。</p>
+</li>
 </ol>
  
       <!-- reward -->
