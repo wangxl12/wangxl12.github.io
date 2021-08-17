@@ -49,12 +49,12 @@
     <link href="https://wangxl12.github.io/2021/08/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%A0%88/"/>
     <id>https://wangxl12.github.io/2021/08/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%A0%88/</id>
     <published>2021-08-17T07:10:40.000Z</published>
-    <updated>2021-08-17T11:33:41.553Z</updated>
+    <updated>2021-08-17T12:47:21.938Z</updated>
     
     
     <summary type="html">&lt;p&gt;浏览器的前进后退功能的实现使用到了栈这种数据结构。&lt;/p&gt;
 &lt;p&gt;当依次访问了页面a，b，c，然后后退的时候又可以重新返回到页面b、a，访问的过程属于入栈的功能，后退的过程是出栈的功能。&lt;/p&gt;
-&lt;h1&gt;理解“栈”&lt;/h1&gt;
+&lt;h3 id=&quot;理解-栈&quot;&gt;理解“栈”&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;栈是一种操作受限的线性表，只允许在一端进行插入和删除操作。&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&quot;为什么需要-栈-？&quot;&gt;为什么需要“栈”？&lt;/h3&gt;
 &lt;p&gt;为何需要单独设计一个数据结构，而不是直接使用链表或者数组来代替呢？&lt;/p&gt;
