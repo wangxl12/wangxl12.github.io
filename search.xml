@@ -1,12 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>王争数据结构与算法学习笔记</title>
+    <title>王争数据结构与算法学习笔记-递归</title>
     <url>/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/</url>
     <content><![CDATA[<p>递归不需要我们去从最高层到最底层屡清楚，我们只需要考虑的是当前层与上一层之间的关系，将这种关系表示出来，然后将终止递归的条件确定清楚即可。至于一层一层往下调交给计算机来处理吧！试图想搞清楚计算机每一步都是怎么执行的，这样就很容易被绕进去。</p>
-<h1 id="递归注意点"><a href="#递归注意点" class="headerlink" title="递归注意点"></a>递归注意点</h1><h2 id="递归代码要警惕堆栈溢出"><a href="#递归代码要警惕堆栈溢出" class="headerlink" title="递归代码要警惕堆栈溢出"></a>递归代码要警惕堆栈溢出</h2><p>在实际的软件开发中，编写递归代码时，我们会遇到很多问题，比如堆栈溢出。而堆栈溢出会造成系统性崩溃，后果会非常严重。</p>
-<p>函数调用会使用栈来保存临时变量。每调用一个函数，都会将临时变量封装为栈帧压入内存栈，等函数执行完成返回时，才出栈。系统栈或者虚拟机栈空间一般都不大。如果递归求解的数据规模很大，调用层次很深，一直压入栈，就会有堆栈溢出的风险。</p>
+<h1>递归注意点</h1>
+<h2 id="递归代码要警惕堆栈溢出">递归代码要警惕堆栈溢出</h2>
+<p>在实际的软件开发中，编写递归代码时，我们会遇到很多问题，比如堆栈溢出。而堆栈溢出会造成<code>系统性崩溃</code>，后果会非常严重。</p>
+<p>函数调用会使用栈来保存临时变量。每调用一个函数，都会将临时变量封装为<code>栈帧</code>压入内存栈，等函数执行完成返回时，才出栈。<code>系统栈</code>或者<code>虚拟机栈</code>空间一般都不大。如果递归求解的数据规模很大，调用层次很深，一直压入栈，就会有<code>堆栈溢出</code>的风险。</p>
+<p><code>如何避免堆栈溢出呢？</code></p>
 <span id="more"></span>
+<ol>
+<li>
+<p>可以通过在代码中限制递归调用的最大深度的方式来解决这个问题。递归调用超过一定深度（比如 1000）之后，我们就不继续往下再递归了，直接返回报错。如下伪代码所示：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 全局变量，表示递归的深度</span></span><br><span class="line"><span class="keyword">int</span> depth = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    ++depth;</span><br><span class="line">    <span class="keyword">if</span> (depth &gt; <span class="number">1000</span>) <span class="keyword">throw</span> exception;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">f</span>(n - <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但这种做法并不能完全解决问题，因为最大允许的递归深度跟当前线程剩余的栈空间大小有关，事先无法计算。如果实时计算，代码过于复杂，就会影响代码的可读性。所以，如果最大深度比较小，比如 10、50，就可以用这种方法，否则这种方法并不是很实用。</p>
+</li>
+<li>
+<p>使用<strong>尾递归</strong>的方式。（参考：<a href="https://segmentfault.com/a/1190000022879214%EF%BC%89">https://segmentfault.com/a/1190000022879214）</a></p>
+<p>**在函数中return一个函数后，当前函数在栈内的调用记录会被删除，当前函数的执行上下文会从调用栈弹出。**一般的递归在函数体中断点能够看到在栈内会创建大量的执行上下文并且不销毁（这就是造成栈溢出的原因）；而尾递归是在栈内增加函数执行上下文，然后在该函数返回函数时，销毁当前函数执行上下文，创建返回的函数的执行上下文。所以尾递归中只有一个活跃的执行上下文。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 函数0是尾递归</span></span><br><span class="line"><span class="function">function <span class="title">a</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">const</span> r = <span class="built_in">c</span>()</span><br><span class="line">    <span class="keyword">return</span> r</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数1是尾递归</span></span><br><span class="line">function <span class="built_in">a</span>()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">c</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数2不是尾递归</span></span><br><span class="line">function <span class="built_in">a</span>()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">c</span>() * <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数3不是尾递归</span></span><br><span class="line">function <span class="built_in">a</span>()&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">c</span>() || <span class="built_in">b</span>()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面对于判断是否为尾递归都是自己在safari实际测试之后的结果。针对上面测试的结果总结一下：函数2不是尾递归，是因为c()调用后还需要进一步计算。函数3不是尾递归，是因为c()调用之后还有判断的动作以及可能的对于c的调用。而函数0和函数1是尾递归是因为返回的是一个函数或者一个已经计算好的值，而不需要再做多余的判断和计算。</p>
+<p>下面使用尾递归来优化如下的累加项代码：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function">function <span class="title">fn</span><span class="params">(n)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> n + <span class="built_in">fn</span>(n<span class="number">-1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>尾递归代码(针对数组里面所有项的累加递归)：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fn</span><span class="params">(arr, sum = <span class="number">0</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length === <span class="number">0</span>) <span class="keyword">return</span> sum</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">fn</span>(arr.<span class="built_in">slice</span>(<span class="number">1</span>), arr[<span class="number">0</span>] + sum)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">fn</span>([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br></pre></td></tr></table></figure>
+<p>尾递归也有自己的一些缺陷。如尾递归是一个隐式行为，如果代码存在死循环尾递归调用，爆栈后难以被开发者察觉；堆栈信息会丢失，造成调试困难。还有目前各大浏览器厂商对尾递归的支持和兼容性不太好。所以在尾递归目前还不被各大浏览器支持的情况下，可以对递归的一些重复内容做优化。</p>
+<h2 id="递归代码要警惕重复计算">递归代码要警惕重复计算</h2>
+</li>
+</ol>
 ]]></content>
       <categories>
         <category>数据结构</category>
@@ -137,42 +159,56 @@
   <entry>
     <title>计算机内功必读书单</title>
     <url>/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/</url>
-    <content><![CDATA[<h1 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h1><ol>
-<li><p><a href="https://book.douban.com/subject/35208251/">现代操作系统：原理与实现</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/现代操作系统：原理与实现.png" alt="现代操作系统：原理与实现"></p>
+    <content><![CDATA[<h1>OS</h1>
+<ol>
+<li>
+<p><a href="https://book.douban.com/subject/35208251/">现代操作系统：原理与实现</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0.png" alt="现代操作系统：原理与实现"></p>
 <span id="more"></span>
 </li>
 </ol>
-<h1 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h1><ol>
-<li><p><a href="https://book.douban.com/subject/4838430/">数据库系统实现</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/数据库系统实现.png" alt="数据库系统实现"></p>
+<h1>Database</h1>
+<ol>
+<li>
+<p><a href="https://book.douban.com/subject/4838430/">数据库系统实现</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%AE%9E%E7%8E%B0.png" alt="数据库系统实现"></p>
 </li>
-<li><p><a href="https://book.douban.com/subject/30329536/">数据密集型应用系统设计</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/数据密集型应用系统设计.png" alt="数据密集型应用系统设计"></p>
+<li>
+<p><a href="https://book.douban.com/subject/30329536/">数据密集型应用系统设计</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E6%95%B0%E6%8D%AE%E5%AF%86%E9%9B%86%E5%9E%8B%E5%BA%94%E7%94%A8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1.png" alt="数据密集型应用系统设计"></p>
 </li>
-<li><p><a href="https://book.douban.com/subject/1390650/">现代操作系统</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/现代操作系统.png" alt="现代操作系统"></p>
-</li>
-</ol>
-<h1 id="计组"><a href="#计组" class="headerlink" title="计组"></a>计组</h1><ol>
-<li><p><a href="https://book.douban.com/subject/10441748/">计算机组成与设计</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/计算机组成与设计.png" alt="计算机组成与设计"></p>
-</li>
-<li><p><a href="https://book.douban.com/subject/7006537/">计算机体系结构</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/计算机体系结构.png" alt="计算机体系结构"></p>
-</li>
-<li><p><a href="https://book.douban.com/subject/5333562/">深入理解计算机系统</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/深入理解计算机系统.png" alt="深入理解计算机系统"></p>
+<li>
+<p><a href="https://book.douban.com/subject/1390650/">现代操作系统</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F.png" alt="现代操作系统"></p>
 </li>
 </ol>
-<h1 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理</h1><ol>
-<li><p><a href="https://book.douban.com/subject/1148282/">计算机程序的构造和解释</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/计算机程序的构造和解释.png" alt="计算机程序的构造和解释"></p>
+<h1>计组</h1>
+<ol>
+<li>
+<p><a href="https://book.douban.com/subject/10441748/">计算机组成与设计</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1.png" alt="计算机组成与设计"></p>
+</li>
+<li>
+<p><a href="https://book.douban.com/subject/7006537/">计算机体系结构</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="计算机体系结构"></p>
+</li>
+<li>
+<p><a href="https://book.douban.com/subject/5333562/">深入理解计算机系统</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F.png" alt="深入理解计算机系统"></p>
 </li>
 </ol>
-<h1 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h1><ol>
-<li><p><a href="https://book.douban.com/subject/1024570/">编码的奥秘</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/编码的奥秘.png" alt="编码的奥秘"></p>
+<h1>编译原理</h1>
+<ol>
+<li>
+<p><a href="https://book.douban.com/subject/1148282/">计算机程序的构造和解释</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9E%84%E9%80%A0%E5%92%8C%E8%A7%A3%E9%87%8A.png" alt="计算机程序的构造和解释"></p>
+</li>
+</ol>
+<h1>Others</h1>
+<ol>
+<li>
+<p><a href="https://book.douban.com/subject/1024570/">编码的奥秘</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E7%BC%96%E7%A0%81%E7%9A%84%E5%A5%A5%E7%A7%98.png" alt="编码的奥秘"></p>
 </li>
 </ol>
 ]]></content>

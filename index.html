@@ -207,7 +207,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/" class="post-title-link" itemprop="url">王争数据结构与算法学习笔记</a>
+            <a href="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/" class="post-title-link" itemprop="url">王争数据结构与算法学习笔记-递归</a>
         </h2>
 
         <div class="post-meta">
@@ -218,7 +218,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-08-22 14:24:45 / 修改时间：14:42:50" itemprop="dateCreated datePublished" datetime="2021-08-22T14:24:45+08:00">2021-08-22</time>
+              <time title="创建时间：2021-08-22 14:24:45 / 修改时间：15:08:28" itemprop="dateCreated datePublished" datetime="2021-08-22T14:24:45+08:00">2021-08-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -231,7 +231,7 @@
             </span>
 
           
-            <span id="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/" class="post-meta-item leancloud_visitors" data-flag-title="王争数据结构与算法学习笔记" title="阅读次数">
+            <span id="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/" class="post-meta-item leancloud_visitors" data-flag-title="王争数据结构与算法学习笔记-递归" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -263,8 +263,11 @@
 
       
           <p>递归不需要我们去从最高层到最底层屡清楚，我们只需要考虑的是当前层与上一层之间的关系，将这种关系表示出来，然后将终止递归的条件确定清楚即可。至于一层一层往下调交给计算机来处理吧！试图想搞清楚计算机每一步都是怎么执行的，这样就很容易被绕进去。</p>
-<h1 id="递归注意点"><a href="#递归注意点" class="headerlink" title="递归注意点"></a>递归注意点</h1><h2 id="递归代码要警惕堆栈溢出"><a href="#递归代码要警惕堆栈溢出" class="headerlink" title="递归代码要警惕堆栈溢出"></a>递归代码要警惕堆栈溢出</h2><p>在实际的软件开发中，编写递归代码时，我们会遇到很多问题，比如堆栈溢出。而堆栈溢出会造成系统性崩溃，后果会非常严重。</p>
-<p>函数调用会使用栈来保存临时变量。每调用一个函数，都会将临时变量封装为栈帧压入内存栈，等函数执行完成返回时，才出栈。系统栈或者虚拟机栈空间一般都不大。如果递归求解的数据规模很大，调用层次很深，一直压入栈，就会有堆栈溢出的风险。</p>
+<h1>递归注意点</h1>
+<h2 id="递归代码要警惕堆栈溢出">递归代码要警惕堆栈溢出</h2>
+<p>在实际的软件开发中，编写递归代码时，我们会遇到很多问题，比如堆栈溢出。而堆栈溢出会造成<code>系统性崩溃</code>，后果会非常严重。</p>
+<p>函数调用会使用栈来保存临时变量。每调用一个函数，都会将临时变量封装为<code>栈帧</code>压入内存栈，等函数执行完成返回时，才出栈。<code>系统栈</code>或者<code>虚拟机栈</code>空间一般都不大。如果递归求解的数据规模很大，调用层次很深，一直压入栈，就会有<code>堆栈溢出</code>的风险。</p>
+<p><code>如何避免堆栈溢出呢？</code></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/#more" rel="contents">
@@ -516,10 +519,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-21 15:10:53 / 修改时间：21:40:23" itemprop="dateCreated datePublished" datetime="2021-08-21T15:10:53+08:00">2021-08-21</time>
+              <time title="创建时间：2021-08-21 15:10:53" itemprop="dateCreated datePublished" datetime="2021-08-21T15:10:53+08:00">2021-08-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-22 15:07:23" itemprop="dateModified" datetime="2021-08-22T15:07:23+08:00">2021-08-22</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -562,9 +571,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h1><ol>
-<li><p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/35208251/">现代操作系统：原理与实现</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/现代操作系统：原理与实现.png" alt="现代操作系统：原理与实现"></p></li></ol>
+          <h1>OS</h1>
+<ol>
+<li>
+<p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/35208251/">现代操作系统：原理与实现</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0.png" alt="现代操作系统：原理与实现"></p></li></ol>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/#more" rel="contents">
