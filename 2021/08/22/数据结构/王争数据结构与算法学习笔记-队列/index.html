@@ -20,16 +20,20 @@
     var CONFIG = {"hostname":"wangxl12.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="WXL&#39;s blog">
-<meta property="og:url" content="https://wangxl12.github.io/tags/cv/index.html">
+  <meta name="description" content="CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。 当我们向固定大小的线程池中请求一个线程时，如果线程池中没有空闲资源了，若线程数没有到达核心线程数时，会创建一个线程；若达到了核心线程数，则将任务加入到任务队列；若到达核心线程数并且任务队列已满，但没有到达最大线程数，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="王争数据结构与算法学习笔记队列">
+<meta property="og:url" content="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="WXL&#39;s blog">
+<meta property="og:description" content="CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。 当我们向固定大小的线程池中请求一个线程时，如果线程池中没有空闲资源了，若线程数没有到达核心线程数时，会创建一个线程；若达到了核心线程数，则将任务加入到任务队列；若到达核心线程数并且任务队列已满，但没有到达最大线程数，">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-08-22T01:41:33.000Z">
+<meta property="article:modified_time" content="2021-08-22T02:19:10.432Z">
 <meta property="article:author" content="WXL">
-<meta property="article:tag" content="代码、博客、思考、生活">
+<meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://wangxl12.github.io/tags/cv/">
+<link rel="canonical" href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/">
 
 
 <script id="page-configurations">
@@ -37,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: cv | WXL's blog</title>
+  <title>王争数据结构与算法学习笔记队列 | WXL's blog</title>
   
 
 
@@ -187,57 +191,163 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WXL">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WXL's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          王争数据结构与算法学习笔记队列
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-22 09:41:33 / 修改时间：10:19:10" itemprop="dateCreated datePublished" datetime="2021-08-22T09:41:33+08:00">2021-08-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/" class="post-meta-item leancloud_visitors" data-flag-title="王争数据结构与算法学习笔记队列" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">cv
-          <small>标签</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-08-19T19:20:16+08:00"
-              content="2021-08-19">
-          08-19
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/08/19/cv/CAM/" itemprop="url">
-            <span itemprop="name">CAM的实现</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
+        <p>CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。</p>
+<p>当我们向固定大小的线程池中请求一个线程时，如果线程池中没有空闲资源了，若线程数没有到达核心线程数时，会创建一个线程；若达到了核心线程数，则将任务加入到任务队列；若到达核心线程数并且任务队列已满，但没有到达最大线程数，则会创建一个线程；若达到核心线程数并且任务队列已满，并且到达最大线程数，那么会执行拒绝策略。</p>
+<h1 id="具有某些额外特性的队列"><a href="#具有某些额外特性的队列" class="headerlink" title="具有某些额外特性的队列"></a>具有某些额外特性的队列</h1><p>循环队列</p>
+<p>阻塞队列</p>
+<p>并发队列</p>
+<p>高性能队列 Disruptor、Linux 环形缓存，都用到了循环并发队列；Java concurrent 并发包利用 ArrayBlockingQueue 来实现公平锁。</p>
+<h1 id="顺序队列和链式队列"><a href="#顺序队列和链式队列" class="headerlink" title="顺序队列和链式队列"></a>顺序队列和链式队列</h1><span id="more"></span>
+<p>使用<code>数组</code>实现的队列是<code>顺序队列</code>，顺序队列的删除操作都是删除队列中的第一个元素，如果每一次删除都需要搬移数据的话，时间复杂度将变成$O(n)$，所以我们可以等到无法入队之后一起搬移从而得到优化。</p>
+<p>具体而言，实现<code>顺序队列</code>的时候我们定义了两个指针：tail指针和head指针，如果删除了元素，head指针加一；如果插入了元素，tail指针加一，一旦tail指针移动到了数组的最后，再次有新的元素入队时，我们就将整体head-tail之间的数据搬移到数组中以0索引开头的位置。</p>
 
     </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>行行好，赏一杯咖啡吧~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/about/wechatpay.jpg" alt="WXL 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/about/alipay.jpg" alt="WXL 支付宝">
+        <p>支付宝</p>
+      </div>
+
   </div>
-  
-  
-  
+</div>
 
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>WXL
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/" title="王争数据结构与算法学习笔记队列">https://wangxl12.github.io/2021/08/22/数据结构/王争数据结构与算法学习笔记-队列/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"><i class="fa fa-tag"></i> 数据结构</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="prev" title="深度学习必读书单">
+      <i class="fa fa-chevron-left"></i> 深度学习必读书单
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -284,6 +394,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B7%E6%9C%89%E6%9F%90%E4%BA%9B%E9%A2%9D%E5%A4%96%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%9F%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">具有某些额外特性的队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97%E5%92%8C%E9%93%BE%E5%BC%8F%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text">顺序队列和链式队列</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

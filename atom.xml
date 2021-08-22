@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-08-21T07:31:07.779Z</updated>
+  <updated>2021-08-22T02:19:10.432Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -17,17 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>王争数据结构与算法学习笔记队列</title>
+    <link href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/"/>
+    <id>https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/</id>
+    <published>2021-08-22T01:41:33.000Z</published>
+    <updated>2021-08-22T02:19:10.432Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。&lt;/p&gt;
+&lt;p&gt;当我们向固定大小的线程池中请求一个线程时，如果线程池中没有空闲资源了，若线程数没有到达核心线程数时，会创建一个线程；若达到了核心线程数，则将任务加入到任务队列；若到达核心线程数并且任务队列已满，但没有到达最大线程数，则会创建一个线程；若达到核心线程数并且任务队列已满，并且到达最大线程数，那么会执行拒绝策略。&lt;/p&gt;
+&lt;h1 id=&quot;具有某些额外特性的队列&quot;&gt;&lt;a href=&quot;#具有某些额外特性的队列&quot; class=&quot;headerlink&quot; title=&quot;具有某些额外特性的队列&quot;&gt;&lt;/a&gt;具有某些额外特性的队列&lt;/h1&gt;&lt;p&gt;循环队列&lt;/p&gt;
+&lt;p&gt;阻塞队列&lt;/p&gt;
+&lt;p&gt;并发队列&lt;/p&gt;
+&lt;p&gt;高性能队列 Disruptor、Linux 环形缓存，都用到了循环并发队列；Java concurrent 并发包利用 ArrayBlockingQueue 来实现公平锁。&lt;/p&gt;
+&lt;h1 id=&quot;顺序队列和链式队列&quot;&gt;&lt;a href=&quot;#顺序队列和链式队列&quot; class=&quot;headerlink&quot; title=&quot;顺序队列和链式队列&quot;&gt;&lt;/a&gt;顺序队列和链式队列&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="数据结构" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+    <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>深度学习必读书单</title>
     <link href="https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     <id>https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</id>
     <published>2021-08-21T07:21:20.000Z</published>
-    <updated>2021-08-21T07:31:07.779Z</updated>
+    <updated>2021-08-21T13:15:50.621Z</updated>
     
     
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href&gt;智能计算系统&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F.png&quot; alt=&quot;智能计算系统&quot;&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://book.douban.com/subject/34988786/&quot;&gt;智能计算系统&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/智能计算系统.png&quot; alt=&quot;智能计算系统&quot;&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
     
     
     
@@ -45,14 +69,12 @@
     <link href="https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/"/>
     <id>https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/</id>
     <published>2021-08-21T07:10:53.000Z</published>
-    <updated>2021-08-21T07:30:59.214Z</updated>
+    <updated>2021-08-21T13:40:23.258Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;OS&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://book.douban.com/subject/35208251/&quot;&gt;现代操作系统：原理与实现&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0.png&quot; alt=&quot;现代操作系统：原理与实现&quot;&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;OS&quot;&gt;&lt;a href=&quot;#OS&quot; class=&quot;headerlink&quot; title=&quot;OS&quot;&gt;&lt;/a&gt;OS&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://book.douban.com/subject/35208251/&quot;&gt;现代操作系统：原理与实现&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/现代操作系统：原理与实现.png&quot; alt=&quot;现代操作系统：原理与实现&quot;&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
     
     
     

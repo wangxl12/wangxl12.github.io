@@ -465,9 +465,8 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
     <title>深度学习必读书单</title>
     <url>/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<ol>
-<li>
-<p><a href>智能计算系统</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F.png" alt="智能计算系统"></p>
+<li><p><a href="https://book.douban.com/subject/34988786/">智能计算系统</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/智能计算系统.png" alt="智能计算系统"></p>
 <span id="more"></span>
 </li>
 </ol>
@@ -483,23 +482,42 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
   <entry>
     <title>计算机内功必读书单</title>
     <url>/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/</url>
-    <content><![CDATA[<h1>OS</h1>
-<ol>
-<li>
-<p><a href="https://book.douban.com/subject/35208251/">现代操作系统：原理与实现</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0.png" alt="现代操作系统：原理与实现"></p>
+    <content><![CDATA[<h1 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h1><ol>
+<li><p><a href="https://book.douban.com/subject/35208251/">现代操作系统：原理与实现</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/现代操作系统：原理与实现.png" alt="现代操作系统：原理与实现"></p>
 <span id="more"></span>
 </li>
 </ol>
-<h1>Database</h1>
-<ol>
-<li>
-<p><a href="https://book.douban.com/subject/4838430/">数据库系统实现</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B3%BB%E7%BB%9F%E5%AE%9E%E7%8E%B0.png" alt="数据库系统实现"></p>
+<h1 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h1><ol>
+<li><p><a href="https://book.douban.com/subject/4838430/">数据库系统实现</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/数据库系统实现.png" alt="数据库系统实现"></p>
 </li>
-<li>
-<p><a href="https://book.douban.com/subject/30329536/">数据密集型应用系统设计</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E6%95%B0%E6%8D%AE%E5%AF%86%E9%9B%86%E5%9E%8B%E5%BA%94%E7%94%A8%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1.png" alt="数据密集型应用系统设计"></p>
+<li><p><a href="https://book.douban.com/subject/30329536/">数据密集型应用系统设计</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/数据密集型应用系统设计.png" alt="数据密集型应用系统设计"></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/1390650/">现代操作系统</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/现代操作系统.png" alt="现代操作系统"></p>
+</li>
+</ol>
+<h1 id="计组"><a href="#计组" class="headerlink" title="计组"></a>计组</h1><ol>
+<li><p><a href="https://book.douban.com/subject/10441748/">计算机组成与设计</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/计算机组成与设计.png" alt="计算机组成与设计"></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/7006537/">计算机体系结构</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/计算机体系结构.png" alt="计算机体系结构"></p>
+</li>
+<li><p><a href="https://book.douban.com/subject/5333562/">深入理解计算机系统</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/深入理解计算机系统.png" alt="深入理解计算机系统"></p>
+</li>
+</ol>
+<h1 id="编译原理"><a href="#编译原理" class="headerlink" title="编译原理"></a>编译原理</h1><ol>
+<li><p><a href="https://book.douban.com/subject/1148282/">计算机程序的构造和解释</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/计算机程序的构造和解释.png" alt="计算机程序的构造和解释"></p>
+</li>
+</ol>
+<h1 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h1><ol>
+<li><p><a href="https://book.douban.com/subject/1024570/">编码的奥秘</a></p>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/编码的奥秘.png" alt="编码的奥秘"></p>
 </li>
 </ol>
 ]]></content>
@@ -509,6 +527,26 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
       <tags>
         <tag>必读书单</tag>
         <tag>计算机内功</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>王争数据结构与算法学习笔记队列</title>
+    <url>/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/</url>
+    <content><![CDATA[<p>CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。</p>
+<p>当我们向固定大小的线程池中请求一个线程时，如果线程池中没有空闲资源了，若线程数没有到达核心线程数时，会创建一个线程；若达到了核心线程数，则将任务加入到任务队列；若到达核心线程数并且任务队列已满，但没有到达最大线程数，则会创建一个线程；若达到核心线程数并且任务队列已满，并且到达最大线程数，那么会执行拒绝策略。</p>
+<h1 id="具有某些额外特性的队列"><a href="#具有某些额外特性的队列" class="headerlink" title="具有某些额外特性的队列"></a>具有某些额外特性的队列</h1><p>循环队列</p>
+<p>阻塞队列</p>
+<p>并发队列</p>
+<p>高性能队列 Disruptor、Linux 环形缓存，都用到了循环并发队列；Java concurrent 并发包利用 ArrayBlockingQueue 来实现公平锁。</p>
+<h1 id="顺序队列和链式队列"><a href="#顺序队列和链式队列" class="headerlink" title="顺序队列和链式队列"></a>顺序队列和链式队列</h1><span id="more"></span>
+<p>使用<code>数组</code>实现的队列是<code>顺序队列</code>，顺序队列的删除操作都是删除队列中的第一个元素，如果每一次删除都需要搬移数据的话，时间复杂度将变成$O(n)$，所以我们可以等到无法入队之后一起搬移从而得到优化。</p>
+<p>具体而言，实现<code>顺序队列</code>的时候我们定义了两个指针：tail指针和head指针，如果删除了元素，head指针加一；如果插入了元素，tail指针加一，一旦tail指针移动到了数组的最后，再次有新的元素入队时，我们就将整体head-tail之间的数据搬移到数组中以0索引开头的位置。</p>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
 </search>
