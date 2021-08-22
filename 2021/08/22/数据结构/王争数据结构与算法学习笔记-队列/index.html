@@ -22,16 +22,18 @@
 
   <meta name="description" content="CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。 当我们向固定大小的线程池中请求一个线程时，如果线程池中没有空闲资源了，若线程数没有到达核心线程数时，会创建一个线程；若达到了核心线程数，则将任务加入到任务队列；若到达核心线程数并且任务队列已满，但没有到达最大线程数，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="王争数据结构与算法学习笔记队列">
+<meta property="og:title" content="王争数据结构与算法学习笔记-队列">
 <meta property="og:url" content="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/index.html">
 <meta property="og:site_name" content="WXL&#39;s blog">
 <meta property="og:description" content="CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。 当我们向固定大小的线程池中请求一个线程时，如果线程池中没有空闲资源了，若线程数没有到达核心线程数时，会创建一个线程；若达到了核心线程数，则将任务加入到任务队列；若到达核心线程数并且任务队列已满，但没有到达最大线程数，">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97.png">
 <meta property="article:published_time" content="2021-08-22T01:41:33.000Z">
-<meta property="article:modified_time" content="2021-08-22T02:19:10.432Z">
+<meta property="article:modified_time" content="2021-08-22T03:33:41.377Z">
 <meta property="article:author" content="WXL">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97.png">
 
 <link rel="canonical" href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/">
 
@@ -46,7 +48,7 @@
   };
 </script>
 
-  <title>王争数据结构与算法学习笔记队列 | WXL's blog</title>
+  <title>王争数据结构与算法学习笔记-队列 | WXL's blog</title>
   
 
 
@@ -211,7 +213,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          王争数据结构与算法学习笔记队列
+          王争数据结构与算法学习笔记-队列
         </h1>
 
         <div class="post-meta">
@@ -222,7 +224,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-08-22 09:41:33 / 修改时间：10:19:10" itemprop="dateCreated datePublished" datetime="2021-08-22T09:41:33+08:00">2021-08-22</time>
+              <time title="创建时间：2021-08-22 09:41:33 / 修改时间：11:33:41" itemprop="dateCreated datePublished" datetime="2021-08-22T09:41:33+08:00">2021-08-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +237,7 @@
             </span>
 
           
-            <span id="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/" class="post-meta-item leancloud_visitors" data-flag-title="王争数据结构与算法学习笔记队列" title="阅读次数">
+            <span id="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/" class="post-meta-item leancloud_visitors" data-flag-title="王争数据结构与算法学习笔记-队列" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -268,13 +270,60 @@
       
         <p>CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。</p>
 <p>当我们向固定大小的线程池中请求一个线程时，如果线程池中没有空闲资源了，若线程数没有到达核心线程数时，会创建一个线程；若达到了核心线程数，则将任务加入到任务队列；若到达核心线程数并且任务队列已满，但没有到达最大线程数，则会创建一个线程；若达到核心线程数并且任务队列已满，并且到达最大线程数，那么会执行拒绝策略。</p>
-<h1 id="具有某些额外特性的队列"><a href="#具有某些额外特性的队列" class="headerlink" title="具有某些额外特性的队列"></a>具有某些额外特性的队列</h1><p>循环队列</p>
+<h1>具有某些额外特性的队列</h1>
+<p>循环队列</p>
 <p>阻塞队列</p>
 <p>并发队列</p>
 <p>高性能队列 Disruptor、Linux 环形缓存，都用到了循环并发队列；Java concurrent 并发包利用 ArrayBlockingQueue 来实现公平锁。</p>
-<h1 id="顺序队列和链式队列"><a href="#顺序队列和链式队列" class="headerlink" title="顺序队列和链式队列"></a>顺序队列和链式队列</h1><span id="more"></span>
-<p>使用<code>数组</code>实现的队列是<code>顺序队列</code>，顺序队列的删除操作都是删除队列中的第一个元素，如果每一次删除都需要搬移数据的话，时间复杂度将变成$O(n)$，所以我们可以等到无法入队之后一起搬移从而得到优化。</p>
+<h1>顺序队列和链式队列</h1>
+<span id="more"></span>
+<p>使用<code>数组</code>实现的队列是<code>顺序队列</code>，顺序队列的删除操作都是删除队列中的第一个元素，如果每一次删除都需要搬移数据的话，时间复杂度将变成<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，所以我们可以等到无法入队之后一起搬移从而得到优化。</p>
 <p>具体而言，实现<code>顺序队列</code>的时候我们定义了两个指针：tail指针和head指针，如果删除了元素，head指针加一；如果插入了元素，tail指针加一，一旦tail指针移动到了数组的最后，再次有新的元素入队时，我们就将整体head-tail之间的数据搬移到数组中以0索引开头的位置。</p>
+<p>这种实现思路，出队操作的时间复杂度仍然为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>​，但是入队操作就需要具体分析一下了，因为入队操作可能会导致整体数据的移动。假设预先定义的数组长度为n，那么在前n次入队操作都不会导致数据的搬移，因为即便是有出队，也只是移动队头指针head，而队尾指针会随着入队的数据增加而右移。当第n+1次入队操作的时候，需要首先将所有的数据移动<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mo>−</mo><mi>h</mi><mi>e</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">n-1-head</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span></span></span></span>格，即一共移动<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>−</mo><mi>h</mi><mi>e</mi><mi>a</mi><mi>d</mi><mo stretchy="false">)</mo><mo>∗</mo><mo stretchy="false">(</mo><mi>t</mi><mi>a</mi><mi>i</mi><mi>l</mi><mo>+</mo><mn>1</mn><mo>−</mo><mi>h</mi><mi>e</mi><mi>a</mi><mi>d</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(n-1-head)*(tail+1-head)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span><span class="mclose">)</span></span></span></span>​格，借助王争老师的手绘图表示如下（强烈建议购买王争老师在极客时间的<code>数据结构与算法之美</code>原作）：</p>
+<p><img src="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97.png" alt="王争老师的手绘图"></p>
+<p>对于这种情况下的时间复杂度可以使用摊还分析法来分析，当<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>i</mi><mi>l</mi><mo>=</mo><mo>=</mo><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">tail == size-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>​时，执行：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = head; i &lt; size; i++) &#123;</span><br><span class="line">    queue[i - head] = queue[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 搬完之后更新head和tail</span></span><br><span class="line">tail -= head;</span><br><span class="line">head = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<p>移动一个元素的时间复杂度为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>，那么将所有的移动时间均摊到每一个节点的话，总的时间复杂度就是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1 + 1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span></span></span></span>即<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>。</p>
+<h1>循环队列</h1>
+<p>在上面讲到的顺序队列中，我们出队之后不马上搬移数据，而是等到队尾指针到达数组最后的时候才移动，这样可以减少很多移动数据而花费的时间，但是最后还是移动了，那么我们能否避免移动数据呢？</p>
+<p>答案是可以的，我们可以使用循环队列的实现方式来避免数据的移动。在顺序队列中，判断队列的状态代码如下所示：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断队列空</span></span><br><span class="line"><span class="keyword">if</span> (head == tail) &#123;&#125;</span><br><span class="line"><span class="comment">// 判断队列满(无法插入数据，而不是需要移动数据的条件)</span></span><br><span class="line"><span class="keyword">if</span> (tail - head + <span class="number">1</span>== size) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>到了循环队列，我们判断队列的状态代码如下所示：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 判断队列空</span></span><br><span class="line"><span class="keyword">if</span> (head == tail) &#123;&#125;</span><br><span class="line"><span class="comment">// 判断队列满</span></span><br><span class="line"><span class="keyword">if</span> ((tail + <span class="number">1</span>) % size == head) &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>判断队列空容易理解，但是判断队列满为什么需要模运算呢？我们考虑两种情况：</p>
+<ol>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>i</mi><mi>l</mi><mo>&lt;</mo><mi>h</mi><mi>e</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">tail &lt; head</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span></span></span></span></p>
+<p>这种情况如果<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>i</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">tail</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>再加一个就和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>e</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">head</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span></span></span></span>重合。</p>
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>i</mi><mi>l</mi><mo>&gt;</mo><mi>h</mi><mi>e</mi><mi>a</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">tail &gt; head</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.73354em;vertical-align:-0.0391em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span></span></span></span></p>
+<p>这种情况下，如果<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>i</mi><mi>l</mi></mrow><annotation encoding="application/x-tex">tail</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span></span></span></span>的索引值为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">size-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.74285em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault">e</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>，而<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mi>e</mi><mi>a</mi><mi>d</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">head=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span></span></span></span>，此时其实队列已经满了，但是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>a</mi><mi>i</mi><mi>l</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">tail+1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>就超过了数组的范围，而我们需要的是和对头指针比较，而且两者刚好相差了一个队列的长度，这个时候就用模运算来实现。</p>
+</li>
+</ol>
+<p>其实想到这里我们会发现，我们可以用判断语句来代替模运算，这样容易理解，但是代码工程量大的时候就会降低效率，所以与其说是可以用判断语句来代替模运算，不如说模运算可以用来优化这里的判断语句，代码优化需要从编程的点点滴滴做起。</p>
+<p>基于数组的循环队列比链式队列应用更加广泛，原因：</p>
+<ol>
+<li>
+<p>CAS（Compare And Swap）比较并替换，是线程并发运行时用到的一种技术，基于数组可以比较原来的head/tail索引，实现线程安全；</p>
+</li>
+<li>
+<p>基于数组的循环队列，利用CAS（Compare And Swap）原子操作. 可以实现一个非常高效的<code>并发队列</code>；</p>
+</li>
+<li>
+<p>数据操作O(1)复杂度，不用搬移数据。</p>
+</li>
+</ol>
+<h1>阻塞队列和并发队列</h1>
+<p><code>阻塞队列</code>其实就是在队列基础上增加了阻塞操作。简单来说，就是在队列为空的时候，从队头取数据会被阻塞。因为此时还没有数据可取，直到队列中有了数据才能返回；如果队列已经满了，那么插入数据的操作就会被阻塞，直到队列中有空闲位置后再插入数据，然后再返回。这一功能是否与操作系统的<code>临界区管理</code>中的<code>PV操作</code>似曾相识呢？这其实可以实现一个“生产者-消费者”模型。</p>
+<p>这种基于阻塞队列实现的“生产者 - 消费者模型”，可以有效地协调生产和消费的速度。当“生产者”生产数据的速度过快，“消费者”来不及消费时，存储数据的队列很快就会满了。这个时候，生产者就阻塞等待，直到“消费者”消费了数据，“生产者”才会被唤醒继续“生产”。</p>
+<p>基于阻塞队列，我们还可以通过协调“生产者”和“消费者”的个数，来提高数据的处理效率。比如前面的例子，我们可以多配置几个“消费者”，来应对一个“生产者”。</p>
+<p>在多线程情况下，会有多个线程同时操作队列，这个时候就会存在线程安全问题，那如何实现一个线程安全的队列呢？</p>
+<p>阻塞队列可能多个数据同时出队列，线程不安全，可以对入队或者出队加上锁，这样线程安全的队列，叫做<code>并发队列</code>。最简单直接的实现方式是直接在 enqueue()、dequeue() 方法上加锁，但是锁粒度大并发度会比较低，同一时刻仅允许一个存或者取操作。如何实现一个高效的并发队列：</p>
+<ol>
+<li>基于数组的循环队列(避免数据搬移) ;</li>
+<li>CAS原子操作（避免真正的去OS底层申请锁资源）。</li>
+</ol>
 
     </div>
 
@@ -310,7 +359,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/" title="王争数据结构与算法学习笔记队列">https://wangxl12.github.io/2021/08/22/数据结构/王争数据结构与算法学习笔记-队列/</a>
+    <a href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/" title="王争数据结构与算法学习笔记-队列">https://wangxl12.github.io/2021/08/22/数据结构/王争数据结构与算法学习笔记-队列/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -394,7 +443,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B7%E6%9C%89%E6%9F%90%E4%BA%9B%E9%A2%9D%E5%A4%96%E7%89%B9%E6%80%A7%E7%9A%84%E9%98%9F%E5%88%97"><span class="nav-number">1.</span> <span class="nav-text">具有某些额外特性的队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%BA%E5%BA%8F%E9%98%9F%E5%88%97%E5%92%8C%E9%93%BE%E5%BC%8F%E9%98%9F%E5%88%97"><span class="nav-number">2.</span> <span class="nav-text">顺序队列和链式队列</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">具有某些额外特性的队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">顺序队列和链式队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">循环队列</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">阻塞队列和并发队列</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

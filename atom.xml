@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-08-22T02:19:10.432Z</updated>
+  <updated>2021-08-22T03:33:41.377Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -17,20 +17,21 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>王争数据结构与算法学习笔记队列</title>
+    <title>王争数据结构与算法学习笔记-队列</title>
     <link href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/"/>
     <id>https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/</id>
     <published>2021-08-22T01:41:33.000Z</published>
-    <updated>2021-08-22T02:19:10.432Z</updated>
+    <updated>2021-08-22T03:33:41.377Z</updated>
     
     
     <summary type="html">&lt;p&gt;CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。&lt;/p&gt;
 &lt;p&gt;当我们向固定大小的线程池中请求一个线程时，如果线程池中没有空闲资源了，若线程数没有到达核心线程数时，会创建一个线程；若达到了核心线程数，则将任务加入到任务队列；若到达核心线程数并且任务队列已满，但没有到达最大线程数，则会创建一个线程；若达到核心线程数并且任务队列已满，并且到达最大线程数，那么会执行拒绝策略。&lt;/p&gt;
-&lt;h1 id=&quot;具有某些额外特性的队列&quot;&gt;&lt;a href=&quot;#具有某些额外特性的队列&quot; class=&quot;headerlink&quot; title=&quot;具有某些额外特性的队列&quot;&gt;&lt;/a&gt;具有某些额外特性的队列&lt;/h1&gt;&lt;p&gt;循环队列&lt;/p&gt;
+&lt;h1&gt;具有某些额外特性的队列&lt;/h1&gt;
+&lt;p&gt;循环队列&lt;/p&gt;
 &lt;p&gt;阻塞队列&lt;/p&gt;
 &lt;p&gt;并发队列&lt;/p&gt;
 &lt;p&gt;高性能队列 Disruptor、Linux 环形缓存，都用到了循环并发队列；Java concurrent 并发包利用 ArrayBlockingQueue 来实现公平锁。&lt;/p&gt;
-&lt;h1 id=&quot;顺序队列和链式队列&quot;&gt;&lt;a href=&quot;#顺序队列和链式队列&quot; class=&quot;headerlink&quot; title=&quot;顺序队列和链式队列&quot;&gt;&lt;/a&gt;顺序队列和链式队列&lt;/h1&gt;</summary>
+&lt;h1&gt;顺序队列和链式队列&lt;/h1&gt;</summary>
     
     
     
