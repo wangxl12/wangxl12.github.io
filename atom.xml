@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-08-23T02:44:20.448Z</updated>
+  <updated>2021-08-23T02:55:13.449Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -21,15 +21,16 @@
     <link href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/"/>
     <id>https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/</id>
     <published>2021-08-22T06:24:45.000Z</published>
-    <updated>2021-08-23T02:44:20.448Z</updated>
+    <updated>2021-08-23T02:55:13.449Z</updated>
     
     
     <summary type="html">&lt;p&gt;递归不需要我们去从最高层到最底层屡清楚，我们只需要考虑的是当前层与上一层之间的关系，将这种关系表示出来，然后将终止递归的条件确定清楚即可。至于一层一层往下调交给计算机来处理吧！试图想搞清楚计算机每一步都是怎么执行的，这样就很容易被绕进去。&lt;/p&gt;
-&lt;h1&gt;递归注意点&lt;/h1&gt;
-&lt;h2 id=&quot;递归代码要警惕堆栈溢出&quot;&gt;递归代码要警惕堆栈溢出&lt;/h2&gt;
-&lt;p&gt;在实际的软件开发中，编写递归代码时，我们会遇到很多问题，比如堆栈溢出。而堆栈溢出会造成&lt;code&gt;系统性崩溃&lt;/code&gt;，后果会非常严重。&lt;/p&gt;
-&lt;p&gt;函数调用会使用栈来保存临时变量。每调用一个函数，都会将临时变量封装为&lt;code&gt;栈帧&lt;/code&gt;压入内存栈，等函数执行完成返回时，才出栈。&lt;code&gt;系统栈&lt;/code&gt;或者&lt;code&gt;虚拟机栈&lt;/code&gt;空间一般都不大。如果递归求解的数据规模很大，调用层次很深，一直压入栈，就会有&lt;code&gt;堆栈溢出&lt;/code&gt;的风险。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;如何避免堆栈溢出呢？&lt;/code&gt;&lt;/p&gt;</summary>
+&lt;p&gt;现在很多 App 都有推荐注册返佣金的这个功能，用户 A 推荐用户 B 来注册，用户 B 又推荐了用户 C 来注册。我们可以说，用户 C 的“最终推荐人”为用户 A，用户 B 的“最终推荐人”也为用户 A，而用户 A 没有“最终推荐人”。一般来说，我们会通过数据库来记录这种推荐关系。在数据库表中，我们可以记录两列数据，其中 actor_id 表示用户 id，referrer_id 表示推荐人 id。那么，给定一个用户 ID，如何查找这个用户的“最终推荐人”？&lt;/p&gt;
+&lt;p&gt;可以使用如下的解决方案：&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;findRootReferrerId&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;long&lt;/span&gt; actorId)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Long referrerId = select referrer_id from [table] where actor_id = actorId;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (referrerId == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; actorId;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; findRootReferrerId(referrerId);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;不过在实际项目中，上面的代码并不能工作：&lt;/p&gt;
+&lt;p&gt;第一，如果递归很深，可能会有堆栈溢出的问题。&lt;/p&gt;
+&lt;p&gt;第二，如果数据库里存在脏数据，我们还需要处理由此产生的无限递归问题。比如 demo 环境下数据库中，测试工程师为了方便测试，会人为地插入一些数据，就会出现脏数据。如果 A 的推荐人是 B，B 的推荐人是 C，C 的推荐人是 A，这样就会发生死循环。这个问题可以限制递归深度或者尾递归解决，不过还可以用一个更高级的解决方法：自动检测A-B-C-A这种“环”的存在。&lt;/p&gt;</summary>
     
     
     
