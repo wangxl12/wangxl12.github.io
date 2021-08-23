@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-23 10:55:13" itemprop="dateModified" datetime="2021-08-23T10:55:13+08:00">2021-08-23</time>
+                <time title="修改时间：2021-08-23 11:05:30" itemprop="dateModified" datetime="2021-08-23T11:05:30+08:00">2021-08-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -272,9 +272,6 @@
 <p>现在很多 App 都有推荐注册返佣金的这个功能，用户 A 推荐用户 B 来注册，用户 B 又推荐了用户 C 来注册。我们可以说，用户 C 的“最终推荐人”为用户 A，用户 B 的“最终推荐人”也为用户 A，而用户 A 没有“最终推荐人”。一般来说，我们会通过数据库来记录这种推荐关系。在数据库表中，我们可以记录两列数据，其中 actor_id 表示用户 id，referrer_id 表示推荐人 id。那么，给定一个用户 ID，如何查找这个用户的“最终推荐人”？</p>
 <p>可以使用如下的解决方案：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">findRootReferrerId</span><span class="params">(<span class="keyword">long</span> actorId)</span> </span>&#123;</span><br><span class="line">  Long referrerId = select referrer_id from [table] where actor_id = actorId;</span><br><span class="line">  <span class="keyword">if</span> (referrerId == <span class="keyword">null</span>) <span class="keyword">return</span> actorId;</span><br><span class="line">  <span class="keyword">return</span> findRootReferrerId(referrerId);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>不过在实际项目中，上面的代码并不能工作：</p>
-<p>第一，如果递归很深，可能会有堆栈溢出的问题。</p>
-<p>第二，如果数据库里存在脏数据，我们还需要处理由此产生的无限递归问题。比如 demo 环境下数据库中，测试工程师为了方便测试，会人为地插入一些数据，就会出现脏数据。如果 A 的推荐人是 B，B 的推荐人是 C，C 的推荐人是 A，这样就会发生死循环。这个问题可以限制递归深度或者尾递归解决，不过还可以用一个更高级的解决方法：自动检测A-B-C-A这种“环”的存在。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/#more" rel="contents">
