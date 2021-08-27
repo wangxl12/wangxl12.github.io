@@ -127,17 +127,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">8</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">9</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">7</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">12</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">13</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -193,6 +193,121 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="WXL">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WXL's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">numpy广播机制的巧妙使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-08-27 11:06:01 / 修改时间：11:39:40" itemprop="dateCreated datePublished" datetime="2021-08-27T11:06:01+08:00">2021-08-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/cv/" itemprop="url" rel="index"><span itemprop="name">cv</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/" class="post-meta-item leancloud_visitors" data-flag-title="numpy广播机制的巧妙使用" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="numpy广播在语义分割上的妙用"><a href="#numpy广播在语义分割上的妙用" class="headerlink" title="numpy广播在语义分割上的妙用"></a>numpy广播在语义分割上的妙用</h1><p>假设输入的图像大小为：536x559：</p>
+<p><img src="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/原图像.png" alt="原图像"></p>
+<p>我们还有如下的标签文件：</p>
+<p><img src="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/标签.png" alt="标签"></p>
+<p>不同颜色和标签的含义如下：</p>
+<p><img src="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/含义.png" alt="含义"></p>
+<p>接下来需要对标签文件中的不同物体颜色块进行分离，即达到如下的效果：</p>
+<p><img src="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/编码.png" alt="编码"></p>
+<p>首先读取mask文件：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>mask = np.random.randint(<span class="number">0</span>, <span class="number">4</span>, (<span class="number">5</span>, <span class="number">3</span>))</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(mask.shape)</span><br><span class="line">(<span class="number">536</span>, <span class="number">559</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(mask)</span><br><span class="line">[[<span class="number">2</span> <span class="number">3</span> <span class="number">0</span>]</span><br><span class="line"> [<span class="number">2</span> <span class="number">2</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">0</span> <span class="number">0</span> <span class="number">3</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">2</span> <span class="number">0</span>]</span><br><span class="line"> [<span class="number">3</span> <span class="number">2</span> <span class="number">2</span>]]</span><br></pre></td></tr></table></figure>
+<p>使用np.unique()函数去重并将数据排序：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>obj_ids = np.unique(mask)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>obj_ids</span><br><span class="line">array([<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<p>扩展obj_ids的维度，以便实现广播：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="built_in">print</span>(obj_ids[:, <span class="literal">None</span>, <span class="literal">None</span>])</span><br><span class="line">[[[<span class="number">0</span>]]</span><br><span class="line"> </span><br><span class="line"> [[<span class="number">1</span>]]</span><br><span class="line"> </span><br><span class="line"> [[<span class="number">2</span>]]</span><br><span class="line"> </span><br><span class="line"> [[<span class="number">3</span>]]]</span><br></pre></td></tr></table></figure>
+<p>开始分离物体颜色块（需要注意的是，0一般为背景，需要去掉，这里保留是为了增强表达效果，如需去掉，则obj_ids = obj_ids[1: ] ）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>masks = mask == obj[:, <span class="literal">None</span>, <span class="literal">None</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>masks</span><br><span class="line">array([[[<span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [ <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>]],</span><br><span class="line"></span><br><span class="line">       [[<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [ <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>]],</span><br><span class="line"></span><br><span class="line">       [[ <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [ <span class="literal">True</span>,  <span class="literal">True</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>,  <span class="literal">True</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>,  <span class="literal">True</span>,  <span class="literal">True</span>]],</span><br><span class="line"></span><br><span class="line">       [[<span class="literal">False</span>,  <span class="literal">True</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>,  <span class="literal">True</span>],</span><br><span class="line">        [<span class="literal">False</span>, <span class="literal">False</span>, <span class="literal">False</span>],</span><br><span class="line">        [ <span class="literal">True</span>, <span class="literal">False</span>, <span class="literal">False</span>]]])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>masks.shape</span><br><span class="line">(<span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>最后输出的masks的形状表示4个物体（0， 1， 2， 3）各自提取出来的掩膜形状为（5， 3）。</p>
+<p>一开始最难以理解的是维度扩充那里，即：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj_ids[:, <span class="literal">None</span>, <span class="literal">None</span>]</span><br></pre></td></tr></table></figure>
+<p>这里扩充是为了满足广播的条件，一开始的obj_ids维度为一维，我们需要将obj_ids中的每一个元素都与mask中的每一个元素进行比较一番（当然最简单的方法可以使用循环实现，但是效率低下），为了实现并行处理，需要将（0,1,2,3）中的每一个元素扩充为二维的形式，即分别为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[[[<span class="number">0</span>]]</span><br><span class="line"> </span><br><span class="line"> [[<span class="number">1</span>]]</span><br><span class="line"> </span><br><span class="line"> [[<span class="number">2</span>]]</span><br><span class="line"> </span><br><span class="line"> [[<span class="number">3</span>]]]</span><br></pre></td></tr></table></figure>
+<p>然后在进行比较的过程中就可以自动使用广播机制来进行加速计算：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line"> [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line"> [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line"> [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line"> [<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>]]</span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], </span><br><span class="line"> [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], </span><br><span class="line"> [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], </span><br><span class="line"> [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], </span><br><span class="line"> [<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]]</span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>], </span><br><span class="line"> [<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>], </span><br><span class="line"> [<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>], </span><br><span class="line"> [<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>], </span><br><span class="line"> [<span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>]]</span><br><span class="line"></span><br><span class="line">[[<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>], </span><br><span class="line"> [<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>], </span><br><span class="line"> [<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>], </span><br><span class="line"> [<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>], </span><br><span class="line"> [<span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span>]]</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -216,10 +331,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-23 11:39:44 / 修改时间：12:47:44" itemprop="dateCreated datePublished" datetime="2021-08-23T11:39:44+08:00">2021-08-23</time>
+              <time title="创建时间：2021-08-23 11:39:44" itemprop="dateCreated datePublished" datetime="2021-08-23T11:39:44+08:00">2021-08-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-25 15:49:13" itemprop="dateModified" datetime="2021-08-25T15:49:13+08:00">2021-08-25</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -262,18 +383,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1>深度学习</h1>
-<h2 id="bilibli">bilibli</h2>
-<h3 id="同济子豪兄">同济子豪兄</h3>
-<p><a target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=%E5%90%8C%E6%B5%8E%E5%AD%90%E8%B1%AA%E5%85%84&amp;from_source=websuggest_search">主页</a></p>
+          <h1 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h1><h2 id="bilibli"><a href="#bilibli" class="headerlink" title="bilibli"></a>bilibli</h2><h3 id="同济子豪兄"><a href="#同济子豪兄" class="headerlink" title="同济子豪兄"></a>同济子豪兄</h3><p><a target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=%E5%90%8C%E6%B5%8E%E5%AD%90%E8%B1%AA%E5%85%84&amp;from_source=websuggest_search">主页</a></p>
 <p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1K7411W7So">精讲CS231N斯坦福计算机视觉公开课</a></p>
-<h3 id="其他up主">其他up主</h3>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nJ411z7fe?from=search&amp;seid=1219562638128911509">最新斯坦福李飞飞cs231n计算机视觉课程</a></p>
-<h2 id="github">GitHub</h2>
-<p><a target="_blank" rel="noopener" href="https://github.com/d2l-ai">动手学深度学习</a></p>
+<h3 id="其他up主"><a href="#其他up主" class="headerlink" title="其他up主"></a>其他up主</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nJ411z7fe?from=search&amp;seid=1219562638128911509">最新斯坦福李飞飞cs231n计算机视觉课程</a></p>
+<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><h3 id="李沐"><a href="#李沐" class="headerlink" title="李沐"></a>李沐</h3><p><a target="_blank" rel="noopener" href="https://github.com/d2l-ai">动手学深度学习</a></p>
 <p><a target="_blank" rel="noopener" href="https://d2l.ai/index.html">dive into deep learning</a></p>
-<h1>算法</h1>
-<p><a target="_blank" rel="noopener" href="https://labuladong.github.io/algo/3/23/57/">labuladong</a></p>
+<p><a target="_blank" rel="noopener" href="https://discuss.d2l.ai/">论坛</a></p>
+<p><a href></a></p>
+<h1 id="stanford"><a href="#stanford" class="headerlink" title="stanford"></a>stanford</h1><p><a target="_blank" rel="noopener" href="https://c.d2l.ai/stanford-cs329p/">practical machine learning</a></p>
+<h1 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h1><p><a target="_blank" rel="noopener" href="https://labuladong.github.io/algo/3/23/57/">labuladong</a></p>
 
       
     </div>
@@ -1114,116 +1232,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="WXL">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WXL's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/" class="post-title-link" itemprop="url">王争数据结构与算法学习笔记-链表</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-08-16 20:48:24 / 修改时间：21:49:05" itemprop="dateCreated datePublished" datetime="2021-08-16T20:48:24+08:00">2021-08-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/" class="post-meta-item leancloud_visitors" data-flag-title="王争数据结构与算法学习笔记-链表" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="链表实现lru">链表实现LRU</h2>
-<p>在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。</p>
-<p>使用链表实现LRU如下：<br>
-创建一个链表来维护CPU缓存，链表中的每一个结点距离头结点的距离用于衡量该结点中存放的数据被访问的时间点距离当前时间点的时长，所以链表的表尾表示最早访问的数据。这样一来需要分几种情况来讨论：</p>
-<ul>
-<li>遍历链表，如果找到了当前需要访问的数据，就将该结点移到链表的表头。</li>
-<li>遍历链表，如果没有找到当前需要访问的数据，就需要将该数据插入链表的表头，但是可能CPU缓存在此时已经满了，所以需要分情况考虑：
-<ul>
-<li>如果CPU缓存没有满，将该数据插入链表即可。</li>
-<li>如果CPU缓存满了，将链表的表尾结点删除（最早访问到的数据），然后将新数据插入链表的表头。</li>
-</ul>
-</li>
-</ul>
-<p>这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>​。</p>
-<h2 id="数组实现lru">数组实现LRU</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1293,20 +1301,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
