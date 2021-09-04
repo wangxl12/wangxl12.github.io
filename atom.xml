@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-09-04T08:07:14.034Z</updated>
+  <updated>2021-09-04T08:08:54.251Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -21,16 +21,10 @@
     <link href="https://wangxl12.github.io/2021/09/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E9%81%93-%E9%A1%BA%E5%BA%8F%E3%80%81%E6%8A%98%E5%8D%8A%E3%80%81%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE/"/>
     <id>https://wangxl12.github.io/2021/09/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E9%81%93-%E9%A1%BA%E5%BA%8F%E3%80%81%E6%8A%98%E5%8D%8A%E3%80%81%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE/</id>
     <published>2021-09-04T06:57:26.000Z</published>
-    <updated>2021-09-04T08:07:14.034Z</updated>
+    <updated>2021-09-04T08:08:54.251Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;span</summary>
-        
-      
+    <summary type="html">&lt;h1&gt;基本概念&lt;/h1&gt;</summary>
     
     
     
@@ -46,13 +40,10 @@
     <link href="https://wangxl12.github.io/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/"/>
     <id>https://wangxl12.github.io/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/</id>
     <published>2021-08-27T03:06:01.000Z</published>
-    <updated>2021-08-27T03:47:05.435Z</updated>
+    <updated>2021-09-04T08:11:57.879Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;numpy广播在语义分割上的妙用&lt;/h1&gt;
-&lt;p&gt;假设输入的图像大小为：536x559：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/%E5%8E%9F%E5%9B%BE%E5%83%8F.png&quot; alt=&quot;原图像&quot;&gt;&lt;/p&gt;
-&lt;p&gt;我们还有如下的标签文件：&lt;/p&gt;</summary>
+    <summary type="html">&lt;h1&gt;numpy广播在语义分割上的妙用&lt;/h1&gt;</summary>
     
     
     
@@ -74,19 +65,10 @@
     <link href="https://wangxl12.github.io/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/"/>
     <id>https://wangxl12.github.io/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/</id>
     <published>2021-08-23T03:39:44.000Z</published>
-    <updated>2021-08-25T07:49:13.671Z</updated>
+    <updated>2021-09-04T08:12:13.378Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;深度学习&lt;/h1&gt;
-&lt;h2 id=&quot;bilibli&quot;&gt;bilibli&lt;/h2&gt;
-&lt;h3 id=&quot;同济子豪兄&quot;&gt;同济子豪兄&lt;/h3&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
+    <summary type="html">&lt;h1&gt;深度学习&lt;/h1&gt;</summary>
     
     
     
@@ -102,16 +84,10 @@
     <link href="https://wangxl12.github.io/2021/08/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%86%92%E6%B3%A1%E3%80%81%E6%8F%92%E5%85%A5%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/"/>
     <id>https://wangxl12.github.io/2021/08/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%86%92%E6%B3%A1%E3%80%81%E6%8F%92%E5%85%A5%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</id>
     <published>2021-08-23T03:28:36.000Z</published>
-    <updated>2021-08-23T03:33:30.921Z</updated>
+    <updated>2021-09-04T08:11:15.058Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;插入排序和冒泡排序的时间复杂度相同，都是&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math</summary>
-        
-      
+    <summary type="html">&lt;p&gt;插入排序和冒泡排序的时间复杂度相同，都是&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(n^2)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1.064108em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.8141079999999999em;&quot;&gt;&lt;span style=&quot;top:-3.063em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;​，在实际的软件开发里，为什么我们更倾向于使用插入排序算法而不是冒泡排序算法呢？&lt;/p&gt;</summary>
     
     
     
@@ -127,13 +103,10 @@
     <link href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/"/>
     <id>https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/</id>
     <published>2021-08-22T06:24:45.000Z</published>
-    <updated>2021-08-23T03:05:30.762Z</updated>
+    <updated>2021-09-04T08:10:21.262Z</updated>
     
     
-    <summary type="html">&lt;p&gt;递归不需要我们去从最高层到最底层屡清楚，我们只需要考虑的是当前层与上一层之间的关系，将这种关系表示出来，然后将终止递归的条件确定清楚即可。至于一层一层往下调交给计算机来处理吧！试图想搞清楚计算机每一步都是怎么执行的，这样就很容易被绕进去。&lt;/p&gt;
-&lt;p&gt;现在很多 App 都有推荐注册返佣金的这个功能，用户 A 推荐用户 B 来注册，用户 B 又推荐了用户 C 来注册。我们可以说，用户 C 的“最终推荐人”为用户 A，用户 B 的“最终推荐人”也为用户 A，而用户 A 没有“最终推荐人”。一般来说，我们会通过数据库来记录这种推荐关系。在数据库表中，我们可以记录两列数据，其中 actor_id 表示用户 id，referrer_id 表示推荐人 id。那么，给定一个用户 ID，如何查找这个用户的“最终推荐人”？&lt;/p&gt;
-&lt;p&gt;可以使用如下的解决方案：&lt;/p&gt;
-&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;long&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;findRootReferrerId&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(&lt;span class=&quot;keyword&quot;&gt;long&lt;/span&gt; actorId)&lt;/span&gt; &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  Long referrerId = select referrer_id from [table] where actor_id = actorId;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (referrerId == &lt;span class=&quot;keyword&quot;&gt;null&lt;/span&gt;) &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; actorId;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; findRootReferrerId(referrerId);&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    <summary type="html">&lt;p&gt;递归不需要我们去从最高层到最底层屡清楚，我们只需要考虑的是当前层与上一层之间的关系，将这种关系表示出来，然后将终止递归的条件确定清楚即可。至于一层一层往下调交给计算机来处理吧！试图想搞清楚计算机每一步都是怎么执行的，这样就很容易被绕进去。&lt;/p&gt;</summary>
     
     
     
@@ -149,18 +122,10 @@
     <link href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/"/>
     <id>https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/</id>
     <published>2021-08-22T01:41:33.000Z</published>
-    <updated>2021-08-22T05:34:00.986Z</updated>
+    <updated>2021-09-04T08:10:35.019Z</updated>
     
     
-    <summary type="html">&lt;p&gt;CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;一般有两种处理策略。第一种是非阻塞的处理方式，直接拒绝任务请求；另一种是阻塞的处理方式，将请求排队，等到有空闲线程时，取出排队的请求继续处理。那么如何处理排队的请求呢？&lt;/p&gt;
-&lt;p&gt;我们希望公平地处理每个排队的请求，先进者先服务，所以队列这种数据结构很适合来存储排队请求。队列有基于链表和基于数组这两种实现方式。这两种实现方式对于排队请求又有什么区别呢？&lt;/p&gt;
-&lt;p&gt;基于链表的实现方式，可以实现一个支持无限排队的无界队列（unbounded queue），但是可能会导致过多的请求排队等待，请求处理的响应时间过长。所以，针对响应时间比较敏感的系统，基于链表实现的无限排队的线程池是不合适的。&lt;/p&gt;
-&lt;p&gt;而基于数组实现的有界队列（bounded queue），队列的大小有限，所以线程池中排队的请求超过队列大小时，接下来的请求就会被拒绝，这种方式对响应时间敏感的系统来说，就相对更加合理。这种方式的不好的地方就是：如果某一时刻任务太多，会造成任务的丢失。不过，设置一个合理的队列大小，也是非常有讲究的。队列太大导致等待的请求太多，请求得不到及时的响应，用户体验就会下降；队列太小会导致无法充分利用系统资源、发挥最大性能。当队列阻塞时，队列所在的服务端可以发给客户端一个 500 或者 503 的状态码，然后客户端收到此状态码后可以一直尝试重发请求，直至请求被处理。当然这并不是最高效的处理方式。&lt;/p&gt;
-&lt;p&gt;除了前面讲到队列应用在线程池请求排队的场景之外，队列可以应用在任何有限资源池中，用于排队请求，比如数据库连接池等。&lt;code&gt;实际上，对于大部分资源有限的场景，当没有空闲资源时，基本上都可以通过“队列”这种数据结构来实现请求排队。&lt;/code&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1&gt;具有某些额外特性的队列&lt;/h1&gt;</summary>
+    <summary type="html">&lt;p&gt;CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。&lt;/p&gt;</summary>
     
     
     
@@ -176,13 +141,12 @@
     <link href="https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     <id>https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</id>
     <published>2021-08-21T07:21:20.000Z</published>
-    <updated>2021-08-21T13:15:50.621Z</updated>
+    <updated>2021-09-04T08:12:41.793Z</updated>
     
     
     <summary type="html">&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://book.douban.com/subject/34988786/&quot;&gt;智能计算系统&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F.png&quot; alt=&quot;智能计算系统&quot;&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+&lt;p&gt;&lt;a href=&quot;https://book.douban.com/subject/34988786/&quot;&gt;智能计算系统&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
     
     
     
@@ -200,14 +164,10 @@
     <link href="https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/"/>
     <id>https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/</id>
     <published>2021-08-21T07:10:53.000Z</published>
-    <updated>2021-08-22T07:07:23.650Z</updated>
+    <updated>2021-09-04T08:12:26.172Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;OS&lt;/h1&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://book.douban.com/subject/35208251/&quot;&gt;现代操作系统：原理与实现&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0.png&quot; alt=&quot;现代操作系统：原理与实现&quot;&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
+    <summary type="html">&lt;h1&gt;OS&lt;/h1&gt;</summary>
     
     
     
@@ -255,19 +215,11 @@
     <link href="https://wangxl12.github.io/2021/08/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/"/>
     <id>https://wangxl12.github.io/2021/08/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/</id>
     <published>2021-08-17T07:52:11.000Z</published>
-    <updated>2021-08-17T08:07:45.790Z</updated>
+    <updated>2021-09-04T08:10:51.371Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;我们使用时间复杂度和空间复杂度来衡量算法代码的执行效率，那么为什么要这么麻烦需要自己去衡量一遍呢？把代码跑一遍，通过统计、监控，就能得到算法执行的时间和占用的内存大小。为什么还要做时间、空间复杂度分析呢？这种分析方法能比我实实在在跑一遍得到的数据更准确吗？&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这种评估算法执行效率的方法是正确的。很多数据结构和算法书籍还给这种方法起了一个名字，叫&lt;font color=&quot;red&quot;&gt;事后统计法&lt;/font&gt;。但是，这种统计方法有非常大的局限性。&lt;/p&gt;
-&lt;h2 id=&quot;大o-表示法&quot;&gt;大O 表示法&lt;/h2&gt;
-&lt;p&gt;公式：&lt;/p&gt;
-&lt;p class=&quot;katex-block&quot;&gt;&lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;T&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;f&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;T(n)=O(f(n))
-&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.13889em;&quot;&gt;T&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.10764em;&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;代码分析示例：&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; cal(&lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; n) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;built_in&quot;&gt;sum&lt;/span&gt; = &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; i = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;built_in&quot;&gt;int&lt;/span&gt; j = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (; i &amp;lt;= n; ++i) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    j = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;for&lt;/span&gt; (; j &amp;lt;= n; ++j) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;built_in&quot;&gt;sum&lt;/span&gt; = &lt;span class=&quot;built_in&quot;&gt;sum&lt;/span&gt; +  i * j;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+&lt;p&gt;我们使用时间复杂度和空间复杂度来衡量算法代码的执行效率，那么为什么要这么麻烦需要自己去衡量一遍呢？把代码跑一遍，通过统计、监控，就能得到算法执行的时间和占用的内存大小。为什么还要做时间、空间复杂度分析呢？这种分析方法能比我实实在在跑一遍得到的数据更准确吗？&lt;/p&gt;&lt;/blockquote&gt;</summary>
     
     
     
@@ -283,21 +235,11 @@
     <link href="https://wangxl12.github.io/2021/08/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%A0%88/"/>
     <id>https://wangxl12.github.io/2021/08/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%A0%88/</id>
     <published>2021-08-17T07:10:40.000Z</published>
-    <updated>2021-08-21T07:00:44.152Z</updated>
+    <updated>2021-09-04T08:11:41.555Z</updated>
     
     
     <summary type="html">&lt;p&gt;浏览器的前进后退功能的实现使用到了栈这种数据结构。&lt;/p&gt;
-&lt;p&gt;当依次访问了页面a，b，c，然后后退的时候又可以重新返回到页面b、a，访问的过程属于入栈的功能，后退的过程是出栈的功能。&lt;/p&gt;
-&lt;h3 id=&quot;理解-栈&quot;&gt;理解“栈”&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;栈是一种操作受限的线性表，只允许在一端进行插入和删除操作。&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;为什么需要-栈-？&quot;&gt;为什么需要“栈”？&lt;/h3&gt;
-&lt;p&gt;为何需要单独设计一个数据结构，而不是直接使用链表或者数组来代替呢？&lt;/p&gt;
-&lt;p&gt;数据结构是对于不同应用场景的抽象，数组和链表用于实现栈的功能，暴露了过多的端口，使用起来不可控，容易出错。&lt;/p&gt;
-&lt;h3 id=&quot;栈的复杂度？&quot;&gt;栈的复杂度？&lt;/h3&gt;
-&lt;p&gt;不论是链式栈还是顺序栈，其时间复杂度均为&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;（针对 入栈 和 出栈 操作），空间复杂度也为&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
-&lt;p&gt;空间复杂度不是&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(n)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;吗？&lt;/p&gt;
-&lt;p&gt;我们所说的空间复杂度指的是&lt;code&gt;除去本来需要的、用于存储数据的存储空间之外，算法运行起来所需要的额外空间。&lt;/code&gt;栈所需要的额外空间为个位数，所以大&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.68333em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;表示法表示空间复杂度为&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
-&lt;h3 id=&quot;支持动态扩容的顺序栈&quot;&gt;支持动态扩容的顺序栈&lt;/h3&gt;</summary>
+&lt;p&gt;当依次访问了页面a，b，c，然后后退的时候又可以重新返回到页面b、a，访问的过程属于入栈的功能，后退的过程是出栈的功能。&lt;/p&gt;</summary>
     
     
     
@@ -313,24 +255,10 @@
     <link href="https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/"/>
     <id>https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/</id>
     <published>2021-08-16T12:48:24.000Z</published>
-    <updated>2021-08-16T13:49:05.994Z</updated>
+    <updated>2021-09-04T08:11:03.943Z</updated>
     
     
-    <summary type="html">&lt;h2 id=&quot;链表实现lru&quot;&gt;链表实现LRU&lt;/h2&gt;
-&lt;p&gt;在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。&lt;/p&gt;
-&lt;p&gt;使用链表实现LRU如下：&lt;br&gt;
-创建一个链表来维护CPU缓存，链表中的每一个结点距离头结点的距离用于衡量该结点中存放的数据被访问的时间点距离当前时间点的时长，所以链表的表尾表示最早访问的数据。这样一来需要分几种情况来讨论：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;遍历链表，如果找到了当前需要访问的数据，就将该结点移到链表的表头。&lt;/li&gt;
-&lt;li&gt;遍历链表，如果没有找到当前需要访问的数据，就需要将该数据插入链表的表头，但是可能CPU缓存在此时已经满了，所以需要分情况考虑：
-&lt;ul&gt;
-&lt;li&gt;如果CPU缓存没有满，将该数据插入链表即可。&lt;/li&gt;
-&lt;li&gt;如果CPU缓存满了，将链表的表尾结点删除（最早访问到的数据），然后将新数据插入链表的表头。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(n)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;​。&lt;/p&gt;
-&lt;h2 id=&quot;数组实现lru&quot;&gt;数组实现LRU&lt;/h2&gt;</summary>
+    <summary type="html">&lt;h2 id=&quot;链表实现lru&quot;&gt;链表实现LRU&lt;/h2&gt;</summary>
     
     
     
@@ -346,21 +274,11 @@
     <link href="https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/"/>
     <id>https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/</id>
     <published>2021-08-16T12:38:31.000Z</published>
-    <updated>2021-08-16T13:35:23.463Z</updated>
+    <updated>2021-09-04T08:11:27.510Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;数组看起来简单基础，但是很多人没有理解这个数据结构的精髓。&lt;code&gt;数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据&lt;/code&gt;。数组在逻辑上是一种线性表数据结构. 数组在物理上是一种顺序的存储结构。 数组定义的关键词:&lt;/p&gt;
-&lt;p&gt;1.连续的内存空间&lt;/p&gt;
-&lt;p&gt;2.相同类型的数据.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;线性表&lt;/code&gt;: 数据排成像一条线一样的结构.每个线性表上的数据最多只有前和后两个方向.&lt;br&gt;
-&lt;code&gt;非线性表&lt;/code&gt;: 数据之间并不是简单的前后关系. 线性表数据结构包括: 数组,链表,队列,栈. 非线性表数据结构包括: 二叉树,堆,图 。&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;1.数组的查找操作时间复杂度并不是&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。即便是排好的数组，用二分查找，时间复杂度也是&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(lgn)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.01968em;&quot;&gt;l&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;g&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。正确表述：数组支持随机访问，根据下标随机访问的时间复杂度为&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(1)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;​&lt;/p&gt;
-&lt;p&gt;2.连续的内存空间和相同类型的数据：正是因为这两个限制，它才有了一个堪称“杀手锏”的特性：“随机访问”。这两个限制也让数组的很多操作变得非常低效，比如要想在数组中删除、插入一个数据，为了保证连续性，就需要做大量的数据搬移工作。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;数组是如何实现根据下标随机访问数组元素&quot;&gt;数组是如何实现根据下标随机访问数组元素&lt;/h2&gt;</summary>
+&lt;p&gt;数组看起来简单基础，但是很多人没有理解这个数据结构的精髓。&lt;code&gt;数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据&lt;/code&gt;。数组在逻辑上是一种线性表数据结构. 数组在物理上是一种顺序的存储结构。 数组定义的关键词:&lt;/p&gt;&lt;/blockquote&gt;</summary>
     
     
     
@@ -376,26 +294,11 @@
     <link href="https://wangxl12.github.io/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/"/>
     <id>https://wangxl12.github.io/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/</id>
     <published>2021-08-14T08:20:46.000Z</published>
-    <updated>2021-08-17T03:37:31.987Z</updated>
+    <updated>2021-09-04T08:09:58.137Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;从2021年8月中旬开始刷题。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;本文将记录我在2021年8月中所刷过的题目，题目量不多，但是每一道保证理解透彻。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1&gt;力扣26题：删除有序数组中的重复项&lt;/h1&gt;
-&lt;p&gt;题目链接：&lt;a href=&quot;https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/&quot;&gt;点击这里&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/leetcode26.png&quot; alt=&quot;AC&quot;&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;首先看清楚题目，这道题目说了是一个有序的数组，那么重复的元素必定是连续的，就连续这一特点我们可以摒弃平常用的字典计数的方法或者使用set的方法，而采用更加简便的方法。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;font color=&quot;gree&quot;&gt;思路1：双指针(时间复杂度O(n)，空间复杂度O(1))&lt;/font&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;假设两个指针p和q，p在左边，q在右边，如果&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;nums[p]==nums[q]&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:0.36687em;vertical-align:0em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，即两指针指向的元素值相等了，那么q指针右移一个单位，再次判断俩指针指向的值是否相等，如果还是相等，q指针继续移动；如果不相等，p指针移动一个单位，且&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mi&gt;m&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;[&lt;/mo&gt;&lt;mi&gt;q&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;nums[p] = nums[q]&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;q&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;。&lt;/p&gt;
-&lt;p&gt;那么何时跳出循环呢？如果q到达了nums最后一个元素，那么说明了所有的元素都遍历了一遍，那么此时p所指向的就是不重复的元素的最后一个。&lt;/p&gt;</summary>
+&lt;p&gt;从2021年8月中旬开始刷题。&lt;/p&gt;&lt;/blockquote&gt;</summary>
     
     
     

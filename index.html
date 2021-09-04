@@ -218,7 +218,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-09-04 14:57:26 / 修改时间：16:07:14" itemprop="dateCreated datePublished" datetime="2021-09-04T14:57:26+08:00">2021-09-04</time>
+              <time title="创建时间：2021-09-04 14:57:26 / 修改时间：16:08:54" itemprop="dateCreated datePublished" datetime="2021-09-04T14:57:26+08:00">2021-09-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -262,39 +262,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <span id="more"></span>
-<h1>基本概念</h1>
-<p><strong>查找表</strong>：查找结构，用于查找的数据集合称为查找表，它由同一类型的数据元素（或记录）组成。</p>
-<p><strong>关键字</strong>：数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的。</p>
-<p><strong>静态查找表</strong>：查找符合条件的数据元素（不会修改表中的数据）。</p>
-<p><strong>动态查找表</strong>：插入、删除某个数据元素。除了查找速度，也要关注插/删操作是否方便实现。</p>
-<p><strong>查找长度</strong>：在查找运算中，需要对比关键字的次数成为查找长度。</p>
-<p><strong>平均查找长度（ASL, Average Search Length)</strong>：所有查找过程中进行关键字的比较次数的平均值。</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mi>S</mi><mi>L</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><msub><mi>P</mi><mi>i</mi></msub><msub><mi>C</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">ASL=\sum_{i=1}^{n}P_iC_i
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">L</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.929066em;vertical-align:-1.277669em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.872331em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.3000050000000005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.277669em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
-<p>其中，n为数据元素的个数，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>P</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">P_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为查找第i个元素的概率，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">C_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为查找第i个元素的查找长度。</p>
-<p>评价一个查找算法的效率的时候，通常考虑查找成功/查找失败两种情况的ASL。ASL的数量级反映了查找算法的时间复杂度。</p>
-<h1>顺序查找</h1>
-<p>思路是给定一个需要查找的元素x，遍历查找表直到找到为止。假设查找表的长度为n，那么对于其中的每一个元素i，计算平均查找长度为：</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="bold">A</mi><mi mathvariant="bold">S</mi><mi mathvariant="bold">L</mi></mrow><mtext>成功 </mtext></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>3</mn><mo>+</mo><mo>…</mo><mo>+</mo><mi>n</mi></mrow><mi>n</mi></mfrac><mo>=</mo><mfrac><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">\mathbf{A S L}_{\text {成功 }}=\frac{1+2+3+\ldots+n}{n}=\frac{n+1}{2}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83611em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">A</span><span class="mord mathbf">S</span><span class="mord mathbf">L</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord cjk_fallback mtight">成功</span><span class="mord mtight"> </span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">n</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.00744em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<p>查找的时间复杂度为：<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。</p>
-<p>查找失败的ASL为n+1。</p>
-<h2 id="顺序查找的优化-有序表">顺序查找的优化（有序表）</h2>
-<p>查找表中的元素有序存放（递增/递减）eg:</p>
-<p>7、13、19、29、37、43</p>
-<p>查找目标：21</p>
-<p>如果查找到29，发现29大于21但是仍未找到21，就可以断定查找失败。有序表的查找判定树如下（图来自王道考研）：</p>
-<p><img src="/2021/09/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E9%81%93-%E9%A1%BA%E5%BA%8F%E3%80%81%E6%8A%98%E5%8D%8A%E3%80%81%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE/%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91.png" alt="二叉查找树"></p>
-<p>查找失败一共有n+1种情况，因为最后一个元素的两边的范围都是查找失败的范围。</p>
-<p>我们认为查找失败的概率都是相等的，即给定一个元素，落在这n+1个范围内的概率是相等的，那么得到的查找失败的平均查找长度为：</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mrow><mi mathvariant="bold">A</mi><mi mathvariant="bold">S</mi><mi mathvariant="bold">L</mi></mrow><mtext>失败 </mtext></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mo>+</mo><mn>2</mn><mo>+</mo><mn>3</mn><mo>+</mo><mo>…</mo><mo>+</mo><mi>n</mi><mo>+</mo><mi>n</mi></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mi>n</mi><mn>2</mn></mfrac><mo>+</mo><mfrac><mi>n</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\mathbf{A S L}_{\text {失败 }}=\frac{1+2+3+\ldots+n+n}{n+1}=\frac{n}{2}+\frac{n}{n+1}
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83611em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord"><span class="mord mathbf">A</span><span class="mord mathbf">S</span><span class="mord mathbf">L</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord text mtight"><span class="mord cjk_fallback mtight">失败</span><span class="mord mtight"> </span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.09077em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.32144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="minner">…</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.7935600000000003em;vertical-align:-0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.8768900000000002em;vertical-align:-0.7693300000000001em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.10756em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.7693300000000001em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
-<p>注意，查找失败的分子上有两个n，分别表示的是元素43左右两个范围的查找次数。</p>
-<p>如果被查找的数据不是等概率的，比如如下的序列：</p>
-<p>7、13、19、29、37、43</p>
-<p>其</p>
-
+          <h1>基本概念</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E9%81%93-%E9%A1%BA%E5%BA%8F%E3%80%81%E6%8A%98%E5%8D%8A%E3%80%81%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -336,10 +312,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-27 11:06:01 / 修改时间：11:47:05" itemprop="dateCreated datePublished" datetime="2021-08-27T11:06:01+08:00">2021-08-27</time>
+              <time title="创建时间：2021-08-27 11:06:01" itemprop="dateCreated datePublished" datetime="2021-08-27T11:06:01+08:00">2021-08-27</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-04 16:11:57" itemprop="dateModified" datetime="2021-09-04T16:11:57+08:00">2021-09-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -387,9 +369,6 @@
 
       
           <h1>numpy广播在语义分割上的妙用</h1>
-<p>假设输入的图像大小为：536x559：</p>
-<p><img src="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/%E5%8E%9F%E5%9B%BE%E5%83%8F.png" alt="原图像"></p>
-<p>我们还有如下的标签文件：</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/#more" rel="contents">
@@ -447,7 +426,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-25 15:49:13" itemprop="dateModified" datetime="2021-08-25T15:49:13+08:00">2021-08-25</time>
+                <time title="修改时间：2021-09-04 16:12:13" itemprop="dateModified" datetime="2021-09-04T16:12:13+08:00">2021-09-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -492,23 +471,14 @@
 
       
           <h1>深度学习</h1>
-<h2 id="bilibli">bilibli</h2>
-<h3 id="同济子豪兄">同济子豪兄</h3>
-<p><a target="_blank" rel="noopener" href="https://search.bilibili.com/all?keyword=%E5%90%8C%E6%B5%8E%E5%AD%90%E8%B1%AA%E5%85%84&amp;from_source=websuggest_search">主页</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1K7411W7So">精讲CS231N斯坦福计算机视觉公开课</a></p>
-<h3 id="其他up主">其他up主</h3>
-<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1nJ411z7fe?from=search&amp;seid=1219562638128911509">最新斯坦福李飞飞cs231n计算机视觉课程</a></p>
-<h2 id="github">GitHub</h2>
-<h3 id="李沐">李沐</h3>
-<p><a target="_blank" rel="noopener" href="https://github.com/d2l-ai">动手学深度学习</a></p>
-<p><a target="_blank" rel="noopener" href="https://d2l.ai/index.html">dive into deep learning</a></p>
-<p><a target="_blank" rel="noopener" href="https://discuss.d2l.ai/">论坛</a></p>
-<p><a href></a></p>
-<h1>stanford</h1>
-<p><a target="_blank" rel="noopener" href="https://c.d2l.ai/stanford-cs329p/">practical machine learning</a></p>
-<h1>算法</h1>
-<p><a target="_blank" rel="noopener" href="https://labuladong.github.io/algo/3/23/57/">labuladong</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -550,10 +520,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-23 11:28:36 / 修改时间：11:33:30" itemprop="dateCreated datePublished" datetime="2021-08-23T11:28:36+08:00">2021-08-23</time>
+              <time title="创建时间：2021-08-23 11:28:36" itemprop="dateCreated datePublished" datetime="2021-08-23T11:28:36+08:00">2021-08-23</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-04 16:11:15" itemprop="dateModified" datetime="2021-09-04T16:11:15+08:00">2021-09-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -596,17 +572,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>插入排序和冒泡排序的时间复杂度相同，都是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，在实际的软件开发里，为什么我们更倾向于使用插入排序算法而不是冒泡排序算法呢？</p>
-<h1>如何分析一个“排序算法”？</h1>
-<h2 id="排序算法的执行效率">排序算法的执行效率</h2>
-<ol>
-<li><strong>最好情况、最坏情况、平均情况时间复杂度</strong></li>
-<li><strong>时间复杂度的系数、常数、低阶</strong></li>
-<li><strong>比较次数和交换（或移动）次数</strong></li>
-</ol>
-<h2 id="排序算法的内存消耗">排序算法的内存消耗</h2>
-<h2 id="排序算法的稳定性">排序算法的稳定性</h2>
-
+          <p>插入排序和冒泡排序的时间复杂度相同，都是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>​，在实际的软件开发里，为什么我们更倾向于使用插入排序算法而不是冒泡排序算法呢？</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/08/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%86%92%E6%B3%A1%E3%80%81%E6%8F%92%E5%85%A5%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -656,7 +630,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-23 11:05:30" itemprop="dateModified" datetime="2021-08-23T11:05:30+08:00">2021-08-23</time>
+                <time title="修改时间：2021-09-04 16:10:21" itemprop="dateModified" datetime="2021-09-04T16:10:21+08:00">2021-09-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -701,9 +675,6 @@
 
       
           <p>递归不需要我们去从最高层到最底层屡清楚，我们只需要考虑的是当前层与上一层之间的关系，将这种关系表示出来，然后将终止递归的条件确定清楚即可。至于一层一层往下调交给计算机来处理吧！试图想搞清楚计算机每一步都是怎么执行的，这样就很容易被绕进去。</p>
-<p>现在很多 App 都有推荐注册返佣金的这个功能，用户 A 推荐用户 B 来注册，用户 B 又推荐了用户 C 来注册。我们可以说，用户 C 的“最终推荐人”为用户 A，用户 B 的“最终推荐人”也为用户 A，而用户 A 没有“最终推荐人”。一般来说，我们会通过数据库来记录这种推荐关系。在数据库表中，我们可以记录两列数据，其中 actor_id 表示用户 id，referrer_id 表示推荐人 id。那么，给定一个用户 ID，如何查找这个用户的“最终推荐人”？</p>
-<p>可以使用如下的解决方案：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">findRootReferrerId</span><span class="params">(<span class="keyword">long</span> actorId)</span> </span>&#123;</span><br><span class="line">  Long referrerId = select referrer_id from [table] where actor_id = actorId;</span><br><span class="line">  <span class="keyword">if</span> (referrerId == <span class="keyword">null</span>) <span class="keyword">return</span> actorId;</span><br><span class="line">  <span class="keyword">return</span> findRootReferrerId(referrerId);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/#more" rel="contents">
@@ -753,10 +724,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-22 09:41:33 / 修改时间：13:34:00" itemprop="dateCreated datePublished" datetime="2021-08-22T09:41:33+08:00">2021-08-22</time>
+              <time title="创建时间：2021-08-22 09:41:33" itemprop="dateCreated datePublished" datetime="2021-08-22T09:41:33+08:00">2021-08-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-04 16:10:35" itemprop="dateModified" datetime="2021-09-04T16:10:35+08:00">2021-09-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -800,14 +777,6 @@
 
       
           <p>CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。</p>
-<blockquote>
-<p>一般有两种处理策略。第一种是非阻塞的处理方式，直接拒绝任务请求；另一种是阻塞的处理方式，将请求排队，等到有空闲线程时，取出排队的请求继续处理。那么如何处理排队的请求呢？</p>
-<p>我们希望公平地处理每个排队的请求，先进者先服务，所以队列这种数据结构很适合来存储排队请求。队列有基于链表和基于数组这两种实现方式。这两种实现方式对于排队请求又有什么区别呢？</p>
-<p>基于链表的实现方式，可以实现一个支持无限排队的无界队列（unbounded queue），但是可能会导致过多的请求排队等待，请求处理的响应时间过长。所以，针对响应时间比较敏感的系统，基于链表实现的无限排队的线程池是不合适的。</p>
-<p>而基于数组实现的有界队列（bounded queue），队列的大小有限，所以线程池中排队的请求超过队列大小时，接下来的请求就会被拒绝，这种方式对响应时间敏感的系统来说，就相对更加合理。这种方式的不好的地方就是：如果某一时刻任务太多，会造成任务的丢失。不过，设置一个合理的队列大小，也是非常有讲究的。队列太大导致等待的请求太多，请求得不到及时的响应，用户体验就会下降；队列太小会导致无法充分利用系统资源、发挥最大性能。当队列阻塞时，队列所在的服务端可以发给客户端一个 500 或者 503 的状态码，然后客户端收到此状态码后可以一直尝试重发请求，直至请求被处理。当然这并不是最高效的处理方式。</p>
-<p>除了前面讲到队列应用在线程池请求排队的场景之外，队列可以应用在任何有限资源池中，用于排队请求，比如数据库连接池等。<code>实际上，对于大部分资源有限的场景，当没有空闲资源时，基本上都可以通过“队列”这种数据结构来实现请求排队。</code></p>
-</blockquote>
-<h1>具有某些额外特性的队列</h1>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/#more" rel="contents">
@@ -857,10 +826,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-21 15:21:20 / 修改时间：21:15:50" itemprop="dateCreated datePublished" datetime="2021-08-21T15:21:20+08:00">2021-08-21</time>
+              <time title="创建时间：2021-08-21 15:21:20" itemprop="dateCreated datePublished" datetime="2021-08-21T15:21:20+08:00">2021-08-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-04 16:12:41" itemprop="dateModified" datetime="2021-09-04T16:12:41+08:00">2021-09-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -905,8 +880,7 @@
       
           <ol>
 <li>
-<p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/34988786/">智能计算系统</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F.png" alt="智能计算系统"></p></li></ol>
+<p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/34988786/">智能计算系统</a></p></li></ol>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/#more" rel="contents">
@@ -964,7 +938,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-08-22 15:07:23" itemprop="dateModified" datetime="2021-08-22T15:07:23+08:00">2021-08-22</time>
+                <time title="修改时间：2021-09-04 16:12:26" itemprop="dateModified" datetime="2021-09-04T16:12:26+08:00">2021-09-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1009,10 +983,6 @@
 
       
           <h1>OS</h1>
-<ol>
-<li>
-<p><a target="_blank" rel="noopener" href="https://book.douban.com/subject/35208251/">现代操作系统：原理与实现</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0.png" alt="现代操作系统：原理与实现"></p></li></ol>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/#more" rel="contents">
@@ -1158,10 +1128,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-08-17 15:52:11 / 修改时间：16:07:45" itemprop="dateCreated datePublished" datetime="2021-08-17T15:52:11+08:00">2021-08-17</time>
+              <time title="创建时间：2021-08-17 15:52:11" itemprop="dateCreated datePublished" datetime="2021-08-17T15:52:11+08:00">2021-08-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-04 16:10:51" itemprop="dateModified" datetime="2021-09-04T16:10:51+08:00">2021-09-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -1205,15 +1181,7 @@
 
       
           <blockquote>
-<p>我们使用时间复杂度和空间复杂度来衡量算法代码的执行效率，那么为什么要这么麻烦需要自己去衡量一遍呢？把代码跑一遍，通过统计、监控，就能得到算法执行的时间和占用的内存大小。为什么还要做时间、空间复杂度分析呢？这种分析方法能比我实实在在跑一遍得到的数据更准确吗？</p>
-</blockquote>
-<p>这种评估算法执行效率的方法是正确的。很多数据结构和算法书籍还给这种方法起了一个名字，叫<font color="red">事后统计法</font>。但是，这种统计方法有非常大的局限性。</p>
-<h2 id="大o-表示法">大O 表示法</h2>
-<p>公式：</p>
-<p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mi>f</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)=O(f(n))
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
-<p>代码分析示例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> cal(<span class="built_in">int</span> n) &#123;</span><br><span class="line">  <span class="built_in">int</span> <span class="built_in">sum</span> = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">int</span> i = <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">int</span> j = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (; i &lt;= n; ++i) &#123;</span><br><span class="line">    j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; j &lt;= n; ++j) &#123;</span><br><span class="line">      <span class="built_in">sum</span> = <span class="built_in">sum</span> +  i * j;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们使用时间复杂度和空间复杂度来衡量算法代码的执行效率，那么为什么要这么麻烦需要自己去衡量一遍呢？把代码跑一遍，通过统计、监控，就能得到算法执行的时间和占用的内存大小。为什么还要做时间、空间复杂度分析呢？这种分析方法能比我实实在在跑一遍得到的数据更准确吗？</p></blockquote>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/08/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/#more" rel="contents">

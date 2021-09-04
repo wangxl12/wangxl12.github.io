@@ -4,6 +4,7 @@
     <title>学习链接</title>
     <url>/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/</url>
     <content><![CDATA[<h1>深度学习</h1>
+<span id="more"></span>
 <h2 id="bilibli">bilibli</h2>
 <h3 id="同济子豪兄">同济子豪兄</h3>
 <p><a href="https://search.bilibili.com/all?keyword=%E5%90%8C%E6%B5%8E%E5%AD%90%E8%B1%AA%E5%85%84&amp;from_source=websuggest_search">主页</a></p>
@@ -49,8 +50,8 @@
     <content><![CDATA[<ol>
 <li>
 <p><a href="https://book.douban.com/subject/34988786/">智能计算系统</a></p>
-<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F.png" alt="智能计算系统"></p>
 <span id="more"></span>
+<p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%99%BA%E8%83%BD%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F.png" alt="智能计算系统"></p>
 </li>
 </ol>
 ]]></content>
@@ -66,11 +67,11 @@
     <title>计算机内功必读书单</title>
     <url>/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/</url>
     <content><![CDATA[<h1>OS</h1>
+<span id="more"></span>
 <ol>
 <li>
 <p><a href="https://book.douban.com/subject/35208251/">现代操作系统：原理与实现</a></p>
 <p><img src="/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/%E7%8E%B0%E4%BB%A3%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%EF%BC%9A%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0.png" alt="现代操作系统：原理与实现"></p>
-<span id="more"></span>
 </li>
 </ol>
 <h1>Database</h1>
@@ -131,6 +132,7 @@
     <url>/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/</url>
     <content><![CDATA[<blockquote>
 <p>从2021年8月中旬开始刷题。</p>
+<span id="more"></span>
 </blockquote>
 <blockquote>
 <p>本文将记录我在2021年8月中所刷过的题目，题目量不多，但是每一道保证理解透彻。</p>
@@ -146,7 +148,6 @@
 </ul>
 <p>假设两个指针p和q，p在左边，q在右边，如果<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>u</mi><mi>m</mi><mi>s</mi><mo stretchy="false">[</mo><mi>p</mi><mo stretchy="false">]</mo><mo>=</mo><mo>=</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>s</mi><mo stretchy="false">[</mo><mi>q</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">nums[p]==nums[q]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault">p</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">]</span></span></span></span>，即两指针指向的元素值相等了，那么q指针右移一个单位，再次判断俩指针指向的值是否相等，如果还是相等，q指针继续移动；如果不相等，p指针移动一个单位，且<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mi>u</mi><mi>m</mi><mi>s</mi><mo stretchy="false">[</mo><mi>p</mi><mo stretchy="false">]</mo><mo>=</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi>s</mi><mo stretchy="false">[</mo><mi>q</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">nums[p] = nums[q]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault">p</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">]</span></span></span></span>。</p>
 <p>那么何时跳出循环呢？如果q到达了nums最后一个元素，那么说明了所有的元素都遍历了一遍，那么此时p所指向的就是不重复的元素的最后一个。</p>
-<span id="more"></span>
 <p>将上述过程写成伪代码：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">p=<span class="number">0</span>, q=<span class="number">1</span>, r=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> q &lt; nums.size():</span><br><span class="line">    <span class="keyword">if</span> nums[p] == nums[q]:</span><br><span class="line">        q++</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        p++</span><br><span class="line">        nums[p] = nums[q]</span><br><span class="line"><span class="keyword">return</span> p</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里需要注意的是，如果直接返回p结果是错的，因为测试的方式是p在nums中所对应的元素是不访问的，</span></span><br><span class="line"><span class="comment"># 所以需要返回p+1</span></span><br></pre></td></tr></table></figure>
 <p>可以自行举个例子来将上述过程推演一遍：<br>
@@ -215,7 +216,8 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
   <entry>
     <title>王争数据结构与算法学习笔记-冒泡、插入、选择排序</title>
     <url>/2021/08/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%86%92%E6%B3%A1%E3%80%81%E6%8F%92%E5%85%A5%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<p>插入排序和冒泡排序的时间复杂度相同，都是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，在实际的软件开发里，为什么我们更倾向于使用插入排序算法而不是冒泡排序算法呢？</p>
+    <content><![CDATA[<p>插入排序和冒泡排序的时间复杂度相同，都是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>​，在实际的软件开发里，为什么我们更倾向于使用插入排序算法而不是冒泡排序算法呢？</p>
+<span id="more"></span>
 <h1>如何分析一个“排序算法”？</h1>
 <h2 id="排序算法的执行效率">排序算法的执行效率</h2>
 <ol>
@@ -238,6 +240,7 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
     <url>/2021/08/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90/</url>
     <content><![CDATA[<blockquote>
 <p>我们使用时间复杂度和空间复杂度来衡量算法代码的执行效率，那么为什么要这么麻烦需要自己去衡量一遍呢？把代码跑一遍，通过统计、监控，就能得到算法执行的时间和占用的内存大小。为什么还要做时间、空间复杂度分析呢？这种分析方法能比我实实在在跑一遍得到的数据更准确吗？</p>
+<span id="more"></span>
 </blockquote>
 <p>这种评估算法执行效率的方法是正确的。很多数据结构和算法书籍还给这种方法起了一个名字，叫<font color="red">事后统计法</font>。但是，这种统计方法有非常大的局限性。</p>
 <h2 id="大o-表示法">大O 表示法</h2>
@@ -246,7 +249,6 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mclose">)</span></span></span></span></span></p>
 <p>代码分析示例：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">int</span> cal(<span class="built_in">int</span> n) &#123;</span><br><span class="line">  <span class="built_in">int</span> <span class="built_in">sum</span> = <span class="number">0</span>;</span><br><span class="line">  <span class="built_in">int</span> i = <span class="number">1</span>;</span><br><span class="line">  <span class="built_in">int</span> j = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (; i &lt;= n; ++i) &#123;</span><br><span class="line">    j = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (; j &lt;= n; ++j) &#123;</span><br><span class="line">      <span class="built_in">sum</span> = <span class="built_in">sum</span> +  i * j;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
 <p>假设每一个语句的执行时间为一个单位时间<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">t_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.76508em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">t</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>​​​​那么，这段代码总的执行时间为：</p>
 <p class="katex-block"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>T</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo><mo>=</mo><mi>O</mi><mo stretchy="false">(</mo><mn>3</mn><mo>+</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>2</mn><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">T(n)=O(3+2n+2n^2)
 </annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">3</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.1141079999999999em;vertical-align:-0.25em;"></span><span class="mord">2</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641079999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></span></p>
@@ -354,6 +356,7 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
     <url>/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/</url>
     <content><![CDATA[<blockquote>
 <p>数组看起来简单基础，但是很多人没有理解这个数据结构的精髓。<code>数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据</code>。数组在逻辑上是一种线性表数据结构. 数组在物理上是一种顺序的存储结构。 数组定义的关键词:</p>
+<span id="more"></span>
 <p>1.连续的内存空间</p>
 <p>2.相同类型的数据.</p>
 <p><code>线性表</code>: 数据排成像一条线一样的结构.每个线性表上的数据最多只有前和后两个方向.<br>
@@ -364,7 +367,6 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
 </blockquote>
 </blockquote>
 <h2 id="数组是如何实现根据下标随机访问数组元素">数组是如何实现根据下标随机访问数组元素</h2>
-<span id="more"></span>
 <p>拿一个长度为 10 的 int 类型的数组 int[] a = new int[10]来举例。计算机给数组 a[10]，分配了一块连续内存空间 1000～1039，其中，内存块的首地址为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>b</mi><mi>a</mi><mi>s</mi><msub><mi>e</mi><mrow><mi>a</mi><mi>d</mi><mi>d</mi><mi>r</mi><mi>e</mi><mi>s</mi><mi>s</mi></mrow></msub></mrow><annotation encoding="application/x-tex">base_{address}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">a</span><span class="mord mathdefault">s</span><span class="mord"><span class="mord mathdefault">e</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">a</span><span class="mord mathdefault mtight">d</span><span class="mord mathdefault mtight">d</span><span class="mord mathdefault mtight" style="margin-right:0.02778em;">r</span><span class="mord mathdefault mtight">e</span><span class="mord mathdefault mtight">s</span><span class="mord mathdefault mtight">s</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>​​ = 1000。</p>
 <p><font color="gree">【注】此处使用的Java语言定义int类型，Java基本类型的整型分4中：byte、short、int、long，长度分别为1、2、4、8，所以此处int数组的每个值长度为4，所以分配的内存长度是10×4=40，此处内存分配从1000-1039共40个字节长度。</font></p>
 <p>计算机会给每个内存单元分配一个地址，计算机通过地址来访问内存中的数据。当计算机需要随机访问数组中的某个元素时，它会首先通过下面的寻址公式，计算出该元素存储的内存地址：</p>
@@ -427,6 +429,7 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
     <url>/2021/08/17/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%A0%88/</url>
     <content><![CDATA[<p>浏览器的前进后退功能的实现使用到了栈这种数据结构。</p>
 <p>当依次访问了页面a，b，c，然后后退的时候又可以重新返回到页面b、a，访问的过程属于入栈的功能，后退的过程是出栈的功能。</p>
+<span id="more"></span>
 <h3 id="理解-栈">理解“栈”</h3>
 <p><code>栈是一种操作受限的线性表，只允许在一端进行插入和删除操作。</code></p>
 <h3 id="为什么需要-栈-？">为什么需要“栈”？</h3>
@@ -437,7 +440,6 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
 <p>空间复杂度不是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>吗？</p>
 <p>我们所说的空间复杂度指的是<code>除去本来需要的、用于存储数据的存储空间之外，算法运行起来所需要的额外空间。</code>栈所需要的额外空间为个位数，所以大<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi></mrow><annotation encoding="application/x-tex">O</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span></span></span></span>表示法表示空间复杂度为<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span>。</p>
 <h3 id="支持动态扩容的顺序栈">支持动态扩容的顺序栈</h3>
-<span id="more"></span>
 <p>对于数组实现的栈，如果数据量超过数组一开始申请的空间就会受限，对于链表实现的栈，每一个结点多出一个“next”指针，内存消耗过多，所以为了解决这个问题，我们需要设计一个支持动态扩容的栈。</p>
 <p>对于动态扩容的数组而言，当剩余的容量不够的时候，再申请一块更大的空间，将原来的数据拷贝到新数组中，就实现了动态扩充。所以要实现动态扩容的顺序栈就需要在一个动态扩容的数组上操作。</p>
 <p>那么支持动态扩容的顺序栈的时间复杂度和空间复杂度如何分析呢？</p>
@@ -508,10 +510,10 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
     <title>王争数据结构与算法学习笔记-递归</title>
     <url>/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/</url>
     <content><![CDATA[<p>递归不需要我们去从最高层到最底层屡清楚，我们只需要考虑的是当前层与上一层之间的关系，将这种关系表示出来，然后将终止递归的条件确定清楚即可。至于一层一层往下调交给计算机来处理吧！试图想搞清楚计算机每一步都是怎么执行的，这样就很容易被绕进去。</p>
+<span id="more"></span>
 <p>现在很多 App 都有推荐注册返佣金的这个功能，用户 A 推荐用户 B 来注册，用户 B 又推荐了用户 C 来注册。我们可以说，用户 C 的“最终推荐人”为用户 A，用户 B 的“最终推荐人”也为用户 A，而用户 A 没有“最终推荐人”。一般来说，我们会通过数据库来记录这种推荐关系。在数据库表中，我们可以记录两列数据，其中 actor_id 表示用户 id，referrer_id 表示推荐人 id。那么，给定一个用户 ID，如何查找这个用户的“最终推荐人”？</p>
 <p>可以使用如下的解决方案：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="title">findRootReferrerId</span><span class="params">(<span class="keyword">long</span> actorId)</span> </span>&#123;</span><br><span class="line">  Long referrerId = select referrer_id from [table] where actor_id = actorId;</span><br><span class="line">  <span class="keyword">if</span> (referrerId == <span class="keyword">null</span>) <span class="keyword">return</span> actorId;</span><br><span class="line">  <span class="keyword">return</span> findRootReferrerId(referrerId);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<span id="more"></span>
 <p>不过在实际项目中，上面的代码并不能工作：</p>
 <p>第一，如果递归很深，可能会有堆栈溢出的问题。</p>
 <p>第二，如果数据库里存在脏数据，我们还需要处理由此产生的无限递归问题。比如 demo 环境下数据库中，测试工程师为了方便测试，会人为地插入一些数据，就会出现脏数据。如果 A 的推荐人是 B，B 的推荐人是 C，C 的推荐人是 A，这样就会发生死循环。这个问题可以限制递归深度或者尾递归解决，不过还可以用一个更高级的解决方法：自动检测A-B-C-A这种“环”的存在。</p>
@@ -571,6 +573,7 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
     <title>王争数据结构与算法学习笔记-链表</title>
     <url>/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/</url>
     <content><![CDATA[<h2 id="链表实现lru">链表实现LRU</h2>
+<span id="more"></span>
 <p>在操作系统中常见的缓存淘汰策略有：先进先出策略 FIFO（First In，First Out）、最少使用策略 LFU（Least Frequently Used）、最近最少使用策略 LRU（Least Recently Used）。</p>
 <p>使用链表实现LRU如下：<br>
 创建一个链表来维护CPU缓存，链表中的每一个结点距离头结点的距离用于衡量该结点中存放的数据被访问的时间点距离当前时间点的时长，所以链表的表尾表示最早访问的数据。这样一来需要分几种情况来讨论：</p>
@@ -585,7 +588,6 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
 </ul>
 <p>这样就实现了LRU缓存。因为不管缓存有没有满，都需要遍历一遍链表，所以这种基于链表的实现思路，缓存访问的时间复杂度为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>​。</p>
 <h2 id="数组实现lru">数组实现LRU</h2>
-<span id="more"></span>
 <ol>
 <li>
 <p>将数组的首元素作为最新访问的数据，数组末尾元素作为最早访问的数据。这样每一次需要遍历数组寻找数据，时间复杂度为O(n)，如果找到了，需要将该数据移到数组首部，最坏的情况是O(n)，最好的情况是O(1);如果不在数组中，当CPU缓存满的时候需要删除数组末尾的数据，这里删除可以采用直接覆盖的方式，移动前面n-1个数据，然后在数组首部插入新数据，时间复杂度为O(n);如果在数组中，移动数据，插入新数据，时间复杂度为O(n)。根据加法原则，时间复杂度为O(2n+1)=O(n)；</p>
@@ -660,6 +662,7 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
     <title>王争数据结构与算法学习笔记-队列</title>
     <url>/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/</url>
     <content><![CDATA[<p>CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。</p>
+<span id="more"></span>
 <blockquote>
 <p>一般有两种处理策略。第一种是非阻塞的处理方式，直接拒绝任务请求；另一种是阻塞的处理方式，将请求排队，等到有空闲线程时，取出排队的请求继续处理。那么如何处理排队的请求呢？</p>
 <p>我们希望公平地处理每个排队的请求，先进者先服务，所以队列这种数据结构很适合来存储排队请求。队列有基于链表和基于数组这两种实现方式。这两种实现方式对于排队请求又有什么区别呢？</p>
@@ -668,7 +671,6 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
 <p>除了前面讲到队列应用在线程池请求排队的场景之外，队列可以应用在任何有限资源池中，用于排队请求，比如数据库连接池等。<code>实际上，对于大部分资源有限的场景，当没有空闲资源时，基本上都可以通过“队列”这种数据结构来实现请求排队。</code></p>
 </blockquote>
 <h1>具有某些额外特性的队列</h1>
-<span id="more"></span>
 <p>循环队列</p>
 <p>阻塞队列</p>
 <p>并发队列</p>
@@ -760,8 +762,8 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
   <entry>
     <title>王道-顺序、折半、分块查找</title>
     <url>/2021/09/04/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E9%81%93-%E9%A1%BA%E5%BA%8F%E3%80%81%E6%8A%98%E5%8D%8A%E3%80%81%E5%88%86%E5%9D%97%E6%9F%A5%E6%89%BE/</url>
-    <content><![CDATA[<span id="more"></span>
-<h1>基本概念</h1>
+    <content><![CDATA[<h1>基本概念</h1>
+<span id="more"></span>
 <p><strong>查找表</strong>：查找结构，用于查找的数据集合称为查找表，它由同一类型的数据元素（或记录）组成。</p>
 <p><strong>关键字</strong>：数据元素中唯一标识该元素的某个数据项的值，使用基于关键字的查找，查找结果应该是唯一的。</p>
 <p><strong>静态查找表</strong>：查找符合条件的数据元素（不会修改表中的数据）。</p>
@@ -804,10 +806,10 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
     <title>numpy广播机制的巧妙使用</title>
     <url>/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1>numpy广播在语义分割上的妙用</h1>
+<span id="more"></span>
 <p>假设输入的图像大小为：536x559：</p>
 <p><img src="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/%E5%8E%9F%E5%9B%BE%E5%83%8F.png" alt="原图像"></p>
 <p>我们还有如下的标签文件：</p>
-<span id="more"></span>
 <p><img src="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/%E6%A0%87%E7%AD%BE.png" alt="标签"></p>
 <p>不同颜色和标签的含义如下：</p>
 <p><img src="/2021/08/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/numpy%E5%B9%BF%E6%92%AD%E6%9C%BA%E5%88%B6%E7%9A%84%E5%B7%A7%E5%A6%99%E4%BD%BF%E7%94%A8/%E5%90%AB%E4%B9%89.png" alt="含义"></p>
