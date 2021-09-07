@@ -161,8 +161,8 @@
       </categories>
       <tags>
         <tag>深度学习</tag>
-        <tag>cv</tag>
         <tag>numpy</tag>
+        <tag>cv</tag>
       </tags>
   </entry>
   <entry>
@@ -473,9 +473,9 @@
         <category>cv</category>
       </categories>
       <tags>
-        <tag>CAM</tag>
         <tag>深度学习</tag>
         <tag>cv</tag>
+        <tag>CAM</tag>
       </tags>
   </entry>
   <entry>
