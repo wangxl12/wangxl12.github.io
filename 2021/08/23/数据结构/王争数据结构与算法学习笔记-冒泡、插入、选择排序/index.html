@@ -28,7 +28,7 @@
 <meta property="og:description" content="插入排序和冒泡排序的时间复杂度相同，都是O(n2)O(n^2)O(n2)​，在实际的软件开发里，为什么我们更倾向于使用插入排序算法而不是冒泡排序算法呢？">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-08-23T03:28:36.000Z">
-<meta property="article:modified_time" content="2021-09-04T08:11:15.058Z">
+<meta property="article:modified_time" content="2021-09-09T03:14:21.575Z">
 <meta property="article:author" content="WXL">
 <meta property="article:tag" content="数据结构">
 <meta name="twitter:card" content="summary">
@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">16</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -198,7 +198,7 @@
     <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2021/08/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%86%92%E6%B3%A1%E3%80%81%E6%8F%92%E5%85%A5%E3%80%81%E9%80%89%E6%8B%A9%E6%8E%92%E5%BA%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/td.jpg">
       <meta itemprop="name" content="WXL">
       <meta itemprop="description" content="">
     </span>
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-04 16:11:15" itemprop="dateModified" datetime="2021-09-04T16:11:15+08:00">2021-09-04</time>
+                <time title="修改时间：2021-09-09 11:14:21" itemprop="dateModified" datetime="2021-09-09T11:14:21+08:00">2021-09-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,12 +274,21 @@
 <h1>如何分析一个“排序算法”？</h1>
 <h2 id="排序算法的执行效率">排序算法的执行效率</h2>
 <ol>
-<li><strong>最好情况、最坏情况、平均情况时间复杂度</strong></li>
-<li><strong>时间复杂度的系数、常数、低阶</strong></li>
-<li><strong>比较次数和交换（或移动）次数</strong></li>
+<li>
+<p><strong>最好情况、最坏情况、平均情况时间复杂度</strong></p>
+<p>有序度不同的数据，对于排序的执行时间有影响，我们要知道排序算法在不同数据下的性能表现。</p>
+</li>
+<li>
+<p><strong>时间复杂度的系数、常数、低阶</strong></p>
+<p>在实际的软件开发中，我们的排序可能是10个、100个、1000个这样规模很小的数据，所以在同一阶时间复杂度的排序算法性能对比的时候，就要将系数、常数、低阶也考虑进来。</p>
+</li>
+<li>
+<p><strong>比较次数和交换（或移动）次数</strong></p>
+<p>基于比较的排序算法的执行过程，会涉及两种操作，一种是元素的比较大小，另一种是元素交换或移动。所以，如果我们在分析排序算法的执行效率的时候，应该把比较次数和交换（或移动）次数也考虑进去。</p>
+</li>
 </ol>
-<h2 id="排序算法的内存消耗">排序算法的内存消耗</h2>
 <h2 id="排序算法的稳定性">排序算法的稳定性</h2>
+<p>很多数据结构示例中，我们排序都是用</p>
 
     </div>
 
@@ -402,12 +411,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">如何分析一个“排序算法”？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%89%A7%E8%A1%8C%E6%95%88%E7%8E%87"><span class="nav-number">1.1.</span> <span class="nav-text">排序算法的执行效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E5%86%85%E5%AD%98%E6%B6%88%E8%80%97"><span class="nav-number">1.2.</span> <span class="nav-text">排序算法的内存消耗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-number">1.3.</span> <span class="nav-text">排序算法的稳定性</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">如何分析一个“排序算法”？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%89%A7%E8%A1%8C%E6%95%88%E7%8E%87"><span class="nav-number">1.1.</span> <span class="nav-text">排序算法的执行效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-number">1.2.</span> <span class="nav-text">排序算法的稳定性</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="WXL"
+      src="/images/td.jpg">
   <p class="site-author-name" itemprop="name">WXL</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -416,7 +427,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
