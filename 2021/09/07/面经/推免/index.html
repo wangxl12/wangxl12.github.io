@@ -31,7 +31,7 @@
 <meta property="og:image" content="https://wangxl12.github.io/2021/09/07/%E9%9D%A2%E7%BB%8F/%E6%8E%A8%E5%85%8D/表2.png">
 <meta property="og:image" content="https://wangxl12.github.io/2021/09/07/%E9%9D%A2%E7%BB%8F/%E6%8E%A8%E5%85%8D/表3.png">
 <meta property="article:published_time" content="2021-09-07T10:26:06.000Z">
-<meta property="article:modified_time" content="2021-09-07T12:13:18.521Z">
+<meta property="article:modified_time" content="2021-09-10T06:52:34.492Z">
 <meta property="article:author" content="WXL">
 <meta property="article:tag" content="面经">
 <meta property="article:tag" content="推免">
@@ -222,10 +222,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-09-07 18:26:06 / 修改时间：20:13:18" itemprop="dateCreated datePublished" datetime="2021-09-07T18:26:06+08:00">2021-09-07</time>
+              <time title="创建时间：2021-09-07 18:26:06" itemprop="dateCreated datePublished" datetime="2021-09-07T18:26:06+08:00">2021-09-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-09-10 14:52:34" itemprop="dateModified" datetime="2021-09-10T14:52:34+08:00">2021-09-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -298,7 +304,25 @@
 </ul>
 <p><strong>结论</strong>：由此可见，符合3NF要求的数据库设计，<strong>基本</strong>上解决了数据冗余过大，插入异常，修改异常，删除异常的问题。当然，在实际中，往往为了性能上或者应对扩展的需要，经常 做到2NF或者1NF</p>
 <p><strong>BC范式</strong>：在3NF的基础上，解决<strong>主属性</strong>对于码的部分函数依赖和传递函数依赖。</p>
-<h2 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h2><h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><h1 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h1><ol>
+<h2 id="OS"><a href="#OS" class="headerlink" title="OS"></a>OS</h2><h3 id="实时系统和分时系统的区别"><a href="#实时系统和分时系统的区别" class="headerlink" title="实时系统和分时系统的区别"></a>实时系统和分时系统的区别</h3><p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_38315190/article/details/80613771">https://blog.csdn.net/qq_38315190/article/details/80613771</a></p>
+<p><strong>实时系统</strong>：保证在一定的时间限制内完成特定功能的操作系统。小的嵌入式操作系统经常需要实时操作系统，内核要满足实时操作系统的要求。例如，可以为确保生产线上的机器人能获取某个物体而设计一个操作系统。</p>
+<p><strong>分时系统</strong>：使一台计算机同时为几个、几十个甚至几百个用户服务的一种操作系统。</p>
+<h3 id="同步和互斥的区别"><a href="#同步和互斥的区别" class="headerlink" title="同步和互斥的区别"></a>同步和互斥的区别</h3><p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/goodluckwhh/article/details/8535775">https://blog.csdn.net/goodluckwhh/article/details/8535775</a></p>
+<p><strong>互斥</strong>：互斥是两个任务之间不可以同时运行，他们会相互排斥，必须等待一个线程运行完毕，另一个才能运行。</p>
+<p><strong>同步</strong>：同步也是不能同时运行，但他是必须要安照某种次序来运行相应的线程（也是一种互斥）。</p>
+<p>互斥具有唯一性和排它性，但互斥并不限制任务的运行顺序，即任务是无序的。而同步的任务之间则有顺序关系。</p>
+<h3 id="进程和线程之间的区别"><a href="#进程和线程之间的区别" class="headerlink" title="进程和线程之间的区别"></a>进程和线程之间的区别</h3><p><strong>进程</strong>是程序在计算机上的一次执行活动。当你运行一个程序，你就启动了一个进程。凡是用于完成操作系统的各种功能的进程就是系统进程，它们就是处于运行状态下的操作系统本身；其它进程就是用户进程。<strong>线程</strong>是OS调度的基本单位，在基于线程的多任务的环境中，所有进程有至少一个线程，但是它们可以具有多个任务。这意味着单个程序可以并发执行两个或者多个任务。多进程与多线程相比，每个<strong>进程</strong>都有一个<strong>完整的地址空间</strong>和<strong>操作环境状态</strong>。每个进程用于创建和维护大量状态信息的成本，与一个线程相比，无论是在时间上还是空间上代价都更高。此外，进程间所固有的独立性使得程序员需要花费很多精力来处理不同进程间的通信。</p>
+<p>进程的资源主要包括：</p>
+<ul>
+<li>地址空间（涉及到同步互斥的地址段主要是数据段和堆栈段）；</li>
+<li>打开的文件句柄。</li>
+</ul>
+<p>线程中的资源：一个进程中的所有线程共享进程的地址空间（数据段/堆）、打开的文件句柄。由线程独享的资源包括：</p>
+<ul>
+<li>栈；</li>
+<li>线程专有数据区。</li>
+</ul>
+<h2 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h2><h1 id="英语"><a href="#英语" class="headerlink" title="英语"></a>英语</h1><ol>
 <li><strong>Please introduce yourself briefly.</strong></li>
 <li><strong>Why do you choose our school?</strong></li>
 <li><strong>Could you tell us something about your university?</strong></li>
@@ -441,7 +465,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%93%E4%B8%9A%E8%AF%BE"><span class="nav-number">1.</span> <span class="nav-text">专业课</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DB"><span class="nav-number">1.1.</span> <span class="nav-text">DB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%B8%B8%E8%A7%81%E8%AE%BE%E8%AE%A1%E8%8C%83%E5%BC%8F%EF%BC%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何理解关系型数据库的常见设计范式？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS"><span class="nav-number">1.2.</span> <span class="nav-text">OS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network"><span class="nav-number">1.3.</span> <span class="nav-text">Network</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8B%B1%E8%AF%AD"><span class="nav-number">2.</span> <span class="nav-text">英语</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%93%E4%B8%9A%E8%AF%BE"><span class="nav-number">1.</span> <span class="nav-text">专业课</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DB"><span class="nav-number">1.1.</span> <span class="nav-text">DB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E5%85%B3%E7%B3%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%B8%B8%E8%A7%81%E8%AE%BE%E8%AE%A1%E8%8C%83%E5%BC%8F%EF%BC%9F"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何理解关系型数据库的常见设计范式？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#OS"><span class="nav-number">1.2.</span> <span class="nav-text">OS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E6%97%B6%E7%B3%BB%E7%BB%9F%E5%92%8C%E5%88%86%E6%97%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.1.</span> <span class="nav-text">实时系统和分时系统的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E5%92%8C%E4%BA%92%E6%96%A5%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.2.</span> <span class="nav-text">同步和互斥的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.3.</span> <span class="nav-text">进程和线程之间的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network"><span class="nav-number">1.3.</span> <span class="nav-text">Network</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8B%B1%E8%AF%AD"><span class="nav-number">2.</span> <span class="nav-text">英语</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -612,6 +636,61 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
