@@ -27,15 +27,15 @@
 <meta property="og:site_name" content="WXL&#39;s blog">
 <meta property="og:description" content="贪心算法有很多经典应用，比如霍夫曼编码、Prim和Kruskal最小生成树算法、Dijkstra单源最短路径算法。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wangxl12.github.io/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/%E5%B8%A6%E6%9D%83%E5%9B%BE.png">
-<meta property="og:image" content="https://wangxl12.github.io/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/带权图.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/霍夫曼编码.png">
 <meta property="article:published_time" content="2021-09-12T02:25:07.000Z">
-<meta property="article:modified_time" content="2021-09-12T05:02:28.288Z">
+<meta property="article:modified_time" content="2021-09-12T06:04:51.293Z">
 <meta property="article:author" content="WXL">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="贪心">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wangxl12.github.io/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/%E5%B8%A6%E6%9D%83%E5%9B%BE.png">
+<meta name="twitter:image" content="https://wangxl12.github.io/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/带权图.png">
 
 <link rel="canonical" href="https://wangxl12.github.io/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/">
 
@@ -223,7 +223,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-09-12 10:25:07 / 修改时间：13:02:28" itemprop="dateCreated datePublished" datetime="2021-09-12T10:25:07+08:00">2021-09-12</time>
+              <time title="创建时间：2021-09-12 10:25:07 / 修改时间：14:04:51" itemprop="dateCreated datePublished" datetime="2021-09-12T10:25:07+08:00">2021-09-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -269,8 +269,8 @@
       
         <p>贪心算法有很多经典应用，比如霍夫曼编码、Prim和Kruskal最小生成树算法、Dijkstra单源最短路径算法。</p>
 <span id="more"></span>
-<h1>理解贪心算法</h1>
-<p>举个例子：假设有一个可以容纳100kg 物品的背包，可以装各种物品，有以下 5 种豆子，每种豆子的总量和总价值都各不相同。为了让背包中所装物品的总价值最大，我们如何选择在背包中装哪些豆子？每种豆子又该装多少呢？</p>
+<h1 id="理解贪心算法"><a href="#理解贪心算法" class="headerlink" title="理解贪心算法"></a>理解贪心算法</h1><p>举个例子：假设有一个可以容纳100kg 物品的背包，可以装各种物品，有以下 5 种豆子，每种豆子的总量和总价值都各不相同。为了让背包中所装物品的总价值最大，我们如何选择在背包中装哪些豆子？每种豆子又该装多少呢？</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -307,32 +307,34 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>我们可以先计算每一种豆子的单价，然后按照单价从高到底一次来装即可。本问题的本质就是贪心算法，接下来总结一下贪心算法的步骤：</p>
 <ol>
 <li>当看到这类问题的时候，可以联想到贪心：针对一组数据，我们定义了<strong>限制值</strong>和<strong>期望值</strong>，希望从中选出几个数据，在满足限制值的情况下，期望值最大。上述例子中，期望值就是背包装的物品的总价值，限制值就是背包能装的100kg重量。</li>
 <li>尝试看看这个问题能否使用贪心解决：每次选择当前情况下，在<strong>对限制值同等贡献量的情况下，对期望值贡献最大的数据</strong>。上述例子中，每次从剩下的豆子中，选择单价最高的，也就是重量相同的情况下，对价值贡献最大的豆子。</li>
 <li>贪心产生的结果是否最优：大部分是最优，但是并不是总能给出最优解。例如：求出下面有向带权图中从S点到达T点的最短路径。贪心的思路是每次从中选出当期结点权值最小的边，直到T点。按照这样的思路求出的最短路径是：S-&gt;A-&gt;E-&gt;T，路径长度为1+4+4=9。但是实际上最短路径应该是：S-&gt;B-&gt;D-&gt;T。<strong>贪心算法在这里不工作的主要原因是，前面的选择会影响后面的选择。</strong></li>
 </ol>
-<p><img src="/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/%E5%B8%A6%E6%9D%83%E5%9B%BE.png" alt="带权图"></p>
-<h1>贪心算法实战分析</h1>
-<h2 id="分糖果">分糖果</h2>
-<p>我们有 m 个糖果和 n 个孩子。我们现在要把糖果分给这些孩子吃，但是糖果少，孩子多（m&lt;n)，所以糖果只能分配给一部分孩子。</p>
+<p><img src="/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/带权图.png" alt="带权图"></p>
+<h1 id="贪心算法实战分析"><a href="#贪心算法实战分析" class="headerlink" title="贪心算法实战分析"></a>贪心算法实战分析</h1><h2 id="分糖果"><a href="#分糖果" class="headerlink" title="分糖果"></a>分糖果</h2><p>我们有 m 个糖果和 n 个孩子。我们现在要把糖果分给这些孩子吃，但是糖果少，孩子多（m&lt;n)，所以糖果只能分配给一部分孩子。</p>
 <p>每个糖果的大小不等，这 m 个糖果的大小分别是 s1，s2，s3，……，sm。除此之外，每个孩子对糖果大小的需求也是不一样的，只有糖果的大小大于等于孩子的对糖果大小的需求的时候，孩子才得到满足。假设这 n 个孩子对糖果大小的需求分别是 g1，g2，g3，……，gn。</p>
 <p>如何分配糖果，能尽可能满足最多数量的孩子？</p>
 <p>这个问题中，<strong>期望值</strong>是满足的孩子个数，<strong>限制值</strong>是糖果的个数。</p>
 <p><strong>使用贪心算法来分析</strong>：对于一个孩子来说，如果小的糖果可以满足，我们就没必要用更大的糖果，这样更大的就可以留给其他对糖果大小需求更大的孩子。我们每次从剩下的孩子中，找出对糖果大小需求最小的，然后发给他剩下的糖果中能满足他的最小的糖果，这样得到的分配方案，也就是满足的孩子个数最多的方案。</p>
-<h2 id="钱币找零">钱币找零</h2>
-<p>假设我们有 1 元、2 元、5 元、10 元、20 元、50 元、100 元这些面额的纸币，它们的张数分别是 c1、c2、c5、c10、c20、c50、c100。我们现在要用这些钱来支付 K 元，最少要用多少张纸币呢？</p>
+<h2 id="钱币找零"><a href="#钱币找零" class="headerlink" title="钱币找零"></a>钱币找零</h2><p>假设我们有 1 元、2 元、5 元、10 元、20 元、50 元、100 元这些面额的纸币，它们的张数分别是 c1、c2、c5、c10、c20、c50、c100。我们现在要用这些钱来支付 K 元，最少要用多少张纸币呢？</p>
 <p>在生活中，我们肯定是先用面值最大的来支付，如果不够，就继续用更小一点面值的，以此类推，最后剩下的用 1 元来补齐。在贡献相同期望值（纸币数目）的情况下，我们希望多贡献点金额，这样就可以让纸币数更少。</p>
-<h2 id="区间覆盖">区间覆盖</h2>
-<p>我们有 n 个区间，区间的起始端点和结束端点分别是[l1, r1]，[l2, r2]，[l3, r3]，……，[ln, rn]。我们从这 n 个区间中选出一部分区间，这部分区间满足两两不相交（端点相交的情况不算相交），最多能选出多少个区间呢？</p>
+<h2 id="区间覆盖"><a href="#区间覆盖" class="headerlink" title="区间覆盖"></a>区间覆盖</h2><p>我们有 n 个区间，区间的起始端点和结束端点分别是[l1, r1]，[l2, r2]，[l3, r3]，……，[ln, rn]。我们从这 n 个区间中选出一部分区间，这部分区间满足两两不相交（端点相交的情况不算相交），最多能选出多少个区间呢？</p>
 <p>我们每次选择的时候，左端点跟前面的已经覆盖的区间不重合的，右端点又尽量小的，这样可以让剩下的未覆盖区间尽可能的大，就可以放置更多的区间。这实际上就是一种贪心的选择方法。</p>
-<h1>如何使用贪心算法实现霍夫曼编码？</h1>
-<p>假设我有一个包含 1000 个字符的文件，每个字符占 1 个 byte（1byte=8bits），存储这 1000 个字符就一共需要 8000bits，那有没有更加节省空间的存储方式呢？</p>
+<h2 id="移除数字"><a href="#移除数字" class="headerlink" title="移除数字"></a>移除数字</h2><p>在一个非负整数 a 中，我们希望从中移除 k 个数字，让剩下的数字值最小，如何选择移除哪 k 个数字呢？</p>
+<p>限定条件是移除k个数字，扫描两个相邻的数字，如果左边大于右边，删除左边，否则指针右移；如果指针已经到达了最后一个数字，但是仍然没有删除够k个数字，那么直接从最后一个数字开始删除。重复上述步骤直至删除了k个数字。</p>
+<h2 id="等待服务"><a href="#等待服务" class="headerlink" title="等待服务"></a>等待服务</h2><p>假设有 n 个人等待被服务，但是服务窗口只有一个，每个人需要被服务的时间长度是不同的，如何安排被服务的先后顺序，才能让这 n 个人总的等待时间最短？</p>
+<p>期望值是等待时间总和最短，限制条件是窗口只有一个且每次只能服务一个人。每次服务一个人对总的贡献值不同，如果先从时间最短的人开始，那么后面的人等待的时间就是最短的；如果先从时间最长的人开始，那么后面的人等待的时间就是最长的。所以需要最优就得时间最短的人先开始。</p>
+<p>贪心算法所产生的一个效果是在局部最优的情况下每次选择剩余数据中最优的数据，那么最后选择的数据可能是最优的(这里不是一定最优，因为局部最优不能确保全局最优)</p>
+<h1 id="如何使用贪心算法实现霍夫曼编码？"><a href="#如何使用贪心算法实现霍夫曼编码？" class="headerlink" title="如何使用贪心算法实现霍夫曼编码？"></a>如何使用贪心算法实现霍夫曼编码？</h1><p>假设我有一个包含 1000 个字符的文件，每个字符占 1 个 byte（1byte=8bits），存储这 1000 个字符就一共需要 8000bits，那有没有更加节省空间的存储方式呢？</p>
 <p>假设我们通过统计分析发现，这 1000 个字符中<strong>只包含 6 种不同字符</strong>，假设它们分别是 a、b、c、d、e、f。而 3 个二进制位（bit）就可以表示 8 个不同的字符，所以，为了尽量减少存储空间，<strong>每个字符我们用 3 个二进制位来表示</strong>。那存储这 1000 个字符只需要 3000bits 就可以了，比原来的存储方式节省了很多空间。不过，还有没有更加节省空间的存储方式呢？</p>
-<p><strong>霍夫曼编码</strong>是一种十分有效的编码方法，广泛用于数据压缩中，其压缩率通常在 20%～90% 之间。霍夫曼编码不仅会考察文本中有多少个不同字符，还会考察每个字符出现的频率，<strong>根据频率的不同，选择不同长度的编码。<strong>霍夫曼编码试图用这种</strong>不等长的编码方法</strong>，来进一步增加压缩的效率。如何给不同频率的字符选择不同长度的编码呢？根据<strong>贪心的思想</strong>，我们可以<strong>把出现频率比较多的字符，用稍微短一些的编码</strong>；<strong>出现频率比较少的字符，用稍微长一些的编码</strong>。这样，我们就可以<strong>减少整个文件的二进制位数量。</strong></p>
+<p><strong>霍夫曼编码</strong>是一种十分有效的编码方法，广泛用于数据压缩中，其压缩率通常在 20%～90% 之间。霍夫曼编码不仅会考察文本中有多少个不同字符，还会考察每个字符出现的频率，<strong>根据频率的不同，选择不同长度的编码。</strong>霍夫曼编码试图用这种<strong>不等长的编码方法</strong>，来进一步增加压缩的效率。如何给不同频率的字符选择不同长度的编码呢？根据<strong>贪心的思想</strong>，我们可以<strong>把出现频率比较多的字符，用稍微短一些的编码</strong>；<strong>出现频率比较少的字符，用稍微长一些的编码</strong>。这样，我们就可以<strong>减少整个文件的二进制位数量。</strong></p>
 <p>对于等长的编码来说，我们解压缩起来很简单。<strong>霍夫曼编码是不等长的</strong>，每次应该读取 1 位还是 2 位、3 位等等来解压缩呢？这个问题就导致霍夫曼编码解压缩起来比较复杂。为了避免解压缩过程中的歧义，霍夫曼编码要求<strong>各个字符的编码之间，不会出现某个编码是另一个编码前缀的情况。</strong></p>
 <p>假设这 6 个字符出现的频率从高到低依次是 a、b、c、d、e、f。我们把它们编码下面这个样子，任何一个字符的编码都不是另一个的前缀，经过这种编码压缩之后，这 1000 个字符只需要 2100bits 就可以了。</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -381,9 +383,10 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>我们把每个字符看作一个节点，并且附带着把频率放到优先级队列中。我们从队列中取出频率最小的两个节点 A、B，然后新建一个节点 C，把频率设置为两个节点的频率之和，并把这个新节点 C 作为节点 A、B 的父节点。最后再把 C 节点放入到优先级队列中。重复这个过程，直到队列中没有数据。</p>
 <p>现在，我们给每一条边加上画一个权值，指向左子节点的边我们统统标记为 0，指向右子节点的边，我们统统标记为 1，那从根节点到叶节点的路径就是叶节点对应字符的霍夫曼编码。</p>
-<p><img src="/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81.png" alt="霍夫曼编码"></p>
+<p><img src="/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/霍夫曼编码.png" alt="霍夫曼编码"></p>
 <p>在霍夫曼编码中，<strong>预期值</strong>是<strong>二进制位数总和</strong>，<strong>限定值</strong>虽然没有显示说出，但是英文字母有26位，我们用超过26位的二进制位来表示显然是不合理的，所以我们可以将限定值看作<strong>表示一个字符的二进制位长度最长为26</strong>。那么贪心的思想就体现在：使用最短的二进制位数总和来表示这个文件的所有字符。</p>
 
     </div>
@@ -505,7 +508,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">理解贪心算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">贪心算法实战分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B3%96%E6%9E%9C"><span class="nav-number">2.1.</span> <span class="nav-text">分糖果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%B1%E5%B8%81%E6%89%BE%E9%9B%B6"><span class="nav-number">2.2.</span> <span class="nav-text">钱币找零</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E8%A6%86%E7%9B%96"><span class="nav-number">2.3.</span> <span class="nav-text">区间覆盖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">如何使用贪心算法实现霍夫曼编码？</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%90%86%E8%A7%A3%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">理解贪心算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E5%AE%9E%E6%88%98%E5%88%86%E6%9E%90"><span class="nav-number">2.</span> <span class="nav-text">贪心算法实战分析</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B3%96%E6%9E%9C"><span class="nav-number">2.1.</span> <span class="nav-text">分糖果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%92%B1%E5%B8%81%E6%89%BE%E9%9B%B6"><span class="nav-number">2.2.</span> <span class="nav-text">钱币找零</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%BA%E9%97%B4%E8%A6%86%E7%9B%96"><span class="nav-number">2.3.</span> <span class="nav-text">区间覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E9%99%A4%E6%95%B0%E5%AD%97"><span class="nav-number">2.4.</span> <span class="nav-text">移除数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E6%9C%8D%E5%8A%A1"><span class="nav-number">2.5.</span> <span class="nav-text">等待服务</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E9%9C%8D%E5%A4%AB%E6%9B%BC%E7%BC%96%E7%A0%81%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">如何使用贪心算法实现霍夫曼编码？</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
