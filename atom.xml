@@ -85,7 +85,7 @@
     <updated>2021-09-10T06:52:34.492Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;专业课&quot;&gt;&lt;a href=&quot;#专业课&quot; class=&quot;headerlink&quot; title=&quot;专业课&quot;&gt;&lt;/a&gt;专业课&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1&gt;专业课&lt;/h1&gt;</summary>
     
     
     
@@ -144,7 +144,7 @@
     <updated>2021-09-05T13:46:21.083Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;numpy广播在语义分割上的妙用&quot;&gt;&lt;a href=&quot;#numpy广播在语义分割上的妙用&quot; class=&quot;headerlink&quot; title=&quot;numpy广播在语义分割上的妙用&quot;&gt;&lt;/a&gt;numpy广播在语义分割上的妙用&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1&gt;numpy广播在语义分割上的妙用&lt;/h1&gt;</summary>
     
     
     
@@ -155,9 +155,9 @@
     
     <category term="深度学习" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="numpy" scheme="https://wangxl12.github.io/tags/numpy/"/>
-    
     <category term="cv" scheme="https://wangxl12.github.io/tags/cv/"/>
+    
+    <category term="numpy" scheme="https://wangxl12.github.io/tags/numpy/"/>
     
   </entry>
   
@@ -303,11 +303,11 @@
     <category term="cv" scheme="https://wangxl12.github.io/categories/cv/"/>
     
     
+    <category term="CAM" scheme="https://wangxl12.github.io/tags/CAM/"/>
+    
     <category term="深度学习" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="cv" scheme="https://wangxl12.github.io/tags/cv/"/>
-    
-    <category term="CAM" scheme="https://wangxl12.github.io/tags/CAM/"/>
     
   </entry>
   
