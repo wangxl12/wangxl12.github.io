@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-09-22T07:25:09.705Z</updated>
+  <updated>2021-09-22T07:35:57.503Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -17,11 +17,24 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>王争数据结构与算法学习笔记-动态规划</title>
+    <link href="https://wangxl12.github.io/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    <id>https://wangxl12.github.io/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</id>
+    <published>2021-09-22T07:35:57.000Z</published>
+    <updated>2021-09-22T07:35:57.503Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>王争数据结构与算法学习笔记-回溯算法</title>
     <link href="https://wangxl12.github.io/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/"/>
     <id>https://wangxl12.github.io/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</id>
     <published>2021-09-22T03:10:37.000Z</published>
-    <updated>2021-09-22T07:25:09.705Z</updated>
+    <updated>2021-09-22T07:26:48.648Z</updated>
     
     
     <summary type="html">&lt;p&gt;2004 年上映了一部非常著名的电影《蝴蝶效应》，讲的就是主人公为了达到自己的目标，一直通过回溯的方法，回到童年，在关键的岔路口，重新做选择。当然，这只是科幻电影，我们的人生是无法倒退的，但是这其中蕴含的思想其实就是回溯算法。&lt;/p&gt;</summary>
@@ -187,7 +200,7 @@
     <link href="https://wangxl12.github.io/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/"/>
     <id>https://wangxl12.github.io/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/</id>
     <published>2021-08-23T03:39:44.000Z</published>
-    <updated>2021-09-04T08:12:13.378Z</updated>
+    <updated>2021-10-05T07:51:27.413Z</updated>
     
     
     <summary type="html">&lt;h1&gt;深度学习&lt;/h1&gt;</summary>
@@ -408,26 +421,6 @@
     
     
     <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>刷算法---2021.08</title>
-    <link href="https://wangxl12.github.io/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/"/>
-    <id>https://wangxl12.github.io/2021/08/14/%E5%88%B7%E7%AE%97%E6%B3%95/%E5%88%B7%E7%AE%97%E6%B3%95-2021-08/</id>
-    <published>2021-08-14T08:20:46.000Z</published>
-    <updated>2021-09-04T08:09:58.137Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;从2021年8月中旬开始刷题。&lt;/p&gt;&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="刷算法" scheme="https://wangxl12.github.io/categories/%E5%88%B7%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="刷算法" scheme="https://wangxl12.github.io/tags/%E5%88%B7%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   

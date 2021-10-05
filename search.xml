@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>王争数据结构与算法学习笔记-动态规划</title>
+    <url>/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>王争数据结构与算法学习笔记-回溯算法</title>
     <url>/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<p>2004 年上映了一部非常著名的电影《蝴蝶效应》，讲的就是主人公为了达到自己的目标，一直通过回溯的方法，回到童年，在关键的岔路口，重新做选择。当然，这只是科幻电影，我们的人生是无法倒退的，但是这其中蕴含的思想其实就是回溯算法。</p>
@@ -19,6 +24,8 @@
 <h2 id="正则表达式">正则表达式</h2>
 <p>我们依次考察正则表达式中的每个字符，当是非通配符时，我们就直接跟文本的字符进行匹配，如果相同，则继续往下处理；如果不同，则回溯。</p>
 <p>如果遇到特殊字符的时候，我们就有多种处理方式了，也就是所谓的岔路口，比如“*”有多种匹配方案，可以匹配任意个文本串中的字符，我们就先随意的选择一种匹配方案，然后继续考察剩下的字符。如果中途发现无法继续匹配下去了，我们就回到这个岔路口，重新选择一种匹配方案，然后再继续匹配剩下的字符。</p>
+<p><strong>思考：</strong></p>
+<p>如果对0-1 背包问题稍加改造，如果每个物品不仅重量不同，价值也不同。如何在不超过背包重量的情况下，让背包中的总价值最大？</p>
 ]]></content>
       <categories>
         <category>数据结构</category>
@@ -495,22 +502,98 @@
     <url>/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/</url>
     <content><![CDATA[<h1>深度学习</h1>
 <span id="more"></span>
-<h2 id="bilibli">bilibli</h2>
+<h2 id="1-bilibli">1. bilibli</h2>
 <h3 id="同济子豪兄">同济子豪兄</h3>
 <p><a href="https://search.bilibili.com/all?keyword=%E5%90%8C%E6%B5%8E%E5%AD%90%E8%B1%AA%E5%85%84&amp;from_source=websuggest_search">主页</a></p>
 <p><a href="https://www.bilibili.com/video/BV1K7411W7So">精讲CS231N斯坦福计算机视觉公开课</a></p>
 <h3 id="其他up主">其他up主</h3>
 <p><a href="https://www.bilibili.com/video/BV1nJ411z7fe?from=search&amp;seid=1219562638128911509">最新斯坦福李飞飞cs231n计算机视觉课程</a></p>
-<h2 id="github">GitHub</h2>
+<h2 id="2-github">2. GitHub</h2>
 <h3 id="李沐">李沐</h3>
 <p><a href="https://github.com/d2l-ai">动手学深度学习</a></p>
 <p><a href="https://d2l.ai/index.html">dive into deep learning</a></p>
 <p><a href="https://discuss.d2l.ai/">论坛</a></p>
-<p><a href></a></p>
+<h2 id="3-federated-learning">3. Federated learning</h2>
+<p><a href="https://github.com/FedML-AI/FedML">github.com/FedML-AI/FedML</a></p>
+<p><a href="https://www.bilibili.com/video/BV1jK411N7gS/">FedML联邦机器学习框架视频教学全集 fedml.ai</a></p>
+<p><a href="https://github.com/FederatedAI/FATE">github.com/FederatedAI/FATE</a></p>
+<p>[FATE Pipeline</p>
+<p><a href="https://blog.csdn.net/weixin_45439861/article/details/100670390">只看这一篇就够：快速了解联邦学习技术及应用实践</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/65403693">联邦学习的研究及应用</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/97854070#:~:text=Communication-Efficient%20Learning%20of%20Deep%20Networks,from%20Decentralized%20Data%20Federated%20Averaging%E7%AE%97%E6%B3%95%E6%80%BB%E5%85%B1%E6%9C%89%E4%B8%89%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%8CC%EF%BC%880%E5%88%B01%EF%BC%89%E6%8E%A7%E5%88%B6%E6%9C%89%E5%A4%9A%E5%B0%91%E6%AF%94%E4%BE%8B%E7%9A%84%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8F%82%E4%B8%8E%E4%BC%98%E5%8C%96%EF%BC%8CE%E6%8E%A7%E5%88%B6%E6%AF%8F%E4%B8%80%E8%BD%AE%E5%A4%9A%E5%B0%91%E8%BD%AESGD%E9%9C%80%E8%A6%81%E5%9C%A8%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%90%E8%A1%8C%EF%BC%8CB%E6%98%AF%E6%AF%8F%E4%B8%80%E8%BD%AE%E7%9A%84Mini-Batch%E7%9A%84%E6%95%B0%E7%9B%AE%E5%A4%A7%E5%B0%8F%E3%80%82">2019联邦学习综述</a></p>
+<p><a href="https://www.birentech.com/news/104.html"><strong>联邦学习模型在医学图像处理领域中的应用实例分析</strong></a></p>
+<p><a href="https://blog.csdn.net/lgzlgz3102/article/details/117433511">联邦学习在视觉领域的应用</a></p>
+<h2 id="4-meta-learning">4. Meta learning</h2>
+<p><a href="https://easyai.tech/ai-definition/meta-learning/">easyai</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/136975128">一文入门元学习（Meta-Learning）（附代码）</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/181709693#:~:text=MAML%EF%BC%8C%E5%85%A8%E7%A7%B0%E5%91%BC%E5%8F%AB%E5%81%9A%20Model-Agnostic%20Meta-Learning%20%EF%BC%8C%E6%84%8F%E6%80%9D%E5%B0%B1%E6%98%AF%20%E6%A8%A1%E5%9E%8B%E6%97%A0%E5%85%B3%E7%9A%84%E5%85%83%E5%AD%A6%E4%B9%A0%E3%80%82,%E6%89%80%E4%BB%A5MAML%E5%8F%AF%20%E5%B9%B6%E4%B8%8D%E6%98%AF%E4%B8%80%E4%B8%AA%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B%20%EF%BC%8C%E5%80%92%E6%98%AF%E6%9B%B4%E5%83%8F%E4%B8%80%E7%A7%8D%20%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7%20%E3%80%82">[meta-learning] 对MAML的深度解析</a></p>
+<p><a href="https://github.com/sudharsan13296/Hands-On-Meta-Learning-With-Python">github.com/sudharsan13296/Hands-On-Meta-Learning-With-Python</a></p>
+<p><a href="https://github.com/floodsung/Meta-Learning-Papers">github.com/floodsung/Meta-Learning-Papers</a></p>
+<p><a href="https://github.com/sudharsan13296/Awesome-Meta-Learning">github.com/sudharsan13296/Awesome-Meta-Learning</a></p>
+<p><a href="https://www.pianshen.com/article/7537868304/">小样本学习（Few-shot Learning）与元学习(meta-learning)初步</a></p>
+<p><a href="https://blog.csdn.net/sdu_hao/article/details/104449203">元学习与小样本学习 | (1) 元学习(Meta Learning)概述</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/70044607">元学习（Meta Learning）最全论文、视频、书籍资源整理</a></p>
+<h2 id="5-paddlepaddle">5. paddlepaddle</h2>
+<p><a href="https://aistudio.baidu.com/aistudio/lhycourse">李宏毅教程</a></p>
+<h2 id="6-人体姿态估计">6. 人体姿态估计</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/270935572">人体姿态估计论文笔记-CPN</a></p>
+<p><a href="https://www.pianshen.com/article/5362139895/">『算法学习』CPN：Cascaded Pyramid Network for Multi-Person Pose Estimation</a></p>
+<p><a href="https://www.cnblogs.com/hellcat/p/10138036.html">『关键点检测』CPN：Cascaded Pyramid Network for Multi-Person Pose Estimation</a></p>
+<p><a href="https://blog.csdn.net/xu_fu_yong/article/details/93169030">CPN:Cascaded Pyramid Network for Multi-Person Pose Estimation_及CPN实现</a></p>
+<p><a href="https://www.aiuai.cn/aifarm446.html">论文阅读 - Cascaded Pyramid Network for Multi-Person Pose Estimation</a></p>
+<h2 id="7-目标检测">7. 目标检测</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/24916786">图解yolo</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/35325884">目标检测|YOLOv2原理与实现(附YOLOv3)</a></p>
+<p><a href="https://blog.csdn.net/zijin0802034/article/details/77097894">YOLO9000: Better, Faster, Stronger</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/47575929">YOLOv2 / YOLO9000 深入理解</a></p>
+<p><a href="https://www.jianshu.com/p/d13ae1055302">yolov3深入理解</a></p>
+<p><a href="https://www.jianshu.com/p/043966013dde">yolov3详解</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/63024247">锚框：Anchor box综述</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/145842317">捋一捋pytorch官方FasterRCNN代码</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzA4MjY4NTk0NQ==&amp;mid=2247493955&amp;idx=1&amp;sn=82133ce8bbbd1872199a5a50f2a37f71&amp;chksm=9f8353d5a8f4dac3d0d8c2d618952d0d010450c82d4efb178a49e4b80192680bf98c2787e1f7&amp;mpshare=1&amp;scene=23&amp;srcid=0407AjRmMHbhPklvpx9iNi5C&amp;sharer_sharetime=1617772180171&amp;sharer_shareid=8c69c1f41758aecb75107bb31071c464#rd">Towards Open World Object Detection -CVPR2021 Oral（开放世界中的目标检测）</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/42553957">Cascade R-CNN 详细解读</a></p>
+<h2 id="8-transformer">8. transformer</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/61440116">计算机视觉中attention机制的理解</a></p>
+<p><a href="https://www.jianshu.com/p/9b87b945151e">transformer模型讲解</a></p>
+<p><a href="http://jalammar.github.io/illustrated-transformer/">The Illustrated Transformer</a></p>
+<h2 id="9-cam">9. CAM</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/75894080">PyTorch的hook及其在Grad-CAM中的应用</a></p>
+<h2 id="10-gnn">10. GNN</h2>
+<p><a href="https://developer.huaweicloud.com/hero/forum.php?mod=viewthread&amp;tid=109580">2021年必火的图神经网络到底是什么？</a></p>
+<p><a href="https://jonathan-hui.medium.com/applications-of-graph-neural-networks-gnn-d487fd5ed17d">Applications of Graph Neural Networks (GNN)</a></p>
+<h2 id="6-杂项">6. 杂项</h2>
+<p><a href="https://zhuanlan.zhihu.com/p/50142573">L1正则化引起稀疏解的多种解释</a></p>
+<p><a href="https://www.geeksforgeeks.org/how-l1-regularization-brings-sparsity/">How L1 Regularization brings Sparsity</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/105152354">自编码器</a></p>
+<p><a href="https://blog.csdn.net/qq_21611223/article/details/115458913">全局平均池化能否完全代替全连接</a></p>
+<p><a href="https://www.cnblogs.com/silence-cho/p/10926248.html">opencv-python学习基础知识</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/83131026">PyTorch中的损失函数–L1Loss /L2Loss/SmoothL1Loss</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/142755610">IoU、GIoU、DIoU、CIoU</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/25110150">聊一聊深度学习的weight initialization</a></p>
+<p><a href="https://www.zhihu.com/question/315611053">了解/从事机器学习/深度学习系统相关的研究需要什么样的知识结构？</a></p>
+<p><a href="https://www.jiqizhixin.com/articles/2018-06-20-4">这是一份通俗易懂的知识图谱技术与应用指南</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU2NTc5MjIwOA==&amp;mid=2247517502&amp;idx=2&amp;sn=5066c1e5cc46414736b4028e89328edd&amp;chksm=fcb49981cbc310978f2c3f15d15858ffc49afa0757a03d76941e2b586c61af94e51f97e5cf76&amp;mpshare=1&amp;scene=23&amp;srcid=0803pT8dWxbEbZULsblTrW5k&amp;sharer_sharetime=1627987544216&amp;sharer_shareid=8c69c1f41758aecb75107bb31071c464#rd">新突破！Swin-UNet：基于纯 Transformer 结构的医学图像分割网络</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU2NTc5MjIwOA==&amp;mid=2247517502&amp;idx=3&amp;sn=504f3f8bef04f3219dc8f926b786e1bc&amp;chksm=fcb49981cbc3109752ba674e677359f739abe086becca116c4563dfc25caee609ec98554295e&amp;mpshare=1&amp;scene=23&amp;srcid=0803MqpZnMReJaAMRXuyEdaH&amp;sharer_sharetime=1627987652283&amp;sharer_shareid=8c69c1f41758aecb75107bb31071c464#rd">港中文等提出：开放世界实体分割</a></p>
+<p><a href="https://blog.csdn.net/qq_30638831/article/details/83625627">空洞卷积</a></p>
+<p><a href="https://www.jianshu.com/p/2b968e7a1715">感受野</a></p>
+<p><a href="https://blog.csdn.net/litt1e/article/details/105817224">深入理解Batch Normalization原理与作用</a></p>
+<p><a href="https://blog.csdn.net/Li_yi_chao/article/details/80756414">数据标准化</a></p>
+<p><a href="https://blog.csdn.net/u010417185/article/details/79533539">深度学习中Batch size对训练效果的影响</a></p>
+<p><a href="https://www.zhihu.com/question/32673260">深度学习中的batch的大小对学习效果有何影响？</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/64864995">学习率和batchsize如何影响模型的性能？</a></p>
+<h1>Linux</h1>
+<p><a href="https://www.bilibili.com/video/BV1dW411M7xL?p=45&amp;spm_id_from=pageDriver">尚硅谷linux教程</a></p>
 <h1>stanford</h1>
 <p><a href="https://c.d2l.ai/stanford-cs329p/">practical machine learning</a></p>
 <h1>算法</h1>
 <p><a href="https://labuladong.github.io/algo/3/23/57/">labuladong</a></p>
+<p><a href="https://mp.weixin.qq.com/s/qwaYOFIksFVqZtA_nisl6g">编程熊</a></p>
+<p><a href="https://codetop.cc/home">codetop</a></p>
+<h1>stackoverflow</h1>
+<p><a href="https://stackoverflow.com/questions/57189925/sys-modules-name-classname-what-does-it-actually-do">sys.modules[<strong>name</strong>] = _classname(). What does it actually do?</a></p>
+<p><a href="https://stackoverflow.com/questions/448271/what-is-init-py-for?rq=1">What is <strong>init</strong>.py for?</a></p>
+<p><a href="https://stackoverflow.com/questions/17020115/how-to-use-setattr-correctly-avoiding-infinite-recursion">How to use <strong>setattr</strong> correctly, avoiding infinite recursion</a></p>
+<p><a href="https://stackoverflow.com/questions/16981921/relative-imports-in-python-3">Relative imports in Python 3</a></p>
 ]]></content>
       <categories>
         <category>常用链接</category>
