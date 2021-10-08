@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-09-22T07:35:57.503Z</updated>
+  <updated>2021-10-08T13:49:47.906Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>miniconda+tf2.x_gpu+torch_gpu环境配置</title>
+    <link href="https://wangxl12.github.io/2021/10/08/%E9%85%8D%E7%8E%AF%E5%A2%83/miniconda+tf2_gpu+torch_gpu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://wangxl12.github.io/2021/10/08/%E9%85%8D%E7%8E%AF%E5%A2%83/miniconda+tf2_gpu+torch_gpu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
+    <published>2021-10-08T13:17:00.000Z</published>
+    <updated>2021-10-08T13:49:47.906Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;情况描述&lt;/h1&gt;
+&lt;p&gt;需要运行联邦学习图神经网络，同时需要torch和tf2.x，运行图神经网络还用到了stellargraph库，这个库依赖于tf，而且要求tf版本&amp;gt;=2.1.0。&lt;/p&gt;
+&lt;h1&gt;版本适配&lt;/h1&gt;
+&lt;p&gt;首先弄清需要安装的包：torch,</summary>
+        
+      
+    
+    
+    
+    <category term="环境配置" scheme="https://wangxl12.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="环境配置" scheme="https://wangxl12.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>入门与FedML框架使用</title>
+    <link href="https://wangxl12.github.io/2021/10/06/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/%E5%85%A5%E9%97%A8%E4%B8%8EFedML%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/"/>
+    <id>https://wangxl12.github.io/2021/10/06/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/%E5%85%A5%E9%97%A8%E4%B8%8EFedML%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/</id>
+    <published>2021-10-06T11:26:27.000Z</published>
+    <updated>2021-10-06T13:16:21.759Z</updated>
+    
+    
+    <summary type="html">&lt;h1&gt;Why federated learning?&lt;/h1&gt;</summary>
+    
+    
+    
+    <category term="联邦学习" scheme="https://wangxl12.github.io/categories/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="联邦学习" scheme="https://wangxl12.github.io/tags/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="FedML" scheme="https://wangxl12.github.io/tags/FedML/"/>
+    
+  </entry>
   
   <entry>
     <title>王争数据结构与算法学习笔记-动态规划</title>
@@ -198,7 +247,7 @@
     <link href="https://wangxl12.github.io/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/"/>
     <id>https://wangxl12.github.io/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/</id>
     <published>2021-08-23T03:39:44.000Z</published>
-    <updated>2021-10-05T07:51:27.413Z</updated>
+    <updated>2021-10-06T11:29:03.152Z</updated>
     
     
     <summary type="html">&lt;h1&gt;深度学习&lt;/h1&gt;</summary>
@@ -373,45 +422,6 @@
     
     <summary type="html">&lt;p&gt;浏览器的前进后退功能的实现使用到了栈这种数据结构。&lt;/p&gt;
 &lt;p&gt;当依次访问了页面a，b，c，然后后退的时候又可以重新返回到页面b、a，访问的过程属于入栈的功能，后退的过程是出栈的功能。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>王争数据结构与算法学习笔记-链表</title>
-    <link href="https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/"/>
-    <id>https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%93%BE%E8%A1%A8/</id>
-    <published>2021-08-16T12:48:24.000Z</published>
-    <updated>2021-09-04T08:11:03.943Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;链表实现lru&quot;&gt;链表实现LRU&lt;/h2&gt;</summary>
-    
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>王争数据结构与算法学习笔记-数组</title>
-    <link href="https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/"/>
-    <id>https://wangxl12.github.io/2021/08/16/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%95%B0%E7%BB%84/</id>
-    <published>2021-08-16T12:38:31.000Z</published>
-    <updated>2021-09-04T08:11:27.510Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;数组看起来简单基础，但是很多人没有理解这个数据结构的精髓。&lt;code&gt;数组（Array）是一种线性表数据结构。它用一组连续的内存空间，来存储一组具有相同类型的数据&lt;/code&gt;。数组在逻辑上是一种线性表数据结构. 数组在物理上是一种顺序的存储结构。 数组定义的关键词:&lt;/p&gt;&lt;/blockquote&gt;</summary>
     
     
     

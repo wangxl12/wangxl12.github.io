@@ -1,6 +1,97 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>miniconda+tf2.x_gpu+torch_gpu环境配置</title>
+    <url>/2021/10/08/%E9%85%8D%E7%8E%AF%E5%A2%83/miniconda+tf2_gpu+torch_gpu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h1>情况描述</h1>
+<p>需要运行联邦学习图神经网络，同时需要torch和tf2.x，运行图神经网络还用到了stellargraph库，这个库依赖于tf，而且要求tf版本&gt;=2.1.0。</p>
+<h1>版本适配</h1>
+<p>首先弄清需要安装的包：torch, tf2.x, stellargraph, cudatoolkit, cudnn。</p>
+<p>为了不让自己所需要的cuda环境影响到服务器中其他用户的使用，我通过conda安装cudatoolkit来解决。</p>
+<p>通过查找发现，torch和tf2.x共用同一个版本的cuda而且tf版本&gt;2.1.0的就发现一个：CUDA 10.1</p>
+<p>当然我只是通过官方提供的下载指令查找的，如果还是找不到自己需要的版本适配，可以通过<a href="https://download.pytorch.org/whl/torch_stable.html">这个网址</a>自己凑出来torch、torchvision、cuda版本（我没试过，可以尝试一下）。</p>
+<p><strong>下面提供官方下载指令，但是不是下载流程，下载流程请继续往下看。</strong></p>
+<p>官方下载torch指令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.1 -c pytorch</span><br></pre></td></tr></table></figure>
+<p>下载tf2.3指令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tensorflow-gpu==2.3.0</span><br></pre></td></tr></table></figure>
+<h1>安装流程</h1>
+<h2 id="安装miniconda：">安装miniconda：</h2>
+<p>下载安装包：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget -c https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-4.6.14-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+<p>安装miniconda:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">bash Miniconda3-4.6.14-Linux-x86_64.sh</span><br></pre></td></tr></table></figure>
+<p>安装过程中注意这一步选择yes，不要一直回车给按过去了：</p>
+<p><img src="/2021/10/08/%E9%85%8D%E7%8E%AF%E5%A2%83/miniconda+tf2_gpu+torch_gpu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/miniconda%E5%AE%89%E8%A3%85%E6%B3%A8%E6%84%8F%E7%82%B9.png" alt="miniconda安装注意点"></p>
+<p>安装好了之后，可以看到miniconda3的目录路径，比如我的是：/home/me/miniconda3。</p>
+<p>输入<code>vi ~/.bashrc</code>，在文件底下插入如下内容：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export PATH=~/home/me/miniconda3/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>然后激活环境变量：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>即可通过<code>conda --version</code>查看版本。</p>
+<h2 id="添加镜像">添加镜像</h2>
+<p><strong>添加pip镜像：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir ~/.pip</span><br><span class="line">cd ~/.pip</span><br><span class="line">touch pip.conf</span><br><span class="line">vi ~/.pip/pip.conf</span><br></pre></td></tr></table></figure>
+<p>将下面的清华镜像加入该文件并保存：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">timeout = 60000</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">[install]</span><br><span class="line">use-mirrors = true</span><br><span class="line">mirrors = https://pypi.tuna.tsinghua.edu.cn</span><br></pre></td></tr></table></figure>
+<p><strong>添加conda镜像：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda config --set show_channel_urls yes</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br></pre></td></tr></table></figure>
+<h2 id="创建新的虚拟环境">创建新的虚拟环境</h2>
+<p>创建名为cuda101，python版本为3.7.5的虚拟环境：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n cuda101 python=3.7.5</span><br></pre></td></tr></table></figure>
+<h2 id="安装相关包">安装相关包</h2>
+<p>先安装pytorch，下面的指令会顺带下载cudatoolkit 10.1：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.1 -c pytorch</span><br></pre></td></tr></table></figure>
+<p>然后下载tf：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install tensorflow-gpu==2.3.0</span><br></pre></td></tr></table></figure>
+<p>安装stellargraph：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install stellargraph</span><br></pre></td></tr></table></figure>
+<p>然后可以试试导入tf和torch是否成功了。</p>
+<p>【参考】</p>
+<p><a href="https://blog.csdn.net/weixin_43141320/article/details/107955115">https://blog.csdn.net/weixin_43141320/article/details/107955115</a></p>
+<p><a href="https://blog.csdn.net/weixin_43141320/article/details/108343528">https://blog.csdn.net/weixin_43141320/article/details/108343528</a></p>
+<p><a href="https://tensorflow.google.cn/install/source">https://tensorflow.google.cn/install/source</a></p>
+<p><a href="https://blog.csdn.net/qq_37774098/article/details/109895048">https://blog.csdn.net/qq_37774098/article/details/109895048</a></p>
+<p><a href="https://blog.csdn.net/qq_42406643/article/details/109545766?utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-2&amp;spm=1001.2101.3001.4242">https://blog.csdn.net/qq_42406643/article/details/109545766?utm_medium=distribute.pc_relevant.none-task-blog-baidulandingword-2&amp;spm=1001.2101.3001.4242</a></p>
+<p><a href="https://pytorch.org/get-started/previous-versions/">https://pytorch.org/get-started/previous-versions/</a></p>
+<p><a href="https://tensorflow.google.cn/install/source_windows#gpu">https://tensorflow.google.cn/install/source_windows#gpu</a></p>
+<p><a href="https://pypi.org/project/stellargraph/#install-stellargraph-in-anaconda-python">https://pypi.org/project/stellargraph/#install-stellargraph-in-anaconda-python</a></p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>入门与FedML框架使用</title>
+    <url>/2021/10/06/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/%E5%85%A5%E9%97%A8%E4%B8%8EFedML%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1>Why federated learning?</h1>
+<span id="more"></span>
+<p>现阶段深度学习大多是集中式训练。多个客户端将数据标注并上传至云服务器，服务器集中训练模型，最后将训练的模型部署到客户端。如下图所示（图来自：<a href="https://blog.csdn.net/lgzlgz3102/article/details/117433511">https://blog.csdn.net/lgzlgz3102/article/details/117433511</a>)。这种中心化的训练模式面临许多困难，<strong>数据隐私方面</strong>：多个客户采集的数据不愿分享的情况，数据的割裂导致只能利用本地的数据进行单点建模，模型效果自然明显下降；<strong>模型更新方面</strong>：传统的处理方式需要将数据集中上传到中心数据库，进行统一的数据处理和模型训练，然后进行模型的评估和部署，由于各个数据院之间的网络性能和设备性能的差异，导致数据同步不一致，整个流程会持续较长的时间，无法满足实时响应的场景。</p>
+<p><img src="/2021/10/06/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/%E5%85%A5%E9%97%A8%E4%B8%8EFedML%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/%E9%9B%86%E4%B8%AD%E5%BC%8F%E8%AE%AD%E7%BB%83.png" alt="集中式训练"></p>
+<h1>The work of federated learning?</h1>
+<p>各个用户之间，数据不可见，所以各自利用各自的数据进行训练，然后将模型的参数上传至服务器，服务器整合并将更新的模型参数下发给其他的所有节点，再次进行上述步骤，直至拟合。</p>
+<p><img src="/2021/10/06/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/%E5%85%A5%E9%97%A8%E4%B8%8EFedML%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F.png" alt="联邦学习的工作模式"></p>
+<h1>联邦学习论文的研究侧重点统计</h1>
+<p><img src="/2021/10/06/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/%E5%85%A5%E9%97%A8%E4%B8%8EFedML%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/%E6%96%B9%E5%90%91%E8%A1%A8%E6%A0%BC%E7%BB%9F%E8%AE%A1.png" alt="方向表格统计"></p>
+<h1>Challenges</h1>
+<p>客户端的optimizer和server端的optimizer是否能互相配合使用，从而让效果更好；</p>
+<p>不同的客户端的计算能力不同，所以设定迭代次数k会导致互相等待，能否根据不同的机器设置不同的迭代次数k，从而让效果较优。这就是k异构下如何优化的问题。</p>
+<p>如果有些客户端是手机，需要训练的是ResNet模型，如果直接用手机来训练显然不合适，那么如何解决这个问题。</p>
+<p><a href="https://arxiv.org/abs/2007.13518">FedML:A Research Library and Benchmark for Federated Machine Learning</a></p>
+<p><a href="https://fedml.ai/files/FedCV.pdf">FedCV: A Federated Learning Framework for Diverse Computer Vision Tasks</a></p>
+]]></content>
+      <categories>
+        <category>联邦学习</category>
+      </categories>
+      <tags>
+        <tag>联邦学习</tag>
+        <tag>FedML</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>王争数据结构与算法学习笔记-动态规划</title>
     <url>/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
     <content><![CDATA[]]></content>
@@ -516,11 +607,10 @@
 <p><a href="https://github.com/FedML-AI/FedML">github.com/FedML-AI/FedML</a></p>
 <p><a href="https://www.bilibili.com/video/BV1jK411N7gS/">FedML联邦机器学习框架视频教学全集 fedml.ai</a></p>
 <p><a href="https://github.com/FederatedAI/FATE">github.com/FederatedAI/FATE</a></p>
-<p>[FATE Pipeline</p>
 <p><a href="https://blog.csdn.net/weixin_45439861/article/details/100670390">只看这一篇就够：快速了解联邦学习技术及应用实践</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/65403693">联邦学习的研究及应用</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/97854070#:~:text=Communication-Efficient%20Learning%20of%20Deep%20Networks,from%20Decentralized%20Data%20Federated%20Averaging%E7%AE%97%E6%B3%95%E6%80%BB%E5%85%B1%E6%9C%89%E4%B8%89%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%8F%82%E6%95%B0%EF%BC%8CC%EF%BC%880%E5%88%B01%EF%BC%89%E6%8E%A7%E5%88%B6%E6%9C%89%E5%A4%9A%E5%B0%91%E6%AF%94%E4%BE%8B%E7%9A%84%E7%9A%84%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8F%82%E4%B8%8E%E4%BC%98%E5%8C%96%EF%BC%8CE%E6%8E%A7%E5%88%B6%E6%AF%8F%E4%B8%80%E8%BD%AE%E5%A4%9A%E5%B0%91%E8%BD%AESGD%E9%9C%80%E8%A6%81%E5%9C%A8%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%90%E8%A1%8C%EF%BC%8CB%E6%98%AF%E6%AF%8F%E4%B8%80%E8%BD%AE%E7%9A%84Mini-Batch%E7%9A%84%E6%95%B0%E7%9B%AE%E5%A4%A7%E5%B0%8F%E3%80%82">2019联邦学习综述</a></p>
-<p><a href="https://www.birentech.com/news/104.html"><strong>联邦学习模型在医学图像处理领域中的应用实例分析</strong></a></p>
+<p><a href="https://www.birentech.com/news/104.html">联邦学习模型在医学图像处理领域中的应用实例分析</a></p>
 <p><a href="https://blog.csdn.net/lgzlgz3102/article/details/117433511">联邦学习在视觉领域的应用</a></p>
 <h2 id="4-meta-learning">4. Meta learning</h2>
 <p><a href="https://easyai.tech/ai-definition/meta-learning/">easyai</a></p>
