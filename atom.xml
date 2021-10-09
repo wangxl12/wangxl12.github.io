@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-10-08T13:49:47.906Z</updated>
+  <updated>2021-10-09T02:09:16.478Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -21,19 +21,11 @@
     <link href="https://wangxl12.github.io/2021/10/08/%E9%85%8D%E7%8E%AF%E5%A2%83/miniconda+tf2_gpu+torch_gpu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
     <id>https://wangxl12.github.io/2021/10/08/%E9%85%8D%E7%8E%AF%E5%A2%83/miniconda+tf2_gpu+torch_gpu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
     <published>2021-10-08T13:17:00.000Z</published>
-    <updated>2021-10-08T13:49:47.906Z</updated>
+    <updated>2021-10-09T02:09:16.478Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;h1&gt;情况描述&lt;/h1&gt;
-&lt;p&gt;需要运行联邦学习图神经网络，同时需要torch和tf2.x，运行图神经网络还用到了stellargraph库，这个库依赖于tf，而且要求tf版本&amp;gt;=2.1.0。&lt;/p&gt;
-&lt;h1&gt;版本适配&lt;/h1&gt;
-&lt;p&gt;首先弄清需要安装的包：torch,</summary>
-        
-      
+&lt;p&gt;需要运行联邦学习图神经网络，同时需要torch和tf2.x，运行图神经网络还用到了stellargraph库，这个库依赖于tf，而且要求tf版本&amp;gt;=2.1.0，在代码内部还用到了keras，需要keras和tf版本相匹配。&lt;/p&gt;</summary>
     
     
     
