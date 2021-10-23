@@ -1458,6 +1458,7 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
 <p>创建名为cuda101，python版本为3.7.5的虚拟环境：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n cuda101 python=3.7.5</span><br></pre></td></tr></table></figure>
 <h2 id="安装相关包">安装相关包</h2>
+<p><strong>安装下面几个包的顺序非常重要。</strong></p>
 <p>先安装pytorch，下面的指令会顺带下载cudatoolkit 10.1：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.1 -c pytorch</span><br></pre></td></tr></table></figure>
 <p>然后下载tf：</p>
@@ -1466,6 +1467,8 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install stellargraph</span><br></pre></td></tr></table></figure>
 <p>安装keras：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install keras==2.4.3</span><br></pre></td></tr></table></figure>
+<p>安装cudnn：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install cudnn=7.6.5</span><br></pre></td></tr></table></figure>
 <p>然后可以试试导入tf和torch是否成功了。</p>
 <p>【参考】</p>
 <p><a href="https://blog.csdn.net/weixin_43141320/article/details/107955115">https://blog.csdn.net/weixin_43141320/article/details/107955115</a></p>
@@ -1482,6 +1485,153 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
       </categories>
       <tags>
         <tag>环境配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker入门</title>
+    <url>/2021/10/12/Docker/Docker%E5%85%A5%E9%97%A8/</url>
+    <content><![CDATA[<h1>Docker学习网站</h1>
+<p>推荐狂神的Docker视频：</p>
+<p><a href="https://www.bilibili.com/video/BV1og4y1q7M4?p=2">https://www.bilibili.com/video/BV1og4y1q7M4?p=2</a></p>
+<p>Docker官网：</p>
+<p><a href="https://www.docker.com/">https://www.docker.com/</a></p>
+<p>文档地址：</p>
+<p><a href="https://docs.docker.com/">https://docs.docker.com/</a></p>
+<p>仓库地址：</p>
+<p><a href="https://hub.docker.com/">https://hub.docker.com/</a></p>
+<h1>Docker为什么会出现</h1>
+<p>配置环境十分麻烦，每一个机器都需要部署环境，费时费力，且不能跨平台。</p>
+<p>传统开发jar，运维来做；现在开发打包和部署上线，一套流程做完。</p>
+<p>Docker解决的问题：发布一个项目（jar+Redis+MySQL+jdk+ES），项目能否带上环境安装打包？</p>
+<p>Docker可以通过隔离机制，将服务器利用到极致。</p>
+<p>传统的虚拟机模拟一台电脑出来，将操作系统的内核、库包含进去，应用直接运行在其上就行。但是有如下缺点：</p>
+<ol>
+<li>资源占用多；</li>
+<li>冗余步骤多（如开机）；</li>
+<li>启动很慢。</li>
+</ol>
+<p>而容器化技术不是模拟的一个完整的操作系统。</p>
+<h1>Docker能干嘛</h1>
+]]></content>
+      <categories>
+        <category>Docker</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python高级编程-part</title>
+    <url>/2021/10/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B-part1/</url>
+    <content><![CDATA[<h1>outline</h1>
+<p><strong>函数与函数式编程：</strong></p>
+<ul>
+<li>一等函数</li>
+<li>把函数视为对象</li>
+<li>高阶函数</li>
+<li>列表推导 vs (map/reduce)</li>
+<li>函数的参数与返回值</li>
+</ul>
+<p><strong>方法和装饰器：</strong></p>
+<ul>
+<li>有用的装饰器</li>
+<li>由简单到复杂实现各类装饰器</li>
+</ul>
+<span id="more"></span>
+<h1>一等函数</h1>
+<p><strong>特点：</strong></p>
+<ol>
+<li>可以运行的时候创建；</li>
+<li>可以作为变量，传给函数；</li>
+<li>可以作为函数的返回结果。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorial</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    return n!</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> n &lt; <span class="number">2</span> <span class="keyword">else</span> factorial(n - <span class="number">1</span>) * n</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(factorial(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<p>既然是对象，就有相应的属性，且可以赋值：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 函数对象的属性</span></span><br><span class="line"><span class="built_in">print</span>(factorial.__doc__)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">type</span>(factorial))</span><br><span class="line"><span class="comment"># 既然是一个函数对象，那么就可以赋值</span></span><br><span class="line">fact = factorial</span><br><span class="line"><span class="built_in">print</span>(fact)</span><br><span class="line"><span class="built_in">print</span>(fact(<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">    <span class="keyword">return</span> n!</span><br><span class="line">    </span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> &#x27;<span class="title">function</span>&#x27;&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">function</span> <span class="title">factorial</span> <span class="title">at</span> 0<span class="title">x00000184B923F288</span>&gt;</span></span><br><span class="line"><span class="class">120</span></span><br></pre></td></tr></table></figure>
+<p>为了更好的理解函数作为对象的特征，可以看看下面这个例子：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 嵌套函数返回函数对象</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_averager</span>():</span></span><br><span class="line">    nums = []</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">averager</span>(<span class="params">new_value</span>):</span></span><br><span class="line">        nums.append(new_value)</span><br><span class="line">        total = <span class="built_in">sum</span>(nums)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> total / <span class="built_in">len</span>(nums)</span><br><span class="line">    <span class="keyword">return</span> averager</span><br></pre></td></tr></table></figure>
+<p>外层函数返回的是函数的对象，这样一来经过下面的测试可以得到预期结果：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">avg = make_averager()</span><br><span class="line"><span class="built_in">print</span>(avg)</span><br><span class="line"><span class="built_in">print</span>(avg(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">&lt;function make_averager.&lt;<span class="built_in">locals</span>&gt;.averager at <span class="number">0x00000184B923FDC8</span>&gt;</span><br><span class="line"><span class="number">3.0</span></span><br></pre></td></tr></table></figure>
+<h1>高阶函数</h1>
+<p>**特点：**接受函数作为参数或者函数作为返回结果。eg:map/reduce，sorted。</p>
+<p>map/reduce/filter就是典型的高阶函数：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">num_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="comment"># map需要传入一个函数对象</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(factorial, num_list)))</span><br></pre></td></tr></table></figure>
+<p>输出：<code>[1, 2, 6, 24, 120, 5040, 362880]</code></p>
+<p>字典实现列表推导式：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 字典的列表推导式</span></span><br><span class="line">usernames = [<span class="string">&#x27;sophia&#x27;</span>, <span class="string">&#x27;emma&#x27;</span>, <span class="string">&#x27;olivia&#x27;</span>, <span class="string">&#x27;ava&#x27;</span>]</span><br><span class="line">name_dict = &#123;name: <span class="built_in">len</span>(name) <span class="keyword">for</span> name <span class="keyword">in</span> usernames&#125;</span><br><span class="line"><span class="built_in">print</span>(name_dict)</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<p><code>&#123;'sophia': 6, 'emma': 4, 'olivia': 6, 'ava': 3&#125;</code></p>
+<p>嵌套高阶函数：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 嵌套高阶函数</span></span><br><span class="line"><span class="comment"># 首先将num_list中的偶数筛选掉</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(factorial, <span class="built_in">filter</span>(<span class="keyword">lambda</span> n: n % <span class="number">2</span>, num_list))))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用列表推导式实现上述功能</span></span><br><span class="line">result = [factorial(num) <span class="keyword">for</span> num <span class="keyword">in</span> num_list <span class="keyword">if</span> num % <span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<p><code>[1, 6, 120, 5040, 362880]</code></p>
+<p><code>[1, 6, 120, 5040, 362880]</code></p>
+<h1>python单下划线和双下划的区别</h1>
+<p>python下划线有5种：</p>
+<table>
+<thead>
+<tr>
+<th>模式</th>
+<th>样例</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单前导下划线</td>
+<td><code>_xxx</code></td>
+<td>约定俗成，仅供类内使用，外部不调用，但是强制调用还是可以的</td>
+</tr>
+<tr>
+<td>双前导下划线</td>
+<td><code>__xxx</code></td>
+<td>强制不可外部调用，如果是函数，那么函数所在的类的子类无法轻易重写该函数</td>
+</tr>
+<tr>
+<td>单末尾下划线</td>
+<td><code>xxx_</code></td>
+<td>防止和python内置关键字冲突</td>
+</tr>
+<tr>
+<td>双前导和末尾下划线</td>
+<td><code>__xxx__</code></td>
+<td>python语义的特殊方法，尽量避免自己使用</td>
+</tr>
+<tr>
+<td>单下划线</td>
+<td><code>_</code></td>
+<td>较多的用法是，该变量在下面的作用域内不会使用到</td>
+</tr>
+</tbody>
+</table>
+<p>下面就这几种模式来举一下例子：</p>
+<p><strong>单前导下划线：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self._name = <span class="string">&quot;julia&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">a = A()</span><br><span class="line"><span class="comment"># 约定俗成，仅供类内使用，外部不调用，但是强制调用还是可以的</span></span><br><span class="line"><span class="built_in">print</span>(a._name)</span><br></pre></td></tr></table></figure>
+<p>输出：julia</p>
+<p><strong>双前导下划线：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.__name = <span class="string">&quot;julia&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">a = A()</span><br><span class="line"><span class="comment"># 强制不可外部调用</span></span><br><span class="line"><span class="built_in">print</span>(a.__name)</span><br></pre></td></tr></table></figure>
+<p>报错：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">---------------------------------------------------------------------------</span><br><span class="line">AttributeError                            Traceback (most recent call last)</span><br><span class="line">&lt;ipython-<span class="built_in">input</span>-<span class="number">24</span>-a75c7bdbf94f&gt; <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">      <span class="number">4</span>         <span class="keyword">pass</span></span><br><span class="line">      <span class="number">5</span> a = A()</span><br><span class="line">----&gt; <span class="number">6</span> <span class="built_in">print</span>(a.__name)</span><br><span class="line"></span><br><span class="line">AttributeError: <span class="string">&#x27;A&#x27;</span> <span class="built_in">object</span> has no attribute <span class="string">&#x27;__name&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>如果是带双前导下划线的函数：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.__name = <span class="string">&quot;julia&quot;</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getname</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> self.__name</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>(<span class="params">A</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__getname</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">dir</span>(A))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">dir</span>(B))</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">[<span class="string">&#x27;_A__getname&#x27;</span>, <span class="string">&#x27;__class__&#x27;</span>, <span class="string">&#x27;__delattr__&#x27;</span>, <span class="string">&#x27;__dict__&#x27;</span>, <span class="string">&#x27;__dir__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__eq__&#x27;</span>, <span class="string">&#x27;__format__&#x27;</span>, <span class="string">&#x27;__ge__&#x27;</span>, <span class="string">&#x27;__getattribute__&#x27;</span>, <span class="string">&#x27;__gt__&#x27;</span>, <span class="string">&#x27;__hash__&#x27;</span>, <span class="string">&#x27;__init__&#x27;</span>, <span class="string">&#x27;__init_subclass__&#x27;</span>, <span class="string">&#x27;__le__&#x27;</span>, <span class="string">&#x27;__lt__&#x27;</span>, <span class="string">&#x27;__module__&#x27;</span>, <span class="string">&#x27;__ne__&#x27;</span>, <span class="string">&#x27;__new__&#x27;</span>, <span class="string">&#x27;__reduce__&#x27;</span>, <span class="string">&#x27;__reduce_ex__&#x27;</span>, <span class="string">&#x27;__repr__&#x27;</span>, <span class="string">&#x27;__setattr__&#x27;</span>, <span class="string">&#x27;__sizeof__&#x27;</span>, <span class="string">&#x27;__str__&#x27;</span>, <span class="string">&#x27;__subclasshook__&#x27;</span>, <span class="string">&#x27;__weakref__&#x27;</span>]</span><br><span class="line">[<span class="string">&#x27;_A__getname&#x27;</span>, <span class="string">&#x27;_B__getname&#x27;</span>, <span class="string">&#x27;__class__&#x27;</span>, <span class="string">&#x27;__delattr__&#x27;</span>, <span class="string">&#x27;__dict__&#x27;</span>, <span class="string">&#x27;__dir__&#x27;</span>, <span class="string">&#x27;__doc__&#x27;</span>, <span class="string">&#x27;__eq__&#x27;</span>, <span class="string">&#x27;__format__&#x27;</span>, <span class="string">&#x27;__ge__&#x27;</span>, <span class="string">&#x27;__getattribute__&#x27;</span>, <span class="string">&#x27;__gt__&#x27;</span>, <span class="string">&#x27;__hash__&#x27;</span>, <span class="string">&#x27;__init__&#x27;</span>, <span class="string">&#x27;__init_subclass__&#x27;</span>, <span class="string">&#x27;__le__&#x27;</span>, <span class="string">&#x27;__lt__&#x27;</span>, <span class="string">&#x27;__module__&#x27;</span>, <span class="string">&#x27;__ne__&#x27;</span>, <span class="string">&#x27;__new__&#x27;</span>, <span class="string">&#x27;__reduce__&#x27;</span>, <span class="string">&#x27;__reduce_ex__&#x27;</span>, <span class="string">&#x27;__repr__&#x27;</span>, <span class="string">&#x27;__setattr__&#x27;</span>, <span class="string">&#x27;__sizeof__&#x27;</span>, <span class="string">&#x27;__str__&#x27;</span>, <span class="string">&#x27;__subclasshook__&#x27;</span>, <span class="string">&#x27;__weakref__&#x27;</span>]</span><br></pre></td></tr></table></figure>
+<p>这里的<code>__getname</code>函数是带前导双下划线的函数，第一个输出的时候，发现<code>__getname</code>的名称前面添加了<code>_A</code>，B类也有一个自己的函数<code>_B__getname</code>，在python中这种用法是为了避免和子类定义的函数名称冲突。</p>
+<p><strong>单末尾下划线：</strong></p>
+<p>这种用法是为了避免定义的变量和python的关键字冲突，比如<code>class</code>，这个时候可以使用<code>class_</code>来代替。</p>
+<p><strong>单下划线：</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;000&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>比如这种情况就没有使用到循环变量，可以使用_来代替。</p>
+]]></content>
+      <categories>
+        <category>python高级编程</category>
+      </categories>
+      <tags>
+        <tag>python高级编程</tag>
       </tags>
   </entry>
 </search>
