@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-10-23T03:51:44.403Z</updated>
+  <updated>2021-10-23T07:12:07.718Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -21,11 +21,10 @@
     <link href="https://wangxl12.github.io/2021/10/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B-part1/"/>
     <id>https://wangxl12.github.io/2021/10/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B-part1/</id>
     <published>2021-10-23T03:16:32.000Z</published>
-    <updated>2021-10-23T03:51:44.403Z</updated>
+    <updated>2021-10-23T07:12:07.718Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;outline&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;函数与函数式编程：&lt;/strong&gt;&lt;/p&gt;
+    <summary type="html">&lt;h1 id=&quot;outline&quot;&gt;&lt;a href=&quot;#outline&quot; class=&quot;headerlink&quot; title=&quot;outline&quot;&gt;&lt;/a&gt;outline&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;函数与函数式编程：&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;一等函数&lt;/li&gt;
 &lt;li&gt;把函数视为对象&lt;/li&gt;

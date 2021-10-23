@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"wangxl12.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="outline 函数与函数式编程：  一等函数 把函数视为对象 高阶函数 列表推导 vs (map&#x2F;reduce) 函数的参数与返回值  方法和装饰器：  有用的装饰器 由简单到复杂实现各类装饰器">
+  <meta name="description" content="outline函数与函数式编程：  一等函数 把函数视为对象 高阶函数 列表推导 vs (map&#x2F;reduce) 函数的参数与返回值  方法和装饰器：  有用的装饰器 由简单到复杂实现各类装饰器">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python高级编程-part">
 <meta property="og:url" content="https://wangxl12.github.io/2021/10/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B-part1/index.html">
 <meta property="og:site_name" content="WXL&#39;s blog">
-<meta property="og:description" content="outline 函数与函数式编程：  一等函数 把函数视为对象 高阶函数 列表推导 vs (map&#x2F;reduce) 函数的参数与返回值  方法和装饰器：  有用的装饰器 由简单到复杂实现各类装饰器">
+<meta property="og:description" content="outline函数与函数式编程：  一等函数 把函数视为对象 高阶函数 列表推导 vs (map&#x2F;reduce) 函数的参数与返回值  方法和装饰器：  有用的装饰器 由简单到复杂实现各类装饰器">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-10-23T03:16:32.000Z">
-<meta property="article:modified_time" content="2021-10-23T03:51:44.403Z">
+<meta property="article:modified_time" content="2021-10-23T07:12:07.718Z">
 <meta property="article:author" content="WXL">
 <meta property="article:tag" content="python高级编程">
 <meta name="twitter:card" content="summary">
@@ -219,7 +219,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-10-23 11:16:32 / 修改时间：11:51:44" itemprop="dateCreated datePublished" datetime="2021-10-23T11:16:32+08:00">2021-10-23</time>
+              <time title="创建时间：2021-10-23 11:16:32 / 修改时间：15:12:07" itemprop="dateCreated datePublished" datetime="2021-10-23T11:16:32+08:00">2021-10-23</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,8 +263,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1>outline</h1>
-<p><strong>函数与函数式编程：</strong></p>
+        <h1 id="outline"><a href="#outline" class="headerlink" title="outline"></a>outline</h1><p><strong>函数与函数式编程：</strong></p>
 <ul>
 <li>一等函数</li>
 <li>把函数视为对象</li>
@@ -278,8 +277,7 @@
 <li>由简单到复杂实现各类装饰器</li>
 </ul>
 <span id="more"></span>
-<h1>一等函数</h1>
-<p><strong>特点：</strong></p>
+<h1 id="一等函数"><a href="#一等函数" class="headerlink" title="一等函数"></a>一等函数</h1><p><strong>特点：</strong></p>
 <ol>
 <li>可以运行的时候创建；</li>
 <li>可以作为变量，传给函数；</li>
@@ -296,22 +294,28 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">avg = make_averager()</span><br><span class="line"><span class="built_in">print</span>(avg)</span><br><span class="line"><span class="built_in">print</span>(avg(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
 <p>输出结果如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;function make_averager.&lt;<span class="built_in">locals</span>&gt;.averager at <span class="number">0x00000184B923FDC8</span>&gt;</span><br><span class="line"><span class="number">3.0</span></span><br></pre></td></tr></table></figure>
-<h1>高阶函数</h1>
-<p>**特点：**接受函数作为参数或者函数作为返回结果。eg:map/reduce，sorted。</p>
+<h1 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h1><p><strong>特点：</strong>接受函数作为参数或者函数作为返回结果。eg:map/reduce，sorted。</p>
 <p>map/reduce/filter就是典型的高阶函数：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num_list = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">9</span>]</span><br><span class="line"><span class="comment"># map需要传入一个函数对象</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(factorial, num_list)))</span><br></pre></td></tr></table></figure>
 <p>输出：<code>[1, 2, 6, 24, 120, 5040, 362880]</code></p>
+<p>reduce和map的区别是，map只允许传入的函数只能接受1个参数，而reduce可以接受两个参数，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line"></span><br><span class="line">lyst = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x**<span class="number">2</span>, lyst)))</span><br><span class="line"><span class="built_in">print</span>(reduce(<span class="keyword">lambda</span> x, y: x + y, lyst))</span><br></pre></td></tr></table></figure>
+<p><strong>注意reduce返回的是一个值，而不是一个可迭代对象。</strong></p>
+<p>对于常见的加减乘除，还可以使用这种方式来实现：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"><span class="keyword">from</span> operator <span class="keyword">import</span> add, mul</span><br><span class="line">op_mul = partial(mul, <span class="number">3</span>)</span><br><span class="line">op_mul(<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+<p>这个op_mul就相当于一个乘法运算对象，而且其中有一个值固定为3，现在就传入另外一个值即可。从这里就可以看出来partial的作用：</p>
+<p><strong>对于一个函数，如果有几个参数是确定的，但是还有一部分不确定，可以将确定的参数传入，然后借助partial函数，将这个传入了几个确定参数之后的函数作为一个新的函数，接下来只用将剩余的参数传入这个新的函数即可。</strong></p>
 <p>字典实现列表推导式：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字典的列表推导式</span></span><br><span class="line">usernames = [<span class="string">&#x27;sophia&#x27;</span>, <span class="string">&#x27;emma&#x27;</span>, <span class="string">&#x27;olivia&#x27;</span>, <span class="string">&#x27;ava&#x27;</span>]</span><br><span class="line">name_dict = &#123;name: <span class="built_in">len</span>(name) <span class="keyword">for</span> name <span class="keyword">in</span> usernames&#125;</span><br><span class="line"><span class="built_in">print</span>(name_dict)</span><br></pre></td></tr></table></figure>
 <p>输出结果如下：</p>
-<p><code>&#123;'sophia': 6, 'emma': 4, 'olivia': 6, 'ava': 3&#125;</code></p>
+<p><code>&#123;&#39;sophia&#39;: 6, &#39;emma&#39;: 4, &#39;olivia&#39;: 6, &#39;ava&#39;: 3&#125;</code></p>
 <p>嵌套高阶函数：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 嵌套高阶函数</span></span><br><span class="line"><span class="comment"># 首先将num_list中的偶数筛选掉</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">list</span>(<span class="built_in">map</span>(factorial, <span class="built_in">filter</span>(<span class="keyword">lambda</span> n: n % <span class="number">2</span>, num_list))))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用列表推导式实现上述功能</span></span><br><span class="line">result = [factorial(num) <span class="keyword">for</span> num <span class="keyword">in</span> num_list <span class="keyword">if</span> num % <span class="number">2</span>]</span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
 <p><code>[1, 6, 120, 5040, 362880]</code></p>
 <p><code>[1, 6, 120, 5040, 362880]</code></p>
-<h1>python单下划线和双下划的区别</h1>
-<p>python下划线有5种：</p>
+<h1 id="python单下划线和双下划的区别"><a href="#python单下划线和双下划的区别" class="headerlink" title="python单下划线和双下划的区别"></a>python单下划线和双下划的区别</h1><p>python下划线有5种：</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -348,6 +352,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>下面就这几种模式来举一下例子：</p>
 <p><strong>单前导下划线：</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self._name = <span class="string">&quot;julia&quot;</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">a = A()</span><br><span class="line"><span class="comment"># 约定俗成，仅供类内使用，外部不调用，但是强制调用还是可以的</span></span><br><span class="line"><span class="built_in">print</span>(a._name)</span><br></pre></td></tr></table></figure>
@@ -366,6 +371,23 @@
 <p><strong>单下划线：</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;000&quot;</span>)</span><br></pre></td></tr></table></figure>
 <p>比如这种情况就没有使用到循环变量，可以使用_来代替。</p>
+<p>参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_38682860/article/details/96902828">https://blog.csdn.net/sinat_38682860/article/details/96902828</a></p>
+<h1 id="函数参数的特殊情况"><a href="#函数参数的特殊情况" class="headerlink" title="函数参数的特殊情况"></a>函数参数的特殊情况</h1><p>下面需要实现一个html标签，如<code>&lt;p&gt;hello&lt;/p&gt;</code>，<code>&lt;item class=&#39;&#39; size=&#39;small&#39;&gt;a&lt;/item&gt;</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_element</span>(<span class="params">name, *contents, cls=<span class="literal">None</span>, **kwargs</span>):</span></span><br><span class="line">    <span class="keyword">if</span> cls:</span><br><span class="line">        kwargs[<span class="string">&#x27;class&#x27;</span>] = cls</span><br><span class="line">    </span><br><span class="line">    pairs = [<span class="string">f&quot;<span class="subst">&#123;attr&#125;</span>=<span class="subst">&#123;value&#125;</span>&quot;</span> <span class="keyword">for</span> attr, value <span class="keyword">in</span> kwargs.items()]</span><br><span class="line">    attr_str = <span class="string">&#x27; &#x27;</span>.join(pairs)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> contents:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;&lt;<span class="subst">&#123;name&#125;</span> <span class="subst">&#123;attr_str&#125;</span>/&gt;&quot;</span></span><br><span class="line">    </span><br><span class="line">    elements = [<span class="string">f&quot;&lt;<span class="subst">&#123;name&#125;</span> <span class="subst">&#123;attr_str&#125;</span>&gt;<span class="subst">&#123;content&#125;</span>&lt;<span class="subst">&#123;name&#125;</span>/&gt;&quot;</span> <span class="keyword">for</span> content <span class="keyword">in</span> contents]</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;\n&#x27;</span>.join(elements)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(make_element(<span class="string">&quot;p&quot;</span>, <span class="string">&quot;hello&quot;</span>, <span class="string">&quot;world&quot;</span>, cls=<span class="string">&quot;sidebar&quot;</span>, size=<span class="string">&quot;small&quot;</span>))</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;p size=small <span class="class"><span class="keyword">class</span>=<span class="title">sidebar</span>&gt;<span class="title">hello</span>&lt;<span class="title">p</span>/&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">p</span> <span class="title">size</span>=<span class="title">small</span> <span class="title">class</span>=<span class="title">sidebar</span>&gt;<span class="title">world</span>&lt;<span class="title">p</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>因为class是python中的关键字，传入函数的话会冲突，所以将cls特意拿出来接受class参数。现在想设计一个专门生成图片标签的函数，可以利用前面说到的partial函数，代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"></span><br><span class="line">image_make = partial(make_element, <span class="string">&quot;img&quot;</span>, cls=<span class="string">&quot;pic-frame&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(image_make(src=<span class="string">&quot;car.png&quot;</span>))</span><br><span class="line"></span><br><span class="line">item_make = partial(make_element, <span class="string">&quot;item&quot;</span>, size=<span class="string">&quot;small&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(item_make(<span class="string">&quot;A&quot;</span>, <span class="string">&quot;B&quot;</span>, <span class="string">&quot;C&quot;</span>))</span><br></pre></td></tr></table></figure>
+<p>输出:</p>
+<p><code>&lt;img src=car.png class=pic-frame/&gt;</code></p>
+<p><code>&lt;item size=small&gt;A&lt;item/&gt;</code></p>
+<p><code>&lt;item size=small&gt;B&lt;item/&gt;</code></p>
+<p><code>&lt;item size=small&gt;C&lt;item/&gt;</code></p>
+<p>这种涉及到的特殊参数是<em>contents和*</em>kwargs，传入函数之后，contents是一个元组，kwargs是一个字典，如果需要对元组和字典进行解包，可以使用如下的方式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># *解包元组</span></span><br><span class="line">a = (<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(*a)</span><br><span class="line"><span class="comment"># **解包字典</span></span><br><span class="line">dict_a = &#123;<span class="string">&quot;a&quot;</span>: <span class="number">1</span>, <span class="string">&quot;b&quot;</span>: <span class="number">2</span>&#125;</span><br><span class="line">dict_b = &#123;<span class="string">&quot;c&quot;</span>: <span class="number">3</span>, <span class="string">&quot;d&quot;</span>: <span class="number">4</span>&#125;</span><br><span class="line">new_dict = &#123;**dict_a, **dict_b&#125;</span><br><span class="line"><span class="built_in">print</span>(new_dict)</span><br></pre></td></tr></table></figure>
+<p>输出：</p>
+<p><code>2 3 4 5</code></p>
+<p><code>&#123;&#39;a&#39;: 1, &#39;b&#39;: 2, &#39;c&#39;: 3, &#39;d&#39;: 4&#125;</code></p>
 
     </div>
 
@@ -485,7 +507,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">outline</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">一等函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">高阶函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">python单下划线和双下划的区别</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#outline"><span class="nav-number">1.</span> <span class="nav-text">outline</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E7%AD%89%E5%87%BD%E6%95%B0"><span class="nav-number">2.</span> <span class="nav-text">一等函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E5%87%BD%E6%95%B0"><span class="nav-number">3.</span> <span class="nav-text">高阶函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#python%E5%8D%95%E4%B8%8B%E5%88%92%E7%BA%BF%E5%92%8C%E5%8F%8C%E4%B8%8B%E5%88%92%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.</span> <span class="nav-text">python单下划线和双下划的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E7%89%B9%E6%AE%8A%E6%83%85%E5%86%B5"><span class="nav-number">5.</span> <span class="nav-text">函数参数的特殊情况</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
