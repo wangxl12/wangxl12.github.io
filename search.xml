@@ -33,6 +33,12 @@
 <li><code>grad_fn</code>: 叶子节点通常为None，只有结果节点的grad_fn才有效，用于指示梯度函数是哪种类型。例如上面示例代码中的<code>y.grad_fn=&lt;PowBackward0 at 0x213550af048&gt;, z.grad_fn=&lt;AddBackward0 at 0x2135df11be0&gt;</code></li>
 <li><code>is_leaf</code>: 用来指示该Tensor是否是叶子节点。</li>
 </ul>
+<p>下面解决《动手学深度学习》的2.5章节的第五题：</p>
+<p><img src="/2021/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/pytorch%E7%9A%84%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC/%E9%A2%98%E7%9B%AE.png" alt="题目"></p>
+<p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = torch.linspace(-<span class="number">5</span>, <span class="number">5</span>, <span class="number">100</span>)</span><br><span class="line"><span class="comment"># 为x设置计算梯度</span></span><br><span class="line">x.requires_grad_(<span class="literal">True</span>)</span><br><span class="line">y = torch.sin(x)</span><br><span class="line"><span class="comment"># y反向传播,但是y是一个向量，所以需要传入参数</span></span><br><span class="line">y.backward(torch.ones_like(x))</span><br><span class="line"><span class="comment"># 这里的y.detach和下一步的x.detach</span></span><br><span class="line"><span class="comment"># 是因为里面有步骤需要使用.numpy()的转换，有计算梯度的tensor不能使用.numpy()</span></span><br><span class="line">y = y.detach()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> utils <span class="keyword">import</span> d2l</span><br><span class="line">d2l.plot(x.detach(), [y, x.grad], <span class="string">&#x27;f(x)&#x27;</span>, <span class="string">&quot;f&#x27;(x)&quot;</span>, legend=[<span class="string">&#x27;f(x)&#x27;</span>, <span class="string">&#x27;Tangent line&#x27;</span>])</span><br><span class="line">d2l.plt.show()</span><br></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<p><img src="/2021/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/pytorch%E7%9A%84%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC/%E6%9B%B2%E7%BA%BF.png" alt="曲线"></p>
 <p><strong>参考</strong>：</p>
 <p><a href="https://towardsdatascience.com/pytorch-autograd-understanding-the-heart-of-pytorchs-magic-2686cd94ec95">PyTorch Autograd</a></p>
 <p><a href="https://blog.csdn.net/qq_39208832/article/details/117415229">grad can be implicitly created only for scalar outputs</a></p>
