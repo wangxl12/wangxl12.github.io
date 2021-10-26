@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-10-24T07:53:32.480Z</updated>
+  <updated>2021-10-26T01:49:46.306Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -17,14 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>线性回归从零开始实现</title>
+    <link href="https://wangxl12.github.io/2021/10/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AE%9E%E7%8E%B0/"/>
+    <id>https://wangxl12.github.io/2021/10/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AE%9E%E7%8E%B0/</id>
+    <published>2021-10-25T02:04:59.000Z</published>
+    <updated>2021-10-26T01:49:46.306Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文代码取自李沐的《动手学习深度学习》，里面有些代码细节让我觉得非常值得斟酌，特记录。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://wangxl12.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
     <title>pytorch的自动求导</title>
     <link href="https://wangxl12.github.io/2021/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/pytorch%E7%9A%84%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC/"/>
     <id>https://wangxl12.github.io/2021/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/pytorch%E7%9A%84%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC/</id>
     <published>2021-10-24T06:44:32.000Z</published>
-    <updated>2021-10-24T07:53:32.480Z</updated>
+    <updated>2021-10-26T04:57:14.710Z</updated>
     
     
-    <summary type="html">&lt;p&gt;使用pytorch的backward函数的时候报错：RuntimeError: grad can be implicitly created only for scalar outputs。通过本文记录一下。&lt;/p&gt;</summary>
+    <summary type="html">&lt;h1&gt;使用pytorch的backward()报错&lt;/h1&gt;
+&lt;p&gt;使用pytorch的backward函数的时候报错：RuntimeError: grad can be implicitly created only for scalar outputs。&lt;/p&gt;</summary>
     
     
     
@@ -410,27 +430,6 @@
     <category term="深度学习" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="必读书单" scheme="https://wangxl12.github.io/tags/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>计算机内功必读书单</title>
-    <link href="https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/"/>
-    <id>https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/</id>
-    <published>2021-08-21T07:10:53.000Z</published>
-    <updated>2021-09-04T08:12:26.172Z</updated>
-    
-    
-    <summary type="html">&lt;h1&gt;OS&lt;/h1&gt;</summary>
-    
-    
-    
-    <category term="必读书单" scheme="https://wangxl12.github.io/categories/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
-    
-    
-    <category term="必读书单" scheme="https://wangxl12.github.io/tags/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
-    
-    <category term="计算机内功" scheme="https://wangxl12.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%86%85%E5%8A%9F/"/>
     
   </entry>
   
