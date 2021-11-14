@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-10-27T01:53:40.993Z</updated>
+  <updated>2021-11-14T05:05:33.406Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -17,11 +17,71 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>一台主机生成多个ssh_key，无冲突提交代码至远程仓库</title>
+    <link href="https://wangxl12.github.io/2021/11/14/Git/%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E5%A4%9A%E4%B8%AAssh_key%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E8%87%B3%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/"/>
+    <id>https://wangxl12.github.io/2021/11/14/Git/%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E5%A4%9A%E4%B8%AAssh_key%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E8%87%B3%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</id>
+    <published>2021-11-14T04:24:18.000Z</published>
+    <updated>2021-11-14T05:05:33.406Z</updated>
+    
+    
+    <summary type="html">&lt;h1&gt;我的情况&lt;/h1&gt;
+&lt;p&gt;我之前创建了一个github账号wangxl12，当时也按照教程生成了ssh key，并且将公钥放在了github中保存了。现在我又创建了一个github账号wxltop，并新建了一个仓库，我想将仓库clone到本地，编辑之后上传代码。但是，我遇到了如下的问题：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Git" scheme="https://wangxl12.github.io/categories/Git/"/>
+    
+    
+    <category term="Git" scheme="https://wangxl12.github.io/tags/Git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>GNN-数据集</title>
+    <link href="https://wangxl12.github.io/2021/10/31/GNN/GNN-%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    <id>https://wangxl12.github.io/2021/10/31/GNN/GNN-%E6%95%B0%E6%8D%AE%E9%9B%86/</id>
+    <published>2021-10-31T02:05:10.000Z</published>
+    <updated>2021-10-31T02:43:14.364Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文介绍一些可以用于GNN的数据集&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数据集" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    
+    
+    <category term="GNN" scheme="https://wangxl12.github.io/tags/GNN/"/>
+    
+    <category term="数据集" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>基本概念</title>
+    <link href="https://wangxl12.github.io/2021/10/29/GNN/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
+    <id>https://wangxl12.github.io/2021/10/29/GNN/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</id>
+    <published>2021-10-29T06:08:59.000Z</published>
+    <updated>2021-10-30T06:38:06.045Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;除了一些常见的图的基本概念，如：连通图、度数、连通子图、强连通图、有向图、无向图、有向图连通性等之外，还有一些之前没有接触过的概念在此补充一下：&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="GNN" scheme="https://wangxl12.github.io/categories/GNN/"/>
+    
+    
+    <category term="GNN" scheme="https://wangxl12.github.io/tags/GNN/"/>
+    
+  </entry>
+  
+  <entry>
     <title>线性回归从零开始实现</title>
     <link href="https://wangxl12.github.io/2021/10/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AE%9E%E7%8E%B0/"/>
     <id>https://wangxl12.github.io/2021/10/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AE%9E%E7%8E%B0/</id>
     <published>2021-10-25T02:04:59.000Z</published>
-    <updated>2021-10-27T01:53:40.993Z</updated>
+    <updated>2021-10-29T02:17:31.900Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文代码取自李沐的《动手学习深度学习》，里面有些代码细节让我觉得非常值得斟酌，特记录。&lt;/p&gt;</summary>
@@ -341,10 +401,10 @@
     <link href="https://wangxl12.github.io/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/"/>
     <id>https://wangxl12.github.io/2021/08/23/%E5%B8%B8%E7%94%A8%E9%93%BE%E6%8E%A5/%E5%AD%A6%E4%B9%A0%E9%93%BE%E6%8E%A5/</id>
     <published>2021-08-23T03:39:44.000Z</published>
-    <updated>2021-10-06T11:29:03.152Z</updated>
+    <updated>2021-11-08T02:56:31.213Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;深度学习&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1 id=&quot;深度学习&quot;&gt;&lt;a href=&quot;#深度学习&quot; class=&quot;headerlink&quot; title=&quot;深度学习&quot;&gt;&lt;/a&gt;深度学习&lt;/h1&gt;</summary>
     
     
     
@@ -371,67 +431,6 @@
     
     
     <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>王争数据结构与算法学习笔记-递归</title>
-    <link href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/"/>
-    <id>https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%80%92%E5%BD%92/</id>
-    <published>2021-08-22T06:24:45.000Z</published>
-    <updated>2021-09-04T08:10:21.262Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;递归不需要我们去从最高层到最底层屡清楚，我们只需要考虑的是当前层与上一层之间的关系，将这种关系表示出来，然后将终止递归的条件确定清楚即可。至于一层一层往下调交给计算机来处理吧！试图想搞清楚计算机每一步都是怎么执行的，这样就很容易被绕进去。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>王争数据结构与算法学习笔记-队列</title>
-    <link href="https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/"/>
-    <id>https://wangxl12.github.io/2021/08/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E9%98%9F%E5%88%97/</id>
-    <published>2021-08-22T01:41:33.000Z</published>
-    <updated>2021-09-04T08:10:35.019Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;CPU的资源有限，任务处理速度与线程的个数不是线性相关，过多的线程反而会导致CPU的频繁切换，处理性能下降。所以，线程池的大小一般都是综合考虑要处理任务的特点和硬件环境来实现设置的。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习必读书单</title>
-    <link href="https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    <id>https://wangxl12.github.io/2021/08/21/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/</id>
-    <published>2021-08-21T07:21:20.000Z</published>
-    <updated>2021-09-04T08:12:41.793Z</updated>
-    
-    
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&quot;https://book.douban.com/subject/34988786/&quot;&gt;智能计算系统&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="必读书单" scheme="https://wangxl12.github.io/categories/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
-    
-    
-    <category term="深度学习" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="必读书单" scheme="https://wangxl12.github.io/tags/%E5%BF%85%E8%AF%BB%E4%B9%A6%E5%8D%95/"/>
     
   </entry>
   
