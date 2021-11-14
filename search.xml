@@ -2048,36 +2048,31 @@ Closeness=\frac{n-1}{\text{结点到其他结点最短路径之和}}</script><p>
   <entry>
     <title>Git安装+账户注册+SourceTree</title>
     <url>/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/</url>
-    <content><![CDATA[<h1>下载并安装typora</h1>
-<span id="more"></span>
+    <content><![CDATA[<h1 id="下载并安装typora"><a href="#下载并安装typora" class="headerlink" title="下载并安装typora"></a>下载并安装typora</h1><span id="more"></span>
 <p>Typora是一个写markdown的非常好用的工具，必不可少。</p>
 <p><a href="https://typora.io/#download">https://typora.io/#download</a></p>
-<h1>下载并安装git</h1>
-<p><a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<h1 id="下载并安装git"><a href="#下载并安装git" class="headerlink" title="下载并安装git"></a>下载并安装git</h1><p><a href="https://git-scm.com/">https://git-scm.com/</a></p>
 <p>直接点这个</p>
-<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/%E4%B8%8B%E8%BD%BDGit.png" alt="下载Git"></p>
+<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/下载Git.png" alt="下载Git"></p>
 <p>安装完成之后随意进入一个文件夹右键，可以看到下面框里的内容：</p>
 <p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/gitbush.png" alt="gitbush"></p>
-<h1>配置Git</h1>
-<p>新建一个文件夹，如learngit,然后进入文件夹，右键，点击<code>Git Bash Here</code>，弹出如下界面：</p>
+<h1 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h1><p>新建一个文件夹，如learngit,然后进入文件夹，右键，点击<code>Git Bash Here</code>，弹出如下界面：</p>
 <p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/shell.png" alt="shell"></p>
 <p>这个界面中可以执行常见的linux系统中的命令，比如ls，cd等。</p>
 <p>然后开始配置：</p>
 <ol>
-<li>配置用户名：<code>git config -global user.name &quot;xxx&quot;</code>，将xxx替换为你想设置的用户名。</li>
-<li>配置邮箱：<code>git config -global user.email &quot;xxx&quot;</code>，将xxx替换为邮箱</li>
-<li>配置大小写敏感：<code>git config -global core.ignorecase false</code>，直接输入这个指令即可。</li>
+<li>配置用户名：<code>git config --global user.name &quot;xxx&quot;</code>，将xxx替换为你想设置的用户名。</li>
+<li>配置邮箱：<code>git config --global user.email &quot;xxx&quot;</code>，将xxx替换为邮箱</li>
+<li>配置大小写敏感：<code>git config --global core.ignorecase false</code>，直接输入这个指令即可。</li>
 <li>查看配置信息：<code>git config --list</code>。</li>
 </ol>
-<h1>关联远程仓库</h1>
-<p>创建一个文件夹，命名为BigDataProject，这个文件夹将存放课设的代码的，可以自己考虑放在哪。输入如下指令：</p>
+<h1 id="关联远程仓库"><a href="#关联远程仓库" class="headerlink" title="关联远程仓库"></a>关联远程仓库</h1><p>创建一个文件夹，命名为BigDataProject，这个文件夹将存放课设的代码的，可以自己考虑放在哪。输入如下指令：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init  # 初始化文件夹，即将该文件夹设为本地仓库，执行之后会多一个.git文件夹</span><br><span class="line">git branch -M main  # 重命名master分支为main</span><br><span class="line">git remote add origin git@github.com:wangxl12/BigDataProject.git  # 关联github上的这个仓库</span><br><span class="line">git push -u origin main  # 将修改推送到GitHub的main分支上</span><br></pre></td></tr></table></figure>
-<h1>SourceTree使用</h1>
-<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/%E6%89%93%E5%BC%80%E9%A1%B9%E7%9B%AE.png" alt="打开项目"></p>
+<h1 id="SourceTree使用"><a href="#SourceTree使用" class="headerlink" title="SourceTree使用"></a>SourceTree使用</h1><p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/打开项目.png" alt="打开项目"></p>
 <p>等待一会儿就有了如下所示界面：</p>
-<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/%E9%A1%B9%E7%9B%AE%E7%95%8C%E9%9D%A2.png" alt="项目界面"></p>
+<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/项目界面.png" alt="项目界面"></p>
 <p>找到你的BigDataProject目录，有如下内容：</p>
-<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/%E9%A1%B9%E7%9B%AE%E5%86%85%E5%AE%B9.png" alt="项目内容"></p>
+<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/项目内容.png" alt="项目内容"></p>
 <p>接下来自学Git教程，进行上传代码、拉取代码、创建分支等等操作。</p>
 ]]></content>
       <categories>
