@@ -1,6 +1,290 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>小组合作项目使用Git的合理姿势</title>
+    <url>/2021/11/14/Git/%E5%B0%8F%E7%BB%84%E5%90%88%E4%BD%9C%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8Git%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/</url>
+    <content><![CDATA[<p>从远程clone过来的项目默认只有一个分支main:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">*main</span><br></pre></td></tr></table></figure>
+<p>尽量在dev分支上进行开发，因为main分支要存放稳定的版本，所以克隆了之后大家首先新建一个dev分支并关联到远程的dev分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git switch -c dev origin/dev</span><br><span class="line"><span class="meta">#</span><span class="bash"> switch是切换的意思，即切换分支</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> -c 表示没有dev分支就新建一个再切换</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 后面带了一个origin/dev，origin表示远程主机名，即origin/dev表示远程主机的dev分支，即github上的dev分支。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 其实直接git switch -c dev是有含义的，而且通常用的更多，表示新建一个名为dev的本地分支并且切换到dev分支下。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 这里多了一个远程分支在后面表示将本地分支dev和远程分支origin/dev关联起来。</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 如果这里没有关联远程分支origin/dev，也可以通过git branch --set-upstream-to=origin/dev dev来关联。</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2021/11/14/Git/%E5%B0%8F%E7%BB%84%E5%90%88%E4%BD%9C%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8Git%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF.png" alt="关联远程分支"></p>
+<p>这个dev分支就是大家可以进行提交的分支，main分支是稳定版本分支，我来合并，大家可以不用管。但是每一次打开这个git bash的时候都会默认是main分支，使用git switch dev就可以切换到dev分支。那么基本的分支弄好了大家如何修bug、提交代码呢？</p>
+<p>需要大家再创建一个分支，刚刚不是创建了一个dev然后关联到远程仓库了吗？现在创建的分支不用关联，只有你自己知道，比如我创建一个feature1分支并切换过去：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git switch -c feature1</span><br></pre></td></tr></table></figure>
+<p>下面比如我将readme.txt文件添加了一行：</p>
+<p><img src="/2021/11/14/Git/%E5%B0%8F%E7%BB%84%E5%90%88%E4%BD%9C%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8Git%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/%E6%B7%BB%E5%8A%A0%E4%BA%86%E4%B8%80%E8%A1%8C.png" alt="添加了一行"></p>
+<p>然后添加到暂存区：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add readme.txt</span><br></pre></td></tr></table></figure>
+<p>然后切换到feature1分支，再将修改提交到本地仓库：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git switch feature1</span><br><span class="line">git commit -m &quot;add a line&quot;</span><br></pre></td></tr></table></figure>
+<p>为什么需要切换到feature1分支呢？暂存区和工作区（BigDataProject文件夹）都是所有分支共享的，所以在哪里进行add操作都可以，但是commit操作会将暂存区里的修改一次性合并到本地仓库的对应分支上，所以需要切换到你想合并的分支下，我们不直接对dev分支进行操作，我们的思路是：直接对feature1分支进行操作，dev分支留在后面的修改全部弄完之后，将feature1合并到dev分支。</p>
+<p>刚刚是进行了一个修改，当你将需要修改的内容全部修改完之后，需要提交到远程仓库之前，需要将feature1提交的修改合并到dev分支上：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先切换到dev分支上：</span></span><br><span class="line">git switch dev</span><br><span class="line"><span class="meta">#</span><span class="bash"> 合并修改：</span></span><br><span class="line">git merge --no-ff feature1</span><br></pre></td></tr></table></figure>
+<p>如果你对于feature1没有其他的使用价值了，就可以将这个分支删除了：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d feature1</span><br></pre></td></tr></table></figure>
+<p>好了，刚刚将修改提交到本地仓库dev了，下面提交到远程仓库github上：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push origin dev  </span><br></pre></td></tr></table></figure>
+<p>提交之后可以去github上查看一下：</p>
+<p><img src="/2021/11/14/Git/%E5%B0%8F%E7%BB%84%E5%90%88%E4%BD%9C%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8Git%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/%E5%9C%A8github%E6%9F%A5%E7%9C%8B.png" alt="在github查看"></p>
+<p>？没变啊？</p>
+<p>别急，这个是main分支下的状态，我们刚刚提交的是dev分支，所以切换一下：</p>
+<p><img src="/2021/11/14/Git/%E5%B0%8F%E7%BB%84%E5%90%88%E4%BD%9C%E9%A1%B9%E7%9B%AE%E4%BD%BF%E7%94%A8Git%E7%9A%84%E6%AD%A3%E7%A1%AE%E5%A7%BF%E5%8A%BF/dev%E5%88%86%E6%94%AF.png" alt="dev分支"></p>
+<p>这就是我们理想中的流程，即成员需要做的就是自己创建分支，在里面“大闹天宫”，提交到本地仓库，然后合并到dev分支中，最后将这个dev分支的内容提交到远程的dev分支，而main分支的内容不需要弄，组长来解决就行。</p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git版本控制与常见操作</title>
+    <url>/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/</url>
+    <content><![CDATA[<p>为什么我们要用git来提交代码？</p>
+<p>我们平常在自己电脑上写一个简单的实验题目的时候，比如我实现了可视化功能，代码以及没有bug了，接下来想要同步数据库，但是又害怕接下来的代码会误改之前完整的代码，于是我就将当前没有Bug的代码压缩打包，命名为v1.0，然后就可以肆无忌惮的编写后面的代码了，等到后面的某一个功能实现之后，我重新将新版的代码压缩打包，命名为v1.1，继续后面的工作，如果后面某一个环节没做好导致所有代码都崩了，想回到v1.0，直接解压v1.0压缩包重新开始编写即可。</p>
+<p>相信大家遇到一个复杂的项目的时候会有上述的操作，但是操作比较繁杂，特别是多个人来合作一个项目开发的时候，大家的代码共享、修改都会遇到很多的问题。使用git可以很好的解决上述问题，大家可以在自己的电脑上写好代码，然后上传到github 上，也可以将别人写的代码从github上下载过来，这个功能解决了开发人员之间的代码交互问题。</p>
+<p>GitHub支持多个版本分支，如下图：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="版本控制意图"></p>
+<p>上图中每一个节点表示一个版本号的代码，假设左边分支名字为dev，表示我们进行开发的分支，也就是可能有bug，正在维护的版本分支；右边分支假设是main 分支，表示我们发布的版本分支，比如我们最终可以拿出来发布的版本。</p>
+<p><code>main</code>分支应该是非常稳定的，也就是仅用来发布新版本，平时不能在上面干活；那在哪干活呢？干活都在<code>dev</code>分支上，也就是说，<code>dev</code>分支是不稳定的，到某个时候，比如1.0版本发布时，再把<code>dev</code>分支合并到<code>main</code>上，在<code>main</code>分支发布1.0版本.团队合作的分支看起来就像这样：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E5%A4%8D%E6%9D%82%E5%9B%BE.png" alt="复杂图"></p>
+<p>我首先在我的账号上创建了一个仓库<code>BigData</code>，然后拉其他人过来就可以协同完成这个项目，首先将项目从远程拉取过来：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:wangxl12/BigDataProject.git</span><br></pre></td></tr></table></figure>
+<p>注意要把SSH Key添加到GitHub，如果提示电脑没有安装ssh，就需要安装一下.</p>
+<p>查看目前有哪些分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<p>默认只有main分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git branch</span></span><br><span class="line">* main</span><br></pre></td></tr></table></figure>
+<p>注意，要在dev分支上开发，就必须创建远程origin（远程主机名）的dev分支到本地，使用如下命令创建本地dev分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git switch -c dev origin/dev</span><br></pre></td></tr></table></figure>
+<p>然后就可以在dev分支上修改，并时不时将dev分支push到远程：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;changed something&quot;</span><br><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+<p>我一开始创建仓库的时候只有main分支，这个分支作为稳定版本发布的分支，尽量少用，而dev分支我们作为开发分支，可以上传代码到这里。可能对于本地仓库、远程仓库的概念有不理解的地方，可以参看下面这张图：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E4%BB%93%E5%BA%93%E5%9B%BE.png" alt="仓库图"></p>
+<p>workspace就是我们的本地工作区，即BigData文件夹，index是暂存区，也在本地，repository是本地仓库，就是BigData目录下的.git目录（这是一个隐藏目录，如果看不见的话可能隐藏了，可以设置文件夹中的隐藏项为可见就可以看到了），而Remote就是远程仓库，即Github或者Gitee。有向线段之间的单词表示操作，经过这些操作之后文件会被传到不同的仓库。</p>
+<h1>廖雪峰教程</h1>
+<p>工作区（BigData）目录下有一个隐藏目录.git，这个是Git的版本库，版本库里有很多东西，其中最重要的就是称为stage（或者叫index)的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD.</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93.png" alt="本地仓库"></p>
+<p>往Git版本库里添加的时候分为两步：</p>
+<p>第一步是用<code>git add</code>将文件添加进去，实际上就是将文件中的修改添加到暂存区；</p>
+<p>第二步是用<code>git commit</code>提交修改，实际上是将暂存区中的所有内容提交到当前分支；</p>
+<p>因为我们创建Git版本库时，Git自动为我们创建了唯一一个<code>master</code>分支，所以，现在，<code>git commit</code>就是往<code>master</code>分支上提交更改。可以简单理解为，需要提交的文件修改通通放到暂存区，然后，一次性提交暂存区的所有修改。</p>
+<p>比如现在创建了一个test.txt文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch test.txt</span><br></pre></td></tr></table></figure>
+<p>先加到暂存区：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add test.txt</span><br></pre></td></tr></table></figure>
+<p>然后提交到当前分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git commit -m &quot;我创建了一个test.txt文件&quot;</span><br></pre></td></tr></table></figure>
+<p>注意，<code>git commit</code>只会将暂存区里的修改提交到当前的分支，如果有修改没有提交到暂存区，那么<code>commit</code>无法将这个修改提交到当前分支。此时，使用<code>git status</code>查看当前的状态的时候，可以看见类似下面的内容：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/nostaged.png" alt="nostaged"></p>
+<p>这就说明有一个read.txt文件在暂存区内，该文件有修改没有提交到版本库。可以使用如下指令<strong>查看工作区内的这个文件和版本库（本地）之间的区别</strong>：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git diff HEAD -- readme.txt</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/diff.png" alt="diff"></p>
+<p>白色是工作区和版本库之间相同的部分，红色是工作区删掉的，绿色则是工作区添加的内容。</p>
+<h1>丢弃修改</h1>
+<ul>
+<li><strong>假设此时修改了工作区的内容，但是还没有提交到暂存区，可以通过如下的方式丢弃修改：</strong></li>
+</ul>
+<p><strong>丢弃工作区的修改：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git restore readme.txt  # 不用背，使用git status查看状态的时候有提示</span><br></pre></td></tr></table></figure>
+<p>修改之后查看工作区和版本库之间的区别：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/nodiff.png" alt="nodiff"></p>
+<p>发现回到了修改工作区之前的状态。就是让这个文件回到最近一次<code>git commit</code>或<code>git add</code>时的状态。<code>git checkout -- file</code>命令中的<code>--</code>很重要，没有<code>--</code>，就变成了“切换到另一个分支”的命令。</p>
+<ul>
+<li><strong>假设此时修改了工作区的内容，还通过add添加到了暂存区，可以通过如下的方式丢弃修改：</strong></li>
+</ul>
+<p>首先输入<code>git restore --staged &lt;file&gt;</code>将暂存区中的文件恢复到提交到暂存区之前，即在工作区修改了没有进行add操作。</p>
+<p>然后使用<code>git restore &lt;file&gt;</code>将工作区的文件修改抛弃，即恢复到没有修改的状态。期间可以使用git status查看文件的状态，<strong>如果是绿色字体的modified，表示提交到了暂存区，没有commit，如果是红色的modified，表示修改了没有add。</strong></p>
+<ul>
+<li><strong>如果不但add交到了暂存区，还commit到了版本库，可以使用版本回退来回到上一个版本，不过这个要求你还没有将本地的版本库推送到远程版本库。</strong></li>
+</ul>
+<p>然后将本地仓库的内容上传到远程仓库：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>查看历史记录：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git log  # 确定要回到之前的哪个版本</span><br><span class="line"><span class="meta">#</span><span class="bash"> 或者</span></span><br><span class="line">git log --pretty=oneline</span><br></pre></td></tr></table></figure>
+<p>版本回退：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reset --hard HEAD^  # 回退一个版本</span><br><span class="line">git reset --hard HEAD^^^ # 回退3个版本</span><br><span class="line">git reset --hard HEAD~100 # 回退100个版本</span><br></pre></td></tr></table></figure>
+<p>版本前进：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reset --hard 版本号  # 版本号可以通过git log查看，不需要完全输入，可以通过输入4~5个字符自动找到</span><br></pre></td></tr></table></figure>
+<p>查看记录的每一次命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git reflog  # 确定要回到未来的哪个版本</span><br></pre></td></tr></table></figure>
+<h1>删除文件</h1>
+<p>将readme.txt删除：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm readme.txt</span><br></pre></td></tr></table></figure>
+<p>然后查看状态：<code>git status</code></p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/deletestatus.png" alt="deletestatus"></p>
+<p>根据提示，可以使用<code>git restore &lt;file&gt;</code>来恢复工作区的修改：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git restore readme.txt</span><br></pre></td></tr></table></figure>
+<p>重新查看状态：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/newstatus.png" alt="newstatus"></p>
+<p>但是如果真的想删掉呢？我们创建一个test.txt文件试一下</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch test.txt</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;commit test.txt&quot;</span><br><span class="line">rm test.txt</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/result1.png" alt="result1"></p>
+<p>接下来将暂存区中的文件删掉，然后commit即可：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/delete.png" alt="delete"></p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/commit.png" alt="commit"></p>
+<h1>创建远程仓库</h1>
+<p>如果一开始只是在本地仓库中操作的，可以将本地仓库关联远程 仓库，然后将本地仓库的内容推送到GitHub仓库，在本地仓库下执行如下指令即可关联：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote add origin git@github.com:wangxl12/learngit.git</span><br></pre></td></tr></table></figure>
+<p>这里的origin是远程仓库，这是Git默认的叫法，也可以改成别的，但是<code>origin</code>这个名字一看就知道是远程库。</p>
+<p>下一步可以将本地库中的所有内容推送到远程库上：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<p>把本地库的内容推送到远程，用<code>git push</code>命令，实际上是把当前分支<code>master</code>推送到远程。</p>
+<p>由于远程库是空的，我们第一次推送<code>master</code>分支时，加上了<code>-u</code>参数，Git不但会把本地的<code>master</code>分支内容推送的远程新的<code>master</code>分支，还会把本地的<code>master</code>分支和远程的<code>master</code>分支关联起来，在以后的推送或者拉取时就可以简化命令。</p>
+<p>从现在起，只要本地作了提交，就可以通过命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<p>把本地<code>master</code>分支的最新修改推送至GitHub，现在，你就拥有了真正的分布式版本库！</p>
+<h1>删除远程库</h1>
+<p>如果添加的时候地址写错了，或者就是想删除远程库，可以用<code>git remote rm &lt;name&gt;</code>命令。使用前，建议先用<code>git remote -v</code>查看远程库信息：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git remote -v</span></span><br><span class="line">origin  git@github.com:wangxl12/BigDataProject.git (fetch)</span><br><span class="line">origin  git@github.com:wangxl12/BigDataProject.git (push)</span><br></pre></td></tr></table></figure>
+<p>然后，根据名字删除，比如删除<code>origin</code>：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git remote rm origin</span><br></pre></td></tr></table></figure>
+<p>此处的“删除”其实是解除了本地和远程的绑定关系，并不是物理上删除了远程库。远程库本身并没有任何改动。要真正删除远程库，需要登录到GitHub，在后台页面找到删除按钮再删除。</p>
+<h1>从远程库克隆</h1>
+<p>上面将的是先创建本地库，然后关联远程库，现在是先创建远程库，然后从远程库克隆。</p>
+<p>如果有多个人协作开发，那么每个人各自从远程克隆一份就可以了。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:michaelliao/gitskills.git</span><br></pre></td></tr></table></figure>
+<h1>分支管理</h1>
+<h2 id="创建与合并分支">创建与合并分支</h2>
+<p>强烈建议先学廖雪峰的Git教程：<a href="https://www.liaoxuefeng.com/wiki/896043488029600/900003767775424">https://www.liaoxuefeng.com/wiki/896043488029600/900003767775424</a></p>
+<p><strong>创建分支并切换分支：</strong></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout -b dev</span><br><span class="line"><span class="meta">#</span><span class="bash"> 相当于下面的两句：</span></span><br><span class="line">git branch dev</span><br><span class="line">git checkout dev</span><br></pre></td></tr></table></figure>
+<p>如果希望将分支推送到远程库可以使用如下指令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git push origin dev</span><br></pre></td></tr></table></figure>
+<p>使用<code>git branch</code>查看分支：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<p>然后我们可以在dev分支上正常提交，比如对readme.txt添加了一行内容：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E6%B7%BB%E5%8A%A0%E4%BA%86%E4%B8%80%E8%A1%8C.png" alt="添加了一行"></p>
+<p>绿色部分就是添加的内容，然后提交：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add readme.txt</span><br><span class="line">git commit -m &quot;branch dev test&quot;</span><br></pre></td></tr></table></figure>
+<p>通过git status也可以查看状态信息。</p>
+<p>然后dev分支的工作完成之后，可以切回到main分支并查看添加的内容：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git checkout main</span><br><span class="line">cat readme.txt</span><br></pre></td></tr></table></figure>
+<p>发现刚刚添加的内容不见了:</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E4%BF%AE%E6%94%B9%E6%B6%88%E5%A4%B1.png" alt="修改消失"></p>
+<p>因为刚刚提交的是在dev 分支上，而main 分支此时的提交点并没有发生改变：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E7%8A%B6%E6%80%811.png" alt="状态1"></p>
+<p>现在，我们将dev分支的工作成果合并到main上：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git merge dev</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E5%90%88%E5%B9%B6.png" alt="合并"></p>
+<p>再查看readme.txt内容发现和dev分支的内容一致了：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E7%BB%93%E6%9E%9C2.png" alt="结果2"></p>
+<p>注意到上面的<code>Fast-forward</code>信息，Git告诉我们，这次合并是“快进模式”，也就是直接把<code>master</code>指向<code>dev</code>的当前提交，所以合并速度非常快。</p>
+<p>当然，也不是每次合并都能<code>Fast-forward</code>，我们后面会讲其他方式的合并。</p>
+<p>合并完成后，就可以放心地删除<code>dev</code>分支了：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d dev</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查看分支：</span></span><br><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<p>因为创建、合并和删除分支非常快，所以Git鼓励你使用分支完成某个任务，合并后再删掉分支，这和直接在<code>master</code>分支上工作效果是一样的，但过程更安全。</p>
+<p>切换分支还可以使用switch：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 创建并切换分支</span></span><br><span class="line">git switch -c dev</span><br><span class="line"><span class="meta">#</span><span class="bash"> 切换到已有分支</span></span><br><span class="line">git switch dev</span><br></pre></td></tr></table></figure>
+<p>查看分支：<code>git branch</code></p>
+<p>创建分支：<code>git branch &lt;name&gt;</code></p>
+<p>切换分支：<code>git checkout &lt;name&gt;</code>或者<code>git switch &lt;name&gt;</code></p>
+<p>创建+切换分支：<code>git checkout -b &lt;name&gt;</code>或者<code>git switch -c &lt;name&gt;</code></p>
+<p>合并某分支到当前分支（快速合并）：<code>git merge &lt;name&gt;</code></p>
+<p>删除分支：<code>git branch -d &lt;name&gt;</code></p>
+<h2 id="解决冲突">解决冲突</h2>
+<p>现在只有main分支，创建一个文件test，add、commit，然后创建一个新的分支feature1，add到暂存区，切换到这个分支下commit到本地仓库中：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch test</span><br><span class="line">git add .</span><br><span class="line"><span class="meta">#</span><span class="bash"> 先将<span class="built_in">test</span>创建的这一个修改提交到本地仓库</span></span><br><span class="line">git commit -m &quot;create test file&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 创建并切换到feature1分支</span></span><br><span class="line">git switch -c feature1</span><br><span class="line"><span class="meta">#</span><span class="bash"> *********向<span class="built_in">test</span>文件中添加一行内容，比如我添加branch main**************</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> vi <span class="built_in">test</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> i</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> branch main</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> :wq!</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> *****************************************************************</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> .表示将所有修改提交到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="meta">#</span><span class="bash"> 暂存区和工作区都是所有分支共享的，即修改和add操作在哪个分支下进行都可</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 但是commit需要切换到想要提交的分支，这里我想提交到main分支</span></span><br><span class="line">git switch main</span><br><span class="line">git commit -m &quot;add a main branch line&quot;</span><br><span class="line"><span class="meta">#</span><span class="bash"> 至此，main分支已经比feature1分支多一个版本节点了，下面继续让二者程并列的状态</span></span><br><span class="line">git switch feature1</span><br><span class="line"><span class="meta">#</span><span class="bash"> *********向<span class="built_in">test</span>文件中添加一行内容，比如我添加的是branch feature1*******</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> vi <span class="built_in">test</span>  <span class="comment"># 打开会发现test是空的，因为之前的修改已经提交到main分支上了</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> i</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> line2 branch dev</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> :wq!</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> *****************************************************************</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;add a feature1 branch line&quot;</span><br><span class="line">git switch main</span><br></pre></td></tr></table></figure>
+<p>至此，分支的状态到达了下图所示：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E5%B9%B6%E8%A1%8C%E7%8A%B6%E6%80%81.png" alt="并行状态"></p>
+<p>这种情况下，Git无法执行“快速合并”，只能试图把各自的修改合并起来，但这种合并就可能会有冲突，我们试试看：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git merge feature1</span></span><br><span class="line">Auto-merging test</span><br><span class="line">CONFLICT (content): Merge conflict in test</span><br><span class="line">Automatic merge failed; fix conflicts and then commit the result.</span><br></pre></td></tr></table></figure>
+<p>因为我们对一个文件进行了两种修改，这两种修改谁覆盖谁都说不通，所以会发生冲突。我们查看冲突的文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git status</span></span><br><span class="line">On branch main</span><br><span class="line">Your branch is ahead of &#x27;origin/main&#x27; by 11 commits.</span><br><span class="line">  (use &quot;git push&quot; to publish your local commits)</span><br><span class="line"></span><br><span class="line">You have unmerged paths.</span><br><span class="line">  (fix conflicts and run &quot;git commit&quot;)</span><br><span class="line">  (use &quot;git merge --abort&quot; to abort the merge)</span><br><span class="line"></span><br><span class="line">Unmerged paths:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)</span><br><span class="line">        both modified:   test</span><br><span class="line"></span><br><span class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>我们直接查看test的内容：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> cat <span class="built_in">test</span></span></span><br><span class="line">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</span><br><span class="line">branch main</span><br><span class="line">=======</span><br><span class="line">line2 branch dev</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">&gt;&gt;&gt;&gt;&gt;&gt; feature1</span></span><br></pre></td></tr></table></figure>
+<p>我们直接手动修改test文件为如下内容，从而解决冲突：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/solveconflict.png" alt="solveconflict"></p>
+<p>然后重新提交：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git add test</span><br><span class="line">git commit -m &quot;conflict fixed&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git commit -m <span class="string">&quot;conflict fixed&quot;</span></span></span><br><span class="line">[main d7c72cc] conflict fixed</span><br></pre></td></tr></table></figure>
+<p>现在main和feature1分支变成了下图所示：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E7%8A%B6%E6%80%812.png" alt="状态2"></p>
+<p>用带参数的<code>git log</code>也可以看到分支的合并情况：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</span></span><br><span class="line">*   d7c72cc (HEAD -&gt; main) conflict fixed</span><br><span class="line">|\</span><br><span class="line">| * 7fb2bc5 (feature1) add a branch feature1 line</span><br><span class="line">* | f68248d add a main branch line</span><br><span class="line">|/</span><br><span class="line">*   69e37a8 Merge branch &#x27;dev&#x27; into main</span><br><span class="line">|\</span><br><span class="line">| * d441a47 test</span><br><span class="line">* | 4e52e8e test-main</span><br><span class="line">|/</span><br><span class="line">* 9bea0ff branch dev test</span><br><span class="line">* 53a40b8 delete test.txt</span><br><span class="line">* a66d7e5 commit test.txt</span><br><span class="line">* 4b238b8 test</span><br><span class="line">* b5353dc two lines changed</span><br><span class="line">* 80c715c add line 2</span><br><span class="line">* 87cf69b create readme.txt</span><br><span class="line">* ed46945 (origin/main) delete README.md</span><br><span class="line">* f650647 (origin/origin/dev, origin/dev) wxl commit readme.md</span><br></pre></td></tr></table></figure>
+<p>合并完成之后，我们就可以删除feature1分支了：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git branch -d feature1</span><br></pre></td></tr></table></figure>
+<p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</p>
+<p>解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。</p>
+<p>用<code>git log --graph</code>命令可以看到分支合并图。</p>
+<p><strong>上面举的例子是对同一个文件进行修改，所以无法自动合并，如果是两个分支同时创建一个文件的话，还是可以使用merge合并的，下面的内容就是举的这个例子：</strong></p>
+<p>然后再新建一个文件，add,切换到main分支下commit：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">touch test-main</span><br><span class="line">git add .</span><br><span class="line">git switch main</span><br><span class="line">git commit -m &quot;test-main&quot;</span><br></pre></td></tr></table></figure>
+<p>注意这里的创建文件、add在哪个分支下进行都可以，因为工作区和暂存区是所有分支共享的，但是commit需要在想提交的那个分支下进行，因为commit的本质就是同步工作区里的相应的分支。</p>
+<p>现在可以切换到dev和main分支中查看，分别有一个test文件和test-main文件。现在各自的状态如下（将feature1分支改为dev，master分支改为main)：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E7%8A%B6%E6%80%813.png" alt="状态3"></p>
+<p>这种情况下如果进行快速合并的话：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git switch main</span><br><span class="line">git merge dev</span><br></pre></td></tr></table></figure>
+<p>会调到一个类似文本文件的界面，输入:q退出。出来之后发现main分支有test文件了：</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/test%E6%96%87%E4%BB%B6%E5%8F%88%E6%9C%89%E4%BA%86.png" alt="test文件又有了"></p>
+<h2 id="分支管理策略">分支管理策略</h2>
+<p>通常，合并分支时，如果可能，Git会用<code>Fast forward</code>模式，但这种模式下，删除分支后，会丢掉分支信息。</p>
+<p>如果要强制禁用<code>Fast forward</code>模式，Git就会在merge时生成一个新的commit，这样，从分支历史上就可以看出分支信息。</p>
+<p>合并分支时，加上<code>--no-ff</code>参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而<code>fast forward</code>合并就看不出来曾经做过合并。</p>
+<p>切换到dev分支，修改一下test里的内容，然后add, commit提交：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git switch -c dev</span><br><span class="line">vi test</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;add merge&quot;</span><br></pre></td></tr></table></figure>
+<p>然后切换回main：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git switch main</span><br></pre></td></tr></table></figure>
+<p>准备合并dev分支，请注意–no-ff参数，表示禁用Fast forward:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git switch main</span><br><span class="line">git merge --no-ff -m &quot;merge with no-ff&quot; dev</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git merge --no-ff -m <span class="string">&quot;merge with no-ff&quot;</span> dev  <span class="comment"># 因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。</span></span></span><br><span class="line">Merge made by the &#x27;recursive&#x27; strategy.</span><br><span class="line"> test | 3 +--</span><br><span class="line"> 1 file changed, 1 insertion(+), 2 deletions(-)</span><br></pre></td></tr></table></figure>
+<p>合并后，我们用<code>git log</code>看看分支历史：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> git <span class="built_in">log</span> --graph --pretty=oneline --abbrev-commit</span></span><br><span class="line">*   fecae9f (HEAD -&gt; main) merge with no-ff</span><br><span class="line">|\</span><br><span class="line">| * 39ba997 (dev) add merge</span><br><span class="line">|/</span><br><span class="line">*   d7c72cc (origin/main) conflict fixed</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>可以看到，不使用<code>Fast forward</code>模式，merge后就像这样:</p>
+<p><img src="/2021/11/14/Git/Git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C/%E7%8A%B6%E6%80%814.png" alt="状态4"></p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git安装+账户注册+SourceTree</title>
+    <url>/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/</url>
+    <content><![CDATA[<h1>下载并安装typora</h1>
+<p>Typora是一个写markdown的非常好用的工具，必不可少。</p>
+<p><a href="https://typora.io/#download">https://typora.io/#download</a></p>
+<h1>下载并安装git</h1>
+<p><a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<p>直接点这个</p>
+<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/%E4%B8%8B%E8%BD%BDGit.png" alt="下载Git"></p>
+<p>安装完成之后随意进入一个文件夹右键，可以看到下面框里的内容：</p>
+<p>![git bush](git bush.png)</p>
+<h1>配置Git</h1>
+<p>新建一个文件夹，如learngit,然后进入文件夹，右键，点击<code>Git Bash Here</code>，弹出如下界面：</p>
+<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/shell.png" alt="shell"></p>
+<p>这个界面中可以执行常见的linux系统中的命令，比如ls，cd等。</p>
+<p>然后开始配置：</p>
+<ol>
+<li>配置用户名：<code>git config -global user.name &quot;xxx&quot;</code>，将xxx替换为你想设置的用户名。</li>
+<li>配置邮箱：<code>git config -global user.email &quot;xxx&quot;</code>，将xxx替换为邮箱</li>
+<li>配置大小写敏感：<code>git config -global core.ignorecase false</code>，直接输入这个指令即可。</li>
+<li>查看配置信息：<code>git config --list</code>。</li>
+</ol>
+<h1>关联远程仓库</h1>
+<p>创建一个文件夹，命名为BigDataProject，这个文件夹将存放课设的代码的，可以自己考虑放在哪。输入如下指令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git init  # 初始化文件夹，即将该文件夹设为本地仓库，执行之后会多一个.git文件夹</span><br><span class="line">git branch -M main  # 重命名master分支为main</span><br><span class="line">git remote add origin git@github.com:wangxl12/BigDataProject.git  # 关联github上的这个仓库</span><br><span class="line">git push -u origin main  # 将修改推送到GitHub的main分支上</span><br></pre></td></tr></table></figure>
+<h1>SourceTree使用</h1>
+<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/%E6%89%93%E5%BC%80%E9%A1%B9%E7%9B%AE.png" alt="打开项目"></p>
+<p>等待一会儿就有了如下所示界面：</p>
+<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/%E9%A1%B9%E7%9B%AE%E7%95%8C%E9%9D%A2.png" alt="项目界面"></p>
+<p>找到你的BigDataProject目录，有如下内容：</p>
+<p><img src="/2021/11/14/Git/Git%E5%AE%89%E8%A3%85+%E8%B4%A6%E6%88%B7%E6%B3%A8%E5%86%8C+SourceTree/%E9%A1%B9%E7%9B%AE%E5%86%85%E5%AE%B9.png" alt="项目内容"></p>
+<p>接下来自学Git教程，进行上传代码、拉取代码、创建分支等等操作。</p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一台主机生成多个ssh_key，无冲突提交代码至远程仓库</title>
     <url>/2021/11/14/Git/%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E5%A4%9A%E4%B8%AAssh_key%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E8%87%B3%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/</url>
     <content><![CDATA[<h1>我的情况</h1>
