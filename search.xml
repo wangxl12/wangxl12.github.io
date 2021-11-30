@@ -14,7 +14,7 @@
   </entry>
   <entry>
     <title>Mendeley Desktop的使用</title>
-    <url>/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/</url>
+    <url>/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley-Desktop%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/</url>
     <content><![CDATA[<p>当我们写一篇论文的时候，会用到很多的参考文献，使用论文管理工具可以更加方便的帮助我们提高工作效率，本文介绍使用Mendeley。</p>
 <span id="more"></span>
 <h1>为什么选Mendeley?</h1>
@@ -24,62 +24,6 @@
 <p>注意下载<code>Mendeley Desktop</code>，而不是<code>Mendeley Reference Manager</code>，这是两个不同的软件，后者很鸡肋，难用，功能少的可怜，很多人以为后者是前者的新版，其实不然，可以参考<a href="https://www.zhihu.com/question/380051419">这里</a>。对于<code>Mendeley Desktop</code>的下载网址点击<a href="https://www.mendeley.com/reference-management/mendeley-desktop">这里</a></p>
 <h2 id="安装插件">安装插件</h2>
 <p>下载好了<code>Mendeley Desktop</code>(以下都称为<code>Mendeley</code>)，提示安装两个插件：</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/chajian.png" alt="chajian"></p>
-<p>第一个插件安装容易，但是我在安装第二个插件的时候报错了，报错的信息当时没有记录，但是大致意思如下：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">E:\Program Files\WPS\WPS Office\11.1.0.11045\office6目录下没有startup</span><br></pre></td></tr></table></figure>
-<p>我就来到office6目录下创建一个名为<code>startup</code>的目录，然后重新点击<code>install</code>就发现在这个目录下新增了这个文件：</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/newfile.png" alt="newfile"></p>
-<p>然后将这个文件剪切到<code>C:\Users\Admin\AppData\Roaming\Microsoft\Word\STARTUP</code>目录下，重新打开一个word文档，就可以发现在 <code>引用</code> 栏中新增了这一项：</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/newadd.png" alt></p>
-<p>如果要在word中插入一个引用，先点击<code>Insert Citation</code> ，然后出现这个窗口：</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/window.png" alt></p>
-<p>点击<code>Go To Mendeley</code> 。</p>
-<p>选中一篇论文，点击左上角的<code>Cite</code> 。</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/cite.png" alt></p>
-<p>然后在word 文档里点击<code>Insert Bibliography</code>，就OK了。</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/citeresult.png" alt></p>
-<p>如果数据库中有文献改动，改完了之后点击<code>Refresh</code>即可。</p>
-<p>Reference:</p>
-<p><a href="https://blog.csdn.net/qq_41118663/article/details/119978092">解决word中安装Mendeley插件Unable to install the Microsoft Word Plugin</a></p>
-<h2 id="make-your-work-easier">Make your work easier</h2>
-<h3 id="导入文件">导入文件</h3>
-<p>导入文件的方式有多种，可以拖拽文件，可以点击<code>Add </code> 添加单个文件、多个文件、文件夹等。</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/addfile.png" alt></p>
-<p><strong>网页添加文献</strong>：</p>
-<p>首先需要安装浏览器插件，安装地址在<a href="https://www.mendeley.com/reference-management/web-importer/">这里</a>，安装好了之后，浏览器出现这个图标：</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/fig.png" alt></p>
-<p>现在我打开这篇论文：<a href="https://openaccess.thecvf.com/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf">https://openaccess.thecvf.com/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf</a></p>
-<p>然后在这篇论文的界面中，点击这个图标，然后选中文章，点击<code>添加到图书馆</code>:</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/addpaper.png" alt></p>
-<p>在本地中同步一下：</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/sync.png" alt></p>
-<p>就发现同步过来了，只不过不能像本地的paper那样可以直接点开在本地的Mendeley中浏览，不过可以点击这里在web中浏览：</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/web.png" alt></p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/websee.png" alt></p>
-<h2 id="添加gb-t-7714-style">添加GB/T 7714 style</h2>
-<p>点击<code>Style</code>里的More Styles：</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/morestyle.png" alt></p>
-<p>点击<code>Get More Styles</code> ，搜索<code>GB/T 7714-2015</code> ，然后安装numeric的那个：</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/GB.png" alt></p>
-<p>安装之后需要在Installed选项卡中选择输入GB搜索，然后选择这个style。一开始的时候会出现英文人名全部大写的情况，可以参考这篇博客修改：</p>
-<p><a href="https://blog.csdn.net/sdulmy/article/details/95616719">mendeley引入并修改GB/T 7714-2005中文标准参考文献 ，解决人名全部大写问题</a></p>
-<h3 id="创建小组">创建小组</h3>
-<p>点击左边的<code>Group</code> 就可以创建小组，为小组命名-&gt;邀请组员即可创建成功。Group的文献添加和个人使用时的文献添加是一样的。</p>
-<h3 id="阅读">阅读</h3>
-<p>点击一篇本地中的论文，然后右侧中有论文的信息，笔记等，笔记可以自己添加：</p>
-<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/left.png" alt></p>
-<p><a href="https://zhuanlan.zhihu.com/p/271010871">文献管理 | Mendeley 的基础使用方法</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/99491256#:~:text=Mendeley,%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%BE%E7%A4%BA%E3%80%82">文献管理工具（二）：Mendeley操作指南</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Mendeley Desktop的使用</title>
-    <url>/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley-Desktop%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/</url>
-    <content><![CDATA[<p>当我们写一篇论文的时候，会用到很多的参考文献，使用论文管理工具可以更加方便的帮助我们提高工作效率，本文介绍使用Mendeley。</p>
-<span id="more"></span>
-<h1 id="为什么选Mendeley"><a href="#为什么选Mendeley" class="headerlink" title="为什么选Mendeley?"></a>为什么选Mendeley?</h1><p>可以参考这篇文章：<a href="https://zhuanlan.zhihu.com/p/86711732">五款常用的文献管理神软件</a></p>
-<h1 id="如何使用Mendeley"><a href="#如何使用Mendeley" class="headerlink" title="如何使用Mendeley?"></a>如何使用Mendeley?</h1><h2 id="下载Mendeley"><a href="#下载Mendeley" class="headerlink" title="下载Mendeley"></a>下载Mendeley</h2><p>注意下载<code>Mendeley Desktop</code>，而不是<code>Mendeley Reference Manager</code>，这是两个不同的软件，后者很鸡肋，难用，功能少的可怜，很多人以为后者是前者的新版，其实不然，可以参考<a href="https://www.zhihu.com/question/380051419">这里</a>。对于<code>Mendeley Desktop</code>的下载网址点击<a href="https://www.mendeley.com/reference-management/mendeley-desktop">这里</a></p>
-<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>下载好了<code>Mendeley Desktop</code>(以下都称为<code>Mendeley</code>)，提示安装两个插件：</p>
 <p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley-Desktop%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/chajian.png" alt="chajian"></p>
 <p>第一个插件安装容易，但是我在安装第二个插件的时候报错了，报错的信息当时没有记录，但是大致意思如下：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">E:\Program Files\WPS\WPS Office\11.1.0.11045\office6目录下没有startup</span><br></pre></td></tr></table></figure>
@@ -97,7 +41,9 @@
 <p>如果数据库中有文献改动，改完了之后点击<code>Refresh</code>即可。</p>
 <p>Reference:</p>
 <p><a href="https://blog.csdn.net/qq_41118663/article/details/119978092">解决word中安装Mendeley插件Unable to install the Microsoft Word Plugin</a></p>
-<h2 id="Make-your-work-easier"><a href="#Make-your-work-easier" class="headerlink" title="Make your work easier"></a>Make your work easier</h2><h3 id="导入文件"><a href="#导入文件" class="headerlink" title="导入文件"></a>导入文件</h3><p>导入文件的方式有多种，可以拖拽文件，可以点击<code>Add</code> 添加单个文件、多个文件、文件夹等。</p>
+<h2 id="make-your-work-easier">Make your work easier</h2>
+<h3 id="导入文件">导入文件</h3>
+<p>导入文件的方式有多种，可以拖拽文件，可以点击<code>Add </code> 添加单个文件、多个文件、文件夹等。</p>
 <p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley-Desktop%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/addfile.png" alt></p>
 <p><strong>网页添加文献</strong>：</p>
 <p>首先需要安装浏览器插件，安装地址在<a href="https://www.mendeley.com/reference-management/web-importer/">这里</a>，安装好了之后，浏览器出现这个图标：</p>
@@ -110,23 +56,27 @@
 <p>就发现同步过来了，只不过不能像本地的paper那样可以直接点开在本地的Mendeley中浏览，不过可以点击这里在web中浏览：</p>
 <p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley-Desktop%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/web.png" alt></p>
 <p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley-Desktop%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/websee.png" alt></p>
-<h2 id="添加GB-T-7714-style"><a href="#添加GB-T-7714-style" class="headerlink" title="添加GB/T 7714 style"></a>添加GB/T 7714 style</h2><p>点击<code>Style</code>里的More Styles：</p>
+<h2 id="添加gb-t-7714-style">添加GB/T 7714 style</h2>
+<p>点击<code>Style</code>里的More Styles：</p>
 <p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley-Desktop%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/morestyle.png" alt></p>
 <p>点击<code>Get More Styles</code> ，搜索<code>GB/T 7714-2015</code> ，然后安装numeric的那个：</p>
 <p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley-Desktop%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/GB.png" alt></p>
 <p>安装之后需要在Installed选项卡中选择输入GB搜索，然后选择这个style。一开始的时候会出现英文人名全部大写的情况，可以参考这篇博客修改：</p>
 <p><a href="https://blog.csdn.net/sdulmy/article/details/95616719">mendeley引入并修改GB/T 7714-2005中文标准参考文献 ，解决人名全部大写问题</a></p>
-<h3 id="创建小组"><a href="#创建小组" class="headerlink" title="创建小组"></a>创建小组</h3><p>点击左边的<code>Group</code> 就可以创建小组，为小组命名-&gt;邀请组员即可创建成功。Group的文献添加和个人使用时的文献添加是一样的。</p>
-<h3 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h3><p>点击一篇本地中的论文，然后右侧中有论文的信息，笔记等，笔记可以自己添加：</p>
+<h3 id="创建小组">创建小组</h3>
+<p>点击左边的<code>Group</code> 就可以创建小组，为小组命名-&gt;邀请组员即可创建成功。Group的文献添加和个人使用时的文献添加是一样的。</p>
+<h3 id="阅读">阅读</h3>
+<p>点击一篇本地中的论文，然后右侧中有论文的信息，笔记等，笔记可以自己添加：</p>
 <p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley-Desktop%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/left.png" alt></p>
 <p><a href="https://zhuanlan.zhihu.com/p/271010871">文献管理 | Mendeley 的基础使用方法</a></p>
 <p><a href="https://zhuanlan.zhihu.com/p/99491256#:~:text=Mendeley,%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%BE%E7%A4%BA%E3%80%82">文献管理工具（二）：Mendeley操作指南</a></p>
 ]]></content>
       <categories>
-        <category>Mendeley</category>
+        <category>论文阅读</category>
       </categories>
       <tags>
         <tag>Mendeley</tag>
+        <tag>论文阅读</tag>
       </tags>
   </entry>
   <entry>
