@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-11-30T02:15:44.444Z</updated>
+  <updated>2021-11-30T06:24:19.840Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -21,15 +21,17 @@
     <link href="https://wangxl12.github.io/2021/11/30/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Deep-Residual-Learning-for-Image-Recognition/"/>
     <id>https://wangxl12.github.io/2021/11/30/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Deep-Residual-Learning-for-Image-Recognition/</id>
     <published>2021-11-30T02:14:55.000Z</published>
-    <updated>2021-11-30T02:15:44.444Z</updated>
+    <updated>2021-11-30T06:24:19.840Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;本文记录我在读论文《Deep Residual Learning For Image Recognition》时的一些笔记与思考。&lt;/p&gt;</summary>
     
     
     
+    <category term="论文阅读" scheme="https://wangxl12.github.io/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
-    <category term="cv" scheme="https://wangxl12.github.io/categories/cv/"/>
     
-    <category term="论文阅读" scheme="https://wangxl12.github.io/categories/cv/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
-    
+    <category term="cv" scheme="https://wangxl12.github.io/tags/cv/"/>
     
     <category term="论文阅读" scheme="https://wangxl12.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
     
