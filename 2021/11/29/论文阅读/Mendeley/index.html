@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"wangxl12.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="当我们写一篇论文的时候，会用到很多的参考文献，使用论文管理工具可以更加方便的帮助我们提高工作效率，本文介绍使用Mendeley。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mendeley Desktop的使用">
+<meta property="og:url" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/index.html">
+<meta property="og:site_name" content="WXL&#39;s blog">
+<meta property="og:description" content="当我们写一篇论文的时候，会用到很多的参考文献，使用论文管理工具可以更加方便的帮助我们提高工作效率，本文介绍使用Mendeley。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/chajian.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/newfile.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/newadd.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/window.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/cite.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/citeresult.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/addfile.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/fig.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/addpaper.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/sync.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/web.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/websee.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/morestyle.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/GB.png">
+<meta property="og:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/left.png">
+<meta property="article:published_time" content="2021-11-29T06:07:30.000Z">
+<meta property="article:modified_time" content="2021-11-29T12:08:02.923Z">
+<meta property="article:author" content="WXL">
+<meta property="article:tag" content="Mendeley">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/chajian.png">
+
+<link rel="canonical" href="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Mendeley Desktop的使用 | WXL's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="WXL's blog" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">WXL's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Talk is cheap, show me your work.</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">26</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">37</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/wangxl12" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/td.jpg">
+      <meta itemprop="name" content="WXL">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WXL's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Mendeley Desktop的使用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-29 14:07:30 / 修改时间：20:08:02" itemprop="dateCreated datePublished" datetime="2021-11-29T14:07:30+08:00">2021-11-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mendeley/" itemprop="url" rel="index"><span itemprop="name">Mendeley</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/" class="post-meta-item leancloud_visitors" data-flag-title="Mendeley Desktop的使用" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>当我们写一篇论文的时候，会用到很多的参考文献，使用论文管理工具可以更加方便的帮助我们提高工作效率，本文介绍使用Mendeley。</p>
+<span id="more"></span>
+<h1>为什么选Mendeley?</h1>
+<p>可以参考这篇文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/86711732">五款常用的文献管理神软件</a></p>
+<h1>如何使用Mendeley?</h1>
+<h2 id="下载mendeley">下载Mendeley</h2>
+<p>注意下载<code>Mendeley Desktop</code>，而不是<code>Mendeley Reference Manager</code>，这是两个不同的软件，后者很鸡肋，难用，功能少的可怜，很多人以为后者是前者的新版，其实不然，可以参考<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/380051419">这里</a>。对于<code>Mendeley Desktop</code>的下载网址点击<a target="_blank" rel="noopener" href="https://www.mendeley.com/reference-management/mendeley-desktop">这里</a></p>
+<h2 id="安装插件">安装插件</h2>
+<p>下载好了<code>Mendeley Desktop</code>(以下都称为<code>Mendeley</code>)，提示安装两个插件：</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/chajian.png" alt="chajian"></p>
+<p>第一个插件安装容易，但是我在安装第二个插件的时候报错了，报错的信息当时没有记录，但是大致意思如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">E:\Program Files\WPS\WPS Office\11.1.0.11045\office6目录下没有startup</span><br></pre></td></tr></table></figure>
+<p>我就来到office6目录下创建一个名为<code>startup</code>的目录，然后重新点击<code>install</code>就发现在这个目录下新增了这个文件：</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/newfile.png" alt="newfile"></p>
+<p>然后将这个文件剪切到<code>C:\Users\Admin\AppData\Roaming\Microsoft\Word\STARTUP</code>目录下，重新打开一个word文档，就可以发现在 <code>引用</code> 栏中新增了这一项：</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/newadd.png" alt></p>
+<p>如果要在word中插入一个引用，先点击<code>Insert Citation</code> ，然后出现这个窗口：</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/window.png" alt></p>
+<p>点击<code>Go To Mendeley</code> 。</p>
+<p>选中一篇论文，点击左上角的<code>Cite</code> 。</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/cite.png" alt></p>
+<p>然后在word 文档里点击<code>Insert Bibliography</code>，就OK了。</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/citeresult.png" alt></p>
+<p>如果数据库中有文献改动，改完了之后点击<code>Refresh</code>即可。</p>
+<p>Reference:</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41118663/article/details/119978092">解决word中安装Mendeley插件Unable to install the Microsoft Word Plugin</a></p>
+<h2 id="make-your-work-easier">Make your work easier</h2>
+<h3 id="导入文件">导入文件</h3>
+<p>导入文件的方式有多种，可以拖拽文件，可以点击<code>Add </code> 添加单个文件、多个文件、文件夹等。</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/addfile.png" alt></p>
+<p><strong>网页添加文献</strong>：</p>
+<p>首先需要安装浏览器插件，安装地址在<a target="_blank" rel="noopener" href="https://www.mendeley.com/reference-management/web-importer/">这里</a>，安装好了之后，浏览器出现这个图标：</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/fig.png" alt></p>
+<p>现在我打开这篇论文：<a target="_blank" rel="noopener" href="https://openaccess.thecvf.com/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf">https://openaccess.thecvf.com/content_cvpr_2015/papers/Long_Fully_Convolutional_Networks_2015_CVPR_paper.pdf</a></p>
+<p>然后在这篇论文的界面中，点击这个图标，然后选中文章，点击<code>添加到图书馆</code>:</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/addpaper.png" alt></p>
+<p>在本地中同步一下：</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/sync.png" alt></p>
+<p>就发现同步过来了，只不过不能像本地的paper那样可以直接点开在本地的Mendeley中浏览，不过可以点击这里在web中浏览：</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/web.png" alt></p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/websee.png" alt></p>
+<h2 id="添加gb-t-7714-style">添加GB/T 7714 style</h2>
+<p>点击<code>Style</code>里的More Styles：</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/morestyle.png" alt></p>
+<p>点击<code>Get More Styles</code> ，搜索<code>GB/T 7714-2015</code> ，然后安装numeric的那个：</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/GB.png" alt></p>
+<p>安装之后需要在Installed选项卡中选择输入GB搜索，然后选择这个style。一开始的时候会出现英文人名全部大写的情况，可以参考这篇博客修改：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sdulmy/article/details/95616719">mendeley引入并修改GB/T 7714-2005中文标准参考文献 ，解决人名全部大写问题</a></p>
+<h3 id="创建小组">创建小组</h3>
+<p>点击左边的<code>Group</code> 就可以创建小组，为小组命名-&gt;邀请组员即可创建成功。Group的文献添加和个人使用时的文献添加是一样的。</p>
+<h3 id="阅读">阅读</h3>
+<p>点击一篇本地中的论文，然后右侧中有论文的信息，笔记等，笔记可以自己添加：</p>
+<p><img src="/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/left.png" alt></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/271010871">文献管理 | Mendeley 的基础使用方法</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/99491256#:~:text=Mendeley,%E4%B8%8D%E5%90%8C%E7%9A%84%E9%A2%9C%E8%89%B2%E6%98%BE%E7%A4%BA%E3%80%82">文献管理工具（二）：Mendeley操作指南</a></p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div>行行好，赏一杯咖啡吧~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.jpg" alt="WXL 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.jpg" alt="WXL 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>WXL
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/" title="Mendeley Desktop的使用">https://wangxl12.github.io/2021/11/29/论文阅读/Mendeley/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Mendeley/" rel="tag"><i class="fa fa-tag"></i> Mendeley</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/11/23/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%9D%83%E9%87%8D%E8%A1%B0%E5%87%8F/" rel="prev" title="权重衰减">
+      <i class="fa fa-chevron-left"></i> 权重衰减
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/11/30/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Deep-Residual-Learning-for-Image-Recognition/" rel="next" title="Deep-Residual-Learning-for-Image-Recognition">
+      Deep-Residual-Learning-for-Image-Recognition <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">为什么选Mendeley?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">如何使用Mendeley?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDmendeley"><span class="nav-number">2.1.</span> <span class="nav-text">下载Mendeley</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">2.2.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#make-your-work-easier"><span class="nav-number">2.3.</span> <span class="nav-text">Make your work easier</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E6%96%87%E4%BB%B6"><span class="nav-number">2.3.1.</span> <span class="nav-text">导入文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0gb-t-7714-style"><span class="nav-number">2.4.</span> <span class="nav-text">添加GB&#x2F;T 7714 style</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%B0%8F%E7%BB%84"><span class="nav-number">2.4.1.</span> <span class="nav-text">创建小组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%85%E8%AF%BB"><span class="nav-number">2.4.2.</span> <span class="nav-text">阅读</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="WXL"
+      src="/images/td.jpg">
+  <p class="site-author-name" itemprop="name">WXL</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wangxl12" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wangxl12" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:wxl.1.2.3@qq.com" title="E-Mail → mailto:wxl.1.2.3@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.csdn.net/weixin_43141320?spm=1000.2115.3001.5343" title="https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_43141320?spm&#x3D;1000.2115.3001.5343" rel="noopener" target="_blank">My CSDN Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://blog.kilig.ink/" title="http:&#x2F;&#x2F;blog.kilig.ink&#x2F;" rel="noopener" target="_blank">HuangPiSong</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">WXL</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 's5o4gRGNyYbPVRfziI5EzhO1-gzGzoHsz',
+      appKey     : 'N7aQtR2SU9AwgaO2YtVhRO0W',
+      placeholder: "发表你的评论吧~",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : true,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

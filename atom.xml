@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>WXL&#39;s blog</title>
   
-  <subtitle>Talk is cheap, show me your hardwork.</subtitle>
+  <subtitle>Talk is cheap, show me your work.</subtitle>
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-11-29T12:08:02.923Z</updated>
+  <updated>2021-11-30T02:15:44.444Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -17,9 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Deep-Residual-Learning-for-Image-Recognition</title>
+    <link href="https://wangxl12.github.io/2021/11/30/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Deep-Residual-Learning-for-Image-Recognition/"/>
+    <id>https://wangxl12.github.io/2021/11/30/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Deep-Residual-Learning-for-Image-Recognition/</id>
+    <published>2021-11-30T02:14:55.000Z</published>
+    <updated>2021-11-30T02:15:44.444Z</updated>
+    
+    
+    
+    
+    <category term="cv" scheme="https://wangxl12.github.io/categories/cv/"/>
+    
+    <category term="论文阅读" scheme="https://wangxl12.github.io/categories/cv/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="论文阅读" scheme="https://wangxl12.github.io/tags/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Mendeley Desktop的使用</title>
-    <link href="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/Mendeley/"/>
-    <id>https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E5%86%99%E4%BD%9C/Mendeley/</id>
+    <link href="https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/"/>
+    <id>https://wangxl12.github.io/2021/11/29/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Mendeley/</id>
     <published>2021-11-29T06:07:30.000Z</published>
     <updated>2021-11-29T12:08:02.923Z</updated>
     
@@ -411,25 +430,6 @@
     <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     <category term="贪心" scheme="https://wangxl12.github.io/tags/%E8%B4%AA%E5%BF%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>王争数据结构与算法学习笔记-归并、快排</title>
-    <link href="https://wangxl12.github.io/2021/09/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%BD%92%E5%B9%B6%E3%80%81%E5%BF%AB%E6%8E%92/"/>
-    <id>https://wangxl12.github.io/2021/09/11/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%BD%92%E5%B9%B6%E3%80%81%E5%BF%AB%E6%8E%92/</id>
-    <published>2021-09-11T06:20:53.000Z</published>
-    <updated>2021-09-11T13:56:40.926Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;归并排序和快排都使用了分治思想，可以借鉴这种思想来解决非排序问题，比如：如何在&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;O&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;O(n)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;O&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;的时间复杂度内找到一个无序数组中的第k大元素？&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
