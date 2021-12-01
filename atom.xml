@@ -147,7 +147,7 @@
     <updated>2021-11-14T13:18:39.106Z</updated>
     
     
-    <summary type="html">&lt;h1 id=&quot;下载并安装typora&quot;&gt;&lt;a href=&quot;#下载并安装typora&quot; class=&quot;headerlink&quot; title=&quot;下载并安装typora&quot;&gt;&lt;/a&gt;下载并安装typora&lt;/h1&gt;</summary>
+    <summary type="html">&lt;h1&gt;下载并安装typora&lt;/h1&gt;</summary>
     
     
     
@@ -193,9 +193,9 @@
     <category term="数据集" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
     
-    <category term="GNN" scheme="https://wangxl12.github.io/tags/GNN/"/>
-    
     <category term="数据集" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    
+    <category term="GNN" scheme="https://wangxl12.github.io/tags/GNN/"/>
     
   </entry>
   
