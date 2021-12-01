@@ -20,14 +20,21 @@
 <h1>论文写作技巧</h1>
 <p>一篇论文中最重要的部分是<strong>Abstract</strong> 和<strong>Introduction</strong>。</p>
 <p>在文章的<code>Abstract</code>中第一句话就提出问题：</p>
+<blockquote>
 <p>Deeper neural networks are more difficult to train.</p>
+</blockquote>
 <p>第二句话提出<strong>文章关心的重点</strong>，<strong>提出什么方法</strong>，<strong>有如何的效果</strong>：</p>
+<blockquote>
 <p>We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously.</p>
+</blockquote>
 <p>然后是我们<strong>如何做的</strong>，不需要细说：</p>
+<blockquote>
 <p>We explicitly reformulate the layers as learn- ing residual functions with reference to the layer inputs, in- stead of learning unreferenced functions.</p>
+</blockquote>
 <p>然后是我们<strong>做了什么实验</strong>，这里简单的提一下，然后说<strong>实验的结果</strong>。如果有<strong>新的架构</strong>或者实验有比较<strong>明显的特点</strong>，要在<strong>Abstract</strong>中提一下，这样可以更好地吸引读者继续读下去。比如本文提到使用了非常深的网络152层，比VGG多8倍，但是最终的复杂度却更小；再比如还使用了1000层的网络在<code>CIFAR-10</code>中训练。</p>
 <p>接着应该是<strong>文章的结论</strong>，但是本文没有结论，因为文章发布在<code>CVPR</code>上，要求每篇文章的正文不能超过8页。</p>
-<p>在论文的第一页右上角有一张图，也是一般论文的布局方法，将最好看的一张图放在这里，图可以是结论、分析数据等，可以吸引读者。</p>
+<p>在论文的第一页右上角有一张图，也是一般论文的布局方法，<strong>将最好看的一张图放在这里</strong>，图可以是结论、分析数据等，可以吸引读者。</p>
+<p>在文章的<code>Introduction</code>部分，作者通过不断的提出问题，介绍前人如何解决的，然后介绍目前遇到的瓶颈，最后就将读者牵引至本文所需要解决的问题中。</p>
 ]]></content>
       <categories>
         <category>论文阅读</category>
