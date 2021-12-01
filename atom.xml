@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-12-01T02:25:50.433Z</updated>
+  <updated>2021-12-01T04:18:38.775Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wangxl12.github.io/2021/11/30/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Deep-Residual-Learning-for-Image-Recognition/"/>
     <id>https://wangxl12.github.io/2021/11/30/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Deep-Residual-Learning-for-Image-Recognition/</id>
     <published>2021-11-30T02:14:55.000Z</published>
-    <updated>2021-12-01T02:25:50.433Z</updated>
+    <updated>2021-12-01T04:18:38.775Z</updated>
     
     
     <summary type="html">&lt;p&gt;本文记录我在读论文《Deep Residual Learning For Image Recognition》时的一些笔记与思考。在读的过程中有一些名词很难理解，经过上下文推敲可以大致猜出其含义，推荐自己读完了之后再观看&lt;a href=&quot;https://www.bilibili.com/video/BV1P3411y7nn?spm_id_from=333.999.0.0&quot;&gt;李沐的ResNet论文讲解视频&lt;/a&gt;，可以有更深刻的理解。&lt;/p&gt;</summary>
