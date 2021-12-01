@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-12-01T05:44:31.064Z</updated>
+  <updated>2021-12-01T06:15:33.141Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wangxl12.github.io/2021/12/01/Git/Gitee%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%8D%9A%E5%AE%A2/"/>
     <id>https://wangxl12.github.io/2021/12/01/Git/Gitee%E8%87%AA%E5%8A%A8%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%8D%9A%E5%AE%A2/</id>
     <published>2021-12-01T04:52:41.000Z</published>
-    <updated>2021-12-01T05:44:31.064Z</updated>
+    <updated>2021-12-01T06:15:33.141Z</updated>
     
     
     <summary type="html">&lt;p&gt;Gitee Pages访问速度快，所以打算弄一个Gitee的镜像，但是它不像GitHub Pages那样，提交代码可以实现自动更新Pages，因为Gitee的自动部署属于Gitee Pages Pro的服务。每次提交之后我们需要手动点击【更新】，甚是麻烦。&lt;/p&gt;</summary>
