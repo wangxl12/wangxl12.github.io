@@ -2807,4 +2807,30 @@ int类没有发生就地变化是因为它是一个不可变对象。</p>
         <tag>Git</tag>
       </tags>
   </entry>
+  <entry>
+    <title>torch-sparse,torch-scatter,torch-cluster的安装</title>
+    <url>/2021/12/06/%E9%85%8D%E7%8E%AF%E5%A2%83/torch-sparse,torch-scatter,torch-cluster%E7%9A%84%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<p>由于项目环境的需要，我安装了torch 1.6.0版本，CUDA版本为10.2，但是项目需要以下依赖包：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">torch_sparse</span><br><span class="line">torch_scatter</span><br><span class="line">torch_cluster</span><br></pre></td></tr></table></figure>
+<p>这三个包无法通过pip install来安装，对版本的匹配要求也非常严格，所以本文记录一下安装的过程。</p>
+<span id="more"></span>
+<p>进入以下链接：</p>
+<p><a href="https://pytorch-geometric.com/whl/">pytorch-geometric依赖库</a></p>
+<p>根据自己的torch和cuda版本找到对应的入口：</p>
+<p><img src="/2021/12/06/%E9%85%8D%E7%8E%AF%E5%A2%83/torch-sparse,torch-scatter,torch-cluster%E7%9A%84%E5%AE%89%E8%A3%85/torch%E7%89%88%E6%9C%AC.png" alt></p>
+<p>我是windows、python 37，就下载对应的版本的whl文件：</p>
+<p><img src="/2021/12/06/%E9%85%8D%E7%8E%AF%E5%A2%83/torch-sparse,torch-scatter,torch-cluster%E7%9A%84%E5%AE%89%E8%A3%85/%E5%8C%85.png" alt></p>
+<p>将三个下载好的文件放入一个路径下，然后切换到那个路径下进行安装：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install torch_sparse</span><br><span class="line">pip install torch_scatter</span><br><span class="line">pip install torch_cluster</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/12/06/%E9%85%8D%E7%8E%AF%E5%A2%83/torch-sparse,torch-scatter,torch-cluster%E7%9A%84%E5%AE%89%E8%A3%85/install.png" alt></p>
+<p>最后安装geometric:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install torch-geometric</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>配环境</category>
+      </categories>
+      <tags>
+        <tag>配环境</tag>
+      </tags>
+  </entry>
 </search>
