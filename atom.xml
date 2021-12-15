@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-12-06T03:13:20.578Z</updated>
+  <updated>2021-12-15T05:58:05.827Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>注意力机制+注意力汇聚</title>
+    <link href="https://wangxl12.github.io/2021/12/14/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
+    <id>https://wangxl12.github.io/2021/12/14/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</id>
+    <published>2021-12-14T11:36:08.000Z</published>
+    <updated>2021-12-15T05:58:05.827Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;学习《动手学习深度学习》&lt;a href=&quot;http://zh-v2.d2l.ai/chapter_attention-mechanisms/attention-cues.html&quot;&gt;注意力机制&lt;/a&gt; 之后，简单做个总结。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://wangxl12.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="Attention" scheme="https://wangxl12.github.io/tags/Attention/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网络可视化</title>
+    <link href="https://wangxl12.github.io/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    <id>https://wangxl12.github.io/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/</id>
+    <published>2021-12-12T05:00:55.000Z</published>
+    <updated>2021-12-12T06:27:44.209Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;介绍常见的可视化网络模型和训练过程的方法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="深度学习" scheme="https://wangxl12.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="深度学习" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="可视化" scheme="https://wangxl12.github.io/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/"/>
+    
+  </entry>
   
   <entry>
     <title>torch-sparse,torch-scatter,torch-cluster的安装</title>
@@ -392,48 +434,6 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>王争数据结构与算法学习笔记-回溯算法</title>
-    <link href="https://wangxl12.github.io/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/"/>
-    <id>https://wangxl12.github.io/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/</id>
-    <published>2021-09-22T03:10:37.000Z</published>
-    <updated>2021-09-22T07:26:48.648Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;2004 年上映了一部非常著名的电影《蝴蝶效应》，讲的就是主人公为了达到自己的目标，一直通过回溯的方法，回到童年，在关键的岔路口，重新做选择。当然，这只是科幻电影，我们的人生是无法倒退的，但是这其中蕴含的思想其实就是回溯算法。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    <category term="回溯" scheme="https://wangxl12.github.io/tags/%E5%9B%9E%E6%BA%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>王争数据结构与算法学习笔记-分治算法</title>
-    <link href="https://wangxl12.github.io/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/"/>
-    <id>https://wangxl12.github.io/2021/09/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95/</id>
-    <published>2021-09-12T06:06:37.000Z</published>
-    <updated>2021-09-22T03:03:34.768Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;分治算法的核心思想是将原问题划分成 n 个规模较小，并且结构与原问题相似的子问题，递归地解决这些子问题，然后再合并其结果，就得到原问题的解。分治算法是一种处理问题的思想，递归是一种编程技巧。分治算法比较适合使用递归来实现。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-    <category term="数据结构" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    <category term="分治" scheme="https://wangxl12.github.io/tags/%E5%88%86%E6%B2%BB/"/>
     
   </entry>
   
