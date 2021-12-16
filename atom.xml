@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-12-16T07:00:30.011Z</updated>
+  <updated>2021-12-16T11:40:33.322Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>注意力机制+注意力汇聚</title>
+    <title>注意力提示+注意力汇聚</title>
     <link href="https://wangxl12.github.io/2021/12/14/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/"/>
     <id>https://wangxl12.github.io/2021/12/14/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</id>
     <published>2021-12-14T11:36:08.000Z</published>
-    <updated>2021-12-16T07:00:30.011Z</updated>
+    <updated>2021-12-16T11:40:33.322Z</updated>
     
     
     <summary type="html">&lt;p&gt;学习《动手学习深度学习》&lt;a href=&quot;http://zh-v2.d2l.ai/chapter_attention-mechanisms/attention-cues.html&quot;&gt;注意力机制&lt;/a&gt; 之后，简单做个总结。&lt;/p&gt;</summary>
