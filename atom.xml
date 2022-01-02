@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2021-12-16T11:40:33.322Z</updated>
+  <updated>2022-01-02T06:48:53.435Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -15,6 +15,73 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python的pathlib库的使用</title>
+    <link href="https://wangxl12.github.io/2022/01/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E7%9A%84pathlib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/"/>
+    <id>https://wangxl12.github.io/2022/01/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E7%9A%84pathlib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/</id>
+    <published>2022-01-02T06:47:25.000Z</published>
+    <updated>2022-01-02T06:48:53.435Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;参考如下：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/344112256&quot;&gt;Pytorch 73.Python丝滑的路径处理库pathlib模块&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://wangxl12.github.io/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python格式化字符串f-string</title>
+    <link href="https://wangxl12.github.io/2022/01/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2f-string/"/>
+    <id>https://wangxl12.github.io/2022/01/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2f-string/</id>
+    <published>2022-01-02T06:29:33.000Z</published>
+    <updated>2022-01-02T06:45:23.927Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/string.html#format-string-syntax&quot;&gt;https://docs.python.org/3/library/string.html#format-string-syntax&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.csdn.net/sunxb10/article/details/81036693&quot;&gt;https://blog.csdn.net/sunxb10/article/details/81036693&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="python" scheme="https://wangxl12.github.io/tags/python/"/>
+    
+    <category term="编程语言" scheme="https://wangxl12.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>pytorch常用代码段</title>
+    <link href="https://wangxl12.github.io/2021/12/19/pytorch/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%AE%B5/"/>
+    <id>https://wangxl12.github.io/2021/12/19/pytorch/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%AE%B5/</id>
+    <published>2021-12-19T12:51:04.000Z</published>
+    <updated>2021-12-29T04:58:45.349Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;参考：&lt;a href=&quot;https://mp.weixin.qq.com/s?__biz=MzI5MDUyMDIxNA==&amp;amp;mid=2247587990&amp;amp;idx=3&amp;amp;sn=cf4d8b924ef6c30bb960aa4b686d2f89&amp;amp;chksm=ec1d756fdb6afc79119b3e730c2d0f90abd5d79e1e9487102689a88d764f46029f0ea899aa4d&amp;amp;mpshare=1&amp;amp;scene=23&amp;amp;srcid=1218esl8858Z5javuaA9HVJJ&amp;amp;sharer_sharetime=1639819506402&amp;amp;sharer_shareid=8c69c1f41758aecb75107bb31071c464#rd&quot;&gt;原文&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="pytorch" scheme="https://wangxl12.github.io/categories/pytorch/"/>
+    
+    
+    <category term="pytorch" scheme="https://wangxl12.github.io/tags/pytorch/"/>
+    
+    <category term="深度学习框架" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/"/>
+    
+  </entry>
   
   <entry>
     <title>注意力提示+注意力汇聚</title>
@@ -380,60 +447,6 @@
     
     
     <category term="Docker" scheme="https://wangxl12.github.io/tags/Docker/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>miniconda+tf2.x_gpu+torch_gpu环境配置</title>
-    <link href="https://wangxl12.github.io/2021/10/08/%E9%85%8D%E7%8E%AF%E5%A2%83/miniconda+tf2_gpu+torch_gpu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    <id>https://wangxl12.github.io/2021/10/08/%E9%85%8D%E7%8E%AF%E5%A2%83/miniconda+tf2_gpu+torch_gpu%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
-    <published>2021-10-08T13:17:00.000Z</published>
-    <updated>2021-10-09T07:38:07.810Z</updated>
-    
-    
-    <summary type="html">&lt;h1&gt;情况描述&lt;/h1&gt;
-&lt;p&gt;需要运行联邦学习图神经网络，同时需要torch和tf2.x，运行图神经网络还用到了stellargraph库，这个库依赖于tf，而且要求tf版本&amp;gt;=2.1.0，在代码内部还用到了keras，需要keras和tf版本相匹配。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="环境配置" scheme="https://wangxl12.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-    
-    <category term="环境配置" scheme="https://wangxl12.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>入门与FedML框架使用</title>
-    <link href="https://wangxl12.github.io/2021/10/06/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/%E5%85%A5%E9%97%A8%E4%B8%8EFedML%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/"/>
-    <id>https://wangxl12.github.io/2021/10/06/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/%E5%85%A5%E9%97%A8%E4%B8%8EFedML%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/</id>
-    <published>2021-10-06T11:26:27.000Z</published>
-    <updated>2021-10-06T13:16:21.759Z</updated>
-    
-    
-    <summary type="html">&lt;h1&gt;Why federated learning?&lt;/h1&gt;</summary>
-    
-    
-    
-    <category term="联邦学习" scheme="https://wangxl12.github.io/categories/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="联邦学习" scheme="https://wangxl12.github.io/tags/%E8%81%94%E9%82%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="FedML" scheme="https://wangxl12.github.io/tags/FedML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>王争数据结构与算法学习笔记-动态规划</title>
-    <link href="https://wangxl12.github.io/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    <id>https://wangxl12.github.io/2021/09/22/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E7%8E%8B%E4%BA%89%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</id>
-    <published>2021-09-22T07:35:57.000Z</published>
-    <updated>2021-09-22T07:35:57.503Z</updated>
-    
-    
-    
-    
     
   </entry>
   

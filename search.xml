@@ -3006,4 +3006,227 @@ f(x) &amp;=\sum_{i=1}^{n} \alpha\left(x, x_{i}\right) y_{i} \\
         <tag>可视化</tag>
       </tags>
   </entry>
+  <entry>
+    <title>python的pathlib库的使用</title>
+    <url>/2022/01/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E7%9A%84pathlib%E5%BA%93%E7%9A%84%E4%BD%BF%E7%94%A8%E7%94%A8/</url>
+    <content><![CDATA[<p>参考如下：</p>
+<p><a href="https://zhuanlan.zhihu.com/p/344112256">Pytorch 73.Python丝滑的路径处理库pathlib模块</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/139783331">python路径操作新标准：pathlib 模块</a></p>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python格式化字符串f-string</title>
+    <url>/2022/01/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Python%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2f-string/</url>
+    <content><![CDATA[<p>参考：</p>
+<p><a href="https://docs.python.org/3/library/string.html#format-string-syntax">https://docs.python.org/3/library/string.html#format-string-syntax</a></p>
+<p><a href="https://blog.csdn.net/sunxb10/article/details/81036693">https://blog.csdn.net/sunxb10/article/details/81036693</a></p>
+<span id="more"></span>
+<h1 id="对齐相关格式描述符"><a href="#对齐相关格式描述符" class="headerlink" title="对齐相关格式描述符"></a><strong>对齐</strong>相关格式描述符</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>格式描述符</th>
+<th>含义与作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;</code></td>
+<td>左对齐（字符串默认对齐方式）</td>
+</tr>
+<tr>
+<td><code>&gt;</code></td>
+<td>右对齐（数值默认对齐方式）</td>
+</tr>
+<tr>
+<td><code>^</code></td>
+<td>居中</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="数字符号相关格式描述符"><a href="#数字符号相关格式描述符" class="headerlink" title="数字符号相关格式描述符"></a><strong>数字符号</strong>相关格式描述符</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>格式描述符</th>
+<th>含义与作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>+</code></td>
+<td>负数前加负号（<code>-</code>），正数前加正号（<code>+</code>）</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>负数前加负号（<code>-</code>），正数前不加任何符号（默认）</td>
+</tr>
+<tr>
+<td>``（空格）</td>
+<td>负数前加负号（<code>-</code>），正数前加一个空格</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注：仅适用于数值类型。</p>
+<h1 id="数字显示方式相关格式描述符"><a href="#数字显示方式相关格式描述符" class="headerlink" title="数字显示方式相关格式描述符"></a><strong>数字显示方式</strong>相关格式描述符</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>格式描述符</th>
+<th>含义与作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#</code></td>
+<td>切换数字显示方式</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注1：仅适用于数值类型。<br>注2：# 对不同数值类型的作用效果不同，详见下表：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>数值类型</th>
+<th>不加<code>#</code>（默认）</th>
+<th>加<code>#</code></th>
+<th>区别</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>二进制整数</td>
+<td><code>&#39;1111011&#39;</code></td>
+<td><code>&#39;0b1111011&#39;</code></td>
+<td>开头是否显示 <code>0b</code></td>
+</tr>
+<tr>
+<td>八进制整数</td>
+<td><code>&#39;173&#39;</code></td>
+<td><code>&#39;0o173&#39;</code></td>
+<td>开头是否显示 <code>0o</code></td>
+</tr>
+<tr>
+<td>十进制整数</td>
+<td><code>&#39;123&#39;</code></td>
+<td><code>&#39;123&#39;</code></td>
+<td>无区别</td>
+</tr>
+<tr>
+<td>十六进制整数（小写字母）</td>
+<td><code>&#39;7b&#39;</code></td>
+<td><code>&#39;0x7b&#39;</code></td>
+<td>开头是否显示 <code>0x</code></td>
+</tr>
+<tr>
+<td>十六进制整数（大写字母）</td>
+<td><code>&#39;7B&#39;</code></td>
+<td><code>&#39;0X7B&#39;</code></td>
+<td>开头是否显示 <code>0X</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="宽度与精度相关格式描述符"><a href="#宽度与精度相关格式描述符" class="headerlink" title="宽度与精度相关格式描述符"></a>宽度与精度相关格式描述符</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>格式描述符</th>
+<th>含义与作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>width</code></td>
+<td>整数 <code>width</code> 指定宽度</td>
+</tr>
+<tr>
+<td><code>0width</code></td>
+<td>整数 <code>width</code> 指定宽度，开头的 <code>0</code> 指定高位用 <code>0</code> 补足宽度</td>
+</tr>
+<tr>
+<td><code>width.precision</code></td>
+<td>整数 <code>width</code> 指定宽度，整数 <code>precision</code> 指定显示精度</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>注1：0width 不可用于复数类型和非数值类型，width.precision 不可用于整数类型。<br>注2：width.precision 用于不同格式类型的浮点数、复数时的含义也不同：用于 f、F、e、E 和 % 时 precision 指定的是小数点后的位数，用于 g 和 G 时 precision 指定的是有效数字位数（小数点前位数+小数点后位数）。<br>注3：width.precision 除浮点数、复数外还可用于字符串，此时 precision 含义是只使用字符串中前 precision 位字符。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a = <span class="number">123.456</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">f&#x27;a is <span class="subst">&#123;a:<span class="number">8.2</span>f&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">&#x27;a is   123.46&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">f&#x27;a is <span class="subst">&#123;a:<span class="number">08.2</span>f&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">&#x27;a is 00123.46&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">f&#x27;a is <span class="subst">&#123;a:<span class="number">8.2</span>e&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">&#x27;a is 1.23e+02&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">f&#x27;a is <span class="subst">&#123;a:<span class="number">8.2</span>%&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">&#x27;a is 12345.60%&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">f&#x27;a is <span class="subst">&#123;a:<span class="number">8.2</span>g&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">&#x27;a is  1.2e+02&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = <span class="string">&#x27;hello&#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">f&#x27;s is <span class="subst">&#123;s:8s&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">&#x27;s is hello   &#x27;</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">f&#x27;s is <span class="subst">&#123;s:<span class="number">8.3</span>s&#125;</span>&#x27;</span></span><br><span class="line"><span class="string">&#x27;s is hel     &#x27;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>python</tag>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>pytorch常用代码段</title>
+    <url>/2021/12/19/pytorch/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%AE%B5/</url>
+    <content><![CDATA[<p>参考：<a href="https://mp.weixin.qq.com/s?__biz=MzI5MDUyMDIxNA==&amp;mid=2247587990&amp;idx=3&amp;sn=cf4d8b924ef6c30bb960aa4b686d2f89&amp;chksm=ec1d756fdb6afc79119b3e730c2d0f90abd5d79e1e9487102689a88d764f46029f0ea899aa4d&amp;mpshare=1&amp;scene=23&amp;srcid=1218esl8858Z5javuaA9HVJJ&amp;sharer_sharetime=1639819506402&amp;sharer_shareid=8c69c1f41758aecb75107bb31071c464#rd">原文</a></p>
+<span id="more"></span>
+<h1 id="基本配置"><a href="#基本配置" class="headerlink" title="基本配置"></a>基本配置</h1><h2 id="随机种子"><a href="#随机种子" class="headerlink" title="随机种子"></a>随机种子</h2><p>在硬件设备（CPU、GPU）不同时，完全的可复现性无法保证，即使随机种子相同。但是，在同一个设备上，应该保证可复现性。具体做法是，在程序开始的时候固定torch的随机种子，同时也把numpy的随机种子固定。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">torch.backends.cudnn.deterministic = <span class="literal">True</span></span><br><span class="line">torch.backends.cudnn.benchmark = <span class="literal">False</span></span><br><span class="line">random.seed(<span class="built_in">hash</span>(<span class="string">&quot;setting random seeds&quot;</span>) % <span class="number">2</span>**<span class="number">32</span> - <span class="number">1</span>)</span><br><span class="line">np.random.seed(<span class="built_in">hash</span>(<span class="string">&quot;improves reproducibility&quot;</span>) % <span class="number">2</span>**<span class="number">32</span> - <span class="number">1</span>)</span><br><span class="line">torch.manual_seed(<span class="built_in">hash</span>(<span class="string">&quot;by removing stochasticity&quot;</span>) % <span class="number">2</span>**<span class="number">32</span> - <span class="number">1</span>)</span><br><span class="line">torch.cuda.manual_seed_all(<span class="built_in">hash</span>(<span class="string">&quot;so runs are repeatable&quot;</span>) % <span class="number">2</span>**<span class="number">32</span> - <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="查询cuda-cudnn-GPU型号版本"><a href="#查询cuda-cudnn-GPU型号版本" class="headerlink" title="查询cuda/cudnn/GPU型号版本"></a>查询cuda/cudnn/GPU型号版本</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn <span class="keyword">as</span> nn</span><br><span class="line"><span class="keyword">import</span> torchvision</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(torch.__version__)</span><br><span class="line"><span class="built_in">print</span>(torch.version.cuda)</span><br><span class="line"><span class="built_in">print</span>(torch.backends.cudnn.version())</span><br><span class="line"><span class="built_in">print</span>(torch.cuda.get_device_name(<span class="number">0</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="显卡设置"><a href="#显卡设置" class="headerlink" title="显卡设置"></a>显卡设置</h2><p>一张显卡：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">device = torch.device(<span class="string">&#x27;cuda&#x27;</span> <span class="keyword">if</span> torch.cuda.is_available() <span class="keyword">else</span> <span class="string">&#x27;cpu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>多张显卡：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line">os.environ[<span class="string">&#x27;CUDA_VISIBLE_DEVICES&#x27;</span>] = <span class="string">&#x27;0,1,2,3&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>清除显存：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.cuda.empty_cache()</span><br></pre></td></tr></table></figure>
+<p>也可以使用在命令行重置GPU的指令:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nvidia-smi --gpu-reset -i [gpu_id]</span><br></pre></td></tr></table></figure>
+<h1 id="张量处理"><a href="#张量处理" class="headerlink" title="张量处理"></a>张量处理</h1><h2 id="张量的数据类型"><a href="#张量的数据类型" class="headerlink" title="张量的数据类型"></a>张量的数据类型</h2><p>PyTorch有9种CPU张量类型和9种GPU张量类型。</p>
+<p><img src="/2021/12/19/pytorch/pytorch%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E6%AE%B5/tensor-type.png" alt></p>
+<h2 id="张量基本信息："><a href="#张量基本信息：" class="headerlink" title="张量基本信息："></a>张量基本信息：</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor = torch.randn(<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line"><span class="built_in">print</span>(tensor.<span class="built_in">type</span>())</span><br><span class="line"><span class="built_in">print</span>(tensor.size())</span><br><span class="line"><span class="built_in">print</span>(tensor.dim())</span><br></pre></td></tr></table></figure>
+<h2 id="数据类型转换："><a href="#数据类型转换：" class="headerlink" title="数据类型转换："></a>数据类型转换：</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">a = torch.randint(<span class="number">3</span>, (<span class="number">3</span>, <span class="number">4</span>))</span><br><span class="line">a = a.cuda()</span><br><span class="line">a = a.cpu()</span><br><span class="line">a = a.<span class="built_in">float</span>()</span><br><span class="line">a = a.long()</span><br></pre></td></tr></table></figure>
+<h2 id="torch-Tensor和np-ndarray转换"><a href="#torch-Tensor和np-ndarray转换" class="headerlink" title="torch.Tensor和np.ndarray转换"></a>torch.Tensor和np.ndarray转换</h2><p>除了CharTensor，其他所有CPU上的张量都支持转换为numpy格式然后再转换回来。 </p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ndarray = tensor.cpu().numpy()</span><br><span class="line">tensor = torch.from_numpy(ndarray).<span class="built_in">float</span>()</span><br><span class="line">tensor = torch.from_numpy(ndarray.copy()).<span class="built_in">float</span>()  <span class="comment"># If ndarray has negative stride.</span></span><br></pre></td></tr></table></figure>
+<h2 id="torch-Tensor和PIL-Image的转换"><a href="#torch-Tensor和PIL-Image的转换" class="headerlink" title="torch.Tensor和PIL.Image的转换"></a>torch.Tensor和PIL.Image的转换</h2><p>pytorch中的张量默认采用[N, C, H, W]的顺序，并且数据范围在[0,1]，需要进行转置和规范化。</p>
+<p>使用PIL读取的图像，使用np.array()转换了之后形状为[H, W, C]</p>
+<p>使用cv读取的图像，形状为[H, W, C].</p>
+<p><strong>torch.Tensor-&gt;PIL.Image</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">image = PIL.Image.fromarray(torch.clamp(tensor*<span class="number">255</span>, <span class="built_in">min</span>=<span class="number">0</span>, <span class="built_in">max</span>=<span class="number">255</span>).byte().permute(<span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span>).cpu().numpy())</span><br><span class="line">image = torchvision.transforms.functional.to_pil_image(tensor)  <span class="comment"># Equivalently way</span></span><br></pre></td></tr></table></figure>
+<p><strong>PIL.Image-&gt;torch.Tensor</strong></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">path = <span class="string">r&#x27;./figure.jpg&#x27;</span></span><br><span class="line">tensor = torch.from_numpy(np.asarray(PIL.Image.<span class="built_in">open</span>(path))).permute(<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>).<span class="built_in">float</span>() / <span class="number">255</span></span><br><span class="line">tensor = torchvision.transforms.functional.to_tensor(PIL.Image.<span class="built_in">open</span>(path)) <span class="comment"># Equivalently way</span></span><br></pre></td></tr></table></figure>
+<h3 id="np-ndarray与PIL-Image的转换"><a href="#np-ndarray与PIL-Image的转换" class="headerlink" title="np.ndarray与PIL.Image的转换"></a>np.ndarray与PIL.Image的转换</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">image = PIL.Image.fromarray(ndarray.astype(np.uint8))</span><br><span class="line"></span><br><span class="line">ndarray = np.asarray(PIL.Image.<span class="built_in">open</span>(path))</span><br></pre></td></tr></table></figure>
+<h2 id="从只包含一个元素的张量中取值"><a href="#从只包含一个元素的张量中取值" class="headerlink" title="从只包含一个元素的张量中取值"></a>从只包含一个元素的张量中取值</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">value = torch.rand(<span class="number">1</span>).item()</span><br></pre></td></tr></table></figure>
+<h2 id="张量形变"><a href="#张量形变" class="headerlink" title="张量形变"></a>张量形变</h2><p>相比torch.view，torch.reshape可以自动处理输入张量不连续的情况。</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor = torch.rand(<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>)</span><br><span class="line">shape = (<span class="number">6</span>, <span class="number">4</span>)</span><br><span class="line">tensor = torch.reshape(tensor, shape)</span><br></pre></td></tr></table></figure>
+<h2 id="打乱顺序"><a href="#打乱顺序" class="headerlink" title="打乱顺序"></a>打乱顺序</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor = tensor[torch.randperm(tensor.size(<span class="number">0</span>))]  <span class="comment"># 打乱第一个维度</span></span><br></pre></td></tr></table></figure>
+<h2 id="水平翻转"><a href="#水平翻转" class="headerlink" title="水平翻转"></a>水平翻转</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># pytorch不支持tensor[::-1]这样的负步长操作，水平翻转可以通过张量索引实现</span></span><br><span class="line"><span class="comment"># 假设张量的维度为[N, D, H, W].</span></span><br><span class="line">tensor = tensor[:,:,:,torch.arange(tensor.size(<span class="number">3</span>) - <span class="number">1</span>, -<span class="number">1</span>, -<span class="number">1</span>).long()]</span><br></pre></td></tr></table></figure>
+<h2 id="复制张量"><a href="#复制张量" class="headerlink" title="复制张量"></a>复制张量</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Operation                 |  New/Shared memory | Still in computation graph |</span></span><br><span class="line">tensor.clone()            <span class="comment"># |        New         |          Yes               |</span></span><br><span class="line">tensor.detach()           <span class="comment"># |      Shared        |          No                |</span></span><br><span class="line">tensor.detach.clone()()   <span class="comment"># |        New         |          No                |</span></span><br></pre></td></tr></table></figure>
+<h2 id="张量拼接"><a href="#张量拼接" class="headerlink" title="张量拼接"></a>张量拼接</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">注意torch.cat和torch.stack的区别在于torch.cat沿着给定的维度拼接，</span></span><br><span class="line"><span class="string">而torch.stack会新增一维。例如当参数是3个10x5的张量，torch.cat的结果是30x5的张量，</span></span><br><span class="line"><span class="string">而torch.stack的结果是3x10x5的张量。</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line">tensor = torch.cat(list_of_tensors, dim=<span class="number">0</span>)</span><br><span class="line">tensor = torch.stack(list_of_tensors, dim=<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="将整数标签转换为one-hot编码"><a href="#将整数标签转换为one-hot编码" class="headerlink" title="将整数标签转换为one-hot编码"></a>将整数标签转换为one-hot编码</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># pytorch的标记默认从0开始</span></span><br><span class="line">tensor = torch.tensor([<span class="number">0</span>, <span class="number">2</span>, <span class="number">1</span>, <span class="number">3</span>])</span><br><span class="line">N = tensor.size(<span class="number">0</span>)</span><br><span class="line">num_classes = <span class="number">4</span></span><br><span class="line">one_hot = torch.zeros(N, num_classes).long()</span><br><span class="line">one_hot.scatter_(dim=<span class="number">1</span>, index=torch.unsqueeze(tensor, dim=<span class="number">1</span>), src=torch.ones(N, num_classes).long())</span><br></pre></td></tr></table></figure>
+<h2 id="得到非零元素"><a href="#得到非零元素" class="headerlink" title="得到非零元素"></a>得到非零元素</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.nonzero(tensor)               <span class="comment"># index of non-zero elements</span></span><br><span class="line">torch.nonzero(tensor==<span class="number">0</span>)            <span class="comment"># index of zero elements</span></span><br><span class="line">torch.nonzero(tensor).size(<span class="number">0</span>)       <span class="comment"># number of non-zero elements</span></span><br><span class="line">torch.nonzero(tensor == <span class="number">0</span>).size(<span class="number">0</span>)  <span class="comment"># number of zero elements</span></span><br></pre></td></tr></table></figure>
+<h2 id="判断两个张量相等"><a href="#判断两个张量相等" class="headerlink" title="判断两个张量相等"></a>判断两个张量相等</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.allclose(tensor1, tensor2)  <span class="comment"># float tensor</span></span><br><span class="line">torch.equal(tensor1, tensor2)     <span class="comment"># int tensor</span></span><br></pre></td></tr></table></figure>
+<h2 id="张量扩张"><a href="#张量扩张" class="headerlink" title="张量扩张"></a>张量扩张</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Expand tensor of shape 64*512 to shape 64*512*7*7.</span></span><br><span class="line">tensor = torch.rand(<span class="number">64</span>,<span class="number">512</span>)</span><br><span class="line">torch.reshape(tensor, (<span class="number">64</span>, <span class="number">512</span>, <span class="number">1</span>, <span class="number">1</span>)).expand(<span class="number">64</span>, <span class="number">512</span>, <span class="number">7</span>, <span class="number">7</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="相乘"><a href="#相乘" class="headerlink" title="相乘"></a>相乘</h2><p>matrix * matrix:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor1 = torch.tensor([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line">tensor2 = torch.tensor([[<span class="number">2</span>], [<span class="number">3</span>], [<span class="number">4</span>]])</span><br><span class="line"><span class="built_in">print</span>(torch.mm(tensor1, tensor2))  <span class="comment"># [[20], [20]]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># or use @</span></span><br><span class="line">res = tensor1 @ tensor2  <span class="comment"># [[20], [20]]</span></span><br></pre></td></tr></table></figure>
+<p>matrix * vector:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor1 = torch.tensor([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line">tensor2 = torch.tensor([<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">torch.mv(tensor1, tensor2)  <span class="comment"># [20, 20]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># or use @:</span></span><br><span class="line">tensor1 @ tensor2  <span class="comment"># [20, 20]</span></span><br></pre></td></tr></table></figure>
+<p>Element-wise multiplication:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">tensor1 = torch.tensor([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line">tensor2 = torch.tensor([[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]])</span><br><span class="line">res = tensor1 * tensor2</span><br><span class="line"><span class="built_in">print</span>(res.size())  <span class="comment"># (2, 3)</span></span><br></pre></td></tr></table></figure>
+<p>Batch matrix multiplication: (b<em>m</em>n) <em> (b</em>n<em>p) -&gt; (b</em>m*p)</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">result = torch.bmm(tensor1, tensor2)</span><br></pre></td></tr></table></figure>
+<h2 id="计算两个数据之间的两两欧氏距离"><a href="#计算两个数据之间的两两欧氏距离" class="headerlink" title="计算两个数据之间的两两欧氏距离"></a>计算两个数据之间的两两欧氏距离</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">X1 = torch.tensor([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]).<span class="built_in">float</span>()</span><br><span class="line">X2 = torch.tensor([[<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]]).<span class="built_in">float</span>()</span><br><span class="line"></span><br><span class="line">dist = torch.sqrt(torch.<span class="built_in">sum</span>((X1[:,<span class="literal">None</span>,:] - X2) ** <span class="number">2</span>, dim=<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(dist)</span><br></pre></td></tr></table></figure>
+<h2 id="增加维度、减少维度"><a href="#增加维度、减少维度" class="headerlink" title="增加维度、减少维度"></a>增加维度、减少维度</h2><p>增加维度：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 方法1：unsqueeze()</span></span><br><span class="line">X1 = torch.tensor([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]).<span class="built_in">float</span>()</span><br><span class="line"><span class="built_in">print</span>(X1.unsqueeze(<span class="number">0</span>).size())  <span class="comment"># [1, 2, 3]</span></span><br><span class="line"><span class="built_in">print</span>(X1.unsqueeze(<span class="number">1</span>).size())  <span class="comment"># [2, 1, 3]</span></span><br><span class="line"><span class="built_in">print</span>(X1.unsqueeze(<span class="number">2</span>).size())  <span class="comment"># [2, 3, 1]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法2：</span></span><br><span class="line">X1 = torch.tensor([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]).<span class="built_in">float</span>()</span><br><span class="line"><span class="built_in">print</span>(X1[<span class="literal">None</span>, :, :].size())  <span class="comment"># [1, 2, 3]</span></span><br><span class="line"><span class="built_in">print</span>(X1[:, <span class="literal">None</span>, :].size())  <span class="comment"># [2, 1, 3]</span></span><br><span class="line"><span class="built_in">print</span>(X1[:, :, <span class="literal">None</span>].size())  <span class="comment"># [2, 3, 1]</span></span><br></pre></td></tr></table></figure>
+<p>减少维度：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">X1 = torch.randn([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">X1.squeeze(<span class="number">0</span>).size()</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>pytorch</category>
+      </categories>
+      <tags>
+        <tag>pytorch</tag>
+        <tag>深度学习框架</tag>
+      </tags>
+  </entry>
 </search>
