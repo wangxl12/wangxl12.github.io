@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2022-01-02T06:48:53.435Z</updated>
+  <updated>2022-01-11T02:25:43.699Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FairMOT的DCN环境配置</title>
+    <link href="https://wangxl12.github.io/2022/01/11/%E9%85%8D%E7%8E%AF%E5%A2%83/FairMOT%E7%9A%84DCN%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    <id>https://wangxl12.github.io/2022/01/11/%E9%85%8D%E7%8E%AF%E5%A2%83/FairMOT%E7%9A%84DCN%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</id>
+    <published>2022-01-11T01:54:05.000Z</published>
+    <updated>2022-01-11T02:25:43.699Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;我尝试在windows和Linux操作系统上都配置了一下，在Windows上配置的时候直接运行./make.sh可以成功，但是在Linux上却报错了，我的Linux系统是Ubuntu，而且非root用户，系统使用的gcc版本是9.3.0。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="环境配置" scheme="https://wangxl12.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+    
+    <category term="环境配置" scheme="https://wangxl12.github.io/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python常见但是自己少用的库</title>
+    <link href="https://wangxl12.github.io/2022/01/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E5%B8%B8%E8%A7%81%E4%BD%86%E6%98%AF%E8%87%AA%E5%B7%B1%E5%B0%91%E7%94%A8%E7%9A%84%E5%BA%93/"/>
+    <id>https://wangxl12.github.io/2022/01/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E5%B8%B8%E8%A7%81%E4%BD%86%E6%98%AF%E8%87%AA%E5%B7%B1%E5%B0%91%E7%94%A8%E7%9A%84%E5%BA%93/</id>
+    <published>2022-01-02T06:56:29.000Z</published>
+    <updated>2022-01-02T07:21:13.228Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;一些常见的python库，自己用的少，记录。&lt;/p&gt;
+&lt;h1&gt;functools.partial&lt;/h1&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    
+    <category term="python" scheme="https://wangxl12.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>python的pathlib库的使用</title>
@@ -374,11 +418,12 @@
     <link href="https://wangxl12.github.io/2021/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/pytorch%E7%9A%84%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC/"/>
     <id>https://wangxl12.github.io/2021/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/pytorch%E7%9A%84%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC/</id>
     <published>2021-10-24T06:44:32.000Z</published>
-    <updated>2021-10-27T06:50:20.373Z</updated>
+    <updated>2022-01-02T08:32:05.952Z</updated>
     
     
-    <summary type="html">&lt;h1&gt;使用pytorch的backward()报错&lt;/h1&gt;
-&lt;p&gt;使用pytorch的backward函数的时候报错：RuntimeError: grad can be implicitly created only for scalar outputs。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;参考：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=MswxJw-8PvE&quot;&gt;PyTorch Autograd Explained-In-depth Tutoral&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/148669484&quot;&gt;Pytorch的自动求导机制与使用方法(一)&lt;/a&gt;&lt;/p&gt;</summary>
     
     
     
@@ -388,65 +433,6 @@
     <category term="深度学习" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="torch" scheme="https://wangxl12.github.io/tags/torch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>python高级编程-part1</title>
-    <link href="https://wangxl12.github.io/2021/10/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B-part1/"/>
-    <id>https://wangxl12.github.io/2021/10/23/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B-part1/</id>
-    <published>2021-10-23T03:16:32.000Z</published>
-    <updated>2021-10-23T11:22:37.210Z</updated>
-    
-    
-    <summary type="html">&lt;h1&gt;outline&lt;/h1&gt;
-&lt;p&gt;&lt;strong&gt;函数与函数式编程：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一等函数&lt;/li&gt;
-&lt;li&gt;把函数视为对象&lt;/li&gt;
-&lt;li&gt;高阶函数&lt;/li&gt;
-&lt;li&gt;列表推导 vs (map/reduce)&lt;/li&gt;
-&lt;li&gt;函数的参数与返回值&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;方法和装饰器：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;有用的装饰器&lt;/li&gt;
-&lt;li&gt;由简单到复杂实现各类装饰器&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="python高级编程" scheme="https://wangxl12.github.io/categories/python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/"/>
-    
-    
-    <category term="python高级编程" scheme="https://wangxl12.github.io/tags/python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker入门</title>
-    <link href="https://wangxl12.github.io/2021/10/12/Docker/Docker%E5%85%A5%E9%97%A8/"/>
-    <id>https://wangxl12.github.io/2021/10/12/Docker/Docker%E5%85%A5%E9%97%A8/</id>
-    <published>2021-10-12T02:10:23.000Z</published>
-    <updated>2021-10-12T02:28:21.331Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1&gt;Docker学习网站&lt;/h1&gt;
-&lt;p&gt;推荐狂神的Docker视频：&lt;/p&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="Docker" scheme="https://wangxl12.github.io/categories/Docker/"/>
-    
-    
-    <category term="Docker" scheme="https://wangxl12.github.io/tags/Docker/"/>
     
   </entry>
   

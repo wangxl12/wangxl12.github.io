@@ -654,9 +654,12 @@ nums = 0, 0, 1, 1, 1, 2, 2, 3, 3, 4。</p>
   <entry>
     <title>pytorch的自动求导</title>
     <url>/2021/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/pytorch%E7%9A%84%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC/</url>
-    <content><![CDATA[<h1>使用pytorch的backward()报错</h1>
-<p>使用pytorch的backward函数的时候报错：RuntimeError: grad can be implicitly created only for scalar outputs。</p>
+    <content><![CDATA[<p>参考：</p>
+<p><a href="https://www.youtube.com/watch?v=MswxJw-8PvE">PyTorch Autograd Explained-In-depth Tutoral</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/148669484">Pytorch的自动求导机制与使用方法(一)</a></p>
 <span id="more"></span>
+<h1>使用pytorch的backward()报错</h1>
+<p>使用pytorch的backward函数的时候报错：RuntimeError: grad can be implicitly created only for scalar outputs。</p>
 <p>观察下面这段代码：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">x = torch.tensor(<span class="number">2.3</span>, requires_grad=<span class="literal">True</span>)</span><br><span class="line">y = <span class="number">2</span> * x</span><br><span class="line">y.backward()</span><br><span class="line"><span class="built_in">print</span>(x.grad)</span><br></pre></td></tr></table></figure>
 <p>输出结果为：2.0</p>
@@ -3227,6 +3230,79 @@ f(x) &amp;=\sum_{i=1}^{n} \alpha\left(x, x_{i}\right) y_{i} \\
       <tags>
         <tag>pytorch</tag>
         <tag>深度学习框架</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python常见但是自己少用的库</title>
+    <url>/2022/01/02/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E5%B8%B8%E8%A7%81%E4%BD%86%E6%98%AF%E8%87%AA%E5%B7%B1%E5%B0%91%E7%94%A8%E7%9A%84%E5%BA%93/</url>
+    <content><![CDATA[<p>一些常见的python库，自己用的少，记录。</p>
+<h1>functools.partial</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> partial</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    <span class="built_in">print</span>(a + b)</span><br><span class="line">fun_new = partial(fun, a=<span class="number">2</span>)</span><br><span class="line">fun_new(b=<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<h1>glob</h1>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取运行目录下所有的 py</span></span><br><span class="line"><span class="built_in">print</span>(glob.glob(<span class="string">&#x27;*.py&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<h1>collections</h1>
+<h2 id="counter">counter</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> col</span><br><span class="line">collections.Counter(files)</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>FairMOT的DCN环境配置</title>
+    <url>/2022/01/11/%E9%85%8D%E7%8E%AF%E5%A2%83/FairMOT%E7%9A%84DCN%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p>我尝试在windows和Linux操作系统上都配置了一下，在Windows上配置的时候直接运行./make.sh可以成功，但是在Linux上却报错了，我的Linux系统是Ubuntu，而且非root用户，系统使用的gcc版本是9.3.0。</p>
+<span id="more"></span>
+<h1>gcc版本太高</h1>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">CUDA on Ubuntu: unsupported GNU version! gcc versions later than 7 are not supported!</span><br></pre></td></tr></table></figure>
+<p>这个时候不要想着去找如何在非root用户下使用不同版本的gcc教程了，直接使用conda虚拟环境安装一个gcc，版本不要太高，5.4.0即可：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">conda install https://anaconda.org/brown-data-science/gcc/<span class="number">5.4</span><span class="number">.0</span>/download/linux-<span class="number">64</span>/gcc-<span class="number">5.4</span><span class="number">.0</span>-<span class="number">0.</span>tar.bz2</span><br></pre></td></tr></table></figure>
+<p>【踩坑史：】</p>
+<p>我一开始也想着如何非root使用不同版本的gcc，查了关于如下的博客，但是还是失败了：</p>
+<p><a href="https://blog.csdn.net/littlehaes/article/details/103372007">https://blog.csdn.net/littlehaes/article/details/103372007</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/162648425">https://zhuanlan.zhihu.com/p/162648425</a></p>
+<p><a href="https://blog.csdn.net/qq_43127685/article/details/103487524">https://blog.csdn.net/qq_43127685/article/details/103487524</a></p>
+<p><a href="https://blog.csdn.net/OliverkingLi/article/details/89645710">https://blog.csdn.net/OliverkingLi/article/details/89645710</a></p>
+<p><a href="https://www.cnblogs.com/nopnog/p/14990738.html">gcc环境部署遇到的问题</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/377881136">Ubuntu20.04 下手动编译安装gcc-6.3.0安装，多版本GCC 共存和切换</a></p>
+<h1>nvcc: not found</h1>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vi ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>将:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export CUDA_HOME=$CUDA_HOME:/usr/local/cuda</span><br></pre></td></tr></table></figure>
+<p>改为：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export CUDA_HOME=/usr/local/cuda</span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/loovelj/article/details/110490986">https://blog.csdn.net/loovelj/article/details/110490986</a></p>
+<p><a href="https://blog.csdn.net/qq_51682716/article/details/120412492?spm=1001.2101.3001.6650.15&amp;utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-15.pc_relevant_paycolumn_v2&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7Edefault-15.pc_relevant_paycolumn_v2&amp;utm_relevant_index=18">无root权限安装CUDA10.0以及gcc的降级+FairMOT构建DCNv2踩坑记录</a></p>
+<h1>致命错误： sys/cdefs.h：没有那个文件或目录</h1>
+<p>查阅了发现是当使用64位Ubuntu编译生成32位程序，在编译过程中报出这个错误。然后有好几个版本的解决办法，对我有效的是安装这个：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install libc6-dev-i386</span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/weixin_43904540/article/details/105916664">https://blog.csdn.net/weixin_43904540/article/details/105916664</a></p>
+<p>【踩坑史：】</p>
+<p>我在解决这个问题之前查到还有说安装下面这两个包的，但是都无法成功：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install lib32readline-gplv2-dev</span><br><span class="line">sudo apt-get install gcc-4.8-multilib g++-4.8-multilib</span><br></pre></td></tr></table></figure>
+<p>报错如下：</p>
+<p><img src="/2022/01/11/%E9%85%8D%E7%8E%AF%E5%A2%83/FairMOT%E7%9A%84DCN%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/cdefs.png" alt></p>
+<p><img src="/2022/01/11/%E9%85%8D%E7%8E%AF%E5%A2%83/FairMOT%E7%9A%84DCN%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/cdefs2.png" alt></p>
+<h1>找不到crti.o：没有这样的文件或目录</h1>
+<p>打开~/.bashrc，在尾部添加如下内容：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:$LIBRARY_PATH </span><br><span class="line">export LIBRARY_PATH</span><br></pre></td></tr></table></figure>
+<p>注意，修改了环境变量记得source ~/.bashrc才能生效。</p>
+<p>参考：</p>
+<p><a href="https://qastack.cn/ubuntu/251978/cannot-find-crti-o-no-such-file-or-directory">https://qastack.cn/ubuntu/251978/cannot-find-crti-o-no-such-file-or-directory</a></p>
+<h1>ImportError: libcudart.so.10.0: cannot open shared object file: No such file or directory</h1>
+<p>打开~/.bashrc，在尾部添加如下内容：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH</span><br><span class="line">export PATH=$PATH:/usr/local/cuda/bin:$PATH</span><br></pre></td></tr></table></figure>
+<p>注意，修改了环境变量记得source ~/.bashrc才能生效。</p>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/weixin_38705903/article/details/103932179">https://blog.csdn.net/weixin_38705903/article/details/103932179</a></p>
+]]></content>
+      <categories>
+        <category>环境配置</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
       </tags>
   </entry>
 </search>
