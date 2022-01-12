@@ -1271,7 +1271,7 @@ f(x) &amp;=\sum_{i=1}^{n} \alpha\left(x, x_{i}\right) y_{i} \\
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Hi wangxl12! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 <p>测试第二个账号：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github-new</span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Hi wxltop! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Hi github-new! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 </li>
 <li>
 <p>修改代码并上传</p>
@@ -1287,6 +1287,27 @@ f(x) &amp;=\sum_{i=1}^{n} \alpha\left(x, x_{i}\right) y_{i} \\
 <p><a href="https://www.cnblogs.com/ayseeing/p/4445194.html">https://www.cnblogs.com/ayseeing/p/4445194.html</a></p>
 <p><a href="https://www.zhihu.com/people/wxl-59-25">https://www.zhihu.com/people/wxl-59-25</a></p>
 <p><a href="http://167.86.101.119/lV5mrUYsucU/how-to-fix-github-permission-denied-publickey-fatal-could-not-read-from-remote-repository">http://167.86.101.119/lV5mrUYsucU/how-to-fix-github-permission-denied-publickey-fatal-could-not-read-from-remote-repository</a></p>
+<h1>补充</h1>
+<p>不知道为什么前段时间还可以用的，但是最近突然使用git push的时候报错：</p>
+<p><img src="/2021/11/14/Git/%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E5%A4%9A%E4%B8%AAssh_key%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E8%87%B3%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/error1.png" alt></p>
+<p>我猜想可能是我把GitHub上的ssh删掉了？重新将本地的id_rsa.pub内容粘贴过去但是报错：</p>
+<p><img src="/2021/11/14/Git/%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E5%A4%9A%E4%B8%AAssh_key%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E8%87%B3%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/error2.png" alt></p>
+<p>随后参考了这篇博客：</p>
+<p><a href="https://blog.csdn.net/m0_38072683/article/details/82939535">git Key is already in use</a></p>
+<p>将如下指令输入但是无效：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T -ai ~/.ssh/id_rsa git@github.com</span><br></pre></td></tr></table></figure>
+<p>最后是通过参考这篇博客解决的：</p>
+<p><a href="https://www.jianshu.com/p/c3aac5024877">[解决]git-ssh: connect to host github.com port 22: Connection timed out</a></p>
+<p>即先测试可用性：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T -p 443 git@ssh.github.com</span><br></pre></td></tr></table></figure>
+<p><img src="/2021/11/14/Git/%E4%B8%80%E5%8F%B0%E4%B8%BB%E6%9C%BA%E5%A4%9A%E4%B8%AAssh_key%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%E8%87%B3%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/test.png" alt></p>
+<p>发现可以用，所以打开~/.ssh/config文件，将里面的两个用户的HostName改成：<a href="http://ssh.github.com">ssh.github.com</a>（<a href="http://xn--github-917is7y4m2c.com">之前是github.com</a>），然后添加一个字段：<code>Port 443</code>，再次测试就可以了：</p>
+<p>测试第一个账号：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Hi wangxl12! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
+<p>测试第二个账号：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ssh -T git@github-new</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Hi github-new! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Git</category>
