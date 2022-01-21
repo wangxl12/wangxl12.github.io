@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>安装pytorch_lightning</title>
+    <url>/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/</url>
+    <content><![CDATA[<p>安装pytorch-lightning本是一件很容易的事情，随便一查都是一个指令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install pytorch-lightning</span><br></pre></td></tr></table></figure>
+<p>但是，我之前所使用的torch是1.6版本的，官方最低支持的是torch1.7版本的：</p>
+<span id="more"></span>
+<p><img src="/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/版本支持.png" alt></p>
+<p>参考链接：<a href="https://github.com/PyTorchLightning/pytorch-lightning#continuous-integration">https://github.com/PyTorchLightning/pytorch-lightning#continuous-integration</a></p>
+<p>所以我需要重新弄一个torch1.8版本的环境，并重新安装之前的所有包。</p>
+<h1 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h1><p>创建一个python为3.7版本的环境：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n torch18 python=3.7</span><br></pre></td></tr></table></figure>
+<h1 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h1><p>我的CUDA版本为10.2，就装一个10.2版本的torch吧：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch</span><br></pre></td></tr></table></figure>
+<h1 id="安装torchreid"><a href="#安装torchreid" class="headerlink" title="安装torchreid"></a>安装torchreid</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装Cython,scipy,numpy,tensorboard</span></span><br><span class="line">conda Cython scipy numpy tensorboard</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装opencv-python,gdown</span></span><br><span class="line">pip install opencv-python gdown </span><br><span class="line">git clone https://github.com/KaiyangZhou/deep-person-reid.git</span><br><span class="line">cd deep-person-reid/</span><br><span class="line">python setup.py develop</span><br></pre></td></tr></table></figure>
+<h1 id="安装torch-sparse-torch-scatter-torch-cluster"><a href="#安装torch-sparse-torch-scatter-torch-cluster" class="headerlink" title="安装torch-sparse,torch-scatter,torch-cluster"></a>安装torch-sparse,torch-scatter,torch-cluster</h1><p>参考这篇博客：<a href="https://blog.abovewater.top/2021/12/06/%E9%85%8D%E7%8E%AF%E5%A2%83/torch-sparse,torch-scatter,torch-cluster%E7%9A%84%E5%AE%89%E8%A3%85/">torch-sparse,torch-scatter,torch-cluster的安装</a></p>
+<p>注意，安装完torch-scatter,torch-sparse,torch-cluster了之后，不要使用pip install torch-geometric，使用如下指令安装：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">conda install pyg -c pyg -c conda-forge</span><br></pre></td></tr></table></figure>
+<p>参考：<a href="https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html">https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html</a></p>
+<h1 id="安装pytorch-lightning"><a href="#安装pytorch-lightning" class="headerlink" title="安装pytorch-lightning"></a>安装pytorch-lightning</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install pytorch-lightning</span><br></pre></td></tr></table></figure>
+<h1 id="安装lapsolver"><a href="#安装lapsolver" class="headerlink" title="安装lapsolver"></a>安装lapsolver</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装pytest-runner</span></span><br><span class="line">conda install pytest-runner</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装cmake</span></span><br><span class="line">pip install cmake</span><br><span class="line"><span class="meta">#</span><span class="bash"> 克隆源码</span></span><br><span class="line">git clone --recursive https://github.com/cheind/py-lapsolver.git</span><br><span class="line"><span class="meta">#</span><span class="bash"> build</span></span><br><span class="line">python setup.py develop</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">test</span>:</span></span><br><span class="line">python setup.py test</span><br></pre></td></tr></table></figure>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install scikit-image</span><br><span class="line">conda install GitPython</span><br><span class="line">pip install sacred </span><br><span class="line">pip install motmetrics</span><br><span class="line">pip install pul</span><br></pre></td></tr></table></figure>
+<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>安装完毕之后，我有这样一段代码：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pytorch-lightning <span class="keyword">as</span> pl</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Net</span>(<span class="params">pl.LightningModule</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, **hparams</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.hparams = hparams</span><br><span class="line">        <span class="built_in">print</span>(self.hparams)</span><br></pre></td></tr></table></figure>
+<p>报错：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">  File <span class="string">&quot;xxx&quot;</span>, line xx, <span class="keyword">in</span> __init__</span><br><span class="line">    self.hparams = hparams</span><br><span class="line">  File <span class="string">&quot;xxx&quot;</span>, line xx, <span class="keyword">in</span> __setattr__</span><br><span class="line">    <span class="built_in">object</span>.__setattr__(self, name, value)</span><br><span class="line">AttributeError: can<span class="string">&#x27;t set attribute</span></span><br></pre></td></tr></table></figure>
+<p>解决方法：</p>
+<p> 将<code>self.hparams=hparams</code>换为<code>self.hparams.update(hparams)</code>。</p>
+<p>参考：</p>
+<p><a href="https://github.com/PyTorchLightning/pytorch-lightning/discussions/7525">https://github.com/PyTorchLightning/pytorch-lightning/discussions/7525</a></p>
+]]></content>
+      <tags>
+        <tag>配环境</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>安装lapsolver</title>
+    <url>/2022/01/20/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85lapsolver/</url>
+    <content><![CDATA[<p>记录安装lapsolver的步骤。</p>
+<span id="more"></span>
+<h1 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h1><p>首先安装cmake：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install cmake</span><br></pre></td></tr></table></figure>
+<p>因为我使用的是python3.7，所以无法直接使用pip install lapsolver。需要从源码安装，首先将仓库代码克隆过来：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git clone --recursive https://github.com/cheind/py-lapsolver.git</span><br></pre></td></tr></table></figure>
+<p>build project:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python setup.py develop</span><br></pre></td></tr></table></figure>
+<p>接下来，如果按照步骤应该执行下面指令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python setup.py test</span><br></pre></td></tr></table></figure>
+<p>但是我在执行的时候报错说pytest版本的问题：</p>
+<p><img src="/2022/01/20/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85lapsolver/pytest.jpg" alt></p>
+<p>我继续执行了如下代码，发现可以正常使用：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> lapsolver <span class="keyword">import</span> solve_dense</span><br><span class="line"></span><br><span class="line">costs = np.array([</span><br><span class="line">    [<span class="number">6</span>, <span class="number">9</span>, <span class="number">1</span>],</span><br><span class="line">    [<span class="number">10</span>, <span class="number">3</span>, <span class="number">2</span>],</span><br><span class="line">    [<span class="number">8</span>, <span class="number">7</span>, <span class="number">4.</span>]</span><br><span class="line">], dtype=np.float32)    </span><br><span class="line"></span><br><span class="line">rids, cids = solve_dense(costs)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> r,c <span class="keyword">in</span> <span class="built_in">zip</span>(rids, cids):</span><br><span class="line">    <span class="built_in">print</span>(r,c) <span class="comment"># Row/column pairings</span></span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<p><a href="https://libraries.io/pypi/lapsolver">https://libraries.io/pypi/lapsolver</a></p>
+<p><a href="https://blog.csdn.net/Moluth/article/details/88738930">https://blog.csdn.net/Moluth/article/details/88738930</a></p>
+]]></content>
+      <tags>
+        <tag>配环境</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>python中的__init__.py,__all__,import,__name__,__doc__</title>
+    <url>/2022/01/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84__init__,__all__,import,__name__,__doc__/</url>
+    <content><![CDATA[<p>Summarize usage of <code>__init__.py</code>, <code>__all__</code>, import, <code>__name__</code>, <code>__doc__</code> .</p>
+<span id="more"></span>
+<h1 id="init-py文件"><a href="#init-py文件" class="headerlink" title="__init__.py文件"></a><code>__init__.py</code>文件</h1><p>用来表明一个文件夹是python包还是一般文件夹，如果存在该文件，就是python包。用处：</p>
+<ol>
+<li>当用于import 对象时，可以识别出哪些是可以导入的包，哪些是一般文件夹。</li>
+<li><p>可以在其中导入需要的对象，然后通过在执行程序中import package来引用这些包，所以简化了执行程序，因为每次导入package的时候会自动执行<code>__init__.py</code>；但最好不要在这里写自己的模块，该文件越简单越好；</p>
+</li>
+<li><p>设置<code>__all__</code>参数，只用于指定 from package import * 时，导入的包是哪些，不需要的包可以先不导入；并不影响from package import module/package、import package.module等形式的导入。</p>
+</li>
+</ol>
+<h1 id="import"><a href="#import" class="headerlink" title="import"></a>import</h1><p>import到底干了啥？从package导入模块需要使用from package import …形式。</p>
+<p><img src="/2022/01/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84__init__,__all__,import,__name__,__doc__/import逻辑.png" alt></p>
+<h1 id="name"><a href="#name" class="headerlink" title="__name__"></a><code>__name__</code></h1><p>用于判断当前模块是不是主程序文件（主执行），也就是查看 <code>__name__</code>的值是否为 <code>__main__</code>，如果是则该程序属于主程序文件，如果不是则显示该文件的文件名。所以很多时候看到有文件里有：<code>if __name__ == &quot;__main__&quot;:</code>，当主程序是该文件的时候才执行这里接下来的内容，如果将其作为导入文件就不会执行。</p>
+<h1 id="doc"><a href="#doc" class="headerlink" title="__doc__"></a><code>__doc__</code></h1><p><code>__doc__</code>：模块的注释文本，例如函数或者类的说明，用 ‘’’…’’’ 三引号形式包围</p>
+<p>参考：</p>
+<p><a href="https://www.cnblogs.com/qi-yuan-008/p/12827918.html">https://www.cnblogs.com/qi-yuan-008/p/12827918.html</a></p>
+]]></content>
+      <categories>
+        <category>编程语言</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>编程语言</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>FairMOT的DCN环境配置</title>
     <url>/2022/01/11/%E9%85%8D%E7%8E%AF%E5%A2%83/FairMOT%E7%9A%84DCN%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p>我尝试在windows和Linux操作系统上都配置了一下，在Windows上配置的时候直接运行./make.sh可以成功，但是在Linux上却报错了，我的Linux系统是Ubuntu，而且非root用户，系统使用的gcc版本是9.3.0。</p>

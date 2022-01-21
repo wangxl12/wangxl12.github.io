@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2022-01-11T02:25:43.699Z</updated>
+  <updated>2022-01-21T10:33:51.253Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -15,6 +15,63 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>安装pytorch_lightning</title>
+    <link href="https://wangxl12.github.io/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/"/>
+    <id>https://wangxl12.github.io/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/</id>
+    <published>2022-01-21T03:39:57.000Z</published>
+    <updated>2022-01-21T10:33:51.253Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;安装pytorch-lightning本是一件很容易的事情，随便一查都是一个指令：&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install pytorch-lightning&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;但是，我之前所使用的torch是1.6版本的，官方最低支持的是torch1.7版本的：&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="配环境" scheme="https://wangxl12.github.io/tags/%E9%85%8D%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安装lapsolver</title>
+    <link href="https://wangxl12.github.io/2022/01/20/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85lapsolver/"/>
+    <id>https://wangxl12.github.io/2022/01/20/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85lapsolver/</id>
+    <published>2022-01-20T14:16:12.000Z</published>
+    <updated>2022-01-20T14:26:43.781Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;记录安装lapsolver的步骤。&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="配环境" scheme="https://wangxl12.github.io/tags/%E9%85%8D%E7%8E%AF%E5%A2%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python中的__init__.py,__all__,import,__name__,__doc__</title>
+    <link href="https://wangxl12.github.io/2022/01/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84__init__,__all__,import,__name__,__doc__/"/>
+    <id>https://wangxl12.github.io/2022/01/19/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/python%E4%B8%AD%E7%9A%84__init__,__all__,import,__name__,__doc__/</id>
+    <published>2022-01-19T01:16:44.000Z</published>
+    <updated>2022-01-19T02:09:08.746Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;Summarize usage of &lt;code&gt;__init__.py&lt;/code&gt;, &lt;code&gt;__all__&lt;/code&gt;, import, &lt;code&gt;__name__&lt;/code&gt;, &lt;code&gt;__doc__&lt;/code&gt; .&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程语言" scheme="https://wangxl12.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+    <category term="python" scheme="https://wangxl12.github.io/tags/python/"/>
+    
+    <category term="编程语言" scheme="https://wangxl12.github.io/tags/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+  </entry>
   
   <entry>
     <title>FairMOT的DCN环境配置</title>
@@ -370,69 +427,6 @@
     <category term="数据集" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
     
     <category term="GNN" scheme="https://wangxl12.github.io/tags/GNN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基本概念</title>
-    <link href="https://wangxl12.github.io/2021/10/29/GNN/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"/>
-    <id>https://wangxl12.github.io/2021/10/29/GNN/%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/</id>
-    <published>2021-10-29T06:08:59.000Z</published>
-    <updated>2021-10-30T06:38:06.045Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;除了一些常见的图的基本概念，如：连通图、度数、连通子图、强连通图、有向图、无向图、有向图连通性等之外，还有一些之前没有接触过的概念在此补充一下：&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="GNN" scheme="https://wangxl12.github.io/categories/GNN/"/>
-    
-    
-    <category term="GNN" scheme="https://wangxl12.github.io/tags/GNN/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>线性回归从零开始实现</title>
-    <link href="https://wangxl12.github.io/2021/10/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AE%9E%E7%8E%B0/"/>
-    <id>https://wangxl12.github.io/2021/10/25/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E5%AE%9E%E7%8E%B0/</id>
-    <published>2021-10-25T02:04:59.000Z</published>
-    <updated>2021-11-23T07:37:29.551Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文代码取自李沐的《动手学习深度学习》，里面有些代码细节让我觉得非常值得斟酌，特记录。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="深度学习" scheme="https://wangxl12.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="torch" scheme="https://wangxl12.github.io/tags/torch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>pytorch的自动求导</title>
-    <link href="https://wangxl12.github.io/2021/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/pytorch%E7%9A%84%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC/"/>
-    <id>https://wangxl12.github.io/2021/10/24/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/pytorch%E7%9A%84%E8%87%AA%E5%8A%A8%E6%B1%82%E5%AF%BC/</id>
-    <published>2021-10-24T06:44:32.000Z</published>
-    <updated>2022-01-02T08:32:05.952Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;参考：&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=MswxJw-8PvE&quot;&gt;PyTorch Autograd Explained-In-depth Tutoral&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://zhuanlan.zhihu.com/p/148669484&quot;&gt;Pytorch的自动求导机制与使用方法(一)&lt;/a&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="深度学习" scheme="https://wangxl12.github.io/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="深度学习" scheme="https://wangxl12.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="torch" scheme="https://wangxl12.github.io/tags/torch/"/>
     
   </entry>
   
