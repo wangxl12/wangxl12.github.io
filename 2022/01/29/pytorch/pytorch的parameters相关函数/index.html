@@ -20,24 +20,20 @@
     var CONFIG = {"hostname":"wangxl12.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="介绍常见的可视化网络模型和训练过程的方法。">
+  <meta name="description" content="register_parameter()和parameter() 这两个都是一个东西，使用上有细微差别，主要作用是：将一个不可训练的类型Tensor转换成可以训练的类型parameter，并将这个parameter绑定到这个module里面，相当于变成了模型的一部分，成为了模型中可以根据训练进行变化的参数。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网络可视化">
-<meta property="og:url" content="https://wangxl12.github.io/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/index.html">
+<meta property="og:title" content="pytorch的parameters相关函数">
+<meta property="og:url" content="https://wangxl12.github.io/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="WXL&#39;s blog">
-<meta property="og:description" content="介绍常见的可视化网络模型和训练过程的方法。">
+<meta property="og:description" content="register_parameter()和parameter() 这两个都是一个东西，使用上有细微差别，主要作用是：将一个不可训练的类型Tensor转换成可以训练的类型parameter，并将这个parameter绑定到这个module里面，相当于变成了模型的一部分，成为了模型中可以根据训练进行变化的参数。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wangxl12.github.io/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/hiddenlayer.png">
-<meta property="og:image" content="https://wangxl12.github.io/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/torchviz.png">
-<meta property="article:published_time" content="2021-12-12T05:00:55.000Z">
-<meta property="article:modified_time" content="2021-12-12T06:27:44.209Z">
+<meta property="article:published_time" content="2022-01-29T05:01:00.000Z">
+<meta property="article:modified_time" content="2022-01-29T05:58:35.992Z">
 <meta property="article:author" content="WXL">
-<meta property="article:tag" content="深度学习">
-<meta property="article:tag" content="可视化">
+<meta property="article:tag" content="pytorch">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wangxl12.github.io/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/hiddenlayer.png">
 
-<link rel="canonical" href="https://wangxl12.github.io/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/">
+<link rel="canonical" href="https://wangxl12.github.io/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/">
 
 
 <script id="page-configurations">
@@ -50,7 +46,7 @@
   };
 </script>
 
-  <title>网络可视化 | WXL's blog</title>
+  <title>pytorch的parameters相关函数 | WXL's blog</title>
   
 
 
@@ -203,7 +199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/">
+    <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/td.jpg">
@@ -216,7 +212,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          网络可视化
+          pytorch的parameters相关函数
         </h1>
 
         <div class="post-meta">
@@ -227,20 +223,11 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-12-12 13:00:55 / 修改时间：14:27:44" itemprop="dateCreated datePublished" datetime="2021-12-12T13:00:55+08:00">2021-12-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
+              <time title="创建时间：2022-01-29 13:01:00 / 修改时间：13:58:35" itemprop="dateCreated datePublished" datetime="2022-01-29T13:01:00+08:00">2022-01-29</time>
             </span>
 
           
-            <span id="/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/" class="post-meta-item leancloud_visitors" data-flag-title="网络可视化" title="阅读次数">
+            <span id="/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" class="post-meta-item leancloud_visitors" data-flag-title="pytorch的parameters相关函数" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -255,8 +242,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -271,23 +258,43 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>介绍常见的可视化网络模型和训练过程的方法。</p>
+        <h1>register_parameter()和parameter()</h1>
+<p>这两个都是一个东西，使用上有细微差别，主要作用是：<strong>将一个不可训练的类型<code>Tensor</code>转换成可以训练的类型<code>parameter</code>，并将这个<code>parameter</code>绑定到这个<code>module</code>里面，相当于变成了模型的一部分，成为了模型中可以根据训练进行变化的参数。</strong></p>
 <span id="more"></span>
-<h1>网络模型可视化</h1>
-<h2 id="hiddenlayer库可视化">HiddenLayer库可视化</h2>
-<p>参考：<a target="_blank" rel="noopener" href="https://github.com/waleedka/hiddenlayer/blob/master/demos/pytorch_graph.ipynb">hiddenlayer</a></p>
-<p>首先安装hiddenlayer库和graphviz库：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install hiddenlayer</span><br><span class="line">conda install python-graphviz</span><br></pre></td></tr></table></figure>
-<p>用如下实例测试一下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hiddenlayer <span class="keyword">as</span> hl</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ConvNet</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.conv1 = nn.Sequential(</span><br><span class="line">            nn.Conv2d(in_channels=<span class="number">1</span>, out_channels=<span class="number">16</span>, kernel_size=<span class="number">3</span>, stride=<span class="number">1</span>, padding=<span class="number">1</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.AvgPool2d(kernel_size=<span class="number">2</span>, stride=<span class="number">2</span>)</span><br><span class="line">        )</span><br><span class="line">        self.conv2 = nn.Sequential(</span><br><span class="line">            nn.Conv2d(in_channels=<span class="number">16</span>, out_channels=<span class="number">32</span>, kernel_size=<span class="number">3</span>, stride=<span class="number">1</span>, padding=<span class="number">1</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.AvgPool2d(kernel_size=<span class="number">2</span>, stride=<span class="number">2</span>)</span><br><span class="line">        )</span><br><span class="line">        self.fc = nn.Sequential(</span><br><span class="line">            nn.Linear(in_features=<span class="number">32</span>*<span class="number">7</span>*<span class="number">7</span>, out_features=<span class="number">128</span>),</span><br><span class="line">            nn.ReLU(),</span><br><span class="line">            nn.Linear(<span class="number">128</span>, <span class="number">64</span>),</span><br><span class="line">            nn.ReLU()</span><br><span class="line">        )</span><br><span class="line">        self.out = nn.Linear(<span class="number">64</span>, <span class="number">10</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, X</span>):</span></span><br><span class="line">        H1 = self.conv1(X)</span><br><span class="line">        H2 = self.conv2(H1)</span><br><span class="line">        H2 = H2.view(H2.size(<span class="number">0</span>), -<span class="number">1</span>)</span><br><span class="line">        H3 = self.fc(H2)</span><br><span class="line">        output = self.out(H3)</span><br><span class="line">        <span class="keyword">return</span> output</span><br><span class="line"></span><br><span class="line">net = ConvNet()</span><br><span class="line"><span class="comment"># print(net)</span></span><br><span class="line">hl_graph = hl.build_graph(net, torch.zeros([<span class="number">1</span>, <span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>]))</span><br><span class="line">hl_graph.theme = hl.graph.THEMES[<span class="string">&quot;blue&quot;</span>].copy()</span><br><span class="line">hl_graph.save(<span class="string">&#x27;hl.png&#x27;</span>, <span class="built_in">format</span>=<span class="string">&#x27;png&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/hiddenlayer.png" alt></p>
-<h2 id="pytorchviz可视化">PyTorchViz可视化</h2>
-<p>还是上面的net，可视化代码如下：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = torch.randn(<span class="number">1</span>, <span class="number">1</span>, <span class="number">28</span>, <span class="number">28</span>).requires_grad_(<span class="literal">True</span>)</span><br><span class="line">y = net(x)</span><br><span class="line">viz = make_dot(y, params=<span class="built_in">dict</span>(<span class="built_in">list</span>(net.named_parameters()) + [(<span class="string">&#x27;x&#x27;</span>, x)]))</span><br><span class="line"><span class="comment"># 将viz保存为图片</span></span><br><span class="line">viz.<span class="built_in">format</span> = <span class="string">&#x27;png&#x27;</span>  <span class="comment"># 保存的格式</span></span><br><span class="line">viz.directory = <span class="string">&#x27;img/myvis&#x27;</span>  <span class="comment"># 保存的路径</span></span><br><span class="line">viz.view()  <span class="comment"># 自动在当前文件夹生成相应目录和文件</span></span><br></pre></td></tr></table></figure>
-<p><img src="/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/torchviz.png" alt></p>
-<h2 id="更高级的方法：">更高级的方法：</h2>
-<p>参考这篇文章：</p>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/147462170">23 款神经网络的设计和可视化工具</a></p>
+<p>使用方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(Example, self).__init__()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;看看我们的模型有哪些parameter:\t&#x27;</span>, self._parameters, end=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        self.W1_params = nn.Parameter(torch.rand(<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;增加W1后看看：&#x27;</span>,self._parameters, end=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        self.register_parameter(<span class="string">&#x27;W2_params&#x27;</span> , nn.Parameter(torch.rand(<span class="number">2</span>,<span class="number">3</span>)))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;增加W2后看看：&#x27;</span>,self._parameters, end=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<p>这里还有一个<code>self._parameters</code>，是在继承了nn.Module的类内所使用的。nn.Linear类中的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, in_features, out_features, bias=<span class="literal">True</span></span>):</span></span><br><span class="line">    <span class="built_in">super</span>(Linear, self).__init__()</span><br><span class="line">    self.in_features = in_features</span><br><span class="line">    self.out_features = out_features</span><br><span class="line">    self.weight = Parameter(torch.Tensor(out_features, in_features))</span><br><span class="line">    <span class="keyword">if</span> bias:</span><br><span class="line">        self.bias = Parameter(torch.Tensor(out_features))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        self.register_parameter(<span class="string">&#x27;bias&#x27;</span>, <span class="literal">None</span>)</span><br><span class="line">    <span class="comment"># 使用默认的方法初始化可训练参数</span></span><br><span class="line">    self.reset_parameters()</span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xinjieyuan/article/details/106951116">pytorch中的register_parameter()和parameter()</a></p>
+<h1>reset_parameters</h1>
+<p>初始化参数，在继承了nn.Module类的网络类中使用：<code>self.reset_parameters()</code>，pytorch提供了多种初始化函数：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">torch.nn.init.constant(tensor, val)</span><br><span class="line">torch.nn.init.normal(tensor, mean=<span class="number">0</span>, std=<span class="number">1</span>)</span><br><span class="line">torch.nn.init.xavier_uniform(tensor, gain=<span class="number">1</span>)</span><br><span class="line">kaiming_uniform_(tensor, a=<span class="number">0</span>, mode=<span class="string">&#x27;fan_in&#x27;</span>, nonlinearity=<span class="string">&#x27;leaky_relu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>常见的初始化：</p>
+<h2 id="nn-init-uniform">nn.init.uniform_()</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.uniform_(w, a=<span class="number">0.0</span>, b=<span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-normal">nn.init.normal_()</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.normal_(w, mean=<span class="number">0.0</span>, std=<span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-constant">nn.init.constant_()</h2>
+<p>Fill the input Tensor with the value <code>val</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.constant_(w, <span class="number">0.3</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-ones">nn.init.ones_()</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.ones_(w)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-zeros">nn.init.zeros_()</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.zeros_(w)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-eye">nn.init.eye_()</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.eye_(w)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-xavier-uniform">nn.init.xavier_uniform_()</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.xavier_uniform_(w, gain=nn.init.calculate_gain(<span class="string">&#x27;relu&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-kaiming-uniform">nn.init.kaiming_uniform_()</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.kaiming_uniform_(w, mode=<span class="string">&#x27;fan_in&#x27;</span>, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-kaiming-normal">nn.init.kaiming_normal_()</h2>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.kaiming_normal_(w, mode=<span class="string">&#x27;fan_out&#x27;</span>, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h1>net.apply()</h1>
+<p>用法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">weights_init</span>(<span class="params">m</span>):</span></span><br><span class="line">    classname=m.__class__.__name__</span><br><span class="line">    <span class="keyword">if</span> classname.find(<span class="string">&#x27;Conv&#x27;</span>) != -<span class="number">1</span>:</span><br><span class="line">        xavier(m.weight.data)</span><br><span class="line">        xavier(m.bias.data)</span><br><span class="line">net = Net()</span><br><span class="line">net.apply(weights_init) <span class="comment">#apply函数会递归地搜索网络内的所有module并把参数表示的函数应用到所有的module上。   </span></span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/f97791393439">Pytorch参数初始化–默认与自定义</a></p>
 
     </div>
 
@@ -323,7 +330,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://wangxl12.github.io/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/" title="网络可视化">https://wangxl12.github.io/2021/12/12/深度学习/网络可视化与训练可视化/</a>
+    <a href="https://wangxl12.github.io/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" title="pytorch的parameters相关函数">https://wangxl12.github.io/2022/01/29/pytorch/pytorch的parameters相关函数/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -335,8 +342,7 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
-              <a href="/tags/%E5%8F%AF%E8%A7%86%E5%8C%96/" rel="tag"><i class="fa fa-tag"></i> 可视化</a>
+              <a href="/tags/pytorch/" rel="tag"><i class="fa fa-tag"></i> pytorch</a>
           </div>
 
         
@@ -345,13 +351,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/12/06/%E9%85%8D%E7%8E%AF%E5%A2%83/torch-sparse,torch-scatter,torch-cluster%E7%9A%84%E5%AE%89%E8%A3%85/" rel="prev" title="torch-sparse,torch-scatter,torch-cluster的安装">
-      <i class="fa fa-chevron-left"></i> torch-sparse,torch-scatter,torch-cluster的安装
+    <a href="/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/" rel="prev" title="安装pytorch_lightning">
+      <i class="fa fa-chevron-left"></i> 安装pytorch_lightning
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/12/14/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/" rel="next" title="注意力提示+注意力汇聚">
-      注意力提示+注意力汇聚 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -411,7 +414,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">网络模型可视化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#hiddenlayer%E5%BA%93%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">1.1.</span> <span class="nav-text">HiddenLayer库可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytorchviz%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">1.2.</span> <span class="nav-text">PyTorchViz可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E9%AB%98%E7%BA%A7%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">更高级的方法：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">register_parameter()和parameter()</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">reset_parameters</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nn-init-uniform"><span class="nav-number">2.1.</span> <span class="nav-text">nn.init.uniform_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nn-init-normal"><span class="nav-number">2.2.</span> <span class="nav-text">nn.init.normal_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nn-init-constant"><span class="nav-number">2.3.</span> <span class="nav-text">nn.init.constant_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nn-init-ones"><span class="nav-number">2.4.</span> <span class="nav-text">nn.init.ones_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nn-init-zeros"><span class="nav-number">2.5.</span> <span class="nav-text">nn.init.zeros_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nn-init-eye"><span class="nav-number">2.6.</span> <span class="nav-text">nn.init.eye_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nn-init-xavier-uniform"><span class="nav-number">2.7.</span> <span class="nav-text">nn.init.xavier_uniform_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nn-init-kaiming-uniform"><span class="nav-number">2.8.</span> <span class="nav-text">nn.init.kaiming_uniform_()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nn-init-kaiming-normal"><span class="nav-number">2.9.</span> <span class="nav-text">nn.init.kaiming_normal_()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">net.apply()</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -583,61 +586,6 @@
   
 
   
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-          load: ['[tex]/mhchem'],
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-          packages: {'[+]': ['mhchem']},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 

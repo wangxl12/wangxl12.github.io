@@ -27,13 +27,13 @@
 <meta property="og:site_name" content="WXL&#39;s blog">
 <meta property="og:description" content="安装pytorch-lightning本是一件很容易的事情，随便一查都是一个指令： 1pip install pytorch-lightning 但是，我之前所使用的torch是1.6版本的，官方最低支持的是torch1.7版本的：">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://wangxl12.github.io/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/版本支持.png">
+<meta property="og:image" content="https://wangxl12.github.io/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%81.png">
 <meta property="article:published_time" content="2022-01-21T03:39:57.000Z">
-<meta property="article:modified_time" content="2022-01-21T10:33:51.253Z">
+<meta property="article:modified_time" content="2022-01-23T07:53:55.011Z">
 <meta property="article:author" content="WXL">
 <meta property="article:tag" content="配环境">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://wangxl12.github.io/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/版本支持.png">
+<meta name="twitter:image" content="https://wangxl12.github.io/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%81.png">
 
 <link rel="canonical" href="https://wangxl12.github.io/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/">
 
@@ -79,8 +79,8 @@
   </style>
 </noscript>
 
-<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /><link rel="alternate" href="/atom.xml" title="WXL's blog" type="application/atom+xml">
-</head>
+<link rel="alternate" href="/atom.xml" title="WXL's blog" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">48</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -223,10 +223,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-01-21 11:39:57 / 修改时间：18:33:51" itemprop="dateCreated datePublished" datetime="2022-01-21T11:39:57+08:00">2022-01-21</time>
+              <time title="创建时间：2022-01-21 11:39:57" itemprop="dateCreated datePublished" datetime="2022-01-21T11:39:57+08:00">2022-01-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-23 15:53:55" itemprop="dateModified" datetime="2022-01-23T15:53:55+08:00">2022-01-23</time>
+              </span>
 
           
             <span id="/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/" class="post-meta-item leancloud_visitors" data-flag-title="安装pytorch_lightning" title="阅读次数">
@@ -264,27 +270,42 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pytorch-lightning</span><br></pre></td></tr></table></figure>
 <p>但是，我之前所使用的torch是1.6版本的，官方最低支持的是torch1.7版本的：</p>
 <span id="more"></span>
-<p><img src="/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/版本支持.png" alt></p>
+<p><img src="/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%81.png" alt></p>
 <p>参考链接：<a target="_blank" rel="noopener" href="https://github.com/PyTorchLightning/pytorch-lightning#continuous-integration">https://github.com/PyTorchLightning/pytorch-lightning#continuous-integration</a></p>
 <p>所以我需要重新弄一个torch1.8版本的环境，并重新安装之前的所有包。</p>
-<h1 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h1><p>创建一个python为3.7版本的环境：</p>
+<h1>创建虚拟环境</h1>
+<p>创建一个python为3.7版本的环境：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n torch18 python=3.7</span><br></pre></td></tr></table></figure>
-<h1 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h1><p>我的CUDA版本为10.2，就装一个10.2版本的torch吧：</p>
+<h1>安装pytorch</h1>
+<p>我的CUDA版本为10.2，就装一个10.2版本的torch吧：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch</span><br></pre></td></tr></table></figure>
-<h1 id="安装torchreid"><a href="#安装torchreid" class="headerlink" title="安装torchreid"></a>安装torchreid</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装Cython,scipy,numpy,tensorboard</span></span><br><span class="line">conda Cython scipy numpy tensorboard</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装opencv-python,gdown</span></span><br><span class="line">pip install opencv-python gdown </span><br><span class="line">git clone https://github.com/KaiyangZhou/deep-person-reid.git</span><br><span class="line">cd deep-person-reid/</span><br><span class="line">python setup.py develop</span><br></pre></td></tr></table></figure>
-<h1 id="安装torch-sparse-torch-scatter-torch-cluster"><a href="#安装torch-sparse-torch-scatter-torch-cluster" class="headerlink" title="安装torch-sparse,torch-scatter,torch-cluster"></a>安装torch-sparse,torch-scatter,torch-cluster</h1><p>参考这篇博客：<a target="_blank" rel="noopener" href="https://blog.abovewater.top/2021/12/06/%E9%85%8D%E7%8E%AF%E5%A2%83/torch-sparse,torch-scatter,torch-cluster%E7%9A%84%E5%AE%89%E8%A3%85/">torch-sparse,torch-scatter,torch-cluster的安装</a></p>
+<h1>安装torchreid</h1>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装Cython,scipy,numpy,tensorboard</span></span><br><span class="line">conda install Cython scipy numpy tensorboard</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装opencv-python,gdown</span></span><br><span class="line">pip install opencv-python gdown </span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装torch reid</span></span><br><span class="line">git clone https://github.com/KaiyangZhou/deep-person-reid.git</span><br><span class="line">cd deep-person-reid/</span><br><span class="line">python setup.py develop</span><br></pre></td></tr></table></figure>
+<h1>安装torch-sparse,torch-scatter,torch-cluster</h1>
+<p>参考这篇博客：<a target="_blank" rel="noopener" href="https://blog.abovewater.top/2021/12/06/%E9%85%8D%E7%8E%AF%E5%A2%83/torch-sparse,torch-scatter,torch-cluster%E7%9A%84%E5%AE%89%E8%A3%85/">torch-sparse,torch-scatter,torch-cluster的安装</a></p>
 <p>注意，安装完torch-scatter,torch-sparse,torch-cluster了之后，不要使用pip install torch-geometric，使用如下指令安装：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install pyg -c pyg -c conda-forge</span><br></pre></td></tr></table></figure>
 <p>参考：<a target="_blank" rel="noopener" href="https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html">https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html</a></p>
-<h1 id="安装pytorch-lightning"><a href="#安装pytorch-lightning" class="headerlink" title="安装pytorch-lightning"></a>安装pytorch-lightning</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pytorch-lightning</span><br></pre></td></tr></table></figure>
-<h1 id="安装lapsolver"><a href="#安装lapsolver" class="headerlink" title="安装lapsolver"></a>安装lapsolver</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装pytest-runner</span></span><br><span class="line">conda install pytest-runner</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装cmake</span></span><br><span class="line">pip install cmake</span><br><span class="line"><span class="meta">#</span><span class="bash"> 克隆源码</span></span><br><span class="line">git clone --recursive https://github.com/cheind/py-lapsolver.git</span><br><span class="line"><span class="meta">#</span><span class="bash"> build</span></span><br><span class="line">python setup.py develop</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">test</span>:</span></span><br><span class="line">python setup.py test</span><br></pre></td></tr></table></figure>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pip install scikit-image</span><br><span class="line">conda install GitPython</span><br><span class="line">pip install sacred </span><br><span class="line">pip install motmetrics</span><br><span class="line">pip install pul</span><br></pre></td></tr></table></figure>
-<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>安装完毕之后，我有这样一段代码：</p>
+<h1>安装pytorch-lightning</h1>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install pytorch-lightning</span><br></pre></td></tr></table></figure>
+<h1>安装lapsolver</h1>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装pytest-runner</span></span><br><span class="line">conda install pytest-runner</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装cmake</span></span><br><span class="line">pip install cmake</span><br><span class="line"><span class="meta">#</span><span class="bash"> 克隆源码</span></span><br><span class="line">git clone --recursive https://github.com/cheind/py-lapsolver.git</span><br><span class="line">cd py-lapsolver</span><br><span class="line"><span class="meta">#</span><span class="bash"> build</span></span><br><span class="line">python setup.py develop</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">test</span>:</span></span><br><span class="line">python setup.py test</span><br></pre></td></tr></table></figure>
+<h1>其他</h1>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pip install scikit-image</span><br><span class="line">conda install GitPython</span><br><span class="line">pip install sacred </span><br><span class="line">pip install motmetrics</span><br><span class="line">pip install pulp</span><br></pre></td></tr></table></figure>
+<p>安装tracking_wo_bnw:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/phil-bergmann/tracking_wo_bnw</span><br><span class="line">cd tracking_wo_bnw</span><br><span class="line">pip3 install -e .</span><br></pre></td></tr></table></figure>
+<p>修改文件：</p>
+<p><a target="_blank" rel="noopener" href="http://tracktor.datasets.factory.py">tracktor.datasets.factory.py</a></p>
+<p>tracktor.datasets.mot15_sequence.py</p>
+<p>tracktor.datasets.mot_sequence.py</p>
+<p>tracktor.datasets.mot_wrapper.py</p>
+<h1>遇到的问题</h1>
+<p>安装完毕之后，我有这样一段代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytorch-lightning <span class="keyword">as</span> pl</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Net</span>(<span class="params">pl.LightningModule</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, **hparams</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.hparams = hparams</span><br><span class="line">        <span class="built_in">print</span>(self.hparams)</span><br></pre></td></tr></table></figure>
 <p>报错：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  File <span class="string">&quot;xxx&quot;</span>, line xx, <span class="keyword">in</span> __init__</span><br><span class="line">    self.hparams = hparams</span><br><span class="line">  File <span class="string">&quot;xxx&quot;</span>, line xx, <span class="keyword">in</span> __setattr__</span><br><span class="line">    <span class="built_in">object</span>.__setattr__(self, name, value)</span><br><span class="line">AttributeError: can<span class="string">&#x27;t set attribute</span></span><br></pre></td></tr></table></figure>
 <p>解决方法：</p>
-<p> 将<code>self.hparams=hparams</code>换为<code>self.hparams.update(hparams)</code>。</p>
+<p>将<code>self.hparams=hparams</code>换为<code>self.hparams.update(hparams)</code>。</p>
 <p>参考：</p>
 <p><a target="_blank" rel="noopener" href="https://github.com/PyTorchLightning/pytorch-lightning/discussions/7525">https://github.com/PyTorchLightning/pytorch-lightning/discussions/7525</a></p>
 
@@ -346,7 +367,10 @@
     <a href="/2022/01/20/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85lapsolver/" rel="prev" title="安装lapsolver">
       <i class="fa fa-chevron-left"></i> 安装lapsolver
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" rel="next" title="pytorch的parameters相关函数">
+      pytorch的parameters相关函数 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -406,7 +430,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">创建虚拟环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85pytorch"><span class="nav-number">2.</span> <span class="nav-text">安装pytorch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85torchreid"><span class="nav-number">3.</span> <span class="nav-text">安装torchreid</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85torch-sparse-torch-scatter-torch-cluster"><span class="nav-number">4.</span> <span class="nav-text">安装torch-sparse,torch-scatter,torch-cluster</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85pytorch-lightning"><span class="nav-number">5.</span> <span class="nav-text">安装pytorch-lightning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85lapsolver"><span class="nav-number">6.</span> <span class="nav-text">安装lapsolver</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">7.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">8.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">1.</span> <span class="nav-text">创建虚拟环境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">2.</span> <span class="nav-text">安装pytorch</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">安装torchreid</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">4.</span> <span class="nav-text">安装torch-sparse,torch-scatter,torch-cluster</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text">安装pytorch-lightning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">6.</span> <span class="nav-text">安装lapsolver</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">7.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">8.</span> <span class="nav-text">遇到的问题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -422,7 +446,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

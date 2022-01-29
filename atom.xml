@@ -6,7 +6,7 @@
   <link href="https://wangxl12.github.io/atom.xml" rel="self"/>
   
   <link href="https://wangxl12.github.io/"/>
-  <updated>2022-01-21T10:33:51.253Z</updated>
+  <updated>2022-01-29T05:58:35.992Z</updated>
   <id>https://wangxl12.github.io/</id>
   
   <author>
@@ -17,11 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>pytorch的parameters相关函数</title>
+    <link href="https://wangxl12.github.io/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/"/>
+    <id>https://wangxl12.github.io/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/</id>
+    <published>2022-01-29T05:01:00.000Z</published>
+    <updated>2022-01-29T05:58:35.992Z</updated>
+    
+    
+    <summary type="html">&lt;h1&gt;register_parameter()和parameter()&lt;/h1&gt;
+&lt;p&gt;这两个都是一个东西，使用上有细微差别，主要作用是：&lt;strong&gt;将一个不可训练的类型&lt;code&gt;Tensor&lt;/code&gt;转换成可以训练的类型&lt;code&gt;parameter&lt;/code&gt;，并将这个&lt;code&gt;parameter&lt;/code&gt;绑定到这个&lt;code&gt;module&lt;/code&gt;里面，相当于变成了模型的一部分，成为了模型中可以根据训练进行变化的参数。&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="pytorch" scheme="https://wangxl12.github.io/tags/pytorch/"/>
+    
+  </entry>
+  
+  <entry>
     <title>安装pytorch_lightning</title>
     <link href="https://wangxl12.github.io/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/"/>
     <id>https://wangxl12.github.io/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/</id>
     <published>2022-01-21T03:39:57.000Z</published>
-    <updated>2022-01-21T10:33:51.253Z</updated>
+    <updated>2022-01-23T07:53:55.011Z</updated>
     
     
     <summary type="html">&lt;p&gt;安装pytorch-lightning本是一件很容易的事情，随便一查都是一个指令：&lt;/p&gt;
@@ -406,27 +424,6 @@
     
     
     <category term="Git" scheme="https://wangxl12.github.io/tags/Git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GNN-数据集</title>
-    <link href="https://wangxl12.github.io/2021/10/31/GNN/GNN-%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    <id>https://wangxl12.github.io/2021/10/31/GNN/GNN-%E6%95%B0%E6%8D%AE%E9%9B%86/</id>
-    <published>2021-10-31T02:05:10.000Z</published>
-    <updated>2021-10-31T02:43:14.364Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文介绍一些可以用于GNN的数据集&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="数据集" scheme="https://wangxl12.github.io/categories/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    
-    
-    <category term="数据集" scheme="https://wangxl12.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    
-    <category term="GNN" scheme="https://wangxl12.github.io/tags/GNN/"/>
     
   </entry>
   

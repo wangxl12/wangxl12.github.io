@@ -1,33 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>pytorch的parameters相关函数</title>
+    <url>/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/</url>
+    <content><![CDATA[<h1>register_parameter()和parameter()</h1>
+<p>这两个都是一个东西，使用上有细微差别，主要作用是：<strong>将一个不可训练的类型<code>Tensor</code>转换成可以训练的类型<code>parameter</code>，并将这个<code>parameter</code>绑定到这个<code>module</code>里面，相当于变成了模型的一部分，成为了模型中可以根据训练进行变化的参数。</strong></p>
+<span id="more"></span>
+<p>使用方法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Example</span>(<span class="params">nn.Module</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="built_in">super</span>(Example, self).__init__()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;看看我们的模型有哪些parameter:\t&#x27;</span>, self._parameters, end=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        self.W1_params = nn.Parameter(torch.rand(<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;增加W1后看看：&#x27;</span>,self._parameters, end=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        self.register_parameter(<span class="string">&#x27;W2_params&#x27;</span> , nn.Parameter(torch.rand(<span class="number">2</span>,<span class="number">3</span>)))</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&#x27;增加W2后看看：&#x27;</span>,self._parameters, end=<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+<p>这里还有一个<code>self._parameters</code>，是在继承了nn.Module的类内所使用的。nn.Linear类中的代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, in_features, out_features, bias=<span class="literal">True</span></span>):</span></span><br><span class="line">    <span class="built_in">super</span>(Linear, self).__init__()</span><br><span class="line">    self.in_features = in_features</span><br><span class="line">    self.out_features = out_features</span><br><span class="line">    self.weight = Parameter(torch.Tensor(out_features, in_features))</span><br><span class="line">    <span class="keyword">if</span> bias:</span><br><span class="line">        self.bias = Parameter(torch.Tensor(out_features))</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        self.register_parameter(<span class="string">&#x27;bias&#x27;</span>, <span class="literal">None</span>)</span><br><span class="line">    <span class="comment"># 使用默认的方法初始化可训练参数</span></span><br><span class="line">    self.reset_parameters()</span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<p><a href="https://blog.csdn.net/xinjieyuan/article/details/106951116">pytorch中的register_parameter()和parameter()</a></p>
+<h1>reset_parameters</h1>
+<p>初始化参数，在继承了nn.Module类的网络类中使用：<code>self.reset_parameters()</code>，pytorch提供了多种初始化函数：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">torch.nn.init.constant(tensor, val)</span><br><span class="line">torch.nn.init.normal(tensor, mean=<span class="number">0</span>, std=<span class="number">1</span>)</span><br><span class="line">torch.nn.init.xavier_uniform(tensor, gain=<span class="number">1</span>)</span><br><span class="line">kaiming_uniform_(tensor, a=<span class="number">0</span>, mode=<span class="string">&#x27;fan_in&#x27;</span>, nonlinearity=<span class="string">&#x27;leaky_relu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>常见的初始化：</p>
+<h2 id="nn-init-uniform">nn.init.uniform_()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.uniform_(w, a=<span class="number">0.0</span>, b=<span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-normal">nn.init.normal_()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.normal_(w, mean=<span class="number">0.0</span>, std=<span class="number">1.0</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-constant">nn.init.constant_()</h2>
+<p>Fill the input Tensor with the value <code>val</code></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.constant_(w, <span class="number">0.3</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-ones">nn.init.ones_()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.ones_(w)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-zeros">nn.init.zeros_()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.zeros_(w)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-eye">nn.init.eye_()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.eye_(w)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-xavier-uniform">nn.init.xavier_uniform_()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.xavier_uniform_(w, gain=nn.init.calculate_gain(<span class="string">&#x27;relu&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-kaiming-uniform">nn.init.kaiming_uniform_()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.kaiming_uniform_(w, mode=<span class="string">&#x27;fan_in&#x27;</span>, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="nn-init-kaiming-normal">nn.init.kaiming_normal_()</h2>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">w = torch.empty(<span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">nn.init.kaiming_normal_(w, mode=<span class="string">&#x27;fan_out&#x27;</span>, nonlinearity=<span class="string">&#x27;relu&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h1>net.apply()</h1>
+<p>用法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">weights_init</span>(<span class="params">m</span>):</span></span><br><span class="line">    classname=m.__class__.__name__</span><br><span class="line">    <span class="keyword">if</span> classname.find(<span class="string">&#x27;Conv&#x27;</span>) != -<span class="number">1</span>:</span><br><span class="line">        xavier(m.weight.data)</span><br><span class="line">        xavier(m.bias.data)</span><br><span class="line">net = Net()</span><br><span class="line">net.apply(weights_init) <span class="comment">#apply函数会递归地搜索网络内的所有module并把参数表示的函数应用到所有的module上。   </span></span><br></pre></td></tr></table></figure>
+<p>参考：</p>
+<p><a href="https://www.jianshu.com/p/f97791393439">Pytorch参数初始化–默认与自定义</a></p>
+]]></content>
+      <tags>
+        <tag>pytorch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>安装pytorch_lightning</title>
     <url>/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/</url>
     <content><![CDATA[<p>安装pytorch-lightning本是一件很容易的事情，随便一查都是一个指令：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install pytorch-lightning</span><br></pre></td></tr></table></figure>
 <p>但是，我之前所使用的torch是1.6版本的，官方最低支持的是torch1.7版本的：</p>
 <span id="more"></span>
-<p><img src="/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/版本支持.png" alt></p>
+<p><img src="/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/%E7%89%88%E6%9C%AC%E6%94%AF%E6%8C%81.png" alt></p>
 <p>参考链接：<a href="https://github.com/PyTorchLightning/pytorch-lightning#continuous-integration">https://github.com/PyTorchLightning/pytorch-lightning#continuous-integration</a></p>
 <p>所以我需要重新弄一个torch1.8版本的环境，并重新安装之前的所有包。</p>
-<h1 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h1><p>创建一个python为3.7版本的环境：</p>
+<h1>创建虚拟环境</h1>
+<p>创建一个python为3.7版本的环境：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda create -n torch18 python=3.7</span><br></pre></td></tr></table></figure>
-<h1 id="安装pytorch"><a href="#安装pytorch" class="headerlink" title="安装pytorch"></a>安装pytorch</h1><p>我的CUDA版本为10.2，就装一个10.2版本的torch吧：</p>
+<h1>安装pytorch</h1>
+<p>我的CUDA版本为10.2，就装一个10.2版本的torch吧：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch</span><br></pre></td></tr></table></figure>
-<h1 id="安装torchreid"><a href="#安装torchreid" class="headerlink" title="安装torchreid"></a>安装torchreid</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装Cython,scipy,numpy,tensorboard</span></span><br><span class="line">conda Cython scipy numpy tensorboard</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装opencv-python,gdown</span></span><br><span class="line">pip install opencv-python gdown </span><br><span class="line">git clone https://github.com/KaiyangZhou/deep-person-reid.git</span><br><span class="line">cd deep-person-reid/</span><br><span class="line">python setup.py develop</span><br></pre></td></tr></table></figure>
-<h1 id="安装torch-sparse-torch-scatter-torch-cluster"><a href="#安装torch-sparse-torch-scatter-torch-cluster" class="headerlink" title="安装torch-sparse,torch-scatter,torch-cluster"></a>安装torch-sparse,torch-scatter,torch-cluster</h1><p>参考这篇博客：<a href="https://blog.abovewater.top/2021/12/06/%E9%85%8D%E7%8E%AF%E5%A2%83/torch-sparse,torch-scatter,torch-cluster%E7%9A%84%E5%AE%89%E8%A3%85/">torch-sparse,torch-scatter,torch-cluster的安装</a></p>
+<h1>安装torchreid</h1>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装Cython,scipy,numpy,tensorboard</span></span><br><span class="line">conda install Cython scipy numpy tensorboard</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装opencv-python,gdown</span></span><br><span class="line">pip install opencv-python gdown </span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装torch reid</span></span><br><span class="line">git clone https://github.com/KaiyangZhou/deep-person-reid.git</span><br><span class="line">cd deep-person-reid/</span><br><span class="line">python setup.py develop</span><br></pre></td></tr></table></figure>
+<h1>安装torch-sparse,torch-scatter,torch-cluster</h1>
+<p>参考这篇博客：<a href="https://blog.abovewater.top/2021/12/06/%E9%85%8D%E7%8E%AF%E5%A2%83/torch-sparse,torch-scatter,torch-cluster%E7%9A%84%E5%AE%89%E8%A3%85/">torch-sparse,torch-scatter,torch-cluster的安装</a></p>
 <p>注意，安装完torch-scatter,torch-sparse,torch-cluster了之后，不要使用pip install torch-geometric，使用如下指令安装：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">conda install pyg -c pyg -c conda-forge</span><br></pre></td></tr></table></figure>
 <p>参考：<a href="https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html">https://pytorch-geometric.readthedocs.io/en/latest/notes/installation.html</a></p>
-<h1 id="安装pytorch-lightning"><a href="#安装pytorch-lightning" class="headerlink" title="安装pytorch-lightning"></a>安装pytorch-lightning</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install pytorch-lightning</span><br></pre></td></tr></table></figure>
-<h1 id="安装lapsolver"><a href="#安装lapsolver" class="headerlink" title="安装lapsolver"></a>安装lapsolver</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装pytest-runner</span></span><br><span class="line">conda install pytest-runner</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装cmake</span></span><br><span class="line">pip install cmake</span><br><span class="line"><span class="meta">#</span><span class="bash"> 克隆源码</span></span><br><span class="line">git clone --recursive https://github.com/cheind/py-lapsolver.git</span><br><span class="line"><span class="meta">#</span><span class="bash"> build</span></span><br><span class="line">python setup.py develop</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">test</span>:</span></span><br><span class="line">python setup.py test</span><br></pre></td></tr></table></figure>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install scikit-image</span><br><span class="line">conda install GitPython</span><br><span class="line">pip install sacred </span><br><span class="line">pip install motmetrics</span><br><span class="line">pip install pul</span><br></pre></td></tr></table></figure>
-<h1 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h1><p>安装完毕之后，我有这样一段代码：</p>
+<h1>安装pytorch-lightning</h1>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install pytorch-lightning</span><br></pre></td></tr></table></figure>
+<h1>安装lapsolver</h1>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 先安装pytest-runner</span></span><br><span class="line">conda install pytest-runner</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装cmake</span></span><br><span class="line">pip install cmake</span><br><span class="line"><span class="meta">#</span><span class="bash"> 克隆源码</span></span><br><span class="line">git clone --recursive https://github.com/cheind/py-lapsolver.git</span><br><span class="line">cd py-lapsolver</span><br><span class="line"><span class="meta">#</span><span class="bash"> build</span></span><br><span class="line">python setup.py develop</span><br><span class="line"><span class="meta">#</span><span class="bash"> <span class="built_in">test</span>:</span></span><br><span class="line">python setup.py test</span><br></pre></td></tr></table></figure>
+<h1>其他</h1>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">pip install scikit-image</span><br><span class="line">conda install GitPython</span><br><span class="line">pip install sacred </span><br><span class="line">pip install motmetrics</span><br><span class="line">pip install pulp</span><br></pre></td></tr></table></figure>
+<p>安装tracking_wo_bnw:</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/phil-bergmann/tracking_wo_bnw</span><br><span class="line">cd tracking_wo_bnw</span><br><span class="line">pip3 install -e .</span><br></pre></td></tr></table></figure>
+<p>修改文件：</p>
+<p><a href="http://tracktor.datasets.factory.py">tracktor.datasets.factory.py</a></p>
+<p>tracktor.datasets.mot15_sequence.py</p>
+<p>tracktor.datasets.mot_sequence.py</p>
+<p>tracktor.datasets.mot_wrapper.py</p>
+<h1>遇到的问题</h1>
+<p>安装完毕之后，我有这样一段代码：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pytorch-lightning <span class="keyword">as</span> pl</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Net</span>(<span class="params">pl.LightningModule</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, **hparams</span>):</span></span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        self.hparams = hparams</span><br><span class="line">        <span class="built_in">print</span>(self.hparams)</span><br></pre></td></tr></table></figure>
 <p>报错：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">  File <span class="string">&quot;xxx&quot;</span>, line xx, <span class="keyword">in</span> __init__</span><br><span class="line">    self.hparams = hparams</span><br><span class="line">  File <span class="string">&quot;xxx&quot;</span>, line xx, <span class="keyword">in</span> __setattr__</span><br><span class="line">    <span class="built_in">object</span>.__setattr__(self, name, value)</span><br><span class="line">AttributeError: can<span class="string">&#x27;t set attribute</span></span><br></pre></td></tr></table></figure>
 <p>解决方法：</p>
-<p> 将<code>self.hparams=hparams</code>换为<code>self.hparams.update(hparams)</code>。</p>
+<p>将<code>self.hparams=hparams</code>换为<code>self.hparams.update(hparams)</code>。</p>
 <p>参考：</p>
 <p><a href="https://github.com/PyTorchLightning/pytorch-lightning/discussions/7525">https://github.com/PyTorchLightning/pytorch-lightning/discussions/7525</a></p>
 ]]></content>

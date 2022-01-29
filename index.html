@@ -73,8 +73,8 @@
   </style>
 </noscript>
 
-<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /><link rel="alternate" href="/atom.xml" title="WXL's blog" type="application/atom+xml">
-</head>
+<link rel="alternate" href="/atom.xml" title="WXL's blog" type="application/atom+xml">
+<link href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css" rel="stylesheet" /></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
@@ -134,7 +134,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">48</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -194,6 +194,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/td.jpg">
+      <meta itemprop="name" content="WXL">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="WXL's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" class="post-title-link" itemprop="url">pytorch的parameters相关函数</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-01-29 13:01:00 / 修改时间：13:58:35" itemprop="dateCreated datePublished" datetime="2022-01-29T13:01:00+08:00">2022-01-29</time>
+            </span>
+
+          
+            <span id="/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" class="post-meta-item leancloud_visitors" data-flag-title="pytorch的parameters相关函数" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1>register_parameter()和parameter()</h1>
+<p>这两个都是一个东西，使用上有细微差别，主要作用是：<strong>将一个不可训练的类型<code>Tensor</code>转换成可以训练的类型<code>parameter</code>，并将这个<code>parameter</code>绑定到这个<code>module</code>里面，相当于变成了模型的一部分，成为了模型中可以根据训练进行变化的参数。</strong></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/29/pytorch/pytorch%E7%9A%84parameters%E7%9B%B8%E5%85%B3%E5%87%BD%E6%95%B0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -217,10 +305,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-01-21 11:39:57 / 修改时间：18:33:51" itemprop="dateCreated datePublished" datetime="2022-01-21T11:39:57+08:00">2022-01-21</time>
+              <time title="创建时间：2022-01-21 11:39:57" itemprop="dateCreated datePublished" datetime="2022-01-21T11:39:57+08:00">2022-01-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-01-23 15:53:55" itemprop="dateModified" datetime="2022-01-23T15:53:55+08:00">2022-01-23</time>
+              </span>
 
           
             <span id="/2022/01/21/%E9%85%8D%E7%8E%AF%E5%A2%83/%E5%AE%89%E8%A3%85pytorch_lightning/" class="post-meta-item leancloud_visitors" data-flag-title="安装pytorch_lightning" title="阅读次数">
@@ -1020,102 +1114,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://wangxl12.github.io/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/td.jpg">
-      <meta itemprop="name" content="WXL">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="WXL's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/" class="post-title-link" itemprop="url">网络可视化</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-12-12 13:00:55 / 修改时间：14:27:44" itemprop="dateCreated datePublished" datetime="2021-12-12T13:00:55+08:00">2021-12-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">深度学习</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/" class="post-meta-item leancloud_visitors" data-flag-title="网络可视化" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>介绍常见的可视化网络模型和训练过程的方法。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/12/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/%E7%BD%91%E7%BB%9C%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%8E%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1187,7 +1185,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
